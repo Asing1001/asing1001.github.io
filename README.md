@@ -5,17 +5,18 @@ Gender : Male
 Birthday : 1991/10/1  
 Email : shinningstar1001@gmail.com  
 Highest degree : Business Administration in National Taipei University  
-Website: https://asing1001.github.io
+Website: [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogspot.tw/)
 
 ## Career Summary
-
-Possessing 3 years of experience in web application development, especially expert in front-end area, skilled for angularjs and reactjs. Love coding, a talent and passionate programmer. 
+* Possessing 3 years experience in web development, specialized in front-end, including Angularjs, Reactjs, Typescript and ES6+. 
+* High performance in projects, quick response for urgent support.
+* Enthusiastic about techniques, love programming.  
+* Fluent in English and Chinese, both written and oral.
 
 ## Skill Summary
-
 * Tooling / Workflow: Webpack, Gulp, Grunt, NPM, Jenkins, Codeship, JIRA
 * Version Control : Git, SVN
-* Database : mongodb, redis, oracle, msSql
+* Database : Mongodb, Redis, Oracle, MSSql
 * Project Management: DevOps, JIRA, trello, Scrum
 * Programming language : C#, javascript, html, css, nodejs, Typescript, Python, Java
 * JS Framework: ReactJS, AngularJS(1.x), AngularJS 2, ES6
