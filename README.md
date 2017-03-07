@@ -1,27 +1,75 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Freelancer](http://startbootstrap.com/template-overviews/freelancer/)
+## Contact info
 
-[Freelancer](http://startbootstrap.com/template-overviews/freelancer/) is a one page freelancer portfolio theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This theme features several content sections, a responsive portfolio grid with hover effects, full page portfolio item modals, and a working PHP contact form.
+Name : 陳星銘
 
-## Getting Started
+Gender : Male
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-freelancer.git`
-* Fork the repo
+Birthday : 1991/10/1
 
-## Bugs and Issues
+Phone number : 0910128813
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-freelancer/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/freelancer/).
+Highest degree : Business Administration in National Taipei University 
 
-## Creator
+Website: https://asing1001.github.io
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+## Career Summary
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+Possessing 3 years of experience in web application development, especially expert in front-end area, skilled for angularjs and reactjs. Love coding, a talent and passionate programmer. 
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+## Skill Summary
 
-## Copyright and License
+* Tooling / Workflow: Webpack, Gulp, Grunt, NPM, Jenkins, Codeship, JIRA
+* Version Control : Git, SVN
+* Database : mongodb, redis, oracle, msSql
+* Project Management: DevOps, JIRA, trello, Scrum
+* Programming language : C#, javascript, html, css, nodejs, Typescript, Python, Java
+* JS Framework: ReactJS, AngularJS(1.x), AngularJS 2, ES6
+* Testing : Mocha, MSTest, Selenium
+* Css : Sass, PostCss
+* Design : Responseive design, Material design
+* Cloud Service : Azure, AWS, Heroku, MLab
+* Others : ELK, WebRtc, Electron, Windows form, Android app
+* Communication language : English(Fluent, TOEIC 900, both oral and written), Chinese (Native)
 
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/gh-pages/LICENSE) license.
+## Work experience
+#### Xuenn :
+* SEO
+* Product support
+* Product design
+* Feature developement
+* Product integration with partners
+* Compliance match
+* KYC
+
+#### Hess :
+* Teach class in full english
+* communication with parents and foreign teacher
+
+## Projects
+* Online gaming platform
+* CMS system
+* Promotion system
+* SEO enhacement
+* Membership system
+* Realtime message system
+* Customer service integration with salesforce
+* Crawler
+
+## Side projects :
+* MovieRater (reactjs, graphql, typescript, nodejs, mongodb) http://movierater.azurewebsites.net/
+* Realtime video chat (WebRTC) https://github.com/Asing1001/webrtc-website
+* Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
+* MVCshopping mall (Asp.net mvc) https://github.com/Asing1001/MVCShoppingMall
+
+## Self learning record :
+* 程式人雜誌刊登 http://programmermagazine.github.io/201411/htm/article6.html
+* Learning how to learn 
+* Hackthon
+* Python 
+* Answer many question at Stackoverflow (https://stackoverflow.com/users/3959161/andy-chen) 
+* 智慧農業關鍵營運行銷班證書
+
+## Certificate :
+* GA certificate
+* TOEIC Golden certificate
+
