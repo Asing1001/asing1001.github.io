@@ -30,7 +30,7 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
 
 ## Work experience
-#### Xuenn IT Consultant *2014~*:
+#### Xuenn, IT Consultant, *2014/10~*
 * Web application design 
 * Feature developement
 * Product integration with partners
@@ -39,7 +39,7 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * Compliance development
 * KYC
 
-#### Hess English teacher *2013*:
+#### Hess, English teacher, *2012/5~2013/5*
 * Teach class in full english
 * Communication with parents and foreign teacher
 
@@ -55,7 +55,7 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 
 ## Side projects :
 * MVCshopping mall (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
-* MovieRater (reactjs, graphql, typescript, nodejs, mongodb) http://movierater.azurewebsites.net/
+* MovieRater (Reactjs, Graphql, Typescript, Nodejs, Mongodb) http://movierater.azurewebsites.net/
 * Realtime video chat (WebRTC) https://github.com/Asing1001/webrtc-website
 * Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
 
