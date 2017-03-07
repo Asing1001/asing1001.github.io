@@ -1,8 +1,6 @@
 ## Contact info
-
 Name : Sing Ming Chen  
 Gender : Male  
-Birthday : 1991/10/1  
 Email : shinningstar1001@gmail.com  
 Highest degree : Business Administration in National Taipei University  
 Website: [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogspot.tw/)
