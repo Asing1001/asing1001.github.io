@@ -60,10 +60,11 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
 
 ## Self learning record :
-* 程式人雜誌刊登 http://programmermagazine.github.io/201411/htm/article6.html
+* Application developement courses (636 hours) by Institute for Information Industry http://www.iiiedu.org.tw/taipei/edm/msit.htm 
 * Stackoverflow reputation 1568, Javascript tagged https://stackoverflow.com/users/3959161/andy-chen
+* 程式人雜誌刊登 http://programmermagazine.github.io/201411/htm/article6.html
 * Coursera courses, learning how to learn, R programming, Python
-* Hackthon
+* 2016 ASIA OPEN DATA HACKATHON https://github.com/Asing1001/budget
 * 智慧農業關鍵營運行銷班證書
 
 ## Certificate :
