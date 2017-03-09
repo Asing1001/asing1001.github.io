@@ -44,7 +44,7 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * Communication with parents and foreign teacher
 
 ## Projects
-* Online gaming platform
+* Online gaming platform (website and mobilesite)
 * Content management system 
 * Promotion system
 * SEO enhacement
