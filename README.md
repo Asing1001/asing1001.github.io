@@ -55,7 +55,7 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 
 ## Side projects :
 * MVCshopping mall (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
-* MovieRater (Reactjs, Graphql, Typescript, Nodejs, Mongodb) http://movierater.azurewebsites.net/
+* MovieRater (Reactjs, Graphql, Typescript, Nodejs, Mongodb) http://moviesrater.herokuapp.com/
 * Realtime video chat (WebRTC) https://github.com/Asing1001/webrtc-website
 * Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
 
@@ -68,5 +68,10 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * 智慧農業關鍵營運行銷班證書
 
 ## Certificate :
-* [GA certificate](https://www.google.com/partners/?hl=zh-TW#i_profile;idtf=100241582365266596912)
-* TOEIC Golden certificate
+* [Google Analytics certificate](https://www.google.com/partners/?hl=zh-TW#i_profile;idtf=100241582365266596912)
+* [TOEIC Golden certificate](https://goo.gl/photos/gGjX7pcqvkGqMoZB8)
+* [ELS level 108 certificate](https://goo.gl/photos/ySSQeWEmLBwUvHzt6)
+
+## Honors & Awards
+* [2013 MSD Elite MedCamp - The Elite Team](https://goo.gl/photos/kSca7Xf9csrJ2bsd8) [`News Link`](http://bit.ly/1B7iH4H)
+* [2011 National Taipei University Annual award](https://goo.gl/photos/QtC9zUMR6qgHiVME7)
