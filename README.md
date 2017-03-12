@@ -10,10 +10,10 @@ Highest degree : Business Administration in National Taipei University
 Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogspot.tw/)
 
 ## Career Summary
-* Possessing 3 years experience in web development, specialized in front-end, including Angularjs, Reactjs, Typescript and ES6+. 
+* Possessing 3 years experience in web development.
+* Expert in front-end, specialized in Angularjs, Reactjs, Typescript, ES6+, HTML5, SASS and CSS3. 
 * High performance in projects, quick response for urgent support.
-* Enthusiastic about techniques, love programming.  
-* Fluent in English and Chinese, both written and oral.
+* Enthusiastic about techniques, dedicate to bring better solution to business.
 
 ## Skill Summary
 * Tooling / Workflow: Webpack, Gulp, Grunt, NPM, Jenkins, Codeship, JIRA
