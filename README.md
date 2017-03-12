@@ -16,15 +16,16 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * Enthusiastic about techniques, dedicate to bring better solution to business.
 
 ## Skill Summary
-* Tooling / Workflow: Webpack, Gulp, Grunt, NPM, Jenkins, Codeship, JIRA
-* Version Control : Git, SVN
-* Database : Mongodb, Redis, Oracle, MSSql
-* Project Management: DevOps, JIRA, trello, Scrum
 * Programming language : C#, javascript, html, css, nodejs, Typescript, Python, R, Java
 * JS Framework: AngularJS(1.x), ReactJS, AngularJS 2
-* Testing : Mocha, MSTest, Selenium
 * Css : Bootstrap, Sass, PostCss
-* Design : Responseive design, Material design
+* Design : Responsive web design, Material design
+* Database : Mongodb, Redis, Oracle, MSSql
+* Testing : Mocha, MSTest, Selenium
+* Tooling : Webpack, Gulp, Grunt, NPM
+* CI/CD : Jenkins, Codeship
+* Version Control : Git, SVN
+* Project Management: JIRA, Trello, Scrum
 * Cloud Service : Azure, AWS, Heroku, MLab
 * Others : ELK stack, WebRTC, Electron, Windows Form, Android app
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
@@ -44,7 +45,7 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * Communication with parents and foreign teacher
 
 ## Projects
-* Online gaming platform (website and mobilesite)
+* Online gaming platform (Both desktop and mobile)
 * Content management system 
 * Promotion system
 * SEO enhacement
