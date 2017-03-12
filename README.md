@@ -16,17 +16,17 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 * Enthusiastic about techniques, dedicate to bring better solution to business.
 
 ## Skill Summary
-* Programming language : C#, javascript, html, css, nodejs, Typescript, Python, R, Java
+* Programming language : C#, Javascript, HTML, CSS, Nodejs, Typescript, SQL, Python, R, Java
 * JS Framework: AngularJS(1.x), ReactJS, AngularJS 2
 * Css : Bootstrap, Sass, PostCss
-* Design : Responsive web design, Material design
-* Database : Mongodb, Redis, Oracle, MSSql
+* Design : MVC, Responsive web design, Material design
+* Database : Mongodb, Redis, Oracle, MSSQL
 * Testing : Mocha, MSTest, Selenium
 * Tooling : Webpack, Gulp, Grunt, NPM
 * CI/CD : Jenkins, Codeship
 * Version Control : Git, SVN
 * Project Management: JIRA, Trello, Scrum
-* Cloud Service : Azure, AWS, Heroku, MLab
+* Cloud Service : Azure, Heroku, AWS, MLab
 * Others : ELK stack, WebRTC, Electron, Windows Form, Android app
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
 
