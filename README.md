@@ -11,9 +11,15 @@ Website : [Portfolio](https://asing1001.github.io), [Blog](http://sincode.blogsp
 
 ## Career Summary
 * Possessing 3 years experience in web development.
-* Expert in front-end, specialized in Angularjs, Reactjs, Typescript, ES6+, HTML5, SASS and CSS3. 
+* Specialized in front-end, built multiple applications in Angularjs, Reactjs, Typescript, ES6+
+* Experienced in develope web application with concurrent user 2k+ 7/24
+* Expert in web application performance tuning
+* Expert in website SEO enhancement
+* Experiened in building CI/CD flow in Jenkins/CodeShip with Git/SVN solution
+* Skilled in data-driven design by using data analytics tool, such as GA, ELK stack
+* Familiar with using cloud computing service, such as Azure, AWS, Heroku
 * High performance in projects, quick response for urgent support.
-* Enthusiastic about techniques, dedicate to bring better solution to business.
+
 
 ## Skill Summary
 * Programming language : C#, Javascript, HTML, CSS, Nodejs, Typescript, SQL, Python, R, Java
