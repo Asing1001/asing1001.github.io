@@ -28,6 +28,3 @@ tags: [C#]
 9.  介面繼承介面只會累積所繼承的方法與特性,除了實作自己的特性與方法還要實作繼承來的特性與方法 
 10.  任何類別均可實作任何介面,只要他信守實作該介面所有的方法與特性的承諾 
 11.  Interface可以向上轉型也可向下轉型,使用is來判別後再使用as來轉型,但是向上轉型後就只能使用父類別的方法與特性 
-12.  傳入方法的Pattern只要是同型態的變數(同樣介面或物件)皆可傳入,  
-    ex:  
-    MonitorPower(Appliance appliance) CoffeeMaker misterCoffee = new CoffeeMaker();//CoffeeMaker為Appliance的子類別所以一定有繼承Appliance的屬性與方法 MonitorPower(misterCoffee);//所以可以帶入參數

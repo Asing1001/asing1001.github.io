@@ -1,5 +1,4 @@
-title: |
-	Javascript function 的參數傳遞 [ function parameter ]
+title: Javascript function 的參數傳遞
 date: 2014-11-05 16:30:00
 tags: [JavaScript]
 ---
