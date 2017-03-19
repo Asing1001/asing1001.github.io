@@ -5,8 +5,7 @@ tags: [JavaScript]
 ---
 
 [W3School Hoist解說參考](http://www.w3schools.com/js/js_hoisting.asp)  
-大家可能沒想過，為什麼在JavaScript中我們能在前面就叫用後來宣告的方法呢？
-這是因為JavaScript中"Hoist"這個行為所產生的結果，今天就來和大家分享這個小知識吧！
+為什麼在JavaScript中我們能在檔案最前面叫用後來宣告的方法，就是因為JavaScript中"Hoist"這個行為所產生的結果！
 
 "Hoist"中文翻做"提升"，顧名思義，就是在Javascript中預設會自動將宣告的變數/方法提到最前面，因此先使用後來才宣告變數/方法是沒問題的，如下：
 ```Javascript

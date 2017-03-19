@@ -1,5 +1,5 @@
 ---
-title: 利用 SQL Compact Edition 免費建立擁有 DataBase 的 Azure Websites [ Azure Websites + Database for free ]
+title: 利用 SQL Compact Edition 免費建立擁有 DataBase 的 Azure Websites
 date: 2014-09-17 03:15:00
 tags: [ASP.NET MVC,Azure]
 ---
