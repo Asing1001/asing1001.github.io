@@ -42,7 +42,7 @@ menu:
   about: /about
   archives: /archives
   tags: /tags
-  profolio: /profolio
+  portfolio: /portfolio
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -63,7 +63,7 @@ menu_icons:
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
-  profolio: book
+  portfolio: book
 
 
 
