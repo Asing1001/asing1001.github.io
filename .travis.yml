@@ -13,8 +13,8 @@ script:
   - npm install
   - hexo clean  
 after_success:
-  - git config user.name "Andy Chen" 
-  - git config user.email "shinningstar1001@gmail.com"
+  - git config --global user.name "Andy Chen" 
+  - git config --global user.email "shinningstar1001@gmail.com"
   - sed -i'' "/^ *repo/s~github\.com~${Github_Token}@github.com~" _config.ym
   - hexo deploy
   - hexo algolia
