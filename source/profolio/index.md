@@ -14,7 +14,7 @@ date: 2017-03-20 02:27:40
 >  [Live Preview](https://wecarestore.azurewebsites.net/) | [Github](https://github.com/Asing1001/MVCShoppingMall) 
 *E-commerce platform, include backoffice, Testing account : `admin@admin.com/P@ssw0rd`*
 `ASP.NET MVC` `MSSQL` `Bootstrap 3` 
-![](index/wecarestore.jpg)
+![](index/wecare-store.jpg)
 
 ## Realtime video chatroom
 > [Live Preview](https://webrtc-realtime-videochat.herokuapp.com/) | [Github](https://github.com/Asing1001/webrtc-website) 
@@ -26,7 +26,7 @@ date: 2017-03-20 02:27:40
 > [Live Preview](http://acfreetool.azurewebsites.net/tools/bloodtransfusioncalculator.html) | [Github](https://github.com/Asing1001/acfreetools) 
 *Blood transfusion calculator is a useful tool for veterinary's daily work.*
  `AngularJS 1.5` `Bootstrap 3` 
-![](index/blood-transfusion-calculator.jpg)
+![](index/blood-transfusion-calculate.jpg)
 
 ## Budget trace
 > [Live Preview](http://commabudget.azurewebsites.net/) | [Github](https://github.com/Asing1001/budget) 
