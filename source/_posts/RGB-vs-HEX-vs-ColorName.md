@@ -1,7 +1,7 @@
 ---
 title: 三種色彩表達法 - RGB & HEX & ColorName
 date: 2014-11-12 20:33:00
-tags: [C#,JavaScript]
+tags: [CSS]
 ---
 
 小弟在剛開始寫程式的時候，看到顏色就一陣頭痛，懶惰如我終於受不了決定來研究解藥了。

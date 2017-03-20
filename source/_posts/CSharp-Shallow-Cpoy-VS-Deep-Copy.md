@@ -1,5 +1,5 @@
-title: |
-	C# Shallow Cpoy VS Deep Copy
+---
+title: C# Shallow Cpoy VS Deep Copy
 date: 2014-11-14 11:44:00
 tags: [C#]
 ---

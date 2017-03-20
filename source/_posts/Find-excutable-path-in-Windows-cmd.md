@@ -1,7 +1,7 @@
 ---
 title: 如何找 Windows cmd 輸入的 command 實體路徑？
 date: 2016-08-08 11:11:00
-tags: [cmd]
+tags: [CMD]
 ---
 
 語法：`Where + Command`

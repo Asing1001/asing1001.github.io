@@ -1,5 +1,5 @@
-title: |
-	C# Interface base rule 介面潛規則
+---
+title: C# Interface base rule 介面潛規則
 date: 2014-11-07 10:31:00
 tags: [C#]
 ---

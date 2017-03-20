@@ -1,7 +1,7 @@
 ---
 title: AngularJS Minified Error:[$injector:unpr]
 date: 2015-03-10 18:04:00
-tags: [AngularJS]
+tags: [AngularJS, Trouble Shooting]
 ---
 
 今天在把 AngularJS 的 Code 放上 Production 環境時出現了一個問題：  

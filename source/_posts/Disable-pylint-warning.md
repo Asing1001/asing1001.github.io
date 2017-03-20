@@ -1,7 +1,7 @@
 ---
 title: Disable pylint warning
 date: 2017-03-18 01:02:00
-tags: [python]
+tags: [Python]
 ---
 
 1. 在project下產生.pylintrc檔案：  

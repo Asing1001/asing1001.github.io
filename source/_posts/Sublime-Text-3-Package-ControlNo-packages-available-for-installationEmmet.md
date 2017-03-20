@@ -1,5 +1,5 @@
-title: |
-	Sublime Text 3 安裝常見問題(Package Control手動安裝、"No packages available for installation"、安裝Emmet出現錯誤)
+---
+title: Sublime Text 3 安裝常見問題(Package Control手動安裝、"No packages available for installation"、安裝Emmet出現錯誤)
 date: 2014-10-15 01:44:00
 tags: [開發工具]
 ---

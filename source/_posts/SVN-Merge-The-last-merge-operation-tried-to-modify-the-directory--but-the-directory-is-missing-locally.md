@@ -1,7 +1,7 @@
 ---
 title: SVN Merge - The last merge operation tried to modify the directory , but the directory is missing locally.
 date: 2014-11-17 20:47:00
-tags: [Trouble Shooting]
+tags: [Trouble Shooting, SVN]
 ---
 
 今天在SVN上做Merge動作時，發生Tree Conflict錯誤：  

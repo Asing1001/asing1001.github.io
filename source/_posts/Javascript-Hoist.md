@@ -1,5 +1,5 @@
-title: |
-	Javascript Hoist
+---
+title: Javascript Hoist
 date: 2014-10-28 21:38:00
 tags: [JavaScript]
 ---

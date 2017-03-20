@@ -1,14 +1,12 @@
 ---
 title: 使用Python argparse處理command line arguments
 date: 2017-03-20 22:08:51
-tags: [Python]
+tags: [Python,CMD]
 ---
 
-## 前言
+## 使用方式
 
 今天專案需要傳argument進python，發覺內建的argparse很好用，記錄簡易用法如下：
-
-## Example :
 
 ```python
 import argparse
