@@ -328,7 +328,7 @@ disqus_shortname: acslog
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: nNUMPUrqNNot_PkJfPzacCg4M0b6Mz5viTh_YBlxew8
 
 # Google Analytics
 google_analytics: UA-93986058-1
