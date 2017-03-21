@@ -9,6 +9,7 @@ tags: [C#]
 有時需要拷貝物件時到底該怎樣視自己需要來做拷貝?  
 差別在於拷貝的class內部的參考物件是否只<span style="color: blue;">拷貝參考指標</span>  
 或是拷貝完整獨立物件(<span style="color: blue;">連參考物件一起拷貝</span>)  
+<!-- more -->
 補充：  
 
 *   序列化(<span style="color: blue;">Serialize</span>)的意義是把物件變成類似binary的資料,通常用來做資料傳輸,例如網路的資料傳輸

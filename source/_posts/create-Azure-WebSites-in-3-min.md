@@ -9,6 +9,7 @@ tags: [Azure]
 ## 第一步：建立網站
 
 登入Window Azure管理介面，左下角按新增→接著如圖選擇建立網站  
+<!-- more -->
 
 [![](http://1.bp.blogspot.com/-PCQxb6lyHZQ/VBiIyyO_qpI/AAAAAAAAJN4/cZZP-FtUahA/s1600/2014-09-17%2B02_51_13-Greenshot.jpg)](http://1.bp.blogspot.com/-PCQxb6lyHZQ/VBiIyyO_qpI/AAAAAAAAJN4/cZZP-FtUahA/s1600/2014-09-17%2B02_51_13-Greenshot.jpg)
 

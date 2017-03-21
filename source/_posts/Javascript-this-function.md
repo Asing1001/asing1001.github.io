@@ -13,6 +13,7 @@ function myFunction() {
 myFunction();
 // Will return the window object
 ```
+<!-- more -->
 
 若改用`myobject`包起來，this就會變成 `myobject`，如下：
 ```Javascript

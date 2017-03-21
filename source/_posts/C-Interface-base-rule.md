@@ -4,7 +4,8 @@ date: 2014-11-07 10:31:00
 tags: [C#]
 ---
 
-<div>Interface是C#裡相當重要的概念，它可以完成多型，讓我們方便維護，本篇整理寫介面時的基本規則，如下：</div>
+Interface是C#裡相當重要的概念，它可以完成多型，讓我們方便維護，本篇整理寫介面時的基本規則，如下：
+<!-- more -->
 
 1.  Interface 會要求繼承的類別(class)必須實作interface裡面定義的方法,建議使用 <span style="color: #0b5394;">I</span> 開頭定義<a name="more"></a>
 2.  Interface介面是不存放資料的,因此不能增加欄位(field),但可以增加特性(property),理由是set和get存取器只是方法 

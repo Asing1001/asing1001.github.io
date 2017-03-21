@@ -7,6 +7,7 @@ tags: [CSS]
 小弟在剛開始寫程式的時候，看到顏色就一陣頭痛，懶惰如我終於受不了決定來研究解藥了。
 
 常見分為<span style="color:#F00">Color Name</span>、<span style="color:#0F0">HEX</span>、<span style="color:#00F">RGB</span>三種表達方式：
+<!-- more -->
 
 
 ## ColorName, 直接打顏色名稱：

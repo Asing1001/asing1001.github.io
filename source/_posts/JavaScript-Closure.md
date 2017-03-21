@@ -6,6 +6,7 @@ tags: [JavaScript]
 
 今天練習的是Javascript裡非常重要的概念-"Closure(封裝)"
 也就是和C#、JAVA等語言一樣，變數也能有Private、Public的差別！
+<!-- more -->
 
 先介紹 global variable(全域變數)和 local variable(私有變數)的差別：
 `global variable` 為直接宣告並隸屬於window物件的變數

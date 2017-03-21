@@ -6,6 +6,7 @@ tags: [JavaScript]
 
 ## 前言
 寫過C#或JAVA的朋友一開始接觸 Javascript 是否和我一樣，覺得 Javascript funtion 參數傳遞很奇怪呢？小弟研讀一番，根據自己的理解整理了兩個迷惑的地方：
+<!-- more -->
 
 ## (一) 參數多傳或少傳的結果
 

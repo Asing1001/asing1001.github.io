@@ -10,7 +10,8 @@ tags: [ASP.NET MVC,Azure]
 只能每個月砸150台幣買DB了嗎！？  
 
 **答案當然是NO!**
-  
+<!-- more -->
+
 
 今天就來教大家利用SQL Compact Edition不花一毛錢使用擁有DataBase的Azure Websites吧！
 

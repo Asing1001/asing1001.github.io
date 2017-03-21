@@ -10,6 +10,7 @@ var cars = [];
 var cars = new Arrary();
 ```
 w3schools提到, 這兩種方式雖然都一樣，但建議用 [] 的方式來宣告，避免某些時候混淆，何況 [] 簡單又好記！
+<!-- more -->
 
 ## Arrays 和 Objects 的主要差別：
 arrays 使用 數字 index

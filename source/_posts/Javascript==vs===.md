@@ -4,10 +4,12 @@ date: 2015-01-07 19:17:00
 tags: [JavaScript]
 ---
 
-**== 和 === 依變數型別會有不同的比較方式：**  
+今天才知道 == 和 === 其實會依變數型別有不同的比較方式
+
 ## 非Object型別(String , Int...)：  
 == 比 'value'  
 === 比 'value' & <span style="color: red;">'type'</span>
+<!-- more -->
 
 Example:
 ``` Javascript

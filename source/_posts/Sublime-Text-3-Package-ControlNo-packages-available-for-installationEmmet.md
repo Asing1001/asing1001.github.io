@@ -5,6 +5,7 @@ tags: [開發工具]
 ---
 
 [Sublime Text 3](http://www.sublimetext.com/3) 是身為前端工程師必安裝的工具，在保哥[Sublime Text 3 新手上路：必要的安裝、設定與基本使用教學](http://blog.miniasp.com/post/2014/01/07/Useful-tool-Sublime-Text-3-Quick-Start.aspx) 這篇中都介紹的很詳細，但是在公司安裝時，由於使用Proxy的關係常常會遇到一些問題，以下整理安裝方法及問題解決方式：  
+<!-- more -->
 
 ※請先至 [Sublime Text 3](http://www.sublimetext.com/3) 網頁選擇適合自己的版本下載安裝  
 

@@ -6,6 +6,7 @@ tags: [Trouble Shooting, SVN]
 
 今天在SVN上做Merge動作時，發生Tree Conflict錯誤：  
 [![](http://4.bp.blogspot.com/-_K8-99BVPvw/VGntsYeN3HI/AAAAAAAAJZw/CWShaTTkGak/s1600/tree%2Bconflict.png)](http://4.bp.blogspot.com/-_K8-99BVPvw/VGntsYeN3HI/AAAAAAAAJZw/CWShaTTkGak/s1600/tree%2Bconflict.png)
+<!-- more -->
 
 雙擊點開顯示：
 `the last merge operation tried to modify the directory , but the directory is missing locally.`

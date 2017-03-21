@@ -4,9 +4,9 @@ date: 2017-03-20 22:08:51
 tags: [Python,CMD]
 ---
 
-# 使用方式
+剛好需要用command line傳參數進python，因此發現了功能完善的`argparse`，記錄用法如下：
+<!-- more -->
 
-今天專案需要傳argument進python，發覺內建的argparse很好用，記錄用法如下：
 
 ## 增加參數
 ```python
@@ -96,4 +96,5 @@ usage: argparse-test.py [-h] [-foo FOO]
 argparse-test.py: error: argument -foo: invalid int value: 'abc'
 ```
 
-更多資訊可以參考：https://docs.python.org/3/library/argparse.html
+更多資訊可以參考：  
+https://docs.python.org/3/library/argparse.html
