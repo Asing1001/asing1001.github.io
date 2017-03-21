@@ -21,7 +21,7 @@ print(args.foo)
 
 ### 測試結果
 
-```bash
+```
 C:\pytest>argparse-test.py -foo=bar
 bar
 
@@ -46,7 +46,7 @@ args = parser.parse_args()
 print(args.foo)
 ```
 ### 測試結果
-```bash
+```
 C:\pytest>argparse-test.py -h
 usage: argparse-test.py [-h] [-foo FOO]
 
@@ -67,7 +67,7 @@ print(args.foo)
 ```
 
 ### 測試結果
-```bash
+```
 C:\pytest>argparse-test.py
 default value
 ```
@@ -84,7 +84,7 @@ print(args.foo)
 ```
 
 ### 測試結果
-```bash
+```
 C:\pytest>argparse-test.py
 2
 
