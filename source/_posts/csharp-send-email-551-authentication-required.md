@@ -1,11 +1,11 @@
 ---
-title: Sending Email error 5.5.1 Authentication Required.
+title: Gmail sending error 5.5.1 Authentication Required.
 date: 2017-03-24 00:10:55
-tags:
+tags: [C#, Trouble Shooting, Google]
 ---
 
 ## 錯誤
-程式自動發送Email時發生錯誤：
+程式自動寄送Email時發生錯誤：
 `SMTP 伺服器需要安全連接，或用戶端未經驗證。伺服器回應為: 5.5.1 Authentication Required.`
 <!-- more -->
 

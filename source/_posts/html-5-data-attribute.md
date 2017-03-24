@@ -1,7 +1,7 @@
 ---
 title: HTML5 強大的新功能 data- 屬性
 date: 2017-03-25 02:11:28
-tags:
+tags: [Javascript, CSS, HTML5]
 ---
 
 常看到HTML裡有`data-`這個屬性, 其實這是HTML5才有的，透過讓每個元素有自己的dataset，讓本來需要用ajax獲得或是hide起來的資料，可直接使用data-把值藏好！
