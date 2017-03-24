@@ -6,7 +6,7 @@ tags:
 
 常看到HTML裡有`data-`這個屬性, 其實這是HTML5才有的，透過讓每個元素有自己的dataset，讓本來需要用ajax獲得或是hide起來的資料，可直接使用data-把值藏好！
 
-## 使用範例：
+## 範例：
 
 存人物的多項資訊到一個DOM元素中
 
@@ -17,6 +17,7 @@ tags:
     <li id="person3" data-yearold="29" data-company="XU">Max</li>
 </ul>
 ```
+<!-- more -->
 
 ## 取出：
 
@@ -51,7 +52,7 @@ person1.dataset.key2 = 'val2';
 </script >
 ```
 
-## CSS selector 藉此設定樣式：
+## CSS selector 可藉此設定樣式：
 
 ```css
 <style type="text/css">
