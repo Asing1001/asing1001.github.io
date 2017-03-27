@@ -86,3 +86,22 @@ algolia:
   adminApiKey: '932b154aa3a650d91916007f13246c39'
   indexName: 'blog'
   chunkSize: 5000
+
+# hexo-all-minifier
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'

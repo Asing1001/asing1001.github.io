@@ -4,16 +4,10 @@ date: 2014-09-17 03:15:00
 tags: [ASP.NET MVC,Azure]
 ---
 
-在<strike>只有免費服務才使用</strike>的這個世代，如果只是一個Demo用的小型網站自然不想使用到雲端的SQL DB來做為DataBase (其實只是不想花一個月150左右的DB費用XD)  
-
-鑑於想要使用免費Azure Websites，但又想要連接資料庫的人要怎麼做呢？  
-只能每個月砸150台幣買DB了嗎！？  
-
-**答案當然是NO!**
+在<strike>只有免費服務才使用</strike>的這個時代，如果只是一個小型網站自然不想月花150使用Azure SQL Server，但自己也沒有Server怎麼辦呢？
 <!-- more -->
 
-
-今天就來教大家利用SQL Compact Edition不花一毛錢使用擁有DataBase的Azure Websites吧！
+今天就來教大家利用`SQL Compact Edition`不花一毛錢來建立使用SQL DB的Azure Websites吧！
 
 ## 第一步：安裝Nuget套件
 
