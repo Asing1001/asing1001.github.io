@@ -6,9 +6,8 @@ date: 2017-03-20 02:27:40
 ## MovieRater
 > [Live Preview](https://moviesrater.herokuapp.com/) | [Github](https://github.com/Asing1001/movieRater.react)   
 *Crawl data from Yahoo, IMDB, PTT, for search movies' ratings easily.*  
-`ReactJS` `Typescript` `NodeJS` `GraphQL` `MongoDB` `Crawler` `Material-UI` 
+`PWA` `ServiceWorker` `ReactJS` `Typescript` `NodeJS` `GraphQL` `MongoDB` `Crawler` `Material-UI` 
 ![](index/movierater.jpg)
- 
 
 ## ASP.NET MVC Shopping mall
 >  [Live Preview](https://wecarestore.azurewebsites.net/) | [Github](https://github.com/Asing1001/MVCShoppingMall) 
