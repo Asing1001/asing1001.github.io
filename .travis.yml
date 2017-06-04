@@ -1,5 +1,6 @@
 language: node_js
 node_js: '6.10.0'
+cache: yarn
 env:
   - CXX=g++-4.8
 addons:
@@ -9,8 +10,7 @@ addons:
     packages:
     - g++-4.8
 script:
-  - npm install -g hexo-cli
-  - npm install
+  - yarn global add hexo-cli
   - hexo clean  
 after_success:
   - git config --global user.name "Andy Chen" 
