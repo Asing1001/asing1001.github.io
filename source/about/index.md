@@ -36,7 +36,7 @@ Highest degree : Business Administration in National Taipei University
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
 
 ## Work experience
-#### Xuenn, IT Consultant, *2014/10~*
+### Xuenn, IT Consultant, *2014/10~*
 * Web application design 
 * Feature developement
 * Product integration with partners
@@ -45,7 +45,7 @@ Highest degree : Business Administration in National Taipei University
 * Compliance development
 * KYC
 
-#### Hess, English teacher, *2012/5~2013/5*
+### Hess, English teacher, *2012/5~2013/5*
 * Teach class in full english
 * Communication with parents and foreign teacher
 
