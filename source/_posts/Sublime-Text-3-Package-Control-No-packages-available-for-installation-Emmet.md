@@ -18,7 +18,7 @@ tags: [開發工具]
 
 安裝完後重新啟動可在Preference中看到多了Package Control即完成安裝，點下去如下圖：  
 
-[![](http://3.bp.blogspot.com/-pv34B1MiHu8/VD1aQ2iM2pI/AAAAAAAAJSw/-1a94uNCJ9c/s1600/2014-10-15%2B01_15_03-Greenshot.jpg)](http://3.bp.blogspot.com/-pv34B1MiHu8/VD1aQ2iM2pI/AAAAAAAAJSw/-1a94uNCJ9c/s1600/2014-10-15%2B01_15_03-Greenshot.jpg)
+[![](https://3.bp.blogspot.com/-pv34B1MiHu8/VD1aQ2iM2pI/AAAAAAAAJSw/-1a94uNCJ9c/s1600/2014-10-15%2B01_15_03-Greenshot.jpg)](https://3.bp.blogspot.com/-pv34B1MiHu8/VD1aQ2iM2pI/AAAAAAAAJSw/-1a94uNCJ9c/s1600/2014-10-15%2B01_15_03-Greenshot.jpg)
 
 ### 三、因為Proxy使得按Install Package出現錯誤訊息(“No packages available for installation”)或沒反應
 
@@ -30,7 +30,7 @@ tags: [開發工具]
 2.  在文件中按如下格式添加Proxy設定，如：
 ```
 "http_proxy": "http://proxy.domain.com:8080",  
-"https_proxy": "http://proxy.domain.com:8080",
+"https_proxy": "https://proxy.domain.com:8080",
 ```
 #### 解決方法二、
 1.  打開IE 
@@ -38,7 +38,7 @@ tags: [開發工具]
 3.  重新啟動ST3
 
 ### 四、安裝Emmet出現錯誤訊息"Error while loading pyV8 binary............"
-[![](http://2.bp.blogspot.com/-lKgBQt4eK7s/VD1fALHbLiI/AAAAAAAAJS8/GHRWQ8GQffs/s1600/7MmZZ.png)](http://2.bp.blogspot.com/-lKgBQt4eK7s/VD1fALHbLiI/AAAAAAAAJS8/GHRWQ8GQffs/s1600/7MmZZ.png)
+[![](https://2.bp.blogspot.com/-lKgBQt4eK7s/VD1fALHbLiI/AAAAAAAAJS8/GHRWQ8GQffs/s1600/7MmZZ.png)](https://2.bp.blogspot.com/-lKgBQt4eK7s/VD1fALHbLiI/AAAAAAAAJS8/GHRWQ8GQffs/s1600/7MmZZ.png)
 
 解決方法：
 1.  請至[https://github.com/emmetio/pyv8-binaries](https://github.com/emmetio/pyv8-binaries)拉到最下面下載正確版本的檔案

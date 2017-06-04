@@ -11,15 +11,15 @@ tags: [實用工具]
 
 開啟Outlook後→右下角工具列找到outlook圖示→右鍵→縮小時自動隱藏(Hide When Minimized)
 
-[![](http://4.bp.blogspot.com/-KiyveuDpwXw/VFnL7ydlo1I/AAAAAAAAJXU/pp1Umg6JtK0/s320/1b6a954ee74d809c9ba845a49b557c0a-754712.jpeg)](http://4.bp.blogspot.com/-KiyveuDpwXw/VFnL7ydlo1I/AAAAAAAAJXU/pp1Umg6JtK0/s1600/1b6a954ee74d809c9ba845a49b557c0a-754712.jpeg)
+[![](https://4.bp.blogspot.com/-KiyveuDpwXw/VFnL7ydlo1I/AAAAAAAAJXU/pp1Umg6JtK0/s320/1b6a954ee74d809c9ba845a49b557c0a-754712.jpeg)](https://4.bp.blogspot.com/-KiyveuDpwXw/VFnL7ydlo1I/AAAAAAAAJXU/pp1Umg6JtK0/s1600/1b6a954ee74d809c9ba845a49b557c0a-754712.jpeg)
 
 ## 按關閉時隱藏到右下角  
 1. 安裝 Microsoft Visual C++ 2010 SP1 Redistributable Package 32-bit and 64-bit (both required for x64 Windows)
-[http://www.microsoft.com/en-us/download/details.aspx?id=5555](http://www.microsoft.com/en-us/download/details.aspx?id=5555)
+[https://www.microsoft.com/en-us/download/details.aspx?id=5555](https://www.microsoft.com/en-us/download/details.aspx?id=5555)
 (這是讓下一步的增益集能正常運作)
 
 2. 至下面連結下載 KeepOutlookRunning.dll ，依電腦選擇64位元或32位元的(不知道的話就先都下載)。
-[http://sourceforge.net/projects/keepoutlook/files/0.0.1/](http://sourceforge.net/projects/keepoutlook/files/0.0.1/)
+[https://sourceforge.net/projects/keepoutlook/files/0.0.1/](https://sourceforge.net/projects/keepoutlook/files/0.0.1/)
 
 3. 至你的OUTLOOK.EXE放的位置( 我的是 C:\Program Files (x86)\Microsoft Office\Office12 ) →右鍵→使用系統管理員身分執行
 
@@ -27,13 +27,13 @@ tags: [實用工具]
    1. 工具→信任中心→增益集  (我的2007版本是這個)
    2. 檔案→選項→增益集
 
-      ![](http://4.bp.blogspot.com/-7tsXJ0-UfK0/VFnL8l7SYdI/AAAAAAAAJXg/enhKYUjiNf0/s1600/7ad883e297eae239c6784893423ddbfd-758348.jpeg)
+      ![](https://4.bp.blogspot.com/-7tsXJ0-UfK0/VFnL8l7SYdI/AAAAAAAAJXg/enhKYUjiNf0/s1600/7ad883e297eae239c6784893423ddbfd-758348.jpeg)
 
 5. 最下方進入(圖中最下方的GO)→加入→選擇剛剛下載的DLL→OK
 
-   [![](http://2.bp.blogspot.com/-o-fPVYy1aXg/VFnL9FX6nhI/AAAAAAAAJXs/C5zMrEAKU60/s320/95cd4f95d5bf27cedd8632c25c3ffc1c-760630.jpeg)](http://2.bp.blogspot.com/-o-fPVYy1aXg/VFnL9FX6nhI/AAAAAAAAJXs/C5zMrEAKU60/s1600/95cd4f95d5bf27cedd8632c25c3ffc1c-760630.jpeg)
+   [![](https://2.bp.blogspot.com/-o-fPVYy1aXg/VFnL9FX6nhI/AAAAAAAAJXs/C5zMrEAKU60/s320/95cd4f95d5bf27cedd8632c25c3ffc1c-760630.jpeg)](https://2.bp.blogspot.com/-o-fPVYy1aXg/VFnL9FX6nhI/AAAAAAAAJXs/C5zMrEAKU60/s1600/95cd4f95d5bf27cedd8632c25c3ffc1c-760630.jpeg)
 
-   [![](http://3.bp.blogspot.com/-bntxwvx2LiI/VFnL9zfUWQI/AAAAAAAAJX4/oIuJkMxhKRM/s320/3ef837ba78f8f19934b1a73f20438a43-763517.jpeg)](http://3.bp.blogspot.com/-bntxwvx2LiI/VFnL9zfUWQI/AAAAAAAAJX4/oIuJkMxhKRM/s1600/3ef837ba78f8f19934b1a73f20438a43-763517.jpeg)
+   [![](https://3.bp.blogspot.com/-bntxwvx2LiI/VFnL9zfUWQI/AAAAAAAAJX4/oIuJkMxhKRM/s320/3ef837ba78f8f19934b1a73f20438a43-763517.jpeg)](https://3.bp.blogspot.com/-bntxwvx2LiI/VFnL9zfUWQI/AAAAAAAAJX4/oIuJkMxhKRM/s1600/3ef837ba78f8f19934b1a73f20438a43-763517.jpeg)
 
 6. 重新啟動Outlook會發現按關閉時自動跳到右下角狀態列了！
 
@@ -43,5 +43,5 @@ tags: [實用工具]
 `Not loaded. Certificate of signed and load at startup COM Add-in is not in trusted source list.`  
 解決方法是取消勾選 `"apply macro security settings to installed add-ins".` 這個選項(中文我不太確定，如圖)
 
-[![](http://4.bp.blogspot.com/-bldRZ40hl0k/VFnL-cC7tiI/AAAAAAAAJYE/BS6tdEtzqWg/s320/d696326a00fa258ca15dda058f5700de-765879.jpeg)](http://4.bp.blogspot.com/-bldRZ40hl0k/VFnL-cC7tiI/AAAAAAAAJYE/BS6tdEtzqWg/s1600/d696326a00fa258ca15dda058f5700de-765879.jpeg)
+[![](https://4.bp.blogspot.com/-bldRZ40hl0k/VFnL-cC7tiI/AAAAAAAAJYE/BS6tdEtzqWg/s320/d696326a00fa258ca15dda058f5700de-765879.jpeg)](https://4.bp.blogspot.com/-bldRZ40hl0k/VFnL-cC7tiI/AAAAAAAAJYE/BS6tdEtzqWg/s1600/d696326a00fa258ca15dda058f5700de-765879.jpeg)
 

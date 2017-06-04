@@ -19,7 +19,7 @@ App.controller("MyCtrl", function ($scope) {
 
 //After Minified：(可透過[線上minified網站](http://refresh-sf.com/)試試看)
 App.controller("MyCtrl",function(o){o.foo="foo"});
-//Cause Error: [$injector:unpr] http://errors.angularjs.org/1.2.26/$injector/unpr?.....
+//Cause Error: [$injector:unpr] https://errors.angularjs.org/1.2.26/$injector/unpr?.....
 ```
 
 解決方法：`在inject時明確指定inject的物件`
