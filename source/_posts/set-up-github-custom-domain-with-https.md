@@ -1,7 +1,7 @@
 ---
 title: Set up Github Pages custom domain with HTTPS
 date: 2017-06-06 00:48:07
-tags: ["github", "godaddy", "custom domain", "dns", "https", "cdn"]
+tags: ["Github", "Godaddy", "custom domain", "DNS", "HTTPS", "CDN"]
 ---
 
 To set up custom domain with HTTPS on Github Pages, there are 6 steps : 
