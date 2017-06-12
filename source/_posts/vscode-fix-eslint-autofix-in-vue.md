@@ -1,7 +1,7 @@
 ---
 title: VSCode - Fix eslint autofix not work in .vue file
 date: 2017-06-13 00:32:16
-tags: ["debug", "eslint", "IDE", "vscode"]
+tags: ["debug", "eslint", "IDE", "vscode", "autofix"]
 ---
 
 1. Open `settings.json` by pressing `Ctrl,`
