@@ -11,7 +11,7 @@ Highest degree : Business Administration in National Taipei University
 ## Career Summary
 * Possessing 3 years experience in web development.
 * Specialized in front-end, built multiple applications in Angularjs, Reactjs, Typescript, ES6+
-* Experienced in develope web application with concurrent user 2k+ 7/24
+* Experienced in develope web application with 3k+ concurrent user, daily transaction 3000k+.
 * Expert in web application performance tuning
 * Expert in website SEO enhancement
 * Expert in building CI/CD flow in Travis/Jenkins/CodeShip with Git/SVN solution
