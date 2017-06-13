@@ -1,6 +1,7 @@
 ---
 title: About me
-date: 2017-03-19 21:57:36
+date: 2017-06-12 21:57:36
+comments: false
 ---
 ## Contact info
 Name : Sing Ming Chen  
