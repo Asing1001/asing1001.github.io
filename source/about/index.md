@@ -37,20 +37,17 @@ Highest degree : Business Administration in National Taipei University
 
 ## Work experience
 ### Xuenn, IT Consultant, *2014/10~*
-* Web application design 
-* Feature developement
-* Product integration with partners
-* SEO (Search Engine Optimization)
-* Product support
+#### Job contents
+* System design and feature developement
+* Website performance tuning
+* Product integration with multiple partners'
+* SEO enhancement
+* Production support
 * Compliance development
-* KYC
+* CI/CD flow building
 
-### Hess, English teacher, *2012/5~2013/5*
-* Teach class in full english
-* Communication with parents and foreign teacher
-
-## Projects
-* Online gaming platform (Both desktop and mobile)
+#### Main projects
+* Online gaming platform (Desktop, Mobile, MobileApp webview)
 * Content management system 
 * Promotion system
 * SEO enhacement
@@ -59,17 +56,22 @@ Highest degree : Business Administration in National Taipei University
 * Customer service integration with Salesforce
 * Crawler
 
+### Hess, English teacher, *2012/5~2013/5*
+* Teach class in full english
+* Communication with parents and foreign teacher
+
 ## Side projects :
-* MVCshopping mall (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
-* MovieRater (Reactjs, Graphql, Typescript, Nodejs, Mongodb) http://moviesrater.herokuapp.com/
-* Realtime video chat (WebRTC) https://github.com/Asing1001/webrtc-website
+* [MVCshopping mall](http://wecarestore.azurewebsites.net/) (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
+* [MovieRater](https://www.mvrater.com/) (Reactjs, Graphql, Typescript, Nodejs, Mongodb) https://github.com/Asing1001/movieRater.React
+* [Realtime video chat](https://webrtc-realtime-videochat.herokuapp.com/) (WebRTC) https://github.com/Asing1001/webrtc-website
 * Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
+* [Doolb](https://www.paddingleft.com/doolb/) (AngularJs, PWA) https://github.com/Asing1001/doolb
 
 ## Self learning record :
 * Application developement courses (636 hours) by Institute for Information Industry http://www.iiiedu.org.tw/taipei/edm/msit.htm 
-* Stackoverflow reputation 1568, Javascript tagged https://stackoverflow.com/users/3959161/andy-chen
+* Stackoverflow reputation 1691, Javascript top tagged https://stackoverflow.com/users/3959161/andy-chen
 * 程式人雜誌刊登 http://programmermagazine.github.io/201411/htm/article6.html
-* Coursera courses, learning how to learn, R programming, Python
+* Coursera courses: learning how to learn, R programming, Python
 * 2016 ASIA OPEN DATA HACKATHON https://github.com/Asing1001/budget
 * 智慧農業關鍵營運行銷班證書
 
