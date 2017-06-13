@@ -14,25 +14,26 @@ Highest degree : Business Administration in National Taipei University
 * Experienced in develope web application with concurrent user 2k+ 7/24
 * Expert in web application performance tuning
 * Expert in website SEO enhancement
-* Experiened in building CI/CD flow in Jenkins/CodeShip with Git/SVN solution
-* Skilled in data-driven design by using data analytics tool, such as GA, ELK stack
-* Familiar with using cloud computing service, such as Azure, AWS, Heroku
+* Expert in building CI/CD flow in Travis/Jenkins/CodeShip with Git/SVN solution
+* Skilled with data-driven design by using data analytics tool, such as GA, ELK stack
+* Skilled with cloud computing service, such as Azure, AWS, Heroku, GAE
 * High performance in projects, quick response for urgent support.
 
 
 ## Skill Summary
 * Programming language : C#, Javascript, HTML, CSS, Nodejs, Typescript, SQL, Python, R, Java
-* JS Framework: AngularJS(1.x), ReactJS, AngularJS 2
+* JS Framework: ReactJS, AngularJS(1.x), AngularJS 2, VueJS
 * Css : Bootstrap, Sass, PostCss
 * Design : MVC, Responsive web design, Material design
 * Database : Mongodb, Redis, Oracle, MSSQL
-* Testing : Mocha, MSTest, Selenium
+* Testing : Mocha, MSTest, Nightwatch, Selenium
 * Tooling : Webpack, Gulp, Grunt, NPM
-* CI/CD : Jenkins, Codeship
+* CI/CD : Travis, Jenkins, Codeship
 * Version Control : Git, SVN
 * Project Management: JIRA, Trello, Scrum
 * Cloud Service : Azure, Heroku, AWS, MLab
-* Others : ELK stack, WebRTC, Electron, Windows Form, Android app
+* Analytic : GA, ELK stack
+* Others : WebRTC, Electron, Windows Form, Android app
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
 
 ## Work experience
