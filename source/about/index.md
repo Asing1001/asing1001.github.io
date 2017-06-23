@@ -21,7 +21,7 @@ Highest degree : Bachelor of Business Administration in National Taipei Universi
 
 ## Skill Summary
 * Programming language : C#, Javascript, HTML, CSS, Typescript, SQL, Python, R, Java
-* Javascript related : NodeJS, ExpressJS, ReactJS, AngularJS(1.x), AngularJS 4, VueJS, ES6+
+* Javascript related : NodeJS, ExpressJS, ReactJS, AngularJS(1.x), AngularJS 4, VueJS, GraphQL, ES6+
 * Css Processor : Sass, PostCss
 * Server side framework : ExpressJS, ASP.NET MVC, Flask
 * Design : RWD(Responsive web design), Material design
