@@ -3,38 +3,37 @@ title: About AC
 date: 2017-06-22 21:57:36
 comments: false
 ---
-## Contact Info
+## Basic Info
 Name : Sing Ming Chen  
 Gender : Male  
 Email : shinningstar1001@gmail.com  
-Highest degree : Business Administration in National Taipei University  
+Highest degree : Bachelor of Business Administration in National Taipei University  
 
 ## Career Summary
-* Possessing 3 years experience in web development.
-* Specialized in front-end, built multiple applications in Angularjs, Reactjs, Typescript, ES6+
-* Experienced in develope web application with 3k+ concurrent user, daily transaction 3000k+.
-* Expert in web application performance tuning
+* Possessing 3+ years experience in web development, specialized in Front-end
+* Best in javascript related, such as NodeJS, ExpressJS, ReactJS, AngularJS, VueJS, Typescript, ES6+
+* Experienced in develope web application with concurrent user 3k+, daily transaction 3000k+
+* Expert in website performance tuning
 * Expert in website SEO enhancement
 * Expert in building CI/CD flow in Travis/Jenkins/CodeShip with Git/SVN solution
-* Skilled with data-driven design by using data analytics tool, such as GA, ELK stack
-* Skilled with cloud computing service, such as Azure, AWS, Heroku, GAE
-* High performance in projects, quick response for urgent support.
-
+* Skilled with data-driven design by using data analytics tool, including GA, ELK stack
+* Skilled with cloud service, including Heroku, Azure, AWS, GAE
 
 ## Skill Summary
-* Programming language : C#, Javascript, HTML, CSS, Nodejs, Typescript, SQL, Python, R, Java
-* JS Framework: ReactJS, AngularJS(1.x), AngularJS 2, VueJS
-* Css : Bootstrap, Sass, PostCss
-* Design : MVC, Responsive web design, Material design
+* Programming language : C#, Javascript, HTML, CSS, Typescript, SQL, Python, R, Java
+* Javascript related : NodeJS, ExpressJS, ReactJS, AngularJS(1.x), AngularJS 4, VueJS, ES6+
+* Css Processor : Sass, PostCss
+* Server side framework : ExpressJS, ASP.NET MVC, Flask
+* Design : RWD(Responsive web design), Material design
 * Database : Mongodb, Redis, Oracle, MSSQL
 * Testing : Mocha, MSTest, Nightwatch, Selenium
-* Tooling : Webpack, Gulp, Grunt, NPM
+* Task Runner : Webpack, Gulp, Grunt, NPM
 * CI/CD : Travis, Jenkins, Codeship
 * Version Control : Git, SVN
 * Project Management: JIRA, Trello, Scrum
-* Cloud Service : Azure, Heroku, AWS, MLab
+* Cloud Service : Heroku, Azure, AWS, MLab
 * Analytic : GA, ELK stack
-* Others : WebRTC, Electron, Windows Form, Android app
+* Other : WebRTC, Electron, Windows Form, PWA(Progressive web app), Android app, GTM(Google tag manager)
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
 
 ## Work Experience
@@ -42,18 +41,19 @@ Highest degree : Business Administration in National Taipei University
 #### Job Contents
 * System design and feature developement
 * Website performance tuning
-* Product integration with multiple partners'
+* Product integration with multiple partners
 * SEO enhancement
 * Production support
 * Compliance development
 * CI/CD flow building
+* Process improvement
 
 #### Main Projects
 * Online gaming platform (Desktop, Mobile, MobileApp webview)
 * Content management system 
 * Promotion system
 * SEO enhacement
-* Membership system
+* Product management system
 * Realtime messaging system
 * CRM integration with Salesforce
 * Crawler
@@ -63,19 +63,19 @@ Highest degree : Business Administration in National Taipei University
 * Communication with parents and foreign teacher
 
 ## Side Projects :
-* [MVCshopping mall](http://wecarestore.azurewebsites.net/) (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
 * [MovieRater](https://www.mvrater.com/) (Reactjs, Graphql, Typescript, Nodejs, Mongodb) https://github.com/Asing1001/movieRater.React
+* [MVCshopping mall](http://wecarestore.azurewebsites.net/) (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
 * [Realtime video chat](https://webrtc-realtime-videochat.herokuapp.com/) (WebRTC) https://github.com/Asing1001/webrtc-website
 * Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
 * [Doolb](https://www.paddingleft.com/doolb/) (AngularJs, PWA) https://github.com/Asing1001/doolb
 
 ## Self-learning Record :
 * Application developement courses (636 hours) by Institute for Information Industry http://www.iiiedu.org.tw/taipei/edm/msit.htm 
-* Stackoverflow reputation 1691, Javascript top tagged https://stackoverflow.com/users/3959161/andy-chen
-* 程式人雜誌刊登 http://programmermagazine.github.io/201411/htm/article6.html
-* Coursera courses: learning how to learn, R programming, Python
+* Stackoverflow reputation 1700+, Javascript top tagged https://stackoverflow.com/users/3959161/andy-chen
+* Published article in Programmer magazine http://programmermagazine.github.io/201411/htm/article6.html
+* Coursera courses - Learning how to learn, R programming, Python
 * 2016 ASIA OPEN DATA HACKATHON https://github.com/Asing1001/budget
-* 智慧農業關鍵營運行銷班證書
+* Intelligent Agriculture Operation Course (35 hours) by China Productivity Center
 
 ## Certificate :
 * [Google Analytics certificate](https://www.google.com/partners/?hl=zh-TW#i_profile;idtf=100241582365266596912)
