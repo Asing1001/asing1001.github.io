@@ -17,18 +17,18 @@ Highest degree : Bachelor of Business Administration in National Taipei Universi
 * Expert in website SEO enhancement
 * Expert in building CI/CD flow in Travis/Jenkins/CodeShip with Git/SVN solution
 * Skilled with data-driven design by using data analytics tool, including GA, ELK stack
-* Skilled with cloud service, including Heroku, Azure, AWS, GAE
+* Skilled with cloud service, including Heroku, Azure, AWS, GAE, Cloudflare
 
 ## Skill Summary
 * Programming language : C#, Javascript, HTML, CSS, Typescript, SQL, Python, R, Java
 * Javascript related : NodeJS, ExpressJS, ReactJS, AngularJS(1.x), AngularJS 4, VueJS, GraphQL, ES6+
 * Css Processor : Sass, PostCss
-* Server side framework : ExpressJS, ASP.NET MVC, Flask
 * Design : RWD(Responsive web design), Material design
+* Server side framework : ExpressJS, ASP.NET MVC, Flask
 * Database : Mongodb, Redis, Oracle, MSSQL
 * Testing : Mocha, MSTest, Nightwatch, Selenium
-* Task Runner : Webpack, Gulp, Grunt, NPM
-* CI/CD : Travis, Jenkins, Codeship
+* Task Runner : Webpack, NPM, Gulp, Grunt
+* CI/CD : Travis, Jenkins, Codeship, 
 * Version Control : Git, SVN
 * Project Management: JIRA, Trello, Scrum
 * Cloud Service : Heroku, Azure, AWS, MLab
@@ -63,9 +63,10 @@ Highest degree : Bachelor of Business Administration in National Taipei Universi
 * Communication with parents and foreign teacher
 
 ## Side Projects :
-* [MovieRater](https://www.mvrater.com/) (Reactjs, Graphql, Typescript, Nodejs, Mongodb) https://github.com/Asing1001/movieRater.React
+* [MovieRater](https://www.mvrater.com/) (ReactJS, GraphQL, Typescript, NodeJS, Mongodb) https://github.com/Asing1001/movieRater.React
 * [MVCshopping mall](http://wecarestore.azurewebsites.net/) (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
 * [Realtime video chat](https://webrtc-realtime-videochat.herokuapp.com/) (WebRTC) https://github.com/Asing1001/webrtc-website
+* [Deployment guide](https://ng-crud.herokuapp.com) (AngularJS 4, Mongodb) https://github.com/Asing1001/Angular4-CRUD
 * Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
 * [Doolb](https://www.paddingleft.com/doolb/) (AngularJs, PWA) https://github.com/Asing1001/doolb
 
