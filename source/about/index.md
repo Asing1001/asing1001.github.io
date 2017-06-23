@@ -1,9 +1,9 @@
 ---
-title: About me
-date: 2017-06-12 21:57:36
+title: About AC
+date: 2017-06-22 21:57:36
 comments: false
 ---
-## Contact info
+## Contact Info
 Name : Sing Ming Chen  
 Gender : Male  
 Email : shinningstar1001@gmail.com  
@@ -37,9 +37,9 @@ Highest degree : Business Administration in National Taipei University
 * Others : WebRTC, Electron, Windows Form, Android app
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
 
-## Work experience
+## Work Experience
 ### Xuenn, IT Consultant, *2014/10~*
-#### Job contents
+#### Job Contents
 * System design and feature developement
 * Website performance tuning
 * Product integration with multiple partners'
@@ -48,28 +48,28 @@ Highest degree : Business Administration in National Taipei University
 * Compliance development
 * CI/CD flow building
 
-#### Main projects
+#### Main Projects
 * Online gaming platform (Desktop, Mobile, MobileApp webview)
 * Content management system 
 * Promotion system
 * SEO enhacement
 * Membership system
 * Realtime messaging system
-* Customer service integration with Salesforce
+* CRM integration with Salesforce
 * Crawler
 
-### Hess, English teacher, *2012/5~2013/5*
+### Hess, English Teacher, *2012/5~2013/5*
 * Teach class in full english
 * Communication with parents and foreign teacher
 
-## Side projects :
+## Side Projects :
 * [MVCshopping mall](http://wecarestore.azurewebsites.net/) (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
 * [MovieRater](https://www.mvrater.com/) (Reactjs, Graphql, Typescript, Nodejs, Mongodb) https://github.com/Asing1001/movieRater.React
 * [Realtime video chat](https://webrtc-realtime-videochat.herokuapp.com/) (WebRTC) https://github.com/Asing1001/webrtc-website
 * Android slot game (Java) https://github.com/max9159/AS.Dev/tree/master/LunchOrder
 * [Doolb](https://www.paddingleft.com/doolb/) (AngularJs, PWA) https://github.com/Asing1001/doolb
 
-## Self learning record :
+## Self-learning Record :
 * Application developement courses (636 hours) by Institute for Information Industry http://www.iiiedu.org.tw/taipei/edm/msit.htm 
 * Stackoverflow reputation 1691, Javascript top tagged https://stackoverflow.com/users/3959161/andy-chen
 * 程式人雜誌刊登 http://programmermagazine.github.io/201411/htm/article6.html
