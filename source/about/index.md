@@ -7,7 +7,8 @@ comments: false
 Name : Sing Ming Chen  
 Gender : Male  
 Email : shinningstar1001@gmail.com  
-Highest degree : Bachelor of Business Administration in National Taipei University  
+Highest degree : Bachelor of Business Administration in National Taipei University  
+Github : https://github.com/Asing1001
 
 ## Career Summary
 * Possessing 3+ years experience in web development, specialized in Front-end
