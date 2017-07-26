@@ -3,6 +3,7 @@ title: About me
 date: 2017-06-22 21:57:36
 comments: false
 ---
+![](/uploads/avatar3.jpg)
 ## Basic Info
 Name : Andy Chen  
 Gender : Male  
@@ -24,14 +25,13 @@ Github : https://github.com/Asing1001
 * Programming language : C#, Javascript, HTML, CSS, Typescript, SQL, Python, R, Java
 * Javascript related : NodeJS, ExpressJS, ReactJS, AngularJS(1.x), AngularJS 4, VueJS, GraphQL, ES6+
 * Css Processor : Sass, PostCss
-* Design : RWD(Responsive web design), Material design
+* UI Design : RWD(Responsive web design), Material design
 * Server side framework : ExpressJS, ASP.NET MVC, Flask
-* Database : Mongodb, Redis, Oracle, MSSQL
+* Database : Mongodb, Redis, MSSQL, Oracle
 * Testing : Mocha, MSTest, Nightwatch, Selenium
 * Task Runner : Webpack, NPM, Gulp, Grunt
-* CI/CD : Travis, Jenkins, Codeship, 
+* CI/CD : Travis, Jenkins, Codeship
 * Version Control : Git, SVN
-* Project Management: JIRA, Trello, Scrum
 * Cloud Service : Heroku, Azure, AWS, MLab
 * Analytic : GA, ELK stack
 * Other : WebRTC, Electron, Windows Form, PWA(Progressive web app), Android app, GTM(Google tag manager)
@@ -39,19 +39,19 @@ Github : https://github.com/Asing1001
 
 ## Work Experience
 ### Xuenn, IT Consultant, *2014/10~*
-#### Job Contents
+#### Responsibilities
 * System design and feature developement
-* Website performance tuning
-* Product integration with multiple partners
-* SEO enhancement
 * Production support
-* Compliance development
+* Website performance tuning
+* SEO enhancement
 * CI/CD flow building
+* Product integration with multiple partners
+* Compliance development
 * Process improvement
 
-#### Main Projects
+#### Key Projects
 * Online gaming platform (Desktop, Mobile, MobileApp webview)
-* Content management system 
+* Content management system
 * Promotion system
 * SEO enhacement
 * Product management system
@@ -72,12 +72,12 @@ Github : https://github.com/Asing1001
 * [Doolb](https://www.paddingleft.com/doolb/) (AngularJs, PWA) https://github.com/Asing1001/doolb
 
 ## Self-learning Record :
-* Application developement courses (636 hours) by Institute for Information Industry http://www.iiiedu.org.tw/taipei/edm/msit.htm 
-* Stackoverflow reputation 1700+, Javascript top tagged https://stackoverflow.com/users/3959161/andy-chen
+* 1700+ Stackoverflow reputation, Javascript top tagged https://stackoverflow.com/users/3959161/andy-chen
+* Application developement course (636 hours) in Institute for Information Industry http://www.iiiedu.org.tw/taipei/edm/msit.htm 
 * Published article in Programmer magazine http://programmermagazine.github.io/201411/htm/article6.html
 * Coursera courses - Learning how to learn, R programming, Python
 * 2016 ASIA OPEN DATA HACKATHON https://github.com/Asing1001/budget
-* Intelligent Agriculture Operation Course (35 hours) by China Productivity Center
+* Intelligent Agriculture Operation Course (35 hours) in China Productivity Center
 
 ## Certificate :
 * [Google Analytics certificate](https://www.google.com/partners/?hl=zh-TW#i_profile;idtf=100241582365266596912)
