@@ -1,10 +1,10 @@
 ---
-title: About AC
+title: About me
 date: 2017-06-22 21:57:36
 comments: false
 ---
 ## Basic Info
-Name : Sing Ming Chen  
+Name : Andy Chen  
 Gender : Male  
 Email : shinningstar1001@gmail.com  
 Highest degree : Bachelor of Business Administration in National Taipei University  
