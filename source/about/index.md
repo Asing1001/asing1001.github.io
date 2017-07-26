@@ -4,7 +4,7 @@ date: 2017-06-22 21:57:36
 comments: false
 ---
 ![](/uploads/avatar3.jpg)
-## Basic Info
+## Profile
 Name : Andy Chen  
 Gender : Male  
 Email : shinningstar1001@gmail.com  
