@@ -4,14 +4,17 @@ date: 2017-06-22 21:57:36
 comments: false
 ---
 ![](/uploads/avatar3.jpg)
+
 ## Profile
-Name : Andy Chen  
-Gender : Male  
-Email : shinningstar1001@gmail.com  
-Highest degree : Bachelor of Business Administration in National Taipei University  
+
+Name : Sing Ming Chen
+Gender : Male
+Email : sing@paddingleft.com
+Highest degree : Bachelor of Business Administration in National Taipei University
 Github : https://github.com/Asing1001
 
 ## Career Summary
+
 * Possessing 3+ years experience in web development, specialized in Front-end
 * Best in javascript related, such as NodeJS, ExpressJS, ReactJS, AngularJS, VueJS, Typescript, ES6+
 * Experienced in develope web application with concurrent user 3k+, daily transaction 3000k+
@@ -22,6 +25,7 @@ Github : https://github.com/Asing1001
 * Skilled with cloud service, including Heroku, Azure, AWS, GAE, Cloudflare
 
 ## Skill Summary
+
 * Programming language : C#, Javascript, HTML, CSS, Typescript, SQL, Python, R, Java
 * Javascript related : NodeJS, ExpressJS, ReactJS, AngularJS(1.x), AngularJS 4, VueJS, GraphQL, ES6+
 * Css Processor : Sass, PostCss
@@ -38,19 +42,21 @@ Github : https://github.com/Asing1001
 * Communication language : English (Fluent, TOEIC 900), Chinese (Native)
 
 ## Work Experience
+
 ### Xuenn, IT Consultant, *2014/10~*
+
 #### Responsibilities
-* System design and feature developement
+
+* Develope high transaction online gaming platform with 30+ team members
+* Product integration with 10+ companys
+* SEO enhancement
 * Production support
 * Website performance tuning
-* SEO enhancement
 * CI/CD flow building
-* Product integration with multiple partners
-* Compliance development
-* Process improvement
 
 #### Key Projects
-* Online gaming platform (Desktop, Mobile, MobileApp webview)
+
+* Online gaming platform (Desktop, Mobile, MobileApp webview), support 3000+ user concurrently
 * Content management system
 * Promotion system
 * SEO enhacement
@@ -60,10 +66,13 @@ Github : https://github.com/Asing1001
 * Crawler
 
 ### Hess, English Teacher, *2012/5~2013/5*
+
 * Teach class in full english
 * Communication with parents and foreign teacher
 
 ## Side Projects :
+
+* [Universiade ticket](https://ticket.mvrater.com) (120+ Github Star, Crawler, Nodejs, Vuejs) https://github.com/Asing1001/universiade-ticket
 * [MovieRater](https://www.mvrater.com/) (ReactJS, GraphQL, Typescript, NodeJS, Mongodb) https://github.com/Asing1001/movieRater.React
 * [MVCshopping mall](http://wecarestore.azurewebsites.net/) (ASP.NET MVC) https://github.com/Asing1001/MVCShoppingMall
 * [Realtime video chat](https://webrtc-realtime-videochat.herokuapp.com/) (WebRTC) https://github.com/Asing1001/webrtc-website
@@ -72,18 +81,21 @@ Github : https://github.com/Asing1001
 * [Doolb](https://www.paddingleft.com/doolb/) (AngularJs, PWA) https://github.com/Asing1001/doolb
 
 ## Self-learning Record :
-* 1700+ Stackoverflow reputation, Javascript top tagged https://stackoverflow.com/users/3959161/andy-chen
+
+* Top 10% Stackoverflow user https://stackoverflow.com/users/3959161/andy-chen 
 * Application developement course (636 hours) in Institute for Information Industry http://www.iiiedu.org.tw/taipei/edm/msit.htm 
-* Published article in Programmer magazine http://programmermagazine.github.io/201411/htm/article6.html
+* Publication in Programmer magazine http://programmermagazine.github.io/201411/htm/article6.html
 * Coursera courses - Learning how to learn, R programming, Python
 * 2016 ASIA OPEN DATA HACKATHON https://github.com/Asing1001/budget
 * Intelligent Agriculture Operation Course (35 hours) in China Productivity Center
 
 ## Certificate :
+
 * [Google Analytics certificate](https://www.google.com/partners/?hl=zh-TW#i_profile;idtf=100241582365266596912)
 * [TOEIC Golden certificate](https://goo.gl/photos/gGjX7pcqvkGqMoZB8)
 * [ELS level 108 certificate](https://goo.gl/photos/ySSQeWEmLBwUvHzt6)
 
 ## Honors & Awards
+
 * [2013 MSD Elite MedCamp - The Elite Team](https://goo.gl/photos/kSca7Xf9csrJ2bsd8) [`News Link`](http://bit.ly/1B7iH4H)
 * [2011 National Taipei University Annual award](https://goo.gl/photos/QtC9zUMR6qgHiVME7)
