@@ -8,10 +8,12 @@ comments: false
 
 Name : Andy Chen  
 Email : sing@paddingleft.com  
-Highest degree : Bachelor of Business Administration in National Taipei University  
+Address : Sec. 1, Academia Rd., Nangang Dist., Taipei City, Taiwan  
 Github : https://github.com/Asing1001
 
-## Career Summary
+## Career
+
+### Summary
 
 * 4 years experience in web development, especially Front-end
 * Best in Javascript, including NodeJS, ExpressJS, ReactJS, AngularJS, VueJS, Typescript, ES6+
@@ -20,7 +22,7 @@ Github : https://github.com/Asing1001
 * Expert in building CI/CD flow in Travis/Jenkins/CodeShip
 * Top 10% Stackoverflow user with 1800+ reputation
 
-## Skill Summary
+### Technical Skill
 
 | Skill          | Years of experience | Used years   |
 | -------------- | :-----------------: | -----------: |
@@ -41,7 +43,8 @@ Github : https://github.com/Asing1001
 | Mocha          | 1 Year              | 2017-present |
 | Webpack        | 1 Year              | 2017-present |
 
-## Open source (https://github.com/Asing1001)
+### Open source (https://github.com/Asing1001)
+
 * [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
     * 120+ Github Stars, 10+ News report, 100k pageview in one week
     * To help people buy universiade ticket easier by crawling official site and re-design
@@ -54,19 +57,24 @@ Github : https://github.com/Asing1001
     * To help people find movie's rating and comment easier
     * Built by ReactJS, Typescript, GraphQL, NodeJS, MongoDB
 
-## Language
+### Language
 
 * English - Fluent(TOEIC Golden Certificate)
 * Chinese - Native
 
-## Certificate :
+### Certificate
+
 * [Google Analytics certificate](https://www.google.com/partners/?hl=zh-TW#i_profile;idtf=100241582365266596912)
 * [TOEIC Golden certificate](https://goo.gl/photos/gGjX7pcqvkGqMoZB8)
 
-## Honors & Awards
+### Awards
+
 * [2013 MSD Elite MedCamp - The Elite Team](https://goo.gl/photos/kSca7Xf9csrJ2bsd8) [`News Link`](http://bit.ly/1B7iH4H)
 * [2011 National Taipei University Annual award](https://goo.gl/photos/QtC9zUMR6qgHiVME7)
 
+## Education
+
+Bachelor of Business Administration in National Taipei University - 2009/9-2013/6
 
 ## Work Experience
 
