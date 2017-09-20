@@ -24,7 +24,7 @@ Github : https://github.com/Asing1001
 
 ### Technical Skill
 
-| Skill          | Years of experience | Used years   |
+| Skill          | Years of experience | Time         |
 | -------------- | :-----------------: | -----------: |
 | Javascript     | 4 Years             | 2014-present |
 | HTML5          | 4 Years             | 2014-present |
@@ -43,7 +43,7 @@ Github : https://github.com/Asing1001
 | Mocha          | 1 Year              | 2017-present |
 | Webpack        | 1 Year              | 2017-present |
 
-### Open source (https://github.com/Asing1001)
+### Open Source (https://github.com/Asing1001)
 
 * [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
     * 120+ Github Stars, 10+ News report, 100k pageview in one week
@@ -74,11 +74,11 @@ Github : https://github.com/Asing1001
 
 ## Education
 
-Bachelor of Business Administration in National Taipei University - 2009/9-2013/6
+Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 ## Work Experience
 
-### Xuenn - Front-end Engineer 2014/10-present
+### Xuenn - Front-end Engineer, 2014/10-present
 
 #### Daily Job
 
