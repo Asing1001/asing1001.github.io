@@ -110,7 +110,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     * (System graphic here)
 * SEO enhacement
     * Time : 2016/4-2016/7
-    * Role : SA & Developer
+    * Role : SA & Developer, me only
     * Problems & Solutions : 
         * Problem : Contents not properly indexed due to Ajax result not rendered by search engine crawler  
           Solution : Write crawler to get full redenerd content and serve to search engine crawler
@@ -121,7 +121,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     * (Before-after graphic here)
 * System performance tuning
     * Time : 2017/3-2017/6
-    * Role : SA & Developer
+    * Role : SA & Developer, 2 team members
     * How : 
         * Service-worker - Cache response from CMS system after first visit, it reduce 50% loading time
         * Redis-cache - Move application memory cache to centralized redis cache, reduce 95% server start time
