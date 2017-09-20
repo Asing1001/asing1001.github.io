@@ -106,9 +106,9 @@ Github : https://github.com/Asing1001
     * Problems & Solutions : 
         * Problem : Contents not properly indexed due to Ajax result not rendered by search engine crawler  
           Solution : Write crawler to get full redenerd content and serve to search engine crawler
-        * Problem : Same content in multi-domain seperate SEO ranking
+        * Problem : Same content in multi-domain seperate SEO ranking  
           Solution : Use canonical-tag and 301 redirection to tell search-engine crawler to stack pages rank
-        * Problem : Downtime maintenance page being indexed since search engine don't know it's in maintenance          
+        * Problem : Downtime maintenance page being indexed since search engine don't know it's in maintenance  
           Solution : Use url-rewrite module and IIS applicationhost config to serve page with 503 status, so search engine will not index at the time.
     * (Before-after graphic here)
 * System performance tuning
