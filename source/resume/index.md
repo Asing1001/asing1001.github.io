@@ -47,7 +47,7 @@ Github : https://github.com/Asing1001
 ### Open Source (https://github.com/Asing1001)
 
 * [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
-    * 120+ Github Stars, 10+ News report, 100k pageview in one week
+    * 120+ Github Stars, 10+ News report, 5k buy action, 100k pageview in one week 
     * To help people buy universiade ticket easier by crawling official site and re-design
 
 * [MVCshopping mall](http://wecarestore.azurewebsites.net/) -  https://github.com/Asing1001/MVCShoppingMall
