@@ -25,7 +25,7 @@ Github : https://github.com/Asing1001
 ### Technical Skill
 
 | Skill          | Years of experience | Time         |
-| -------------- | :-----------------: | -----------: |
+| :------------- | :------------------ | :----------- |
 | Javascript     | 4 Years             | 2014-present |
 | HTML5          | 4 Years             | 2014-present |
 | CSS3           | 4 Years             | 2014-present |
