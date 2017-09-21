@@ -30,7 +30,7 @@ Github : https://github.com/Asing1001
 | HTML5          | 4 Years             | 2014-present |
 | CSS3           | 4 Years             | 2014-present |
 | C#             | 4 Years             | 2014-present |
-| ASP.NET MVC    | 4 Year              | 2014-present |
+| ASP.NET MVC    | 4 Years             | 2014-present |
 | NodeJS         | 3 Years             | 2015-present |
 | AngularJS(1.x) | 3 Years             | 2015-present |
 | CI/CD          | 3 Years             | 2015-present |
@@ -88,7 +88,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 * SEO enhancement
 * Product integration with multiple partners's API
 
-#### Product & Projects
+## Product & Projects
 
 * Online gaming portal (Desktop, Mobile, MobileApp webview) 
     * Time : 2015/10-present
