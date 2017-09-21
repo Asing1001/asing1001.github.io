@@ -30,12 +30,12 @@ Github : https://github.com/Asing1001
 | HTML5          | 4 Years             | 2014-present |
 | CSS3           | 4 Years             | 2014-present |
 | C#             | 4 Years             | 2014-present |
-| ASP.NET MVC    | 4 Years             | 2014-present |
+| ASP.NET MVC    | 4 Years             | 2014-present |
 | NodeJS         | 3 Years             | 2015-present |
 | AngularJS(1.x) | 3 Years             | 2015-present |
 | CI/CD          | 3 Years             | 2015-present |
 | MongoDB        | 2 Years             | 2016-present |
-| ReactJS        | 1 Year              | 2016-present |
+| ReactJS        | 2 Year              | 2016-present |
 | AngularJS 4    | 1 Year              | 2017-present |
 | VueJS          | 1 Year              | 2017-present |
 | Redis          | 1 Year              | 2017-present |
