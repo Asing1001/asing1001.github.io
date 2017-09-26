@@ -6,8 +6,8 @@ comments: false
 
 ## Profile
 
-Name : Sing Ming Chen  
-Email : sing@paddingleft.com  
+Name : Sing Ming Chen  
+Email : sing@paddingleft.com  
 Address : Sec. 1, Academia Rd., Nangang Dist., Taipei City, Taiwan  
 Github : https://github.com/Asing1001
 
