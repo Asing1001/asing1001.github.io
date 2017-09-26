@@ -132,4 +132,4 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     * Time : 2016/10-present
     * Role : All, 2 team members
     * Purpose : To help people find movie's rating and comment easier
-    * (System Graphic here)
+![](https://github.com/Asing1001/system-diagrams/blob/master/mvrater.jpg?raw=true)
