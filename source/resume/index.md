@@ -34,6 +34,7 @@ Github : https://github.com/Asing1001
 | NodeJS         | 3 Years             | 2015-present |
 | AngularJS(1.x) | 3 Years             | 2015-present |
 | CI/CD          | 3 Years             | 2015-present |
+| GIT            | 3 Years             | 2015-present |
 | GA/GTM         | 3 Years             | 2015-present |
 | MongoDB        | 2 Years             | 2016-present |
 | ReactJS        | 2 Years             | 2016-present |
@@ -102,31 +103,33 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 * Content management system
     * Time : 2015/10-present
     * Role : Full stack developer, 5 team members
-    * Purpose : To provide widgets and RWD setting in content managerment system.
-    * (Before-after graphic here)
+    * Situation :
+        * System only provide fixed position for setting banner,  not support custom RWD layout
+        * System could only set static html
+    * Solution :
+        * Add bootstrap class setting into CMS
+        * Integrate dynamic widgets with AngularJS directive
+    * Result :
+        * Operation is able to customize every pages layout with both widgets and custom HTML
 * Promotion system
     * Time : 2016/2-present
     * Role : Front-end developer, 10 team members
     * Purpose : To put manually promotion work into system
     * (System graphic here)
-* SEO enhacement
+* SEO enhancement - seo crawler & prerender
     * Time : 2016/4-2016/7
     * Role : SA & Developer, me only
-    * Problems & Solutions : 
-        * Problem : Contents not properly indexed due to Ajax result not rendered by search engine crawler  
-          Solution : Write crawler to get full redenerd content and serve to search engine crawler
-        * Problem : Same content in multi-domain seperate SEO ranking  
-          Solution : Use canonical-tag and 301 redirection to tell search-engine crawler to stack pages rank
-        * Problem : Downtime maintenance page being indexed since search engine don't know it's in maintenance  
-          Solution : Use url-rewrite module and IIS applicationhost config to serve page with 503 status, so search engine will not index at the time.
-    * (Before-after graphic here)
+    * Situation : Website contents not properly indexed due to Ajax result not rendered by search engine crawler
+    * Solution : 
+![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
 * System performance tuning
     * Time : 2017/3-2017/6
     * Role : SA & Developer, 2 team members
-    * How : 
+    * Target : To reduce portal loading time and deployment time
+    * Solution : 
         * Service-worker - Cache response from CMS system after first visit, it reduce 50% loading time
         * Redis-cache - Move application memory cache to centralized redis cache, reduce 95% server start time
-        * HTML-templates minified into single JS file - Reduce request from Angular's template by minified template into single JS file, it reduce 30% request.
+        * HTML-templates minified - Reduce 30% request by minify AngularJS templates into single JS file.
     * (Before-after graphic here)
 * Movie rater (Side project)
     * Time : 2016/10-present
