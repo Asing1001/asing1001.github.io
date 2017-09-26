@@ -120,9 +120,9 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     * Time : 2016/4-2016/7
     * Role : SA & Developer, me only
     * Situation : Website contents not properly indexed due to Ajax result not rendered by search engine crawler
-    * Solution : 
+    * Solution :  
 ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
-* System performance tuning
+* Main site performance tuning
     * Time : 2017/3-2017/6
     * Role : SA & Developer, 2 team members
     * Target : To reduce portal loading time and deployment time
