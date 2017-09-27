@@ -109,13 +109,12 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     * Solution :
         * Add bootstrap class setting into CMS
         * Integrate dynamic widgets with AngularJS directive
-    * Result :
-        * Operation is able to customize every pages layout with both widgets and custom HTML
-* Promotion system
-    * Time : 2016/2-present
-    * Role : Front-end developer, 10 team members
-    * Purpose : To put manually promotion work into system
-    * (System graphic here)
+    * ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
+* Questionaire promotion system
+    * Time : 2017/6-10
+    * Role : Project lead, 2 team members
+    * Situation : Business use lots of time to launch questionaire promotion by email and excel
+    
 * SEO enhancement - seo crawler & prerender
     * Time : 2016/4-2016/7
     * Role : SA & Developer, me only
