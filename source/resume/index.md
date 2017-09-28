@@ -48,16 +48,21 @@ Github : https://github.com/Asing1001
 ### Open Source (https://github.com/Asing1001)
 
 * [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
-    * 120+ Github Stars, 10+ News report, 5k buy action, 100k pageview in one week 
-    * To help people buy universiade ticket easier by crawling official site and re-design
+  * Role : Main contributor
+  * Purpose : Help people buy universiade ticket easily by crawling official site then re-design
+  * Feature : 120+ Github Stars, 10+ News report, 5k buy action, 100k pageview in one week
+    ![](https://github.com/Asing1001/system-diagrams/blob/master/universiade-ticket.jpg?raw=true)
 
 * [MVCshopping mall](http://wecarestore.azurewebsites.net/) -  https://github.com/Asing1001/MVCShoppingMall
-    * Demostrate how to build e-commerce platform by ASP.NET MVC
-    * Provide a one click setup by code-first and data seeding
+  * Role : Main contributor
+  * Purpose : Demostrate how to build e-commerce platform by ASP.NET MVC
+  * Feature : Provide a one click setup by code-first and data seeding
 
 * [MovieRater](https://www.mvrater.com/) - https://github.com/Asing1001/movieRater.React
-    * To help people find movie's rating and comment easier
-    * Built by ReactJS, Typescript, GraphQL, NodeJS, MongoDB
+  * Role : Main contributor
+  * Purpose : To help people find movie's rating and comment easier
+  * Feature : Built by ReactJS, Typescript, GraphQL, NodeJS, MongoDB
+    ![](https://github.com/Asing1001/system-diagrams/blob/master/mvrater.jpg?raw=true)
 
 ### Language
 
@@ -92,46 +97,40 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 ## Product & Projects
 
-* Online gaming portal (Desktop, Mobile, MobileApp webview) 
-    * Time : 2015/10-present
-    * Role : Fron-end developer, 30 team members
-    * Purpose :
-        * To provide a multilingual and localized gaming portal
-        * Easily customize games and contents in backoffice
-        * Better expericence for customer like inbox and UI-revamp
-    * (Before-after graphic here)
+* Online gaming portal (Desktop, Mobile, MobileApp webview)
+  * Time : 2015/10-present
+  * Role : Fron-end developer, 30 team members
+  * Purpose :
+    * To provide a multilingual and localized gaming portal
+    * Easily customize games and contents in backoffice
+    * Better expericence for customer like inbox and UI-revamp
+  * (Before-after graphic here)
 * Content management system
-    * Time : 2015/10-present
-    * Role : Full stack developer, 5 team members
-    * Situation :
-        * System only provide fixed position for setting banner,  not support custom RWD layout
-        * System could only set static html
-    * Solution :
-        * Add bootstrap class setting into CMS
-        * Integrate dynamic widgets with AngularJS directive
-    * ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
+  * Time : 2015/10-present
+  * Role : Full stack developer, 5 team members
+  * Situation :
+    * System only provide fixed position for setting banner,  not support custom RWD layout
+    * System could only set static html
+  * Solution :
+    * Add bootstrap class setting into CMS
+    * Integrate dynamic widgets with AngularJS directive
+  * ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
 * Questionaire promotion system
-    * Time : 2017/6-10
-    * Role : Project lead, 2 team members
-    * Situation : Business use lots of time to launch questionaire promotion by email and excel
-    
+  * Time : 2017/6-10
+  * Role : Project lead, 2 team members
+  * Situation : Business use lots of time to launch questionaire promotion by email and excel
 * SEO enhancement - seo crawler & prerender
-    * Time : 2016/4-2016/7
-    * Role : SA & Developer, me only
-    * Situation : Website contents not properly indexed due to Ajax result not rendered by search engine crawler
-    * Solution :  
-![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
+  * Time : 2016/4-2016/7
+  * Role : SA & Developer, me only
+  * Situation : Website contents not properly indexed due to Ajax result not rendered by search engine crawler
+  * Solution :  
+    ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
 * Main site performance tuning
-    * Time : 2017/3-2017/6
-    * Role : SA & Developer, 2 team members
-    * Target : To reduce portal loading time and deployment time
-    * Solution : 
-        * Service-worker - Cache response from CMS system after first visit, it reduce 50% loading time
-        * Redis-cache - Move application memory cache to centralized redis cache, reduce 95% server start time
-        * HTML-templates minified - Reduce 30% request by minify AngularJS templates into single JS file.
-    * (Before-after graphic here)
-* Movie rater (Side project)
-    * Time : 2016/10-present
-    * Role : All, 2 team members
-    * Purpose : To help people find movie's rating and comment easier
-![](https://github.com/Asing1001/system-diagrams/blob/master/mvrater.jpg?raw=true)
+  * Time : 2017/3-2017/6
+  * Role : SA & Developer, 2 team members
+  * Target : To reduce portal loading time and deployment time
+  * Solution :
+    * Service-worker - Cache response from CMS system after first visit, it reduce 50% loading time
+    * Redis-cache - Move application memory cache to centralized redis cache, reduce 95% server start time
+    * HTML-templates minified - Reduce 30% request by minify AngularJS templates into single JS file.
+  * (Before-after graphic here)
