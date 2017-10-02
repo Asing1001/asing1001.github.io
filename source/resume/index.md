@@ -114,7 +114,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
   * Solution :
     * Add bootstrap class setting into CMS
     * Integrate dynamic widgets with AngularJS directive
-  * ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
+    ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
 * Questionaire promotion system
   * Time : 2017/6-10
   * Role : Project lead, 2 team members
