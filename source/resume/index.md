@@ -15,12 +15,12 @@ Github : https://github.com/Asing1001
 
 ### Summary
 
-* 4 years experience in web development, especially Front-end
-* Best in Javascript, including NodeJS, ExpressJS, ReactJS, AngularJS, VueJS, Typescript, ES6+
-* Develope application with concurrent user 3k+, daily transaction 3000k+
-* Expert in website performance tuning and SEO enhancement
+* 4 years web development experience, specialized in Front-end
+* Best in NodeJS, AngularJS, ReactJS, C#
+* Experience in building high traffic website - Develope application with concurrent user 3k+, daily transaction 3000k+
+* Expert in performance tuning and SEO enhancement
 * Expert in building CI/CD flow in Travis/Jenkins/CodeShip
-* Top 10% Stackoverflow user with 1800+ reputation
+* Top 10% in Stackoverflow with 1800+ reputation
 
 ### Technical Skill
 
@@ -99,26 +99,29 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 * Online gaming portal (Desktop, Mobile, MobileApp webview)
   * Time : 2015/10-present
-  * Role : Fron-end developer, 30 team members
+  * Role : Fron-end developer, 30 team members  
   * Purpose :
-    * To provide a multilingual and localized gaming portal
-    * Easily customize games and contents in backoffice
-    * Better expericence for customer like inbox and UI-revamp
-  * (Before-after graphic here)
+    * Offer better customer expericence by UI-revamp and new feature like inbox
+    * Provide multilingual and localized gaming portal
+    * Provide control of games in backoffice
 * Content management system
   * Time : 2015/10-present
   * Role : Full stack developer, 5 team members
   * Situation :
-    * System only provide fixed position for setting banner,  not support custom RWD layout
+    * System only provide fixed position for setting banner, not support custom RWD layout
     * System could only set static html
   * Solution :
     * Add bootstrap class setting into CMS
     * Integrate dynamic widgets with AngularJS directive
     ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
-* Questionaire promotion system
-  * Time : 2017/6-10
-  * Role : Project lead, 2 team members
-  * Situation : Business use lots of time to launch questionaire promotion by email and excel
+* Promotion system
+  * Time : 2015/10-present
+  * Role : Fron-end developer, 10 team members
+  * Situation : 
+    * Business launch promotion by email and excel
+    * Customer need to join promotion by sending email
+  * Solution : 
+    ![](https://github.com/Asing1001/system-diagrams/blob/master/promotion-uml-uc.jpg?raw=true)
 * SEO enhancement - seo crawler & prerender
   * Time : 2016/4-2016/7
   * Role : SA & Developer, me only
@@ -128,9 +131,11 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 * Main site performance tuning
   * Time : 2017/3-2017/6
   * Role : SA & Developer, 2 team members
-  * Target : To reduce portal loading time and deployment time
+  * Purpose : To reduce page loading time and server loading time
   * Solution :
-    * Service-worker - Cache response from CMS system after first visit, it reduce 50% loading time
-    * Redis-cache - Move application memory cache to centralized redis cache, reduce 95% server start time
-    * HTML-templates minified - Reduce 30% request by minify AngularJS templates into single JS file.
-  * (Before-after graphic here)
+    * Service-worker - Cache response from CMS/CDN after first visit, reduce 50% page loading time
+    ![](https://raw.githubusercontent.com/Asing1001/system-diagrams/master/service-worker.jpg)
+    * Redis-cache - Centralized application cache into redis, reduce 95% server start time and 90% read query
+    ![](https://raw.githubusercontent.com/Asing1001/system-diagrams/master/centralized-cache.jpg)
+    * Angular template cache - Compressed AngularJS templates into single JS file, reduce 30% request
+    * Use .woff/.woff2 font file - Replace .ttf/.eot with smaller and browser-supported font file, reduce 50% sizing
