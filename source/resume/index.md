@@ -20,7 +20,7 @@ Github : https://github.com/Asing1001
 * Experience in building high traffic website - Develope application with concurrent user 3k+, daily transaction 3000k+
 * Expert in performance tuning and SEO enhancement
 * Expert in building CI/CD flow in Travis/Jenkins/CodeShip
-* Top 10% in Stackoverflow with 1800+ reputation
+* Top 10% user in Stackoverflow with 1800+ reputation
 
 ### Technical Skill
 
