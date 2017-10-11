@@ -124,7 +124,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     ![](https://github.com/Asing1001/system-diagrams/blob/master/promotion-uml-uc.jpg?raw=true)
 * SEO enhancement - seo crawler & prerender
   * Time : 2016/4-2016/7
-  * Role : All, only me
+  * Role : All, 1 team member
   * Situation : Website contents not properly indexed due to Ajax result not rendered by search engine crawler
   * Solution :  
     ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
