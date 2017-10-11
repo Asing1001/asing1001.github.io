@@ -99,7 +99,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 * Online gaming portal (Desktop, Mobile, MobileApp webview)
   * Time : 2015/10-present
-  * Role : Fron-end developer, 30 team members  
+  * Role : Fron-end major developer, 30 team members  
   * Purpose :
     * Offer better customer expericence by UI-revamp and new feature like inbox
     * Provide multilingual and localized gaming portal
@@ -116,7 +116,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
 * Promotion system
   * Time : 2015/10-present
-  * Role : Fron-end developer, 10 team members
+  * Role : Front-end developer, 10 team members
   * Situation : 
     * Business launch promotion by email and excel
     * Customer need to join promotion by sending email
@@ -124,13 +124,13 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     ![](https://github.com/Asing1001/system-diagrams/blob/master/promotion-uml-uc.jpg?raw=true)
 * SEO enhancement - seo crawler & prerender
   * Time : 2016/4-2016/7
-  * Role : SA & Developer, me only
+  * Role : All, only me
   * Situation : Website contents not properly indexed due to Ajax result not rendered by search engine crawler
   * Solution :  
     ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
 * Main site performance tuning
   * Time : 2017/3-2017/6
-  * Role : SA & Developer, 2 team members
+  * Role : Major developer, 2 team members
   * Purpose : To reduce page loading time and server loading time
   * Solution :
     * Service-worker - Cache response from CMS/CDN after first visit, reduce 50% page loading time
