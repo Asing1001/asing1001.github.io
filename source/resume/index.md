@@ -87,7 +87,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 ### Xuenn - Front-end Engineer, 2014/10-present
 
-#### Daily Job
+#### Responsibilities
 
 * System design and developement
 * Production support
@@ -95,7 +95,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 * SEO enhancement
 * Product integration with multiple partners's API
 
-## Product & Projects
+#### Projects
 
 * Online gaming portal (Desktop, Mobile, MobileApp webview)
   * Time : 2015/10-present
