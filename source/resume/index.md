@@ -17,7 +17,7 @@ Github : https://github.com/Asing1001
 
 * 4 years web development experience, specialized in Front-end
 * Best in NodeJS, AngularJS, ReactJS, C#
-* Experience in building high traffic website - Develope application with concurrent user 3k+, daily transaction 3000k+
+* Experience in building high traffic website - Develop application with concurrent user 3k+, daily transaction 3000k+
 * Expert in performance tuning and SEO enhancement
 * Expert in building CI/CD flow in Travis/Jenkins/CodeShip
 * Top 10% user in Stackoverflow with 1800+ reputation
