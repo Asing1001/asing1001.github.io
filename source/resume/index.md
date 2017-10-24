@@ -89,7 +89,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 #### Responsibilities
 
-* System design and developement
+* System design and development
 * Production support
 * Website performance tuning, to support
 * SEO enhancement
