@@ -47,19 +47,19 @@ Github : https://github.com/Asing1001
 
 ### Open Source (https://github.com/Asing1001)
 
-- [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
+[Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
   - Role: Main contributor
   - Purpose: Help people buy Universiade ticket easily by crawling official site then re-design
   - Feature: 120+ Github Stars, 10+ News report, 5k buy action, 100k pageview in one week
   - Reference news: https://buzzorange.com/techorange/2017/08/23/universiade-ticket-checker-app/
     ![](https://github.com/Asing1001/system-diagrams/blob/master/universiade-ticket.jpg?raw=true)
 
-- [MVCshopping mall](http://wecarestore.azurewebsites.net/) -  https://github.com/Asing1001/MVCShoppingMall
+[MVCshopping mall](http://wecarestore.azurewebsites.net/) -  https://github.com/Asing1001/MVCShoppingMall
   - Role: Main contributor
   - Purpose: Demonstrate how to build e-commerce platform by ASP.NET MVC
   - Feature: Provide a one-click setup by code-first and data seeding
 
-- [MovieRater](https://www.mvrater.com/) - https://github.com/Asing1001/movieRater.React
+[MovieRater](https://www.mvrater.com/) - https://github.com/Asing1001/movieRater.React
   - Role: Main contributor
   - Purpose: To help people find movie's rating and comment easier
   - Feature: Built by ReactJS, Typescript, GraphQL, NodeJS, MongoDB
@@ -98,14 +98,15 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 #### Projects
 
-- Online gaming portal (Desktop, Mobile, MobileApp webview)
+Online gaming portal (Desktop, Mobile, MobileApp webview)
   - Time: 2015/10-present
   - Role: Front-end major developer, 30 team members  
   - Purpose:
     - Offer better customer experience by UI-revamp and new feature like inbox
     - Provide multilingual and localized gaming portal
     - Provide control of games in back office
-- Content management system
+    
+Content management system
   - Time: 2015/10-present
   - Role: Full stack developer, 5 team members
   - Situation:
@@ -115,7 +116,8 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     - Add bootstrap class setting into CMS
     - Integrate dynamic widgets with AngularJS directive
     ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
-- Promotion system
+    
+Promotion system
   - Time: 2015/10-present
   - Role: Front-end developer, 10 team members
   - Situation: 
@@ -123,13 +125,15 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
     - Customer need to join promotion by sending email
   - Solution: 
     ![](https://github.com/Asing1001/system-diagrams/blob/master/promotion-uml-uc.jpg?raw=true)
-- SEO enhancement - seo crawler & prerender
+    
+SEO enhancement - seo crawler & prerender
   - Time: 2016/4-2016/7
   - Role: All, 1 team member
   - Situation: Website contents not properly indexed due to Ajax result not rendered by search engine crawler
   - Solution:  
     ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
-- Main site performance tuning
+    
+Main site performance tuning
   - Time: 2017/3-2017/6
   - Role: Major developer, 2 team members
   - Purpose: To reduce page loading time and server loading time
