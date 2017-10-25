@@ -92,7 +92,7 @@ Bachelor of Business Administration in National Taipei University, 2009/9-2013/6
 
 - System design and development
 - Production support
-- Website performance tuning, to support
+- Website performance tuning, to support 3000+ concurrent user
 - SEO enhancement
 - Product integration with multiple partners' API
 
