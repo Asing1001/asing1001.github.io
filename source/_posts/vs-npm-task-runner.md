@@ -9,8 +9,9 @@ Recently my co-worker recommends a great VS extension [NPM task runner](https://
 Install via `Tools > Extensions and Updates > Online > Search NPM task runner`
 {% asset_img "extension.jpg" %}
 
-Task Runner Explorer, could find it in `View > Other Windows > Task Runner Explorer`
+Task Runner Explorer locate in `View > Other Windows > Task Runner Explorer`
+Run task by double-click tasks in sidebar, close it by `x` button
 {% asset_img "task-runner.jpg" %}
 
-If your task fails, it probably references to wrong NPM or Node.js, to fix it change the order in `Tools > Options > Projects and Solutions > External Web Tools` . For example, I lift-up `${PATH}` to the second one.
+If your task fails, it probably references to wrong NPM or Node.js, to fix it change the order in `Tools > Options > Projects and Solutions > External Web Tools`. I lift-up `${PATH}` to the second one.
 {% asset_img "setting.jpg" %}
