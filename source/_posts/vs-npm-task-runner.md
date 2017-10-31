@@ -6,7 +6,7 @@ tags: ["Visual Studio", "Extension", "Tool", "npm"]
 
 Recently my co-worker recommends a great VS extension [NPM task runner](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner). Instead of running NPM task via a separate terminal, it will discover NPM task via package.json and run them inside Visual Studio by a double-click.
 
-Install it via Extensions and Updates.
+Install via `Tools > Extensions and Updates > Online > Search NPM task runner`
 {% asset_img "extension.jpg" %}
 
 Task Runner Explorer, could find it in `View > Other Windows > Task Runner Explorer`
