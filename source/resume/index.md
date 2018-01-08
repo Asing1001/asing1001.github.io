@@ -125,10 +125,7 @@ Main site performance tuning
     - Angular template cache - Compressed AngularJS templates into single JS file, reduce 30% request
     - Use .woff/.woff2 font file - Replace .ttf/.eot with smaller and browser-supported font file, reduce 50% sizing
     
-### Xuenn - Front-end Engineer, 2014/10-present
-
-
-### Open Source (https://github.com/Asing1001)
+## Open Source (https://github.com/Asing1001)
 
 [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
   - Role: Main contributor
