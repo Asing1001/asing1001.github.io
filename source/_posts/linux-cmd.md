@@ -1,10 +1,9 @@
 ---
-title: Linux useful command list
+title: Linux commands cheatsheet
 date: 2018-02-08 14:28:04
-tags: ["Linux"]
+tags: ["Linux", "cmd"]
 ---
 
-**This list will update constantly.**
 **Always use `man commandName` to know what the command is before copy and paste.**
 
 ```bash
