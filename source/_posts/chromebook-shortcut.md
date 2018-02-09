@@ -4,4 +4,12 @@ date: 2018-02-09 22:04:00
 tags: [Chromebook]
 ---
 
-- <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>?</kbd> :	Show Keyboard Shortcut
+- `ctrl + alt + /` : Show Keyboard Shortcut
+- `ctrl + 口||` : Screenshot
+- `ctrl + shift + 口||` : Screenshot region
+- `ctrl + shift + i` : Open developer tools
+- `alt + search` : Toggle Caps Lock
+- `alt + shift + m` : Open file manager
+- `ctrl + space` : Change input method
+- `shift + esc` : Open task manager
+- `ctrl + alt + t` Open terminal
