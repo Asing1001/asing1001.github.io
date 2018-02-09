@@ -1,6 +1,6 @@
 ---
-title: AngularJS Minified Error:[$injector:unpr]
-date: 2018-02-9 23:04:00
+title: Online IDE - AWS Cloud9 introduction 
+date: 2018-02-09 23:04:00
 tags: [AWS, IDE, Cloud9]
 ---
 
