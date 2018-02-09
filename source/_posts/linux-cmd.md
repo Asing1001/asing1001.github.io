@@ -8,7 +8,13 @@ tags: ["Linux", "cmd"]
 
 ```bash
 # Show how to use a command
-man commandName
+man command
+
+# Find first excutable path
+whichis command
+
+# Find every excutable path
+whereis command
 
 # Use proxy
 export http_proxy=http://server-ip:port/ 
