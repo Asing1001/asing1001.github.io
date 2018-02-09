@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Sing's Log</ShortName>
+  <Description>Sing's log, a developer's blog</Description>
+  <Url type="text/html" method="get" template="https://www.paddingleft.com/?q={searchTerms}"/>
+  <InputEncoding>UTF-8</InputEncoding>
+  <Image height="16" width="16" type="image/x-icon">https://www.paddingleft.com/favicon.ico</Image>
+</OpenSearchDescription>
