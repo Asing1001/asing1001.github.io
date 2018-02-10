@@ -9,22 +9,21 @@ comments: false
 Name : Sing Ming Chen  
 Email : sing@paddingleft.com  
 Nationality : Taiwan  
-Residence : Nangang Dist., Taipei  
-Github : https://github.com/Asing1001
+Residence : Taipei
 
-## Career
+## Career Summary
 
-### Summary
-
-- 4 years web development experience, specialized in front-end development
-- Proficient in NodeJS, AngularJS, ReactJS
-- Experienced in C# and ASP.NET MVC for backend development
-- Experienced in building high traffic website with concurrent user 3k+, daily transaction 3000k+
-- Expert in performance tuning and SEO
-- Expert in building CI/CD flow in Jenkins/Travis/CodeShip
+- 4 years' experience in web development, specialized in frontend
+- Possess extensive and deep skill sets not just on front-end but also NodeJS, C#, Webapi, databases
+- Strong experience in performance tuning, SEO, ELK, CI/CD
 - Top 10% user in Stackoverflow with 2k+ reputation
+- Willing to learn and share anything he knows
+- Aggressive in works, also responsible and open minded
+- Github : https://github.com/Asing1001
 
-### Technical Skill
+## Skills Summary
+
+### Software Development : 
 
 | Skill          | Years of experience | Time         |
 | :------------- | :------------------ | :----------- |
@@ -49,83 +48,72 @@ Github : https://github.com/Asing1001
 
 ### Language
 
-- English - Fluent (TOEIC 900 Golden Certificate)
+- English - Fluent (TOEIC 900, Golden Certificate)
 - Chinese - Native
 
 ### Certificate
 
-- [Google Analytics certificate](https://www.google.com/partners/?hl=zh-TW#i_profile;idtf=100241582365266596912)
+- Google Analytics certificate
 - [TOEIC Golden certificate](https://goo.gl/photos/gGjX7pcqvkGqMoZB8)
-
-### Awards
-
-- [2013 MSD Elite MedCamp - The Elite Team](https://goo.gl/photos/kSca7Xf9csrJ2bsd8) [`News Link`](http://bit.ly/1B7iH4H)
-- [2011 National Taipei University Annual award](https://goo.gl/photos/QtC9zUMR6qgHiVME7)
-
-## Education
-
-- Microsoft Internet Technology Courses (636 hours), Institute for Information Industry, 2014/3-2014/9
-- B.S. in Business Administration, National Taipei University, Taiwan, 2009/9-2013/6
 
 ## Work Experience
 
-### Xuenn - Front-end Engineer, 2014/10-present
+### Xuenn - IT Consultant - *2014/10-present*
 
 #### Responsibilities
 
-- System design and development, mostly in front-end, webapi, noSql db
+- System design and development, focus on front-end, webapi, noSQL
 - Production support
-- Website performance tuning, to support 3000+ concurrent user
-- SEO enhancement
-- Product integration with multiple partners' API
+- Performance tuning, SEO
+- Webapi integration with partners
 
 #### Projects
 
 Online gaming portal (Desktop, Mobile, MobileApp webview)
-  - Time: 2015/10-present
   - Role: Front-end major developer, 30 team members  
-  - Purpose:
-    - Offer better customer experience by UI and new feature like inbox
-    - Provide multilingual and localized gaming portal
-    - Provide control of games in back office
-    
-Content management system
-  - Time: 2015/10-present
-  - Role: Full stack developer, 5 team members
-  - Purpose: 
-    - Support custom RWD layout in CMS
-    - Offer widgets in CMS
   - Solution:
-    - Add bootstrap class setting into CMS
-    - Integrate dynamic widgets with AngularJS directive
+    - Revamp UI with AngularJS and ASP.NET Webapi
+    - Provide multi-language and localized gaming portal by integrating CMS
+    - Extend maintainability by refactor and decouple system with TDD
+
+Realtime messaging system
+  - Role: Front-end major developer, 3 team members
+  - Solution: 
+    - Provide realtime functionality and notification by SignalR and Redis Pub/Sub
+    
+Content management system
+  - Role: Full stack developer, 5 team members
+  - Solution:
+    - Support custom RWD layout in CMS with dynamic bootstrap settings
+    - Provide dynamic widgets with AngularJS directive
     ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
     
 Promotion system
-  - Time: 2015/10-present
-  - Role: Front-end developer, 10 team members
-  - Purpose: Automate promotion launch process    
+  - Role: Front-end developer, 10 team members  
   - Solution: 
+    - Automate promotion launch process by using Angular and NodeJS Express server
     ![](https://github.com/Asing1001/system-diagrams/blob/master/promotion-uml-uc.jpg?raw=true)
     
 SEO enhancement - seo crawler & prerender
-  - Time: 2016/4-2016/7
-  - Role: All, 1 team member
-  - Purpose: Make search engine index Ajax contents
-  - Solution:  
+  - Role: Project owner  
+  - Solution: Make search engine index Ajax contents with making seo-crawler
     ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
     
 Main site performance tuning
-  - Time: 2017/3-2017/6
-  - Role: Major developer, 2 team members
-  - Purpose: Reduce page loading time and server loading time
-  - Solution:
-    - Service-worker - Cache response from CMS/CDN after first visit, reduce 50% page loading time
-    - Redis-cache - Centralized application cache into Redis, reduce 95% server start time and 90% read query
+  - Role: Major developer, 2 team members  
+  - Solution: 
+    - Service-worker - Reduce 50% page loading time by caching response from CMS/CDN
+    - Redis-cache - Reduce 95% server start time and 90% read query by centralizing application cache into Redis, 
     ![](https://raw.githubusercontent.com/Asing1001/system-diagrams/master/centralized-cache.jpg)
-    - Angular template cache - Compressed AngularJS templates into single JS file, reduce 30% request
+    - Angular template cache - Reduce 30% request by compressing AngularJS templates with webpack
     - Use .woff/.woff2 font file - Replace .ttf/.eot with smaller and browser-supported font file, reduce 50% sizing
     
-## Open Source (https://github.com/Asing1001)
+### Hess International Educational - English Teacher *2012/05-2013/05(part-time)*
+
+- Teach class in full English
+- Communication with parents and foreign teachers
+    
+## Open Source projects (https://github.com/Asing1001)
 
 [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
   - Role: Main contributor
@@ -144,3 +132,14 @@ Main site performance tuning
   - Purpose: To help people find movie's rating and comment easier
   - Feature: Built by ReactJS, Typescript, GraphQL, NodeJS, MongoDB
     ![](https://github.com/Asing1001/system-diagrams/blob/master/mvrater.jpg?raw=true)
+
+## Awards
+
+- 2017 Hsinchu Hackthon Best Popularity Award
+- [2013 MSD Elite MedCamp - The Elite Team](https://goo.gl/photos/kSca7Xf9csrJ2bsd8) [`News Link`](http://bit.ly/1B7iH4H)
+- [2011 National Taipei University Annual award](https://goo.gl/photos/QtC9zUMR6qgHiVME7)
+
+## Education
+
+- Microsoft Internet Technology Courses (636 hours), Institute for Information Industry, 2014/3-2014/9
+- B.S. in Business Administration, National Taipei University, Taiwan, 2009/9-2013/6
