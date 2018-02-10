@@ -17,14 +17,18 @@ Residence : Taipei
 - Possess extensive and deep skill sets not just on front-end but also NodeJS, C#, Webapi, databases
 - Strong experience in performance tuning, SEO, ELK, CI/CD
 - Top 10% user in Stackoverflow with 2k+ reputation
-- Willing to learn and share anything he knows
-- Aggressive in works, also responsible and open minded
+- Willing to learn and share, proactive in work, reliable team player
 - Github : https://github.com/Asing1001
 
 ## Skills Summary
 
-### Software Development : 
+### Technical skill : 
 
+- Expert in :
+  Javascript (AngularJS, ReactJS, VueJS), HTML, CSS, NodeJS
+- Skilled in :
+  C#, ASP.NET MVC, Webapi
+  
 | Skill          | Years of experience | Time         |
 | :------------- | :------------------ | :----------- |
 | Javascript     | 4 Years             | 2014-present |
