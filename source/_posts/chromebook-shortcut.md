@@ -1,6 +1,6 @@
 ---
 title: Chromebook shortcut
-date: 2018-02-09 22:04:00
+date: 2018-02-10 22:04:00
 tags: [Chromebook]
 ---
 
@@ -12,4 +12,5 @@ tags: [Chromebook]
 - `alt + shift + m` : Open file manager
 - `ctrl + space` : Change input method
 - `shift + esc` : Open task manager
-- `ctrl + alt + t` Open terminal
+- `ctrl + alt + t` : Open terminal
+- `search + button between esc and power` : F1~F10
