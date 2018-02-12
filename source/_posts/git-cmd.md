@@ -11,4 +11,9 @@ git checkout hashOfCommit folderName
 # Discard every change
 git reset --hard
 
+# Rebase
+git pull --rebase
+
+# Check commit's message and change(-p)
+git log -p -2
 ```
