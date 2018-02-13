@@ -66,8 +66,7 @@ Online gaming portal (Desktop, Mobile, MobileApp webview)
 
 Realtime messaging system
   - Role: Front-end major developer, 3 team members
-  - Solution: 
-    - Provide realtime functionality and notification by SignalR and Redis Pub/Sub
+  - Solution: Provide realtime functionality and notification by SignalR and Redis Pub/Sub
 
 Content management system
   - Role: Full stack developer, 5 team members
