@@ -24,14 +24,14 @@ Residence : Taipei
 
 ### Technical skill : 
 
-- Programming :  
+- Programming :
   - Advanced - Javascript, NodeJS, AngularJS, HTML, CSS, C#, ASP.NET MVC, ASP.NET Webapi  
   - Skilled - GraphQL, Typescript, ReactJS, VueJS, Webpack
-- Databases :  
+- Databases :
   - Skilled - Redis, MongoDB, MSSQL
-- Testing :  
+- Testing :
   - Skilled - Mocha, Selenium, MSTest
-- Other :  
+- Other :
   - Advanced - Performance tuning, ELK, SEO, CI/CD, Crawler, GA/GTM, GIT  
 
 ### Language
@@ -68,7 +68,7 @@ Realtime messaging system
   - Role: Front-end major developer, 3 team members
   - Solution: 
     - Provide realtime functionality and notification by SignalR and Redis Pub/Sub
-    
+
 Content management system
   - Role: Full stack developer, 5 team members
   - Solution:
