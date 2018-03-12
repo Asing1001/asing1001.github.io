@@ -46,7 +46,7 @@ Residence : Taipei
 
 ## Work Experience
 
-### Xuenn - IT Consultant - *2014/10-present*
+### Xuenn - Senior full stack engineer - *2014/10-present*
 
 #### Responsibilities
 
@@ -62,7 +62,7 @@ Online gaming portal (Desktop, Mobile, MobileApp webview)
   - Solution:
     - Revamp UI with AngularJS and ASP.NET Webapi
     - Provide multi-language and localized gaming portal by integrating CMS
-    - Extend maintainability by refactor and decouple system with TDD
+    - Extend maintainability by refactor and decouple system with TDD
 
 Realtime messaging system
   - Role: Front-end major developer, 3 team members
