@@ -4,8 +4,6 @@ date: 2018-03-10 18:04:00
 tags: [MongoDB]
 ---
 
-If you can not excute command directly, you need to go to mongodb `bin` folder first, default installation path for windows will under `C:\Program Files\MongoDB\Server\3.2\bin`
-
 Directly copy db from ip :
 ```
 mongo 172.16.45.83 
@@ -22,6 +20,8 @@ mongodump --db dbname
 mongorestore --port <port number> <path to the backup>
 # e.g. mongorestore --port 27017 X:\dump
 ```
+
+If commands are unable to find, you need to go to mongodb `bin` folder first, windows default path : `C:\Program Files\MongoDB\Server\3.2\bin\`
 
 Reference : 
 https://docs.mongodb.com/manual/tutorial/backup-and-restore-tools/
