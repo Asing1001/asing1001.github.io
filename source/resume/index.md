@@ -4,12 +4,11 @@ date: 2017-09-21 02:00:00
 comments: false
 ---
 
-## Profile
+## Sing Ming Chen
 
-Name : Sing Ming Chen  
 Email : sing@paddingleft.com  
+Phone : (+886)910128813  
 Nationality : Taiwan  
-Residence : Taipei
 
 ## Career Summary
 
@@ -28,7 +27,7 @@ Residence : Taipei
   - Advanced - Javascript, NodeJS, AngularJS, HTML, CSS, C#, ASP.NET MVC, ASP.NET Webapi  
   - Skilled - GraphQL, Typescript, ReactJS, VueJS, Webpack
 - Databases :
-  - Skilled - Redis, MongoDB, MSSQL
+  - Skilled - Redis, MongoDB, MSSQL, Elastic Search
 - Testing :
   - Skilled - Mocha, Selenium, MSTest
 - Other :
@@ -74,12 +73,6 @@ Content management system
     - Support custom RWD layout in CMS with dynamic bootstrap settings
     - Provide dynamic widgets with AngularJS directive
     ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
-    
-Promotion system
-  - Role: Front-end developer, 10 team members  
-  - Solution: 
-    - Automate promotion launch process by using Angular and NodeJS Express server
-    ![](https://github.com/Asing1001/system-diagrams/blob/master/promotion-uml-uc.jpg?raw=true)
     
 SEO enhancement - seo crawler & prerender
   - Role: Project owner  
