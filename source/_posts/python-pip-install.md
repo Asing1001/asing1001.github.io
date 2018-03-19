@@ -1,7 +1,7 @@
 ---
-title: Python pip install requirement.txt
+title: Python - handle package dependencies with requirements.txt
 date: 2018-03-18 01:02:00
-tags: [Python]
+tags: [Python, pip, requirements.txt, SSL]
 ---
 
 To create same environment in python, you must know `requirements.txt`, it includes packages dependencies and let you install by a single command.
@@ -30,7 +30,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
-### pip install bypass ssl/certificate : 
+### pip install bypass SSL/certificate : 
 
 ```bash
 pip install --trusted-host pypi.python.org <package_name>
