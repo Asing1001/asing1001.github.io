@@ -30,7 +30,7 @@ pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
 
-### pip install bypass SSL/certificate : 
+### pip install bypass SSL certificate : 
 
 ```bash
 pip install --trusted-host pypi.python.org <package_name>
