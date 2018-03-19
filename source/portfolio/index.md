@@ -10,9 +10,9 @@ date: 2017-03-20 02:27:40
 ![](index/movierater.jpg)
 
 ## Universiade ticket
-> [Live Preview](https://ticket.mvrater.com/) | [Github](https://github.com/Asing1001/universiade-ticket)   
-*Improved universiade ticket system, 120+ Github Stars, 10+ News report, 5k buy action, 100k pageview in one week*  
-`Daily Top 1 Github trending` `VueJS` `Redis` `NodeJS` `Crawler` 
+> [Live Preview](https://ticket.mvrater.com/) | [Github](https://github.com/Asing1001/universiade-ticket) | [Report](https://www.evernote.com/shard/s234/sh/ad7cea60-1f26-4aac-bfce-eedee5828859/7085f154f1f93772e3dc5a8e36386358)   
+*Advanced universiade ticket system, 120+ Github Stars, 10+ News report, 5k buy action, 100k pageview in one week, Daily Top 1 Github trending*  
+`VueJS` `Redis` `NodeJS` `Crawler` 
 ![](index/ticket.png)
 
 ## Badminton map
