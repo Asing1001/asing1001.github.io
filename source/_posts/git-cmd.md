@@ -14,6 +14,9 @@ git reset --hard
 # Rebase
 git pull --rebase
 
+# Push to target remote, -u is short for --set-upstream
+git push -u <remote-name> <branch>
+
 # Check commit's message and change(-p)
 git log -p -2
 
