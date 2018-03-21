@@ -16,4 +16,7 @@ git pull --rebase
 
 # Check commit's message and change(-p)
 git log -p -2
+
+# Update to latest submodules
+git submodule update --recursive --remote
 ```
