@@ -15,7 +15,7 @@ Nationality : Taiwan
 - 4 years' experience in web development, specialized in frontend
 - Possess extensive and deep skill sets not only front-end but also NodeJS, C#, Webapi, databases
 - Strong experience in performance tuning, SEO, ELK, CI/CD
-- Top 10% user in Stackoverflow with 2k+ reputation
+- Top 10% Javascript developer in Stackoverflow with 2k+ reputation
 - Willing to learn and share, proactive in work, reliable team player
 - Github : https://github.com/Asing1001
 
@@ -24,8 +24,8 @@ Nationality : Taiwan
 ### Technical skill : 
 
 - Programming :
-  - Advanced - Javascript, NodeJS, AngularJS, HTML, CSS, C#, ASP.NET MVC, ASP.NET Webapi  
-  - Skilled - GraphQL, Typescript, ReactJS, VueJS, Webpack
+  - Advanced - Javascript, NodeJS, ReactJS, AngularJS, HTML, CSS, C#, ASP.NET MVC, ASP.NET Webapi  
+  - Skilled - GraphQL, Typescript, VueJS, Webpack
 - Databases :
   - Skilled - Redis, MongoDB, MSSQL, Elastic Search
 - Testing :
