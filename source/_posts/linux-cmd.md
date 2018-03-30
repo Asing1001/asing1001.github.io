@@ -31,4 +31,16 @@ cat > filename
 
 # RPM install
 rpm -ivh file.rpm
+
+# switch to last directory
+cd -
+
+# Download file with wget -c=continue download
+wget -c --header "Cookie: foo=bar" http://url/to/file`
+
+# Force reboot immediately
+reboot -f
+
+# Rename files
+rename <old name> <new name> <Regex match>
 ```
