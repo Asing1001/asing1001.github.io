@@ -23,15 +23,16 @@ Nationality : Taiwan
 
 ### Technical skill : 
 
-- Programming :
-  - Advanced - Javascript, NodeJS, ReactJS, AngularJS, HTML, CSS, C#, ASP.NET MVC, ASP.NET Webapi  
-  - Skilled - GraphQL, Typescript, VueJS, Webpack
-- Databases :
-  - Skilled - Redis, MongoDB, MSSQL, Elastic Search
-- Testing :
-  - Skilled - Mocha, Selenium, MSTest
-- Other :
-  - Advanced - Performance tuning, ELK, SEO, CI/CD, Crawler, GA/GTM, GIT  
+- Programming language: Javascript, C#, Python
+- Frontend: ReactJS, AngularJS, VueJS, HTML, CSS, Webpack, Typescript, PWA
+- Backend: NodeJS, ASP.NET MVC, ASP.NET Webapi, GraphQL
+- Databases: Redis, MongoDB, MSSQL, Elastic Search
+- Testing: Mocha, Selenium, MSTest
+- CI/CD: Jenkins, Travis, Codeship
+- Cloud service: Heroku, Azure
+- SCM: GIT, SVN
+- Analytics: ELK, GA, GTM, Google Search Console
+- Other: Performance tuning, SEO, Crawler
 
 ### Language
 
