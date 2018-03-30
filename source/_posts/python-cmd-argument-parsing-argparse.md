@@ -1,14 +1,14 @@
 ---
-title: 使用Python argparse處理command line arguments
+title: Python argparse - handle command line arguments
 date: 2017-03-20 22:08:51
-tags: [Python,CMD]
+tags: [Python,CMD,argparse]
 ---
 
-剛好需要用command line傳參數進python，因此發現了功能完善的`argparse`，記錄用法如下：
+Library `argparse` in python could help user handle arguments passed through command prompt, below I record the most important functions ：
 <!-- more -->
 
 
-## 增加參數
+## Add argument
 ```python
 import argparse
 
@@ -19,7 +19,7 @@ args = parser.parse_args()
 print(args.foo)
 ```
 
-### 測試結果
+### Result
 
 ```
 C:\pytest>argparse-test.py -foo=bar
@@ -35,7 +35,7 @@ C:\pytest>argparse-test.py
 None
 ```
 
-## 增加help
+## Add --help
 ```python
 import argparse
 
@@ -45,7 +45,7 @@ args = parser.parse_args()
 
 print(args.foo)
 ```
-### 測試結果
+### Result
 ```
 C:\pytest>argparse-test.py -h
 usage: argparse-test.py [-h] [-foo FOO]
@@ -55,7 +55,7 @@ optional arguments:
   -foo FOO    info for foo
 ```
 
-## 增加 default value
+## Add default value
 ```python
 import argparse
 
@@ -66,13 +66,13 @@ args = parser.parse_args()
 print(args.foo)
 ```
 
-### 測試結果
+### Result
 ```
 C:\pytest>argparse-test.py
 default value
 ```
 
-## 給予型別
+## Specify argument type
 ```python
 import argparse
 
@@ -83,7 +83,7 @@ args = parser.parse_args()
 print(args.foo)
 ```
 
-### 測試結果
+### Result
 ```
 C:\pytest>argparse-test.py
 2
@@ -96,5 +96,5 @@ usage: argparse-test.py [-h] [-foo FOO]
 argparse-test.py: error: argument -foo: invalid int value: 'abc'
 ```
 
-更多資訊可以參考：  
+Reference：  
 https://docs.python.org/3/library/argparse.html
