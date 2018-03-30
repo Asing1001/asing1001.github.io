@@ -1,12 +1,12 @@
 ---
-title: Install elastic stack on linux
+title: Install ELK on linux
 date: 2018-03-30 18:09:19
-tags: [elastic-stack, Elasticsearch, Logstash, Kibana, ELK]
+tags: [Elastic Stack, Elasticsearch, Logstash, Kibana, ELK, Install]
 ---
 
 ## Before start
 
-Make sure your server has internet access, I recommend CCProxy to grant your server temporary internet access, {% post_link grant-internet-access-by-ccproxy tutorial here %}. 
+Make sure the server has internet access or you will have to download and upload packages manually. If the server doesn't, I recommend {% post_link grant-internet-access-by-ccproxy CCProxy %} to grant temporary internet access.
 
 ## Install JDK
 
