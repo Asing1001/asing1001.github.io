@@ -49,10 +49,11 @@ Nationality : Taiwan
 
 #### Responsibilities
 
-- System design and development, focus on front-end, webapi, noSQL
-- Production support
-- Performance tuning, SEO
-- Webapi integration with partners
+- System design / develop, focus on front-end, noSQL and .NET solutions
+- Develop / Maintain high traffic websites include gaming portal, CMS, promotion system, backoffice
+- Production support/deployment
+- Performance tuning, SEO enhancement
+- Product API integration with multiple companies
 
 #### Projects
 
