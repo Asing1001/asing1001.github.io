@@ -16,4 +16,4 @@ tags: ["debug", "eslint", "IDE", "vscode", "autofix"]
 
 1. (Optional) Add `"eslint.autoFixOnSave": true` for autofix on save.
 
-It should work now, enjoy :)
+1. It should work now, enjoy :)
