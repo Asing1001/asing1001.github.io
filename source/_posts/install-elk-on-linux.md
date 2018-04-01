@@ -4,7 +4,7 @@ date: 2018-03-30 18:09:19
 tags: [Elastic Stack, Elasticsearch, Logstash, Kibana, ELK, Install]
 ---
 
-## Before start
+## Before Start
 
 Make sure the server has internet access or you will have to download and upload packages manually. If the server doesn't, I recommend {% post_link grant-internet-access-by-ccproxy CCProxy %} to grant temporary internet access.
 
@@ -15,7 +15,7 @@ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://downl
 rpm -ivh jdk-8u161-linux-x64.rpm
 ```
 
-## Elastic search
+## Elasticsearch
 
 1. Download and install
 
