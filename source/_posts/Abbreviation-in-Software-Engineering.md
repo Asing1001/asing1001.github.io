@@ -1,0 +1,14 @@
+---
+title: Abbreviation in Software Engineering
+date: 2018-04-10 15:38:28
+tags: [Abbreviation, Software Engineering]
+---
+
+This sheet is to record abbreviation in my daily work as a software engineer.
+
+| Abbreviation | Full name                       | Explain                                                  |
+| ------------ | ------------------------------- | -------------------------------------------------------- |
+| CDC          | Change data capture             | Use to sync one db data change to another db             |
+| MPLS         | Multi-Protocol Label Switching  | Link site to site network like both in same network      |
+| IDC          | Internet Data Center            | Buildings where we put servers                           |
+| REST         | REpresentational State Transfer | Architectural style defines a set of constraints on HTTP |
