@@ -47,15 +47,10 @@ public async Task<string> GetAsync(string url, object data)
     try
     {
         string requestUrl = $"{url}?{GetQueryString(data)}";
-        logger.Debug($"GetAsync Start, requestUrl:{requestUrl}");
+        logger.Info($"GetAsync Start, requestUrl:{requestUrl}");
         var response = await Client.GetAsync(requestUrl).ConfigureAwait(false);
         string result = await response.Content.ReadAsStringAsync();
-        if (response.StatusCode != HttpStatusCode.OK)
-        {
-            logger.Error($"GetAsync End, requestUrl:{requestUrl}, HttpStatusCode:{response.StatusCode}, result:{result}");
-            return "";
-        }
-        logger.Debug($"GetAsync End, requestUrl:{requestUrl}, result:{result}");
+        logger.Info($"GetAsync End, requestUrl:{requestUrl}, HttpStatusCode:{response.StatusCode}, result:{result}");
         return result;
     }
     catch (WebException ex)
