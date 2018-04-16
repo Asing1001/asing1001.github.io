@@ -16,7 +16,7 @@ public async Task<T> PostAsync<T>(string url, object data) where T : class, new(
         var buffer = Encoding.UTF8.GetBytes(content);
         var byteContent = new ByteArrayContent(buffer);
         byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-        var response = await Client.PostAsync(url, byteContent);
+        var response = await Client.PostAsync(url, byteContent).ConfigureAwait(false);
         string result = await response.Content.ReadAsStringAsync();
         if (response.StatusCode != HttpStatusCode.OK)
         {
