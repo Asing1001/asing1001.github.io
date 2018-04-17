@@ -11,6 +11,9 @@ git checkout hashOfCommit folderName
 # Discard every change
 git reset --hard
 
+# Undo most recent commit
+git reset HEAD~
+
 # Rebase
 git pull --rebase
 
