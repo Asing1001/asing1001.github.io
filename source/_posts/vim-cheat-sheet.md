@@ -5,8 +5,28 @@ tags: [vim]
 ---
 
 ```bash
-
 # Replace word A with word B
 :%s/A/B/g
+
+# Next word
+w
+
+# Previous word
+b
+
+# copy (yank)
+y
+
+# copy line
+yy
+
+# paste
+p
+
+# delete
+d
+
+# Undo
+u
 
 ```
