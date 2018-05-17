@@ -112,3 +112,32 @@ generator_amp:
     width:  1024
     height: 800
   warningLog: true   # To display warning, please set true. 
+
+# hexo-all-minifier
+html_minifier:
+  enable: true
+  ignore_error: false
+  silent: false
+  exclude:
+
+css_minifier:
+  enable: true
+  exclude: 
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude: 
+    - '*.min.js'
+
+image_minifier:
+  enable: true
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+  silent: false
