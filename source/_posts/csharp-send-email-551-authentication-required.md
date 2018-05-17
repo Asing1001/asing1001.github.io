@@ -14,7 +14,7 @@ Gmail權限預設不讓不明程式發送EMAIL，需到Google設定自己的電�
 
 ## 解決方法
 登入Google→至[Google帳號設定頁面](https://myaccount.google.com/security)→已連結的網站與應用程式->允許安全性較低的應用程式→啟用
-![](/uploads/images/setting-location.jpg)
+{% asset_img "setting-location.jpg" %}
 
 ## 程式碼參考
 [C# SMTP Sending Email](/2014/11/02/CSharp-SMTP-Email/)
