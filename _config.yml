@@ -85,7 +85,11 @@ theme: next-reloaded
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/Asing1001/asing1001.github.io.git
+  branch: master
+  message: 
+
 algolia:
   applicationID: 'RG9H1JR5W2'
   apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206'
