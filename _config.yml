@@ -6,9 +6,10 @@
 title: Sing's Log
 subtitle: Knowledge worth sharing
 description: Sing's log, a developer's blog
+keywords: Web development, Front-End, Javascript, IT, Hexo, NexT
 author: Sing Ming Chen
 language: en
-timezone: 
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -49,7 +50,16 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -70,38 +80,15 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: next-reloaded
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/Asing1001/asing1001.github.io.git
-  branch: master
-  message: 
-
+  type:
 algolia:
   applicationID: 'RG9H1JR5W2'
   apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206'
   adminApiKey: '932b154aa3a650d91916007f13246c39'
   indexName: 'blog'
   chunkSize: 5000
-
-# hexo-all-minifier
-html_minifier:
-  enable: true
-  ignore_error: false
-  exclude:
-
-css_minifier:
-  enable: true
-  exclude: 
-    - '*.min.css'
-
-js_minifier:
-  enable: true
-  mangle: true
-  output:
-  compress:
-  exclude: 
-    - '*.min.js'
