@@ -93,9 +93,7 @@ deploy:
 algolia:
   applicationID: 'RG9H1JR5W2'
   apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206'
-  adminApiKey: '932b154aa3a650d91916007f13246c39'
   indexName: 'blog'
-  chunkSize: 5000
 
 # hexo-generator-amp 
 # The following settings is the quick start options. 
