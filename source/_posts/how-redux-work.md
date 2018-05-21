@@ -5,6 +5,7 @@ date: 2018-04-02 22:35:58
 ---
 
 If you want to understand how Redux work, `createStore(reducer)` is the core function you should know and try to implement yourself. Here is a basic example of Redux, don't worry I will break it down later :
+<!--more-->
 
 ```javascript
 const counterReducer = (state = 0, action) => {

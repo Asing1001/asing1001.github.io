@@ -19,6 +19,7 @@ for(var i=0; i<10000; i++){
 const results = await Promise.all(promises)
 ```
 
+<!--more-->
 After few seconds, error `ECONNRESET` show up like this, due to too many request processing at a time :
 
 ```terminal

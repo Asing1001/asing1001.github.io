@@ -5,6 +5,7 @@ tags: [pid, port, TCP/IP, Windows, CMD, netstat, Network]
 ---
 
 To find ports status on windows, there is a default Windows GUI - `Resource Monitor` or you could use `netstat` via command prompt.
+<!--more-->
 
 ## Default Windows GUI - Resource Monitor
 

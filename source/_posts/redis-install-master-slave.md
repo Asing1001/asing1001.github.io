@@ -8,6 +8,7 @@ tags: [redis, HA, install, linux, master, slave]
 
 1. [Download and install redis from official site](https://redis.io/download)
 2. redis excutable commands are under `bin` folder, configs are under `etc` folder, logs are under `var` folder
+<!--more-->
 
 ## Redis master
 
