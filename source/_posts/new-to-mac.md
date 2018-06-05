@@ -10,9 +10,23 @@ So I decided to log it down for me and any new comer for MAC :)
 ## Must install
 
 * homebrew
-* Alfred
+* iterm2
 
 ## Shortcut
 
 * Print screen area: command + control + shift + 4 (control is optional for copy to clickboard)
 * Open link in new tab: command + click
+* Delete file: command + backspace
+* Lock screen: ctrl + command + q
+
+## Settings
+
+* Finder
+    `View` > `Show Status Bar`, `Show Path Bar`
+
+## Optional install
+
+* [nvm](https://github.com/creationix/nvm)
+* [Alfred](https://www.alfredapp.com/)
+* [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+    change default shell to zsh with `chsh -s $(which zsh`
