@@ -5,7 +5,7 @@ tags: [MAC, development]
 ---
 
 Today I start to use MAC for developing on my new job, it is really painful that so many shortcut or convention are different.
-So I decided to log it down for me and any new comer for MAC :) 
+So I decided to log it down for me and any new comer for MAC :)
 
 ## Must install
 
@@ -18,11 +18,16 @@ So I decided to log it down for me and any new comer for MAC :)
 * Open link in new tab: command + click
 * Delete file: command + backspace
 * Lock screen: ctrl + command + q
+* [Evernote shorcut for mac](https://help.evernote.com/hc/en-us/articles/208313358-Keyboard-shortcuts-in-Evernote-for-Mac)
+* Close window: command + w
+* Quit app: command + q
 
 ## Settings
 
 * Finder
     `View` > `Show Status Bar`, `Show Path Bar`
+* Iterm
+    `Menu bar` > `iterm2` > `Make iIerm2 default term`
 
 ## Optional install
 
