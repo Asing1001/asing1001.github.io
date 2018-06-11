@@ -49,4 +49,11 @@ sudo openvpn --config client.ovpn
 
 # kill process by id
 kill PID
+
+# List recent command history
+history
+
+# excute command from history
+!<search text>
+!vi # excute recent command contains vi
 ```
