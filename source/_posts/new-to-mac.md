@@ -12,6 +12,7 @@ So I decided to log it down for me and any new comer for MAC :)
 * homebrew
 * iterm2
 * [vscode](https://code.visualstudio.com/Download)
+* [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
 
 ## Shortcut
 
@@ -22,7 +23,9 @@ So I decided to log it down for me and any new comer for MAC :)
 * [Evernote shorcut for mac](https://help.evernote.com/hc/en-us/articles/208313358-Keyboard-shortcuts-in-Evernote-for-Mac)
 * Close window: command + w
 * Quit app: command + q
-* Max/Miniimize window: ctrl + command + f
+* Fullscreen/Normalscreen: ctrl + command + f
+* Hide window: command + m
+* Show window: Hold command + tab to the app, then hold option then release command
 
 ## Settings
 
@@ -38,6 +41,9 @@ So I decided to log it down for me and any new comer for MAC :)
     ```
     * [Use terminal to open vscode](https://stackoverflow.com/questions/30065227/run-open-vscode-from-mac-terminal):
     `Command + Shift + P` then `Shell Command : Install code in PATH`, then you can type `code <folder path>` to open vscode
+* zsh
+    * [osx](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx)
+    * [zsh-completions](https://github.com/zsh-users/zsh-completions)
 
 ## Optional install
 
@@ -45,3 +51,5 @@ So I decided to log it down for me and any new comer for MAC :)
 * [Alfred](https://www.alfredapp.com/)
 * [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
     change default shell to zsh with `chsh -s $(which zsh`
+* [超注音](https://applealmond.com/posts/27387)
+* [spectacle](https://www.spectacleapp.com/)
