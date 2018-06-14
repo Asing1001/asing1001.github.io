@@ -16,6 +16,7 @@ So I decided to log it down for me and any new comer for MAC :)
 
 ## Shortcut
 
+* [Mac shortcuts](https://support.apple.com/en-us/ht201236)
 * Print screen area: command + control + shift + 4 (control is optional for copy to clickboard)
 * Open link in new tab: command + click
 * Delete file: command + backspace
@@ -26,6 +27,8 @@ So I decided to log it down for me and any new comer for MAC :)
 * Fullscreen/Normalscreen: ctrl + command + f
 * Hide window: command + m
 * Show window: Hold command + tab to the app, then hold option then release command
+* Open application preference: command + ,
+* Switch different window in same application: command + `
 
 ## Settings
 
@@ -53,3 +56,8 @@ So I decided to log it down for me and any new comer for MAC :)
     change default shell to zsh with `chsh -s $(which zsh`
 * [超注音](https://applealmond.com/posts/27387)
 * [spectacle](https://www.spectacleapp.com/)
+* [awesome-vim-configuration](https://github.com/amix/vimrc)
+
+## Things you need to know
+
+* If you command + tab switch window and nothings come up, it is because there is no window for this application, to quit application just simply command + q, or you could open window for this application by top menu bar
