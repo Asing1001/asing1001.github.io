@@ -125,3 +125,4 @@ document.addEventListener('click', ()=>{
 ## Reference
 
 https://egghead.io/courses/getting-started-with-redux
+https://github.com/reduxjs/redux/blob/master/docs/recipes/reducers/ImmutableUpdatePatterns.md
