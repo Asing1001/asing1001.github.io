@@ -10,10 +10,11 @@ So I decided to log it down for me and any new comer for MAC :)
 ## Must install
 
 * homebrew
+    * You could almost install everything through `brew install <program name>` or `brew cask install <program with GUI>`
 * iterm2
 * [vscode](https://code.visualstudio.com/Download)
 * [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-    change default shell to zsh with `chsh -s $(which zsh`
+    * Change default shell to zsh with `chsh -s $(which zsh`
 
 ## Shortcut
 
