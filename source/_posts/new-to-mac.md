@@ -12,7 +12,8 @@ So I decided to log it down for me and any new comer for MAC :)
 * homebrew
 * iterm2
 * [vscode](https://code.visualstudio.com/Download)
-* [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
+* [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+    change default shell to zsh with `chsh -s $(which zsh`
 
 ## Shortcut
 
@@ -51,13 +52,23 @@ So I decided to log it down for me and any new comer for MAC :)
 ## Optional install
 
 * [nvm](https://github.com/creationix/nvm)
+    * Handle Nodejs environment
 * [Alfred](https://www.alfredapp.com/)
-* [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-    change default shell to zsh with `chsh -s $(which zsh`
+    * Replacement for `Spotlight`
 * [超注音](https://applealmond.com/posts/27387)
 * [spectacle](https://www.spectacleapp.com/)
+    * Shortcut for docking windows
 * [awesome-vim-configuration](https://github.com/amix/vimrc)
+* [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
+    * Best tool for launching app with custom shortcut
+* [insomnia]http://semaja2.net/ye-ol-projects/insomniaxinfo/
+    * Prevent mac sleep behavior
+* Beyond compare `brew cask install beyond-compare`
+    * Best diff tool ever
 
 ## Things you need to know
 
 * If you command + tab switch window and nothings come up, it is because there is no window for this application, to quit application just simply command + q, or you could open window for this application by top menu bar
+* `Spotlight` is search engine inside your Mac
+* `Finder` is File Manager
+* `Preview` has functionality of `painter`
