@@ -61,7 +61,7 @@ So I decided to log it down for me and any new comer for MAC :)
 * [awesome-vim-configuration](https://github.com/amix/vimrc)
 * [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
     * Best tool for launching app with custom shortcut
-* [insomnia]http://semaja2.net/ye-ol-projects/insomniaxinfo/
+* [insomniaX](http://semaja2.net/ye-ol-projects/insomniaxinfo/)
     * Prevent mac sleep behavior
 * Beyond compare `brew cask install beyond-compare`
     * Best diff tool ever
