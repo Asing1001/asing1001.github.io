@@ -22,7 +22,7 @@ So I decided to log it down for me and any new comer for MAC :)
 * [Spotify](https://support.spotify.com/us/using_spotify/system_settings/keyboard-shortcuts/)
 * [Evernote shorcut for mac](https://help.evernote.com/hc/en-us/articles/208313358-Keyboard-shortcuts-in-Evernote-for-Mac)
 * [Chrome](https://support.google.com/chrome/answer/157179?hl=zh-Hant)
-* Print screen area: `command + control + shift + 4` (control is optional for copy to clickboard)
+* Print screen area: `command + control + shift + 4` (`control` is optional for copy to clipboard)
 * Open link in new tab: `command + click`
 * Delete file: `command + backspace`
 * Lock screen: `ctrl + command + q`
