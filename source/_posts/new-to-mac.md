@@ -54,7 +54,7 @@ So I decided to log it down for me and any new comer for MAC :)
 
 ## Optional install
 
-* [Karabiner-Elements][https://github.com/tekezo/Karabiner-Elements]
+* [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements)
    * `brew cask install Karabiner-Elements`
    * Keyboard mapper, if you use mechanical keyboard you should install it!
 * [nvm](https://github.com/creationix/nvm)
