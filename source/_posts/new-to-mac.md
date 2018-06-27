@@ -53,19 +53,23 @@ So I decided to log it down for me and any new comer for MAC :)
 ## Optional install
 
 * [nvm](https://github.com/creationix/nvm)
-    * Handle Nodejs environment
+   * Handle Nodejs environment
 * [Alfred](https://www.alfredapp.com/)
-    * Replacement for `Spotlight`
+   * Replacement for `Spotlight`
 * [超注音](https://applealmond.com/posts/27387)
 * [spectacle](https://www.spectacleapp.com/)
-    * Shortcut for docking windows
+   * Shortcut for docking windows
 * [awesome-vim-configuration](https://github.com/amix/vimrc)
 * [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
-    * Best tool for launching app with custom shortcut
+   * Best tool for launching app with custom shortcut
 * [insomniaX](http://semaja2.net/ye-ol-projects/insomniaxinfo/)
-    * Prevent mac sleep behavior
-* Beyond compare `brew cask install beyond-compare`
-    * Best diff tool ever
+   * Prevent mac sleep behavior
+* Beyond compare 
+   * `brew cask install beyond-compare`
+   * Best diff tool ever
+* [Scroll Reverser](http://pilotmoon.com/scrollreverser/) 
+   * `brew cask install scroll-reverser`
+   * Seperate mouse / touchpad scroll direction setting
 
 ## Things you need to know
 
