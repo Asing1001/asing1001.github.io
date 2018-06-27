@@ -19,18 +19,20 @@ So I decided to log it down for me and any new comer for MAC :)
 ## Shortcut
 
 * [Mac shortcuts](https://support.apple.com/en-us/ht201236)
-* Print screen area: command + control + shift + 4 (control is optional for copy to clickboard)
-* Open link in new tab: command + click
-* Delete file: command + backspace
-* Lock screen: ctrl + command + q
+* [Spotify](https://support.spotify.com/us/using_spotify/system_settings/keyboard-shortcuts/)
 * [Evernote shorcut for mac](https://help.evernote.com/hc/en-us/articles/208313358-Keyboard-shortcuts-in-Evernote-for-Mac)
-* Close window: command + w
-* Quit app: command + q
-* Fullscreen/Normalscreen: ctrl + command + f
-* Hide window: command + m
-* Show window: Hold command + tab to the app, then hold option then release command
-* Open application preference: command + ,
-* Switch different window in same application: command + `
+* [Chrome](https://support.google.com/chrome/answer/157179?hl=zh-Hant)
+* Print screen area: `command + control + shift + 4` (control is optional for copy to clickboard)
+* Open link in new tab: `command + click`
+* Delete file: `command + backspace`
+* Lock screen: `ctrl + command + q`
+* Close window: `command + w`
+* Quit app: `command + q`
+* Fullscreen/Normalscreen: `ctrl + command + f`
+* Hide window: `command + m`
+* Show window: Hold `command + tab` to the app, then hold `option` then release command
+* Open application preference: `command + ,`
+* Switch different window in same application: `` command + ` ``
 
 ## Settings
 
