@@ -4,7 +4,7 @@ date: 2018-06-01 03:15:00
 tags: [MAC, development]
 ---
 
-Today I start to use MAC for developing on my new job, it is really painful that so many shortcut or convention are different.
+Today I start to use MAC for developing in my new job, it is really painful that so many shortcut or convention are different.
 So I decided to log it down for me and any new comer for MAC :)
 
 ## Must install
@@ -14,7 +14,7 @@ So I decided to log it down for me and any new comer for MAC :)
 * iterm2
 * [vscode](https://code.visualstudio.com/Download)
 * [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-    * Change default shell to zsh with `chsh -s $(which zsh`
+    * Change default shell to zsh with `chsh -s $(which zsh)`
 
 ## Shortcut
 
