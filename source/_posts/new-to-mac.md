@@ -82,3 +82,7 @@ So I decided to log it down for me and any new comer for MAC :)
 * `Spotlight` is search engine inside your Mac
 * `Finder` is File Manager
 * `Preview` has functionality of `painter`
+
+## Read more
+
+* [Mac輸入法教學](http://letsoffice.tw/2016mackeyin/)
