@@ -1,10 +1,45 @@
 ---
 title: Vim cheat sheet
-date: 2018-04-11 17:03:34
+date: 2018-08-29 17:03:34
 tags: [vim]
 ---
 
 https://vim.rtorr.com/
+
+## Use relative line mode with vim
+
+In vim, you will frequently need to manipulate multi line with `3dd` `4yy` or something else, relative line mode in IDE could help you easy to count the line number.
+if you are using VScode like me, you could enable it by add the line to user setting:
+
+```json
+"editor.lineNumbers": "relative",
+```
+
+## Useful vim command combination list
+
+```bash
+# Make a word uppercase
+gUe
+
+# edit neariest word inside symbol, e.g. }
+ci}
+
+# edit neariest word outside symbol, e.g. ]
+ca]
+
+# edit and delete from cursor to next symbol, e.g. )
+ct)
+
+# edit and delete from cursor to previos symbol, e.g. )
+cT)
+
+
+# replace word with yanked word
+viwp
+
+```
+
+## Common command
 
 ```bash
 # Replace word A with word B
@@ -30,5 +65,4 @@ d
 
 # Undo
 u
-
 ```
