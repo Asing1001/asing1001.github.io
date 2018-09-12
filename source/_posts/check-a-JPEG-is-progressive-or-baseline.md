@@ -1,7 +1,7 @@
 ---
 title: Check a JPEG is progressive or baseline
 date: 2018-09-04 13:00:19
-tags: [JPEG, progressive, baseline, curl, hexdump, shell, grep]
+tags: [JPEG, JPG, progressive, baseline, curl, hexdump, shell, grep]
 ---
 
 ## Determine progressive JPEG by it's content

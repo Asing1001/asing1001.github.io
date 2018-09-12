@@ -47,6 +47,9 @@ rename <old name> <new name> <Regex match>
 # Connect to openvpn
 sudo openvpn --config client.ovpn
 
+# List port listening
+lsof -i :<port>
+
 # kill process by id
 kill PID
 
