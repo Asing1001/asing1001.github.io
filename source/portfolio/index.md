@@ -15,6 +15,12 @@ date: 2017-03-20 02:27:40
 `VueJS` `Redis` `NodeJS` `Crawler` 
 ![](index/ticket.png)
 
+## Nininanaa
+> [Live Preview](https://www.nininanaa.me/)
+*Long term support and built blog*
+`Hexo` `css` `ejs`
+<!-- ![](index/nini.png) -->
+
 ## Badminton map
 > [Live Preview](https://badmap.mvrater.com/) | [Github](https://github.com/Asing1001/badmintonmap.vue)   
 *Offer badminton information for public.*  
