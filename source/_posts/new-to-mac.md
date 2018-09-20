@@ -22,6 +22,7 @@ So I decided to log it down for me and any new comer for MAC :)
 * [Spotify](https://support.spotify.com/us/using_spotify/system_settings/keyboard-shortcuts/)
 * [Evernote shorcut for mac](https://help.evernote.com/hc/en-us/articles/208313358-Keyboard-shortcuts-in-Evernote-for-Mac)
 * [Chrome](https://support.google.com/chrome/answer/157179?hl=zh-Hant)
+* [Zsh Git Alias](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh)
 * Print screen area: `command + control + shift + 4` (`control` is optional for copy to clipboard)
 * Open link in new tab: `command + click`
 * Delete file: `command + backspace`
@@ -75,6 +76,10 @@ So I decided to log it down for me and any new comer for MAC :)
 * [Scroll Reverser](http://pilotmoon.com/scrollreverser/) 
    * `brew cask install scroll-reverser`
    * Seperate mouse / touchpad scroll direction setting
+* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+   * Make your git diff so fancy
+   * `brew install diff-so-fancy`
+   * `git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"`
 
 ## Things you need to know
 

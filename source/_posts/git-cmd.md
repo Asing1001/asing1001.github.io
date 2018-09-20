@@ -1,8 +1,16 @@
 ---
-title: Git commands cheatsheet
-date: 2018-02-08 18:29:07
+title: Build your own Git
+date: 2018-09-08 18:29:07
 tags: ["Git", "cmd"]
 ---
+
+## Recommend plugins
+
+* Make your diff so fancy - [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+* [ZSH Git alias](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh
+)
+
+## Commands
 
 ```bash
 # Roll back only one folder to one commit
