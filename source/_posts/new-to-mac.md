@@ -1,20 +1,45 @@
 ---
 title: New to Mac guide
-date: 2018-06-01 03:15:00
-tags: [MAC, development]
+date: 2018-09-19 03:15:00
+tags: [MAC, development, install-list]
 ---
 
-Today I start to use MAC for developing in my new job, it is really painful that so many shortcut or convention are different.
-So I decided to log it down for me and any new comer for MAC :)
+Recently I start to use Macbook Pro for software development. It is really painful that so many shortcut and software are different from Windows. I hope log it down could help some MAC new comers :)
 
-## Must install
+## Recommended install list
 
 * homebrew
-    * You could almost install everything through `brew install <program name>` or `brew cask install <program with GUI>`
-* iterm2
-* [vscode](https://code.visualstudio.com/Download)
+  * You could almost install everything through `brew install <program name>` or `brew cask install <program with GUI>`
+* [iterm2](https://www.iterm2.com/)
+  * Better terminal in MAC
 * [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-    * Change default shell to zsh with `chsh -s $(which zsh)`
+  * Change default shell to zsh with `chsh -s $(which zsh)`
+* [vscode](https://code.visualstudio.com/Download)
+* [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements)
+  * `brew cask install Karabiner-Elements`
+  * Keyboard mapper, if you use mechanical keyboard you should install it!
+* [nvm](https://github.com/creationix/nvm)
+  * Handle Nodejs environment
+* [Alfred](https://www.alfredapp.com/)
+  * Replacement for `Spotlight`
+* [超注音](https://applealmond.com/posts/27387)
+* [spectacle](https://www.spectacleapp.com/)
+  * Shortcut for docking windows
+* [awesome-vim-configuration](https://github.com/amix/vimrc)
+* [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
+  * Best tool for launching app with custom shortcut
+* [insomniaX](http://semaja2.net/ye-ol-projects/insomniaxinfo/)
+  * Prevent mac sleep behavior
+* Beyond compare
+  * `brew cask install beyond-compare`
+  * Best diff tool ever
+* [Scroll Reverser](http://pilotmoon.com/scrollreverser/)
+  * `brew cask install scroll-reverser`
+  * Seperate mouse / touchpad scroll direction setting
+* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
+  * Make your git diff so fancy
+  * `brew install diff-so-fancy`
+  * `git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"`
 
 ## Shortcut
 
@@ -42,44 +67,16 @@ So I decided to log it down for me and any new comer for MAC :)
 * Iterm
     `Menu bar` > `iterm2` > `Make iIerm2 default term`
 * VSCode
-    * To use `zsh`, edit user settings:
+  * To use `zsh`, edit user settings:
     ```json
     "terminal.integrated.shell.osx": "zsh",
     "terminal.integrated.fontFamily": "Menlo for Powerline"
     ```
-    * [Use terminal to open vscode](https://stackoverflow.com/questions/30065227/run-open-vscode-from-mac-terminal):
+  * [Use terminal to open vscode](https://stackoverflow.com/questions/30065227/run-open-vscode-from-mac-terminal):
     `Command + Shift + P` then `Shell Command : Install code in PATH`, then you can type `code <folder path>` to open vscode
 * zsh
-    * [osx](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx)
-    * [zsh-completions](https://github.com/zsh-users/zsh-completions)
-
-## Optional install
-
-* [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements)
-   * `brew cask install Karabiner-Elements`
-   * Keyboard mapper, if you use mechanical keyboard you should install it!
-* [nvm](https://github.com/creationix/nvm)
-   * Handle Nodejs environment
-* [Alfred](https://www.alfredapp.com/)
-   * Replacement for `Spotlight`
-* [超注音](https://applealmond.com/posts/27387)
-* [spectacle](https://www.spectacleapp.com/)
-   * Shortcut for docking windows
-* [awesome-vim-configuration](https://github.com/amix/vimrc)
-* [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
-   * Best tool for launching app with custom shortcut
-* [insomniaX](http://semaja2.net/ye-ol-projects/insomniaxinfo/)
-   * Prevent mac sleep behavior
-* Beyond compare 
-   * `brew cask install beyond-compare`
-   * Best diff tool ever
-* [Scroll Reverser](http://pilotmoon.com/scrollreverser/) 
-   * `brew cask install scroll-reverser`
-   * Seperate mouse / touchpad scroll direction setting
-* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
-   * Make your git diff so fancy
-   * `brew install diff-so-fancy`
-   * `git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"`
+  * [osx](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx)
+  * [zsh-completions](https://github.com/zsh-users/zsh-completions)
 
 ## Things you need to know
 
