@@ -1,7 +1,7 @@
 ---
 title: New to Mac guide
 date: 2018-09-19 03:15:00
-tags: [MAC, development, install-list]
+tags: [MAC, development, install-list, OSX, macOS]
 ---
 
 Recently I start to use Macbook Pro for software development. It is really painful that so many shortcut and software are different from Windows. I hope log it down could help some MAC new comers :)
@@ -77,6 +77,8 @@ Recently I start to use Macbook Pro for software development. It is really painf
 * zsh
   * [osx](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx)
   * [zsh-completions](https://github.com/zsh-users/zsh-completions)
+* Disable firefox and other apps notification sound
+  * `System Preferences > Notifications` Choose Firefox and uncheck `Play sound for notifications` to get rid of the sound.
 
 ## Things you need to know
 
