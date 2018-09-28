@@ -15,6 +15,18 @@ if you are using VScode like me, you could enable it by add the line to user set
 "editor.lineNumbers": "relative",
 ```
 
+## Get difference before save
+
+```bash
+:w !diff % -
+```
+### Explanation
+
+- `w` without filename will save to stdin 
+- `!` will excute bash in vim 
+- `%` is current file in vim
+- `diff` with `-` will read content from stdin
+
 ## Useful vim command combination list
 
 ```bash
@@ -42,6 +54,9 @@ viwp
 ## Common command
 
 ```bash
+# get recent command list
+q:
+
 # Replace word A with word B
 :%s/A/B/g
 
