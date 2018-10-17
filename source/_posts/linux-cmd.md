@@ -7,6 +7,9 @@ tags: ["Linux", "cmd"]
 **Always use `man commandName` to know what the command is before copy and paste.**
 
 ```bash
+# Open a new shell with root, exit with "exit" or "ctrl+d"
+sudo su -
+
 # Show how to use a command
 man command
 
@@ -17,7 +20,7 @@ whichis command
 whereis command
 
 # Use proxy
-export http_proxy=http://server-ip:port/ 
+export http_proxy=http://server-ip:port/
 export https_proxy=http://server-ip:port/
 
 # Check CentOS version
