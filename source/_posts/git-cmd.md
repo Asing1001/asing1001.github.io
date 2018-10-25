@@ -1,7 +1,7 @@
 ---
-title: Build your own Git
+title: "Git commands and tricks you must know"
 date: 2018-09-08 18:29:07
-tags: ["Git", "cmd"]
+tags: ["Git", "cmd", "diff", "zsh", commands]
 ---
 
 ## Recommend plugins
