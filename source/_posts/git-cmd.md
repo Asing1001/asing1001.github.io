@@ -13,6 +13,9 @@ tags: ["Git", "cmd", "diff", "zsh", commands]
 ## Commands
 
 ```bash
+# Remove tracking branches no longer on remote
+git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
+
 # Roll back only one folder to one commit
 git checkout hashOfCommit folderName
 
