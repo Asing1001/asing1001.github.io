@@ -1,12 +1,14 @@
 ---
 title: Connect to GCP mysql through XAMPP
 date: 2018-11-18 23:37:10
-tags: [XAMPP, MYSQL, GCP]
+tags: [XAMPP, MYSQL, GCP, SQL, Google Cloud Platform]
 ---
 
 ## Requirement
 
-Connect to a cloud mySQL DB through XAMPP
+Connect to Google Cloud Platform mySQL DataBase through XAMPP
+
+<!-- more -->
 
 ## Solution steps
 
@@ -17,24 +19,25 @@ Connect to a cloud mySQL DB through XAMPP
     {% asset_img "create.png" %}
 1. Wait a few minutes for Google setup the mysql instance
 1. Click your instance name
-1. Go to **overview** tab and find mysql IP address
+1. Go to **overview** tab and copy mysql IP address, `e.g. 1.2.3.4`
     {% asset_img "mysql-ip.png" %}
 1. Open XAMPP phpMyAdmin Config, located in `XAMPP > Apache > Config > phpMyAdmin(config.inc.php)`
     {% asset_img "xampp.png" %}
 1. Edit following lines in the configuration
     ```php    
-    /* Authentication type and info */
+    /* Paste username / password */
     $cfg['Servers'][$i]['user'] = 'root';
     $cfg['Servers'][$i]['password'] = '<your password>';
     
-    /* Bind to the localhost ipv4 address and tcp */
-    $cfg['Servers'][$i]['host'] = '';    
+    /* Paste mysql ip address */
+    $cfg['Servers'][$i]['host'] = '1.2.3.4';    
     ```    
 1. Go to **Authorization(連線設定)** tab
 1. Click `Add network` under public ip
-1. Paste your ip address which could find by [What is my ip](http://ipv4.whatismyv6.com/)
     {% asset_img "add-network.png" %}
-1. Start your Apache, go to http://localhost/phpmyadmin/ and find it is connected, enjoy :)
+1. Paste your ip address, which could be found through [What is my ip](http://ipv4.whatismyv6.com/)    
+1. Start XAMPP Apache, go to http://localhost/phpmyadmin/ and find it is connected, enjoy :)
+    {% asset_img "phpadmin.png" %}
 
 ## Reference
 
