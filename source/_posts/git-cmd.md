@@ -13,11 +13,18 @@ tags: ["Git", "cmd", "diff", "zsh", commands]
 ## Commands
 
 ```bash
+# Delete local branch
+git -D <branch_name>
+
+# Delete remote branch, there are two options
+git push <remote_name> :<branch_name>
+git push <remote_name> --delete <branch_name>
+
 # Remove tracking branches no longer on remote
 git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done
 
 # Roll back only one folder to one commit
-git checkout hashOfCommit folderName
+git checkout <hash_of_commit> <folder_name>
 
 # Discard every change
 git reset --hard
@@ -48,9 +55,9 @@ git rebase --skip # you will need this if no change in some steps
 git rebase --continue # After resolving conflict and git add <conflict file>
 
 $ git rebase -i HEAD~3 # You need to edit "pick" part to tell git to do commands on the commit
-pick 8b9100d add relative line mode
-pick f175572 add gzip size measuring
-pick 9bac799 :book: check progressive JPEG
+pick 8b9100d commit message 1
+pick f175572 commit message 2
+pick 9bac799 commit message 3
 
 # Rebase 9a4f60e..9bac799 onto 9a4f60e (3 commands)
 #
