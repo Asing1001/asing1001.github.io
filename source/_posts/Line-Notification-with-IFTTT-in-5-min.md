@@ -5,8 +5,12 @@ tags: [Line, IFTTT, Webhook, Line notify]
 ---
 
 1. Go to create my applet page in [IFTTT](https://ifttt.com/create)
-2. Choose `Webhooks > Receive a web request` as `this`
-3. Choose `Line > Send message` as `that`
-4. Go to [Webhooks](https://ifttt.com/maker_webhooks) > Documentation
-5. Get your `webhook_key` and `endpoint` here
-6. Try it and you will see message deliver to Line immdiately!
+1. Choose `this > Webhooks > Receive a web request`
+1. Set any `event name` and click `create trigger`
+1. Choose `that > Line > Send message`
+1. Set `Message` as `value1`
+    {% asset_img "sendMessage.png" %}
+1. Go to [Webhooks](https://ifttt.com/maker_webhooks)
+1. Click `Documentation` on the top right corner
+1. Fill up the `event name` and `value1` then try the `curl` example on the page
+1. You could see a message deliver to LINE immdiately!
