@@ -6,7 +6,7 @@ tags: [gzip, curl, wc, size]
 
 <!--more-->
 
-## Measure request size by gzip compression
+## Measure compressed request size with curl, gzip and wc
 
 To measure gzip sizing for a request, you don't need to actually gzip it, just use pipe `|` to pipe the stream from `curl` to `gzip` to `wc` :
 
