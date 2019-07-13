@@ -12,24 +12,24 @@ Nationality : Taiwan
 
 ## Career Summary
 
-- 4 years' experience in web development, specialized in frontend
-- Possess extensive and deep skill sets not only front-end but also NodeJS, C#, Webapi, databases
-- Strong experience in performance tuning, SEO, ELK, CI/CD
-- Top 10% Javascript developer in Stackoverflow with 2k+ reputation
-- Willing to learn and share, proactive in work, reliable team player
-- Github : https://github.com/Asing1001
+- 5 years' experience in web development, specialized in frontend
+- Possess deep skills in front-end, master in the browser engine rendering and JavaScript optimization
+- Full stack skills including NodeJS, C#, .NET, GraphQL, databases, APP development
+- Strong experiences in performance tuning, SEO, ELK, CI/CD, Kubernetes
+- Willing to learn and share, proactive in work, a reliable team player
+- Github: https://github.com/Asing1001 
 
 ## Skills Summary
 
 ### Technical skill : 
 
-- Programming language: Javascript, C#, Python
-- Frontend: ReactJS, AngularJS, VueJS, HTML, CSS, Webpack, Typescript, PWA
-- Backend: NodeJS, ASP.NET MVC, ASP.NET Webapi, GraphQL
+- Programming language: Javascript, Typescript, C#, Python
+- Frontend: VueJS, Server-Side rendering, ReactJS, AngularJS, HTML, CSS, Webpack, PWA
+- Backend: NodeJS, GraphQL, ASP.NET MVC, ASP.NET Webapi
 - Databases: Redis, MongoDB, MSSQL, Elastic Search
-- Testing: Mocha, Selenium, MSTest
-- CI/CD: Jenkins, Travis, Codeship
-- Cloud service: Heroku, Azure
+- Testing: Jest, Mocha, Cypress, Selenium, MSTest
+- CI/CD: Drone, Jenkins, Travis, Codeship
+- Cloud Native: Heroku, Azure
 - SCM: GIT, SVN
 - Analytics: ELK, GA, GTM, Google Search Console
 - Other: Performance tuning, SEO, Crawler
@@ -46,7 +46,14 @@ Nationality : Taiwan
 
 ## Work Experience
 
-### Xuenn - Senior full stack engineer - *2014/10-present*
+### LINE - Software engineer = *2018/06-present*
+
+#### Responsibilities
+
+- System design and develop, focus on VueJS, VueX, SSR, GraphQL, and noSQL DBs.
+- Devops including Drone, Kubenetes and container solutions.
+
+### Xuenn - Full stack engineer - *2014/10-2018/05*
 
 #### Responsibilities
 
