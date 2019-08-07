@@ -50,8 +50,10 @@ Nationality : Taiwan
 
 #### Responsibilities
 
-- System design and develop, focus on VueJS, VueX, SSR, GraphQL, and noSQL DBs.
-- Devops including Drone, Kubenetes and container solutions.
+- Design / develop LINE shopping and LINE travel
+- Develop services with VueJS, VueX, VueSSR, GraphQL, Express, Redis, MongoDB, Elasticsearch
+- Unit test / Integration test with Jest and Cypress
+- DevOps - containerized CI/CD with Drone, Kubernetes
 
 ### Xuenn - Full stack engineer - *2014/10-2018/05*
 
@@ -66,7 +68,7 @@ Nationality : Taiwan
 #### Projects
 
 Online gaming portal (Desktop, Mobile, MobileApp webview)
-  - Role: Front-end major developer, 30 team members  
+  - Role: Front-end developer, 30 team members  
   - Solution:
     - Revamp UI with AngularJS and ASP.NET Webapi
     - Provide multi-language and localized gaming portal by integrating CMS
