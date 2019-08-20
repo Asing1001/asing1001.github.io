@@ -30,10 +30,11 @@ skip_render: [README.md]
 
 # Social links
 social:
-  GitHub: https://github.com/asing1001
-  StackOverflow: https://stackoverflow.com/users/3959161/andy-chen?tab=profile
-  Linkedin: https://www.linkedin.com/in/andychen-pro/
-  Facebook: https://www.facebook.com/singming.chen.7
+  GitHub: https://github.com/asing1001 || github
+  E-Mail: mailto:sing@paddingleft.com || envelope
+  Linkedin: https://www.linkedin.com/in/andychen-pro/ || linkedin
+  Facebook: https://www.facebook.com/sing1001 || facebook
+  StackOverflow: https://stackoverflow.com/users/3959161/andy-chen?tab=profile || stack-overflow
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -50,7 +51,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -59,7 +60,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -88,16 +89,16 @@ deploy:
   type: git
   repo: https://github.com/Asing1001/asing1001.github.io.git
   branch: master
-  message: 
+  message:
 
 algolia:
   applicationID: 'RG9H1JR5W2'
   apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206'
   indexName: 'blog'
 
-# hexo-generator-amp 
-# The following settings is the quick start options. 
- 
+# hexo-generator-amp
+# The following settings is the quick start options.
+
 generator_amp:
   templateDir:  amp-template
   assetDistDir: amp-dist
@@ -109,4 +110,4 @@ generator_amp:
     path:   sample/sample-substituteTitleImage.png
     width:  1024
     height: 800
-  warningLog: true   # To display warning, please set true. 
+  warningLog: true   # To display warning, please set true.
