@@ -20,10 +20,11 @@ if you are using VScode like me, you could enable it by add the line to user set
 ```bash
 :w !diff % -
 ```
+
 ### Explanation
 
-- `w` without filename will save to stdin 
-- `!` will excute bash in vim 
+- `w` without filename will save to stdin
+- `!` will excute bash in vim
 - `%` is current file in vim
 - `diff` with `-` will read content from stdin
 
@@ -45,10 +46,15 @@ ct)
 # edit and delete from cursor to previos symbol, e.g. )
 cT)
 
-
 # replace word with yanked word
 viwp
 
+# Comment multi line, for example using # for comment
+1. Ctrl + v to enter "Visual block mode"
+2. Move cursor to select lines that need to be edited
+2. Shift + i
+3. #
+4. Esc
 ```
 
 ## Common command
@@ -80,4 +86,10 @@ d
 
 # Undo
 u
+
+# Redo
+ctrl + r
+
+# Show Line numbers
+set number
 ```
