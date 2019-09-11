@@ -42,3 +42,27 @@ Step2 - Remove submodule config in `.gitmodules`
 path = themes/next-reloaded
 url = https://github.com/Asing1001/hexo-next.git
 ```
+
+## Update submodule to latest commit
+
+Step1 - Checkout the target version of the submodule
+
+```bash
+# Go to the submodule folder
+cd projB/projA
+# Checkout the target commit
+git pull origin master
+```
+
+Step2 - Commit the update
+
+```bash
+# Back to the parent folder
+cd ..
+git add projB/projA
+git commit -m "submodule projA updated"
+```
+
+## Reference
+
+- https://stackoverflow.com/questions/8191299/update-a-submodule-to-the-latest-commit
