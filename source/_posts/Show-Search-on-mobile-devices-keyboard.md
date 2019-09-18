@@ -7,10 +7,10 @@ tags: [Android, IOS, Search, Keyboard, 顯示搜尋按鈕]
 <img style="width:200px" src="/2019/09/18/Show-Search-on-mobile-devices-keyboard/search_button.jpeg">
 
 - In Android, only `type="search"` is required on `<input>`
-- In IOS, it is required to wrap `<input type="search">` inside a `<form>`, note that attribute `action` is must-have.
+- In IOS, it is required to wrap `<input type="search">` inside a `<form action>`, note that attribute `action` is must-have.
 
 ```html
-<form action="/s">
+<form action>
   <input
     type="search"
   >
