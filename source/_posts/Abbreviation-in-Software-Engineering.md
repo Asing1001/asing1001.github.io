@@ -17,10 +17,11 @@ table th:nth-of-type(2) {
 
 This sheet is to record abbreviation in my daily work as a software engineer.
 
-| Abbreviation | Full name                       | Explain                                                  |
-| ------------ | ------------------------------- | -------------------------------------------------------- |
-| CDC          | Change data capture             | Use to sync one db data change to another db             |
-| MPLS         | Multi-Protocol Label Switching  | Link site to site network like both in same network      |
-| IDC          | Internet Data Center            | Buildings where we put servers                           |
-| REST         | REpresentational State Transfer | Architectural style defines a set of constraints on HTTP |
+| Abbreviation | Full name                       | Explain                                                                                   |
+| ------------ | ------------------------------- | ----------------------------------------------------------------------------------------- |
+| CDC          | Change data capture             | Use to sync one db data change to another db                                              |
+| MPLS         | Multi-Protocol Label Switching  | Link site to site network like both in same network                                       |
+| IDC          | Internet Data Center            | Buildings where we put servers                                                            |
+| REST         | REpresentational State Transfer | Architectural style defines a set of constraints on HTTP                                  |
 | CNAME        | Canonical Name                  | A DNS record to point a/b/c domain to d domain so you don't have to add A record in a/b/c |
+| ACL          | Access Control List             | An ACL specifies which users or system processes are granted access to objects |
