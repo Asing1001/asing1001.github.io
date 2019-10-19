@@ -59,6 +59,7 @@ Recently I start to use Macbook Pro for software development. It is really painf
 * Show window: Hold `command + tab` to the app, then hold `option` then release command
 * Open application preference: `command + ,`
 * Switch different window in same application: `` command + ` ``
+* Show desktop `(fn) + F11`
 
 ## Settings
 
