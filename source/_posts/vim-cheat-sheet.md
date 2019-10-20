@@ -1,52 +1,65 @@
 ---
-title: Vim cheat sheet
+title: Awesome Vim cheat sheet
 date: 2018-08-29 17:03:34
-tags: [vim]
+tags: [vim, line number]
 ---
 
-https://vim.rtorr.com/
+## Switch mode
 
-## Use relative line mode with vim
+### Insert mode
 
-In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or something else, relative line mode in IDE could help you easy to count the line number.
+- i
+  - insert before the char
+- I
+  - insert before the start of line
+- a
+  - append after the char
+- A
+  - append at the end of line
 
-- In vim
+### Normal mode
 
-```vi
-:set rnu
-```
+- ESC
 
-- In VSCode:
+### Visual mode
 
-```json
-"editor.lineNumbers": "relative",
-```
+- v
+  - select a char
+- V
+  - select a line
+- Ctrl + v
+  - visual block mode
 
-## Get difference before save
+## Move cursor(Normal mode)
 
-```bash
-:w !diff % -
-```
+### char
 
-### Explanation
+- h
+- j
+- k
+- l
 
-- `w` without filename will save to stdin
-- `!` will excute bash in vim
-- `%` is current file in vim
-- `diff` with `-` will read content from stdin
-
-### Navigation
+### Word
 
 - w
+  - go to next start of word
 - e
+  - go to end of word
 - b
+  - back to start of word
 
 ### Block & Paragraph
 
-- {} - goto blank line
-- () - goto ()
-- [] - goto []
-- [{ or }] - goto start/end of block
+- {}
+  - goto blank line
+- ()
+  - goto ()
+- []
+  - goto []
+- [{ or }]
+  - goto start/end of block
+- %
+  - go to the match bracket
 
 ### Window
 
@@ -64,7 +77,7 @@ In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or so
 - G
   - end of file
 
-### Scroll
+## Scroll
 
 - zt
   - scroll current line to top
@@ -73,7 +86,9 @@ In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or so
 - zz
   - scroll current line to middle
 
-### Search char in single line (keep mode)
+## Search
+
+### Search char in single line (keep normal mode)
 
 - f/F
   - find char, forward/backward
@@ -97,7 +112,7 @@ In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or so
 - *, #
   - search next/previous current word
 
-### Edit
+## Edit
 
 - insert line before/after the current line
   - o, O
@@ -147,7 +162,7 @@ In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or so
 - There are three dimention in vim
   - window, file, project
 - Use vim like your mouse
-  - e.g. delete Bar in fooBarBeBaz, `fBdfe`
+  - e.g. delete `Bar` in `fooBarBeBaz`, `fBdfe`
 
 ## Useful vim command combination list
 
@@ -201,3 +216,53 @@ Ctrl + A
 # decrease the first right number in the line
 Ctrl + X
 ```
+
+## Use relative line mode with vim
+
+In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or something else, relative line mode in IDE could help you easy to count the line number.
+
+- In vim
+
+```vi
+:set rnu
+```
+
+- In VSCode:
+
+```json
+"editor.lineNumbers": "relative",
+```
+
+## Get difference before save
+
+```bash
+:w !diff % -
+```
+
+### Explanation
+
+- `w` without filename will save to stdin
+- `!` will excute bash in vim
+- `%` is current file in vim
+- `diff` with `-` will read content from stdin
+
+## vimrc
+
+`"` is the comment symbol in .vimrc, could only be placed at the start of line
+
+```vi
+"Enable copy paste from system clibboard
+set clipboard^=unnamed,unnamedplus
+
+"Show differt cursor in different mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+"Show relative line number
+set rnu
+```
+
+### Reference
+
+- https://vim.rtorr.com/
