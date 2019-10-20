@@ -1,7 +1,7 @@
 ---
 title: Schedule backup Mongodb to AWS S3 with DroneCI cronjob
 date: 2019-10-18 15:42:08
-tags: [Schedule backup, mongodump, DroneCI, cronjob, AWS, S3, docker, pipeline]
+tags: [Schedule backup, mongodump, DroneCI, cronjob, AWS, S3, docker, pipeline, CI]
 ---
 
 To schedule backup mongodb to AWS S3 could be done extremely easy in any docker pipeline, here is an example using DroneCI docker pipeline and cronjob feature. The complete code example could be found here: https://github.com/Asing1001/mongodb-s3-backup.
