@@ -8,8 +8,15 @@ https://vim.rtorr.com/
 
 ## Use relative line mode with vim
 
-In vim, you will frequently need to manipulate multi line with `3dd` `4yy` or something else, relative line mode in IDE could help you easy to count the line number.
-if you are using VScode like me, you could enable it by add the line to user setting:
+In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or something else, relative line mode in IDE could help you easy to count the line number.
+
+- In vim
+
+```vi
+:set rnu
+```
+
+- In VSCode:
 
 ```json
 "editor.lineNumbers": "relative",
@@ -27,6 +34,120 @@ if you are using VScode like me, you could enable it by add the line to user set
 - `!` will excute bash in vim
 - `%` is current file in vim
 - `diff` with `-` will read content from stdin
+
+### Navigation
+
+- w
+- e
+- b
+
+### Block & Paragraph
+
+- {} - goto blank line
+- () - goto ()
+- [] - goto []
+- [{ or }] - goto start/end of block
+
+### Window
+
+- H
+  - Top of window
+- L
+  - Last of window
+- M
+  - Middle of window
+
+### File
+
+- gg
+  - Start
+- G
+  - end of file
+
+### Scroll
+
+- zt
+  - scroll current line to top
+- zb
+  - scroll current line to bottom
+- zz
+  - scroll current line to middle
+
+### Search char in single line (keep mode)
+
+- f/F
+  - find char, forward/backward
+  - `abcABCabc`, `fC` to find middle C
+- t/T
+  - Go to previous char before the char, forward/backward
+  - `foo.bar<>` , go to r by `t<`
+- ;
+  - Repeat t/T/f/F
+- ,
+  - Reverse t/T/f/F
+
+### Search in file
+
+- /
+  - Search forward
+- ?
+  - Search backward
+- n and N
+  - next and previous
+- *, #
+  - search next/previous current word
+
+### Edit
+
+- insert line before/after the current line
+  - o, O
+- join two line (keep mode)
+  - j
+- yank (copy) the current line
+  - yy, Y
+- Cut and change to insert mode
+  - c
+    - Change
+  - s
+    - substitute
+  - C
+    - Cut to end of line
+  - S
+    - Delete line and go to insert mode
+- delete
+  - d(keep mode)
+    - `d3j` or `3dd`
+  - x and X
+    - delete and backspace
+- replace
+  - r
+- repeat action
+  - .
+- Macro
+  - q + a~z
+    - record macro to key in a~z
+  - normal mode + q to quit recording
+  - @ + a~z to excute macro
+- Bookmark
+  - m + a~z
+    - bookmark current location to a~z
+  - ` + a~z
+    - go to a~z bookmark
+- clipboard register key
+  - " + a~z
+    - Specify which register to use on the following command
+    - `0` is default clipboard for `y`(yank)
+    - `"` is default clipboard for others
+    - e.g. `"adw` : delete the and save it to register `a`
+    - e.g. `"0p` : paste from last yank
+    - e.g. to copy `foo` and replace `bar` with it, `yw` then `fbardw"0p`
+
+## Concept
+
+- There are three dimention in vim
+  - window, file, project
+- Use vim like your mouse
+  - e.g. delete Bar in fooBarBeBaz, `fBdfe`
 
 ## Useful vim command combination list
 
@@ -46,50 +167,37 @@ ct)
 # edit and delete from cursor to previos symbol, e.g. )
 cT)
 
+# delete inside tag
+dit
+
 # replace word with yanked word
 viwp
 
 # Comment multi line, for example using # for comment
 1. Ctrl + v to enter "Visual block mode"
 2. Move cursor to select lines that need to be edited
-2. Shift + i
-3. #
-4. Esc
-```
+3. Shift + i
+4. #
+5. Esc
 
-## Common command
+# Show Line numbers
+:set number
 
-```bash
+# Set relative line number
+:set rnu
+
 # get recent command list
 q:
 
 # Replace word A with word B
 :%s/A/B/g
 
-# Next word
-w
+# Undo/Redo
+u / Ctrl+r
 
-# Previous word
-b
+# increase the first right number in the line
+Ctrl + A
 
-# copy (yank)
-y
-
-# copy line
-yy
-
-# paste
-p
-
-# delete
-d
-
-# Undo
-u
-
-# Redo
-ctrl + r
-
-# Show Line numbers
-set number
+# decrease the first right number in the line
+Ctrl + X
 ```
