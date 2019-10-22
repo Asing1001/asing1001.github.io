@@ -13,6 +13,9 @@ tags: ["Git", "cmd", "diff", "zsh", commands]
 ## Commands
 
 ```bash
+# Remove untracked files
+git clean -fd
+
 # Delete local branch
 git -D <branch_name>
 
