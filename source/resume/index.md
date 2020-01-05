@@ -7,29 +7,27 @@ comments: false
 ## Sing Ming Chen
 
 Email : sing@paddingleft.com  
-Phone : (+886)910128813  
-Nationality : Taiwan  
+Phone : (+886)910128813
 
 ## Career Summary
 
 - 5 years' experience in web development, specialized in frontend
 - Possess deep skills in front-end, master in the browser engine rendering and JavaScript optimization
-- Full stack skills including NodeJS, C#, .NET, GraphQL, databases, APP development
+- Full stack skills including NodeJS, C#, .NET, GraphQL, databases
 - Strong experiences in performance tuning, SEO, ELK, CI/CD, Kubernetes
-- Willing to learn and share, proactive in work, a reliable team player
 - Github: https://github.com/Asing1001 
 
 ## Skills Summary
 
-### Technical skill : 
+### Technical skills
 
 - Programming language: Javascript, Typescript, C#, Python
 - Frontend: VueJS, Server-Side rendering, ReactJS, AngularJS, HTML, CSS, Webpack, PWA
 - Backend: NodeJS, GraphQL, ASP.NET MVC, ASP.NET Webapi
 - Databases: Redis, MongoDB, MSSQL, Elastic Search
 - Testing: Jest, Mocha, Cypress, Selenium, MSTest
-- CI/CD: Drone, Jenkins, Travis, Codeship
-- Cloud Native: Heroku, Azure
+- CI/CD: Drone, Jenkins, Travis, Codeship, ArgoCD
+- Cloud Native: Heroku, Azure, k8s solutions
 - SCM: GIT, SVN
 - Analytics: ELK, GA, GTM, Google Search Console
 - Other: Performance tuning, SEO, Crawler
@@ -46,83 +44,82 @@ Nationality : Taiwan
 
 ## Work Experience
 
-### LINE - Software engineer = *2018/06-present*
+### LINE - Software engineer - *2018/06-present*
 
 #### Responsibilities
 
-- Design / develop LINE shopping and LINE travel
-- Develop services with VueJS, VueX, VueSSR, GraphQL, Express, Redis, MongoDB, Elasticsearch
+- System design / develop in LINE shopping and LINE travel
+- Built services with VueJS, VueX, VueSSR, GraphQL, Express, Redis, MongoDB, Elasticsearch
 - Unit test / Integration test with Jest and Cypress
-- DevOps - containerized CI/CD with Drone, Kubernetes
+- DevOps - containerized CI/CD with Drone, ArgoCD, Kubernetes
 
 ### Xuenn - Full stack engineer - *2014/10-2018/05*
 
 #### Responsibilities
 
 - System design / develop, focus on front-end, noSQL and .NET solutions
-- Develop / Maintain high traffic websites include gaming portal, CMS, promotion system, backoffice
-- Production support/deployment
-- Performance tuning, SEO enhancement
-- Product API integration with multiple companies
+- Develop / Maintain high traffic websites include gaming portal, CMS, promotion system
+- Frontend performance tuning, SEO enhancement
+- Product integration with multiple companies
 
 #### Projects
 
-Online gaming portal (Desktop, Mobile, MobileApp webview)
-  - Role: Front-end developer, 30 team members  
-  - Solution:
-    - Revamp UI with AngularJS and ASP.NET Webapi
-    - Provide multi-language and localized gaming portal by integrating CMS
-    - Extend maintainability by refactor and decouple system with TDD
+Gaming portal revamp and performance tuning (Desktop, Mobile, MobileApp webview)
+  - Role: System Analysis, Developer
+  - Solution: 
+    - Migrate Webform to AngularJS + ASP.NET Webapi
+    - Introduce Service Worker - Reduce 50% page loading time by caching response from CMS/CDN
+    - Angular template cache - Reduce 30% request by compressing AngularJS templates with webpack
+    - Use .woff/.woff2 font file - Replace .ttf/.eot with smaller and browser-supported font file, reduce 50% sizing
+    - Centralize cache - Reduce 95% server start time and 90% read query by centralizing application cache into Redis
+      ![](https://raw.githubusercontent.com/Asing1001/system-diagrams/master/centralized-cache.jpg)
+
+SEO enhancement - seo crawler & prerender
+  - Role: Project owner, System Analysis, Developer
+  - Solution: Help search engines index Ajax contents by making snapshot of our pages
+    ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
+    
+No Downtime Deployment Mechanism  
+  - Role: System Analysis, Developer
+  - Features: To allow deployments can be tested before open to public and without downtime
+    ![](https://user-images.githubusercontent.com/6785698/71785538-a5239e00-303b-11ea-87ef-99c03f5bc790.png)
 
 Realtime messaging system
-  - Role: Front-end major developer, 3 team members
+  - Role: Developer
   - Solution: Provide realtime functionality and notification by SignalR and Redis Pub/Sub
 
 Content management system
-  - Role: Full stack developer, 5 team members
+  - Role: Developer
   - Solution:
-    - Support custom RWD layout in CMS with dynamic bootstrap settings
+    - Support custom RWD layout in CMS with dynamic bootstrap settings    
     - Provide dynamic widgets with AngularJS directive
+    - Provide region-language localized content to consumers
     ![](https://github.com/Asing1001/system-diagrams/blob/master/CMS.jpg?raw=true)
-    
-SEO enhancement - seo crawler & prerender
-  - Role: Project owner  
-  - Solution: Make search engine index Ajax contents with making seo-crawler
-    ![](https://github.com/Asing1001/system-diagrams/blob/master/seo-crawler-prerender.jpg?raw=true)
-    
-Main site performance tuning
-  - Role: Major developer, 2 team members  
-  - Solution: 
-    - Service-worker - Reduce 50% page loading time by caching response from CMS/CDN
-    - Redis-cache - Reduce 95% server start time and 90% read query by centralizing application cache into Redis, 
-    ![](https://raw.githubusercontent.com/Asing1001/system-diagrams/master/centralized-cache.jpg)
-    - Angular template cache - Reduce 30% request by compressing AngularJS templates with webpack
-    - Use .woff/.woff2 font file - Replace .ttf/.eot with smaller and browser-supported font file, reduce 50% sizing
     
 ### Hess International Educational - English Teacher *2012/05-2013/05(part-time)*
 
-- Teach class in full English
+- Teach primary school students in English
 - Communication with parents and foreign teachers
     
 ## Open Source projects (https://github.com/Asing1001)
 
 [Universiade ticket](http://ticket.mvrater.com/) - https://github.com/Asing1001/universiade-ticket
-  - Role: Main contributor
-  - Purpose: Help people buy Universiade ticket easily by crawling official site then re-design
+  - Role: Major contributor
+  - Purpose: Help people buy Universiade tickets easily by crawling official site and re-design
   - Feature: 120+ Github Stars, 10+ News report, 5k buy action, 100k pageview in one week
   - Reference news: https://buzzorange.com/techorange/2017/08/23/universiade-ticket-checker-app/
     ![](https://github.com/Asing1001/system-diagrams/blob/master/universiade-ticket.jpg?raw=true)
 
+[MovieRater](https://www.mvrater.com/) - https://github.com/Asing1001/movieRater.React
+  - Role: Major contributor
+  - Purpose: To help people find movie's rating and comments easier
+  - Feature: Built by ReactJS, Typescript, GraphQL, NodeJS, MongoDB, Heroku
+    ![](https://github.com/Asing1001/system-diagrams/blob/master/mvrater.jpg?raw=true)
+
 [MVCshopping mall](http://wecarestore.azurewebsites.net/) -  https://github.com/Asing1001/MVCShoppingMall
-  - Role: Main contributor
+  - Role: Major contributor
   - Purpose: Demonstrate how to build e-commerce platform by ASP.NET MVC
   - Feature: Provide a one-click setup by code-first and data seeding
-
-[MovieRater](https://www.mvrater.com/) - https://github.com/Asing1001/movieRater.React
-  - Role: Main contributor
-  - Purpose: To help people find movie's rating and comment easier
-  - Feature: Built by ReactJS, Typescript, GraphQL, NodeJS, MongoDB
-    ![](https://github.com/Asing1001/system-diagrams/blob/master/mvrater.jpg?raw=true)
 
 ## Awards
 
