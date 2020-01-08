@@ -12,7 +12,6 @@ Phone : (+886)910128813
 ## Career Summary
 
 - 5 years' experience in web development, specialized in frontend
-- Possess deep skills in front-end, master in the browser engine rendering and JavaScript optimization
 - Full stack skills including NodeJS, C#, .NET, GraphQL, databases
 - Strong experiences in performance tuning, SEO, ELK, CI/CD, Kubernetes
 - Github: https://github.com/Asing1001 
@@ -21,16 +20,16 @@ Phone : (+886)910128813
 
 ### Technical skills
 
-- Programming language: Javascript, Typescript, C#, Python
+- Programming language: Javascript, Typescript, C#
 - Frontend: VueJS, Server-Side rendering, ReactJS, AngularJS, HTML, CSS, Webpack, PWA
 - Backend: NodeJS, GraphQL, ASP.NET MVC, ASP.NET Webapi
-- Databases: Redis, MongoDB, MSSQL, Elastic Search
+- Databases: Redis, MongoDB, MSSQL, Elasticsearch
 - Testing: Jest, Mocha, Cypress, Selenium, MSTest
 - CI/CD: Drone, Jenkins, Travis, Codeship, ArgoCD
 - Cloud Native: Heroku, Azure, k8s solutions
 - SCM: GIT, SVN
 - Analytics: ELK, GA, GTM, Google Search Console
-- Other: Performance tuning, SEO, Crawler
+- Others: Performance tuning, SEO, Crawler
 
 ### Language
 
@@ -81,12 +80,12 @@ SEO enhancement - seo crawler & prerender
     
 No Downtime Deployment Mechanism  
   - Role: System Analysis, Developer
-  - Features: To allow deployments can be tested before open to public and without downtime
+  - Features: Allow deployments can be tested before open to public and without downtime
     ![](https://user-images.githubusercontent.com/6785698/71785538-a5239e00-303b-11ea-87ef-99c03f5bc790.png)
 
 Realtime messaging system
   - Role: Developer
-  - Solution: Provide realtime functionality and notification by SignalR and Redis Pub/Sub
+  - Feature: Provide realtime web notification by SignalR and Redis Pub/Sub
 
 Content management system
   - Role: Developer
