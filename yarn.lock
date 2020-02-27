@@ -1411,10 +1411,10 @@ hexo-fs@^1.0.2:
     escape-string-regexp "^1.0.5"
     graceful-fs "^4.1.11"
 
-hexo-generator-amp@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/hexo-generator-amp/-/hexo-generator-amp-3.1.2.tgz#4a93f21091a4104fb04000df20ca0285c7d7295a"
-  integrity sha512-B0ZqmQtGRsM6X6R0uSJIcIOp5xJCQX4+lRybjYRRdApM6cP9XLlXVF6Iz3iwqm/Exf3Un7FcBH6ZRpL2y/OanQ==
+hexo-generator-amp@^3.2.0:
+  version "3.2.0"
+  resolved "https://npm.tw.linecorp.com/hexo-generator-amp/-/hexo-generator-amp-3.2.0.tgz#a7750cb3fda0a58371749298a9a88bc099ee27ad"
+  integrity sha512-A4f1Qcjai9+iukp9yigFi67Ke83OCdWxYFhLmG3xOiscOJRRZLhPPQVF7wCnjJxobmmF/5PzvpQDA9kHCCS9fQ==
   dependencies:
     amphtml-validator "^1.0.21"
     bluebird "^3.5.1"
