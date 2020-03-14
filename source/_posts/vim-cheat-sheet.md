@@ -77,6 +77,17 @@ tags: [vim, line number]
 - G
   - end of file
 
+### Others
+
+- ctrl+o
+  - previous jump position
+- ctrl+i
+  - next jump position
+- g;
+  - previous Change position
+- g,
+  - next Change position
+
 ## Scroll
 
 - zt
@@ -148,14 +159,17 @@ tags: [vim, line number]
     - bookmark current location to a~z
   - ` + a~z
     - go to a~z bookmark
-- clipboard register key
+- clipboard register
   - " + a~z
-    - Specify which register to use on the following command
+    -  which register to use on the following command
     - `0` is default clipboard for `y`(yank)
-    - `"` is default clipboard for others
+    - `+` is system clipboard
     - e.g. `"adw` : delete the and save it to register `a`
     - e.g. `"0p` : paste from last yank
-    - e.g. to copy `foo` and replace `bar` with it, `yw` then `fbardw"0p`
+    - e.g. to copy `foo` and replace it with `bar`, `yw` then `/bardw"0p`
+  - In search mode, you could press `ctrl + r + register key` to use the value in register
+- Join lines
+  - J
 
 ## Concept
 
@@ -266,3 +280,4 @@ set rnu
 ### Reference
 
 - https://vim.rtorr.com/
+- http://vimdoc.sourceforge.net/htmldoc/motion.html

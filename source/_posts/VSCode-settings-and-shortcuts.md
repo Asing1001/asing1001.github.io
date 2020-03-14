@@ -5,6 +5,9 @@ tags: [VSCode, shortcuts, setting]
 ---
 
 - `command 0` - Focus on sidebar
+- `cmd+d` - For don't save
+- `gb` - For multi cursor in vim mode
+- `cmd+shift+.` - show breadcumb
 
 ## Settings.json
 
@@ -14,3 +17,7 @@ tags: [VSCode, shortcuts, setting]
   "editor.snippetSuggestions": "top",
 }
 ```
+
+# References
+
+- http://vimdoc.sourceforge.net/htmldoc/motion.html
