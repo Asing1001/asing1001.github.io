@@ -1,13 +1,13 @@
 language: node_js
-node_js: 8.12.0
+node_js: 12
 branches:
   only:
   - hexo
 script:
   - yarn global add hexo-cli
-  - hexo clean  
+  - hexo clean
 after_success:
-  - git config --global user.name "Andy Chen" 
+  - git config --global user.name "Andy Chen"
   - git config --global user.email "shinningstar1001@gmail.com"
   - sed -i'' "/^ *repo/s~github\.com~${Github_Token}@github.com~" _config.yml
   - hexo deploy
