@@ -51,13 +51,13 @@ tags: [vim, line number]
 ### Block & Paragraph
 
 - {}
-  - goto blank line
+  - paragraphs forward/backward
 - ()
-  - goto ()
+  - sentences forward/backward
 - []
   - goto []
-- [{ or }]
-  - goto start/end of block
+- [{ or }] or [( or )] or [[ or ]]
+  - goto start/end of { or ( or [
 - %
   - go to the match bracket
 
@@ -159,11 +159,20 @@ tags: [vim, line number]
     - bookmark current location to a~z
   - ` + a~z
     - go to a~z bookmark
-- clipboard register
-  - " + a~z
-    -  which register to use on the following command
-    - `0` is default clipboard for `y`(yank)
-    - `+` is system clipboard
+  - ``
+    - go to last position
+- [registers](https://www.brianstorti.com/vim-registers/)
+  - " + registerKey (a~z, 0~9, "+*/:%-)
+    - `:reg` to see all registers
+    - `"` is the default(unnamed) register
+    - `0` is the default register for `y`(yank)
+    - `+`, `*` is the system clipboard
+    - `/` stores the latest search keyword
+    - `:` stores the latest used command
+    - `%` has the current file path
+    - `#` has the last edited file
+    - In command mode, `ctrl+r+<register>` to paste the register content into the command.
+    - e.g. `*:/s/<ctrl+r>//abc/gc` to replace the lastest search keyword(*) to `abc` with confirmation dialog
     - e.g. `"adw` : delete the and save it to register `a`
     - e.g. `"0p` : paste from last yank
     - e.g. to copy `foo` and replace it with `bar`, `yw` then `/bardw"0p`
@@ -281,3 +290,4 @@ set rnu
 
 - https://vim.rtorr.com/
 - http://vimdoc.sourceforge.net/htmldoc/motion.html
+- https://www.brianstorti.com/vim-registers/
