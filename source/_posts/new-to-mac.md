@@ -1,5 +1,5 @@
 ---
-title: New to Mac guide
+title: New to Macbook guide for developer
 date: 2018-09-19 03:15:00
 tags: [MAC, development, install-list, OSX, macOS]
 ---
