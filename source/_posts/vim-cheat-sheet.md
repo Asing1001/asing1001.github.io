@@ -159,7 +159,7 @@ tags: [vim, line number]
     - bookmark current location to a~z
   - ` + a~z
     - go to a~z bookmark
-  - ``
+  - \``
     - go to last position
 - [registers](https://www.brianstorti.com/vim-registers/)
   - " + registerKey (a~z, 0~9, "+*/:%-)
