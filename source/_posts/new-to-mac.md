@@ -17,22 +17,16 @@ Recently I start to use Macbook Pro for software development. It is really painf
 * [vscode](https://code.visualstudio.com/Download)
 * [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements)
   * `brew cask install Karabiner-Elements`
-  * Keyboard mapper, if you use mechanical keyboard you should install it!
+  * Keyboard mapper, if you use your own keyboard you should install it!
 * [nvm](https://github.com/creationix/nvm)
   * Handle Nodejs environment
-* [Alfred](https://www.alfredapp.com/)
-  * Replacement for `Spotlight`
 * [超注音](https://applealmond.com/posts/27387)
+  * Enable the ability to switch language by `shift`
 * [spectacle](https://www.spectacleapp.com/)
   * Shortcut for docking windows
 * [awesome-vim-configuration](https://github.com/amix/vimrc)
 * [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
   * Best tool for launching app with custom shortcut
-* [insomniaX](http://semaja2.net/ye-ol-projects/insomniaxinfo/)
-  * Prevent mac sleep behavior
-* Beyond compare
-  * `brew cask install beyond-compare`
-  * Best diff tool ever
 * [Scroll Reverser](http://pilotmoon.com/scrollreverser/)
   * `brew cask install scroll-reverser`
   * Seperate mouse / touchpad scroll direction setting
@@ -45,7 +39,6 @@ Recently I start to use Macbook Pro for software development. It is really painf
 
 * [Mac shortcuts](https://support.apple.com/en-us/ht201236)
 * [Spotify](https://support.spotify.com/us/using_spotify/system_settings/keyboard-shortcuts/)
-* [Evernote shorcut for mac](https://help.evernote.com/hc/en-us/articles/208313358-Keyboard-shortcuts-in-Evernote-for-Mac)
 * [Chrome](https://support.google.com/chrome/answer/157179?hl=zh-Hant)
 * [Zsh Git Alias](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh)
 * Print screen area: `command + control + shift + 4` (`control` is optional for copy to clipboard)
