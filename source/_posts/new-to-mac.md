@@ -8,15 +8,15 @@ Recently I start to use Macbook Pro for software development. It is really painf
 
 ## Recommended install list
 
-* homebrew
-  * You could almost install everything through `brew install <program name>` or `brew cask install <program with GUI>`
+* [homebrew](https://brew.sh/)
+  * You could almost install everything through `brew install <program name>` or `brew install --cask <program with GUI>`
 * [iterm2](https://www.iterm2.com/)
   * Better terminal in MAC
 * [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
   * Change default shell to zsh with `chsh -s $(which zsh)`
 * [vscode](https://code.visualstudio.com/Download)
 * [Karabiner-Elements](https://github.com/tekezo/Karabiner-Elements)
-  * `brew cask install Karabiner-Elements`
+  * `brew install --cask Karabiner-Elements`
   * Keyboard mapper, if you use your own keyboard you should install it!
 * [nvm](https://github.com/creationix/nvm)
   * Handle Nodejs environment
@@ -28,7 +28,7 @@ Recently I start to use Macbook Pro for software development. It is really painf
 * [manico](https://itunes.apple.com/cn/app/manico/id724472954?mt=12)
   * Best tool for launching app with custom shortcut
 * [Scroll Reverser](http://pilotmoon.com/scrollreverser/)
-  * `brew cask install scroll-reverser`
+  * `brew install --cask scroll-reverser`
   * Seperate mouse / touchpad scroll direction setting
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
   * Make your git diff so fancy
