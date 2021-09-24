@@ -1,25 +1,39 @@
 ---
 title: Awesome Vim cheat sheet
 date: 2018-08-29 17:03:34
-tags: [vim, line number]
+tags: [vim, introduction, trick, must know]
 ---
 
-## Switch mode
+- [My slides share](https://www.paddingleft.com/slides/html/vim.html)[
+- [Coding faster with Vim + IDE](/2021/09/24/Coding-faster-with-Vim-IDE/)
+
+## Mode
+
+- insert
+- normal
+- visual
+- command
+
+---
 
 ### Insert mode
 
 - i
-  - insert before the char
+  - insert before the cursor
 - I
   - insert before the start of line
 - a
-  - append after the char
+  - append after the cursor
 - A
   - append at the end of line
 
+---
+
 ### Normal mode
 
-- ESC
+- `<ESC>`
+
+---
 
 ### Visual mode
 
@@ -30,45 +44,83 @@ tags: [vim, line number]
 - Ctrl + v
   - visual block mode
 
-## Move cursor(Normal mode)
+---
 
-### char
+### Command mode
 
-- h
-- j
-- k
-- l
+`:` + `<command>`
+
+```vim
+:wq
+:cq
+:set rnu
+```
+
+---
+
+## Cursor movement
+
+---
+
+### Char
+
+- h (left)
+- j (down)
+- k (up)
+- l (right)
+- Combile with number to move, `2k` to jump 2 lines up
+- Relative line numbers `:set rnu`
+
+---
 
 ### Word
 
-- w
-  - go to next start of word
-- e
-  - go to end of word
-- b
-  - back to start of word
+- w or W
+  - jump forwards to the start of a word
+- e or E
+  - jump forwards to the end of a word
+- b or B
+  - jump backwards to the start of a word
+- Capital case can contain `punctuation`
 
-### Block & Paragraph
+---
+
+### Single line
+
+- $ - end of line
+- ^ - start of the line after the indentation
+- 0 - move to the column 0
+
+---
+
+### Text Object motion
 
 - {}
   - paragraphs forward/backward
 - ()
   - sentences forward/backward
 - []
-  - goto []
-- [{ or }] or [( or )] or [[ or ]]
-  - goto start/end of { or ( or [
+  - backward/forward sections
+
+---
+
+### Pair
+
 - %
   - go to the match bracket
 
-### Window
+---
+
+### Screen
 
 - H
-  - Top of window
-- L
-  - Last of window
+  - move to top of screen
 - M
-  - Middle of window
+  - move to middle of screen
+- L
+  - move to bottom of screen
+
+---
 
 ### File
 
@@ -76,19 +128,12 @@ tags: [vim, line number]
   - Start
 - G
   - end of file
+- :`<absolute-line-numbers>`
+  - move to the absolute line
 
-### Others
+---
 
-- ctrl+o
-  - previous jump position
-- ctrl+i
-  - next jump position
-- g;
-  - previous Change position
-- g,
-  - next Change position
-
-## Scroll
+### Scroll
 
 - zt
   - scroll current line to top
@@ -97,20 +142,26 @@ tags: [vim, line number]
 - zz
   - scroll current line to middle
 
+---
+
 ## Search
 
-### Search char in single line (keep normal mode)
+---
+
+### Search char in single line
 
 - f/F
   - find char, forward/backward
   - `abcABCabc`, `fC` to find middle C
 - t/T
   - Go to previous char before the char, forward/backward
-  - `foo.bar<>` , go to r by `t<`
+  - `foo.bar<>` , move to r by `t<`
 - ;
-  - Repeat t/T/f/F
+  - Repeat `t/T/f/F`
 - ,
-  - Reverse t/T/f/F
+  - Reverse `t/T/f/F`
+
+---
 
 ### Search in file
 
@@ -122,101 +173,168 @@ tags: [vim, line number]
   - next and previous
 - *, #
   - search next/previous current word
+  - The behavior is identical to /`word`
+
+---
 
 ## Edit
+
+- Undo/Redo
+  - u / Ctrl+r
+
+---
+
+### Insert
 
 - insert line before/after the current line
   - o, O
 - join two line (keep mode)
-  - j
-- yank (copy) the current line
-  - yy, Y
-- Cut and change to insert mode
-  - c
-    - Change
-  - s
-    - substitute
-  - C
-    - Cut to end of line
-  - S
-    - Delete line and go to insert mode
-- delete
-  - d(keep mode)
-    - `d3j` or `3dd`
-  - x and X
-    - delete and backspace
-- replace
-  - r
-- repeat action
-  - .
-- Macro
-  - q + a~z
-    - record macro to key in a~z
-  - normal mode + q to quit recording
-  - @ + a~z to excute macro
-- Bookmark
-  - m + a~z
-    - bookmark current location to a~z
-  - ` + a~z
-    - go to a~z bookmark
-  - \``
-    - go to last position
-- [registers](https://www.brianstorti.com/vim-registers/)
-  - " + registerKey (a~z, 0~9, "+*/:%-)
-    - `:reg` to see all registers
-    - `"` is the default(unnamed) register
-    - `0` is the default register for `y`(yank)
-    - `+`, `*` is the system clipboard
-    - `/` stores the latest search keyword
-    - `:` stores the latest used command
-    - `%` has the current file path
-    - `#` has the last edited file
-    - In command mode, `ctrl+r+<register>` to paste the register content into the command.
-    - e.g. `*:/s/<ctrl+r>//abc/gc` to replace the lastest search keyword(*) to `abc` with confirmation dialog
-    - e.g. `"adw` : delete the and save it to register `a`
-    - e.g. `"0p` : paste from last yank
-    - e.g. to copy `foo` and replace it with `bar`, `yw` then `/bardw"0p`
-  - In search mode, you could press `ctrl + r + register key` to use the value in register
-- Join lines
   - J
 
-## Concept
+---
 
-- There are three dimention in vim
-  - window, file, project
-- Use vim like your mouse
-  - e.g. delete `Bar` in `fooBarBeBaz`, `fBdfe`
+### Copy
 
-## Useful vim command combination list
+- y + motion
+  - combine with any motion, e.g. `yt;` or `yw`
+- yy = Y
+  - yank (copy) the current line
+
+---
+
+### Paste from clipboard registry
+
+- p
+  - paste after
+
+- P
+  - paste before
+
+---
+
+### Cut and switch to insert mode
+
+- c + motion
+  - Cut
+- C
+  - Cut to end of line
+- s
+  - Substitute the char under the cursor
+- S
+  - Substitube the line
+- r
+  - replace a char
+- R
+  - Enter the insert-replace mode
+
+---
+
+### Cut and keep in normal mode
+
+- d
+  - `d3j` or `3dd`
+- D
+  - Delete to end of the line
+- dd
+  - Delete the entire line
+- x and X
+  - delete and backspace
+
+---
+
+### inside / around
 
 ```bash
-# Make a word uppercase
-gUe
-
 # edit neariest word inside symbol, e.g. }
 ci}
 
 # edit neariest word outside symbol, e.g. ]
 ca]
 
-# edit and delete from cursor to next symbol, e.g. )
-ct)
-
-# edit and delete from cursor to previos symbol, e.g. )
-cT)
-
 # delete inside tag
 dit
 
 # replace word with yanked word
-viwp
+vi]p
 
-# Comment multi line, for example using # for comment
-1. Ctrl + v to enter "Visual block mode"
+```
+
+---
+
+### Repeat action
+
+- repeat action
+  - .
+
+---
+
+### Macro
+
+- `q` + `a~z`
+  - record macro to `a~z`
+- `normal mode` + `q` to quit recording
+- `@` + `a~z` to excute macro
+
+---
+
+### Bookmark
+
+- `m` + `a~z`
+  - bookmark current location to `a~z`
+- `'` + `a~z`
+  - go to a~z bookmark
+- `''`
+  - go to the last position
+
+---
+
+### [Registers](https://www.brianstorti.com/vim-registers/)
+
+- `"` + `a~z` `0~9` `"+*/:%-`
+  - `:reg` see all registers
+  - `"` the default(unnamed) register
+  - `0` the default register for `y`(yank)
+  - `+`, `*` the system clipboard
+  - `/` the latest search keyword
+  - `:` the latest used command
+  - `%` the current file path
+  - `#` the last edited file
+
+> "adw : delete the word and save to register `a`
+
+===
+
+### Registers - Advance
+
+- `"0p` - paste from last yank
+- Use the register in the `Search` and `Command mode`
+  - `ctrl` + `r` + `<register>`
+
+> `*:%s/<ctrl+r>//abc/gc` to replace the lastest search keyword(*) to `abc` with confirmation dialog
+
+---
+
+### Change multi line
+
+1. `Ctrl + v` to enter `Visual block mode`
 2. Move cursor to select lines that need to be edited
-3. Shift + i
-4. #
+3. `Shift + i`
+4. `#`
 5. Esc
+
+---
+
+### More
+
+```bash
+# increase the first right number in the line
+Ctrl + A
+
+# decrease the first right number in the line
+Ctrl + X
+
+# Make a word uppercase
+gUe
 
 # Show Line numbers
 :set number
@@ -230,64 +348,53 @@ q:
 # Replace word A with word B
 :%s/A/B/g
 
-# Undo/Redo
-u / Ctrl+r
-
-# increase the first right number in the line
-Ctrl + A
-
-# decrease the first right number in the line
-Ctrl + X
 ```
 
-## Use relative line mode with vim
+---
 
-In vim, you will frequently need to manipulate multi line with `y3j` `4yy` or something else, relative line mode in IDE could help you easy to count the line number.
+### More...and more
 
-- In vim
+- ctrl+o
+  - previous jump position
+- ctrl+i
+  - next jump position
+- g;
+  - previous Change position
+- g,
+  - next Change position
 
-```vi
-:set rnu
-```
+---
 
-- In VSCode:
+## vim X IDE
 
-```json
-"editor.lineNumbers": "relative",
-```
+---
 
-## Get difference before save
+### Setup
+
+- Ideavim
+  1. click the `V` icon on the right bottom corner
+  2. open `~/.ideavimrc`
+  3. edit and save
+
+- [VScode](https://github.com/Asing1001/tennis-kata#setup-vscode-configs)
+
+---
+
+## Reference
+
+- [vim doc](http://vimdoc.sourceforge.net/htmldoc/motion.html)
+- [vim register](https://www.brianstorti.com/vim-registers/)
+- [vim cheatsheet](https://vim.rtorr.com/)
+
+---
+
+### Get the difference before saving in vim
 
 ```bash
 :w !diff % -
 ```
 
-### Explanation
-
-- `w` without filename will save to stdin
+- `w` without filename will output to stdin
 - `!` will excute bash in vim
 - `%` is current file in vim
 - `diff` with `-` will read content from stdin
-
-## vimrc
-
-`"` is the comment symbol in .vimrc, could only be placed at the start of line
-
-```vi
-"Enable copy paste from system clibboard
-set clipboard^=unnamed,unnamedplus
-
-"Show differt cursor in different mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
-"Show relative line number
-set rnu
-```
-
-### Reference
-
-- https://vim.rtorr.com/
-- http://vimdoc.sourceforge.net/htmldoc/motion.html
-- https://www.brianstorti.com/vim-registers/
