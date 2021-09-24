@@ -1,0 +1,2805 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="nNUMPUrqNNot_PkJfPzacCg4M0b6Mz5viTh_YBlxew8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=20170328?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: true,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'RG9H1JR5W2',
+      apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Sing's Log">
+<script data-ad-client="ca-pub-6735629726636183" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+
+  <meta name="description" content="Sing&apos;s log, a developer&apos;s blog">
+<meta name="keywords" content="Web development, Front-End, Javascript, IT, Hexo, NexT">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sing&#39;s Log">
+<meta property="og:url" content="https://www.paddingleft.com/index.html">
+<meta property="og:site_name" content="Sing&#39;s Log">
+<meta property="og:description" content="Sing&apos;s log, a developer&apos;s blog">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sing&#39;s Log">
+<meta name="twitter:description" content="Sing&apos;s log, a developer&apos;s blog">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.paddingleft.com/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Sing's Log</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '546618865728828',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93986058-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93986058-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sing's Log</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Knowledge worth sharing</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+    <a href="/timeline/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Timeline</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-portfolio">
+    <a href="/portfolio/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-book"></i> <br>Portfolio</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2021/09/24/Coding-faster-with-Vim-IDE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/09/24/Coding-faster-with-Vim-IDE/" itemprop="url">
+                  Coding faster with Vim + IDE
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-09-24 16:54:59 / Modified: 09:29:47" itemprop="dateCreated datePublished" datetime="2021-09-24T16:54:59+00:00">2021-09-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/09/24/Coding-faster-with-Vim-IDE/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/24/Coding-faster-with-Vim-IDE/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Vim-X-IDE"><a href="#Vim-X-IDE" class="headerlink" title="Vim X IDE"></a>Vim X IDE</h2><ul>
+<li><a href="https://www.paddingleft.com/slides/html/vim.html">My slides share</a></li>
+<li><a href="/2018/08/29/vim-cheat-sheet/">Vim tutorial</a></li>
+</ul>
+<hr>
+<h3 id="JetBrains-IDE-vim"><a href="#JetBrains-IDE-vim" class="headerlink" title="JetBrains IDE + vim"></a>JetBrains IDE + vim</h3><ul>
+<li>Install <a href="https://plugins.jetbrains.com/plugin/164-ideavim" target="_blank" rel="noopener">ideavim</a><ul>
+<li>Custom setting<ol>
+<li>Click <code>V</code> icon on the right bottom corner</li>
+<li>Open and edit <code>~/.ideavimrc</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Tennis Kata demo - <code>Dart</code> + <code>Android Studio</code></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rev_gQ_FTaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hr>
+<h3 id="VScode-Vim"><a href="#VScode-Vim" class="headerlink" title="VScode + Vim"></a>VScode + Vim</h3><ul>
+<li>Install <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim" target="_blank" rel="noopener">vscodevim</a></li>
+<li><a href="https://github.com/Asing1001/tennis-kata#setup-vscode-configs" target="_blank" rel="noopener">Setup instruction</a></li>
+<li>Tennis Kata demo - <code>Vscode</code> + <code>Javascript</code></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6lEIFl30JEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2021/09/15/SSH-to-server-without-password/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/09/15/SSH-to-server-without-password/" itemprop="url">
+                  SSH to server without password
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-09-15 03:26:00" itemprop="dateCreated datePublished" datetime="2021-09-15T03:26:00+00:00">2021-09-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/09/15/SSH-to-server-without-password/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/15/SSH-to-server-without-password/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="The-requirement-to-ssh-to-server-without-password"><a href="#The-requirement-to-ssh-to-server-without-password" class="headerlink" title="The requirement to ssh to server without password"></a>The requirement to ssh to server without password</h2><p>To ssh without password, you must meet the condition:</p>
+<ul>
+<li>Private key in client <code>~/.ssh/</code></li>
+<li>Public key in server <code>~/.ssh/authorized_keys</code></li>
+</ul>
+<h2 id="Steps-to-setup"><a href="#Steps-to-setup" class="headerlink" title="Steps to setup"></a>Steps to setup</h2><ol>
+<li><p>Create ssh key pairs by ssh-keygen</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generate key</span></span><br><span class="line">ssh-keygen</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check the generated key pair</span></span><br><span class="line">ls ~/.ssh</span><br><span class="line">-rw-------  1 sing  staff  1679 Jun  8  2018 id_rsa</span><br><span class="line">-rw-r--r--  1 sing  staff   404 Jun  8  2018 id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Login to your server</p>
+</li>
+<li><p>Copy the content of the publicKey (id_rsa.pub) to server’s <code>~/.ssh/authorized_keys</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;public key content&#125;</span>"</span> &gt;&gt; .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify ssh without password</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@serverip</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2021/09/14/Device-pixel-ratio/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/09/14/Device-pixel-ratio/" itemprop="url">
+                  Device pixel ratio - How to select a proper size image that looks sharp and display fast on different devices
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-09-14 01:39:07" itemprop="dateCreated datePublished" datetime="2021-09-14T01:39:07+00:00">2021-09-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/09/14/Device-pixel-ratio/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/14/Device-pixel-ratio/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="What-is-Device-Pixel-Ratio"><a href="#What-is-Device-Pixel-Ratio" class="headerlink" title="What is Device Pixel Ratio?"></a>What is Device Pixel Ratio?</h2><p>The term <code>device pixel ratio</code> plays the crucial role in different languages’ styling. The definition of Device pixel ratio from MDN:</p>
+<blockquote>
+<p>The devicePixelRatio of Window interface returns the ratio of the resolution in physical pixels to the resolution in CSS pixels for the current display device.</p>
+</blockquote>
+<p>My translation:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Device pixel ratio = (Device physical pixel width) / (Width of a device in a program)</span><br></pre></td></tr></table></figure>
+<p>For instance an <code>iPhone12</code>:</p>
+<ul>
+<li><code>Physical Width</code>: <code>1170px</code></li>
+<li><code>CSS width</code>: <code>390px</code></li>
+<li><code>Device Ratio Pixel</code>: <code>1170px / 390px = 3</code></li>
+</ul>
+<h2 id="How-to-select-a-proper-width-image"><a href="#How-to-select-a-proper-width-image" class="headerlink" title="How to select a proper width image"></a>How to select a proper width image</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Proper image size = devicePixelRatio * width</span><br></pre></td></tr></table></figure>
+<p>If you setup a image with style <code>width:150px</code>, the phone will use <code>150 * 3 = 450 physical pixel</code> to render, so the proper width of the image should be <code>450</code></p>
+<h2 id="Common-Device-Pixel-Ratio"><a href="#Common-Device-Pixel-Ratio" class="headerlink" title="Common Device Pixel Ratio"></a>Common Device Pixel Ratio</h2><img src="/2021/09/14/Device-pixel-ratio/device-pixel-ratio.png">
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://www.mydevice.io/" target="_blank" rel="noopener">https://www.mydevice.io/</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2020/11/16/Display-iphone-android-screen-on-Mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/16/Display-iphone-android-screen-on-Mac/" itemprop="url">
+                  Display iphone/android screen on Mac
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2020-11-16 19:56:17" itemprop="dateCreated datePublished" datetime="2020-11-16T19:56:17+00:00">2020-11-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/16/Display-iphone-android-screen-on-Mac/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/16/Display-iphone-android-screen-on-Mac/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Display-iphone-screen-on-Mac"><a href="#Display-iphone-screen-on-Mac" class="headerlink" title="Display iphone screen on Mac"></a>Display iphone screen on Mac</h2><ol>
+<li>Connect your iphone through wire.</li>
+<li>Open <code>QuickTime Player</code></li>
+<li>File &gt; New Movie Recording <img src="/2020/11/16/Display-iphone-android-screen-on-Mac/iphone_0.jpg"></li>
+<li>In the recording screen, select the dropdown &gt; camera &gt; your iphone name <img src="/2020/11/16/Display-iphone-android-screen-on-Mac/iphone_1.png">
+</li>
+</ol>
+<h2 id="Display-Android-Device-on-Mac"><a href="#Display-Android-Device-on-Mac" class="headerlink" title="Display Android Device on Mac"></a>Display Android Device on Mac</h2><ol>
+<li>Install <a href="https://github.com/Genymobile/scrcpy" target="_blank" rel="noopener">scrcpy</a> by <code>brew install scrcpy</code></li>
+<li>If you don’t have <code>adb</code>, run <code>brew cask install android-platform-tools</code></li>
+<li>Connect your Android phone through wire</li>
+<li>excute <code>scrcpy</code></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/" itemprop="url">
+                  Schedule backup Mongodb to AWS S3 with DroneCI cronjob
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-10-18 15:42:08" itemprop="dateCreated datePublished" datetime="2019-10-18T15:42:08+00:00">2019-10-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>To schedule backup mongodb to AWS S3 could be done extremely easy in any docker pipeline, here is an example using DroneCI docker pipeline and cronjob feature. The complete code example could be found here: <a href="https://github.com/Asing1001/mongodb-s3-backup" target="_blank" rel="noopener">https://github.com/Asing1001/mongodb-s3-backup</a>.</p>
+<ol>
+<li>Create <code>.drone.jsonnet</code> file using docker pipeline</li>
+<li>Use <code>mongodump</code> in step1 to create archive</li>
+<li><p>Upload the archive by <code>s3 plugin</code> in step2</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">local backupLocation = <span class="string">'mongo-archive.gz'</span>;</span><br><span class="line"></span><br><span class="line">[&#123;</span><br><span class="line">  kind: <span class="string">'pipeline'</span>,</span><br><span class="line">  name: <span class="string">'default'</span>,</span><br><span class="line">  steps: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">'mongodump'</span>,</span><br><span class="line">      image: <span class="string">'mongo:3.6.5'</span>,</span><br><span class="line">      environment: &#123;</span><br><span class="line">        DB_URI: &#123;</span><br><span class="line">          from_secret: <span class="string">'db_uri'</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      commands: [</span><br><span class="line">        <span class="string">'mongodump --gzip --uri="$DB_URI" --archive='</span> + backupLocation,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">'upload'</span>,</span><br><span class="line">      image: <span class="string">'plugins/s3'</span>,</span><br><span class="line">      settings: &#123;</span><br><span class="line">        bucket: <span class="string">'mongo-backup'</span>,</span><br><span class="line">        access_key: &#123;</span><br><span class="line">          from_secret: <span class="string">'aws_access_key_id'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        secret_key: &#123;</span><br><span class="line">          from_secret: <span class="string">'aws_secret_access_key'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        source: backupLocation,</span><br><span class="line">        target: <span class="string">'/'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  trigger: &#123;</span><br><span class="line">    event: [<span class="string">'cron'</span>, <span class="string">'push'</span>],</span><br><span class="line">    branch: <span class="string">'master'</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Activate the project in DroneCI and fill up variables <code>aws_access_key_id</code>, <code>aws_secret_access_key</code>, <code>db_uri</code></p>
+</li>
+<li><p>Setup Cron jobs in Drone project’s settings<br><img src="https://user-images.githubusercontent.com/6785698/67076974-cdc89400-f1c0-11e9-9ccc-d98ed054ec65.png" alt="drone-mongo"></p>
+</li>
+<li><p>Push the repository and verify the job :)</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://drone.io/" target="_blank" rel="noopener">Drone</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/program/mongodump/" target="_blank" rel="noopener">mongodump</a></li>
+<li><a href="http://plugins.drone.io/drone-plugins/drone-s3/" target="_blank" rel="noopener">drone S3 plugin</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/09/18/Show-Search-on-mobile-devices-keyboard/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/18/Show-Search-on-mobile-devices-keyboard/" itemprop="url">
+                  Show "Search" button on mobile keyboard
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-18 12:52:53" itemprop="dateCreated datePublished" datetime="2019-09-18T12:52:53+00:00">2019-09-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/18/Show-Search-on-mobile-devices-keyboard/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/18/Show-Search-on-mobile-devices-keyboard/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img style="width:200px" src="/2019/09/18/Show-Search-on-mobile-devices-keyboard/search_button.jpeg"></p>
+<h2 id="For-Android"><a href="#For-Android" class="headerlink" title="For Android"></a>For Android</h2><p>Only <code>type=&quot;search&quot;</code> is required on <code>&lt;input&gt;</code></p>
+<h2 id="For-IOS"><a href="#For-IOS" class="headerlink" title="For IOS"></a>For IOS</h2><p>It is required to wrap <code>&lt;input type=&quot;search&quot;&gt;</code> inside a <code>&lt;form action&gt;</code>, note that the attribute <code>action</code> is must-have.</p>
+<h2 id="For-all-mobile-devices"><a href="#For-all-mobile-devices" class="headerlink" title="For all mobile devices"></a>For all mobile devices</h2><p>To sum up, the minimum requirement on mobile is:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">    <span class="attr">type</span>=<span class="string">"search"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>To try on mobile device, here is a live example on JSFiddle :</p>
+<script async src="//jsfiddle.net/asing1001/70vhab4e/20/embed/result,html/dark/"></script>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/" itemprop="url">
+                  [Drone CI] migrate pipeline config from 0.x to 1.x
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-11 17:24:25" itemprop="dateCreated datePublished" datetime="2019-09-11T17:24:25+00:00">2019-09-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="New-syntax-for-pipeline-and-step"><a href="#New-syntax-for-pipeline-and-step" class="headerlink" title="New syntax for pipeline and step"></a>New syntax for pipeline and step</h2><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- pipeline:</span></span><br><span class="line"><span class="deletion">-   custom-step:</span></span><br><span class="line"><span class="deletion">-     image: some-image</span></span><br><span class="line"><span class="addition">+ kind: pipeline</span></span><br><span class="line"><span class="addition">+ steps:</span></span><br><span class="line"><span class="addition">+   name: custom-step</span></span><br><span class="line"><span class="addition">+   image: some-image</span></span><br></pre></td></tr></table></figure>
+<h2 id="Custom-plugin-variables-should-be-placed-under-settings"><a href="#Custom-plugin-variables-should-be-placed-under-settings" class="headerlink" title="Custom plugin variables should be placed under settings"></a>Custom plugin variables should be placed under <code>settings</code></h2><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">kind: pipeline</span><br><span class="line">name: default</span><br><span class="line">steps:</span><br><span class="line">  name: custom-plugin</span><br><span class="line">  image: some-image</span><br><span class="line"><span class="deletion">- foo:</span></span><br><span class="line"><span class="deletion">-   bar: baz</span></span><br><span class="line"><span class="addition">+ settings:</span></span><br><span class="line"><span class="addition">+   foo:</span></span><br><span class="line"><span class="addition">+     bar: baz</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/08/20/git-submodule/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/20/git-submodule/" itemprop="url">
+                  GIT submodule note
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-20 23:17:24" itemprop="dateCreated datePublished" datetime="2019-08-20T23:17:24+00:00">2019-08-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/20/git-submodule/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/20/git-submodule/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Clone-repository-with-submodule"><a href="#Clone-repository-with-submodule" class="headerlink" title="Clone repository with submodule"></a>Clone repository with submodule</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --recursive &lt;repo_url&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Clone-submodules-after-repository-cloned"><a href="#Clone-submodules-after-repository-cloned" class="headerlink" title="Clone submodules after repository cloned"></a>Clone submodules after repository cloned</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git submodule init</span><br><span class="line">git submodule update --recursive</span><br></pre></td></tr></table></figure>
+<h2 id="Add-submodule"><a href="#Add-submodule" class="headerlink" title="Add submodule"></a>Add submodule</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;submodule_clone_url&gt; &lt;submodule_folder&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Remove-submodule"><a href="#Remove-submodule" class="headerlink" title="Remove submodule"></a>Remove submodule</h2><p>Step1 - Remove submodule folder</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached /path/to/submodule</span><br><span class="line">rm -rf /path/to/submodule</span><br></pre></td></tr></table></figure>
+<p>Step2 - Remove submodule config in <code>.gitmodules</code></p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-[submodule "themes/next"]</span></span><br><span class="line"><span class="deletion">- path = themes/next</span></span><br><span class="line"><span class="deletion">- url = https://github.com/Asing1001/hexo-theme-next.git</span></span><br><span class="line">[submodule "themes/next-reloaded"]</span><br><span class="line">path = themes/next-reloaded</span><br><span class="line">url = https://github.com/Asing1001/hexo-next.git</span><br></pre></td></tr></table></figure>
+<h2 id="Update-submodule-to-latest-commit"><a href="#Update-submodule-to-latest-commit" class="headerlink" title="Update submodule to latest commit"></a>Update submodule to latest commit</h2><p>Step1 - Checkout the target version of the submodule</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Go to the submodule folder</span></span><br><span class="line"><span class="built_in">cd</span> projB/projA</span><br><span class="line"><span class="comment"># Checkout the target commit</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>Step2 - Commit the update</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Back to the parent folder</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">git add projB/projA</span><br><span class="line">git commit -m <span class="string">"submodule projA updated"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://stackoverflow.com/questions/8191299/update-a-submodule-to-the-latest-commit" target="_blank" rel="noopener">https://stackoverflow.com/questions/8191299/update-a-submodule-to-the-latest-commit</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/06/18/VSCode-settings-and-shortcuts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/18/VSCode-settings-and-shortcuts/" itemprop="url">
+                  [VSCode] settings and shortcuts
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-18 10:48:52" itemprop="dateCreated datePublished" datetime="2019-06-18T10:48:52+00:00">2019-06-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/18/VSCode-settings-and-shortcuts/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/06/18/VSCode-settings-and-shortcuts/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><code>command 0</code> - Focus on sidebar</li>
+<li><code>cmd+d</code> - For don’t save</li>
+<li><code>gb</code> - For multi cursor in vim mode</li>
+<li><code>cmd+shift+.</code> - show breadcumb</li>
+</ul>
+<h2 id="Settings-json"><a href="#Settings-json" class="headerlink" title="Settings.json"></a>Settings.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"editor.autoIndent"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"editor.snippetSuggestions"</span>: <span class="string">"top"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><ul>
+<li><a href="http://vimdoc.sourceforge.net/htmldoc/motion.html" target="_blank" rel="noopener">http://vimdoc.sourceforge.net/htmldoc/motion.html</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/02/21/GTM-Get-the-item-order-in-a-list/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/21/GTM-Get-the-item-order-in-a-list/" itemprop="url">
+                  [GTM] Get the item order in a list
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-21 11:55:02" itemprop="dateCreated datePublished" datetime="2019-02-21T11:55:02+00:00">2019-02-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2021-09-24 09:29:47" itemprop="dateModified" datetime="2021-09-24T09:29:47+00:00">2021-09-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/21/GTM-Get-the-item-order-in-a-list/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/21/GTM-Get-the-item-order-in-a-list/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Google Tag Manager(GTM) is a back office for quickly managing HTML on webpages, basically, it enables the maintainer to do <strong>Everything</strong> on their website without changing the code base. There are three major elements in GTM which are Tag, Variable, and Trigger.</p>
+<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2><p>A Tag will be triggered by the <strong>Trigger</strong> you set and passing both the system defined variables and the user-defined variables to your Tag, then you could take the action such as sending it to GA or manipulate DOM on your pages.</p>
+<img src="/2019/02/21/GTM-Get-the-item-order-in-a-list/tag.png">
+<h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><img src="/2019/02/21/GTM-Get-the-item-order-in-a-list/customjs.png">
+<p>Other than System defined variables, you could create your own by Javascript:<br>Select <code>User-Defined Variables</code>, then select the type <code>Custom Javascript</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> element = &#123;&#123;Click Element&#125;&#125;</span><br><span class="line">    <span class="keyword">var</span> elementClass = &#123;&#123;Element <span class="class"><span class="keyword">class</span>&#125;&#125;</span></span><br><span class="line"><span class="class">    <span class="title">if</span> (!<span class="title">element</span> || !<span class="title">elementClass</span>) <span class="title">return</span></span></span><br><span class="line"><span class="class">    <span class="title">var</span> <span class="title">selector</span> </span>= <span class="string">'.'</span> + elementClass.split(<span class="string">' '</span>).join(<span class="string">'.'</span>)</span><br><span class="line">    <span class="keyword">var</span> list = <span class="built_in">document</span>.querySelectorAll(selector)</span><br><span class="line">    <span class="keyword">var</span> order = [].indexOf.call(list, element) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> order</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.dataLayer.filter(<span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> obj.errorMsg === e.message;</span><br><span class="line">    &#125;).length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">window</span>.dataLayer.push(&#123;</span><br><span class="line">        <span class="string">'event'</span>: <span class="string">'variable error'</span>,</span><br><span class="line">        <span class="string">'errorMsg'</span>: e.message</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Trigger"><a href="#Trigger" class="headerlink" title="Trigger"></a>Trigger</h2><img src="/2019/02/21/GTM-Get-the-item-order-in-a-list/trigger.png">
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="Sing Ming Chen">
+            
+              <p class="site-author-name" itemprop="name">Sing Ming Chen</p>
+              <p class="site-description motion-element" itemprop="description">Sing's log, a developer's blog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/timeline">
+                
+                    <span class="site-state-item-count">72</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">179</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/asing1001" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:sing@paddingleft.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/andychen-pro/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/sing1001" target="_blank" title="Facebook" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/3959161/andy-chen?tab=profile" target="_blank" title="StackOverflow" rel="external nofollow"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sing Ming Chen</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://acslog.disqus.com/count.js" async></script>
+  
+
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
