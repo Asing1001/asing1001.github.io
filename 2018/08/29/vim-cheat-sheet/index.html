@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="nNUMPUrqNNot_PkJfPzacCg4M0b6Mz5viTh_YBlxew8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=20170328?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: true,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'RG9H1JR5W2',
+      apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Sing's Log">
+<script data-ad-client="ca-pub-6735629726636183" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <link rel="amphtml" href="./amp/index.html">
+
+
+
+  <meta name="description" content="My slides share[ Coding faster with Vim + IDE  Mode insert normal visual command   Insert mode i insert before the cursor   I insert before the start of line   a append after the cursor   A append at">
+<meta name="keywords" content="vim,introduction,trick,must know">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Awesome Vim cheat sheet">
+<meta property="og:url" content="https://www.paddingleft.com/2018/08/29/vim-cheat-sheet/index.html">
+<meta property="og:site_name" content="Sing&#39;s Log">
+<meta property="og:description" content="My slides share[ Coding faster with Vim + IDE  Mode insert normal visual command   Insert mode i insert before the cursor   I insert before the start of line   a append after the cursor   A append at">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2022-05-28T13:10:52.104Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Awesome Vim cheat sheet">
+<meta name="twitter:description" content="My slides share[ Coding faster with Vim + IDE  Mode insert normal visual command   Insert mode i insert before the cursor   I insert before the start of line   a append after the cursor   A append at">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.paddingleft.com/2018/08/29/vim-cheat-sheet/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Awesome Vim cheat sheet | Sing's Log</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '546618865728828',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93986058-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93986058-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sing's Log</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Knowledge worth sharing</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+    <a href="/timeline/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Timeline</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-portfolio">
+    <a href="/portfolio/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-book"></i> <br>Portfolio</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/08/29/vim-cheat-sheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Awesome Vim cheat sheet
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-29 17:03:34" itemprop="dateCreated datePublished" datetime="2018-08-29T17:03:34+00:00">2018-08-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2022-05-28 13:10:52" itemprop="dateModified" datetime="2022-05-28T13:10:52+00:00">2022-05-28</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/08/29/vim-cheat-sheet/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/29/vim-cheat-sheet/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><a href="https://www.paddingleft.com/slides/html/vim.html">My slides share</a>[</li>
+<li><a href="/2021/09/24/Coding-faster-with-Vim-IDE/">Coding faster with Vim + IDE</a></li>
+</ul>
+<h2 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h2><ul>
+<li>insert</li>
+<li>normal</li>
+<li>visual</li>
+<li>command</li>
+</ul>
+<hr>
+<h3 id="Insert-mode"><a href="#Insert-mode" class="headerlink" title="Insert mode"></a>Insert mode</h3><ul>
+<li>i<ul>
+<li>insert before the cursor</li>
+</ul>
+</li>
+<li>I<ul>
+<li>insert before the start of line</li>
+</ul>
+</li>
+<li>a<ul>
+<li>append after the cursor</li>
+</ul>
+</li>
+<li>A<ul>
+<li>append at the end of line</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Normal-mode"><a href="#Normal-mode" class="headerlink" title="Normal mode"></a>Normal mode</h3><ul>
+<li><code>&lt;ESC&gt;</code></li>
+</ul>
+<hr>
+<h3 id="Visual-mode"><a href="#Visual-mode" class="headerlink" title="Visual mode"></a>Visual mode</h3><ul>
+<li>v<ul>
+<li>select a char</li>
+</ul>
+</li>
+<li>V<ul>
+<li>select a line</li>
+</ul>
+</li>
+<li>Ctrl + v<ul>
+<li>visual block mode</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Command-mode"><a href="#Command-mode" class="headerlink" title="Command mode"></a>Command mode</h3><p><code>:</code> + <code>&lt;command&gt;</code></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">wq</span></span><br><span class="line">:<span class="keyword">cq</span></span><br><span class="line">:<span class="keyword">set</span> rnu</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><hr>
+<h3 id="Char"><a href="#Char" class="headerlink" title="Char"></a>Char</h3><ul>
+<li>h (left)</li>
+<li>j (down)</li>
+<li>k (up)</li>
+<li>l (right)</li>
+<li>Combile with number to move, <code>2k</code> to jump 2 lines up</li>
+<li>Relative line numbers <code>:set rnu</code></li>
+</ul>
+<hr>
+<h3 id="Word"><a href="#Word" class="headerlink" title="Word"></a>Word</h3><ul>
+<li>w or W<ul>
+<li>jump forwards to the start of a word</li>
+</ul>
+</li>
+<li>e or E<ul>
+<li>jump forwards to the end of a word</li>
+</ul>
+</li>
+<li>b or B<ul>
+<li>jump backwards to the start of a word</li>
+</ul>
+</li>
+<li>Capital case can contain <code>punctuation</code></li>
+</ul>
+<hr>
+<h3 id="Single-line"><a href="#Single-line" class="headerlink" title="Single line"></a>Single line</h3><ul>
+<li>$ - end of line</li>
+<li>^ - start of the line after the indentation</li>
+<li>0 - move to the column 0</li>
+</ul>
+<hr>
+<h3 id="Text-Object-motion"><a href="#Text-Object-motion" class="headerlink" title="Text Object motion"></a>Text Object motion</h3><ul>
+<li>{}<ul>
+<li>paragraphs forward/backward</li>
+</ul>
+</li>
+<li>()<ul>
+<li>sentences forward/backward</li>
+</ul>
+</li>
+<li>[]<ul>
+<li>backward/forward sections</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Pair"><a href="#Pair" class="headerlink" title="Pair"></a>Pair</h3><ul>
+<li>%<ul>
+<li>go to the match bracket</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h3><ul>
+<li>H<ul>
+<li>move to top of screen</li>
+</ul>
+</li>
+<li>M<ul>
+<li>move to middle of screen</li>
+</ul>
+</li>
+<li>L<ul>
+<li>move to bottom of screen</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><ul>
+<li>gg<ul>
+<li>Start</li>
+</ul>
+</li>
+<li>G<ul>
+<li>end of file</li>
+</ul>
+</li>
+<li>:<code>&lt;absolute-line-numbers&gt;</code><ul>
+<li>move to the absolute line</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Scroll"><a href="#Scroll" class="headerlink" title="Scroll"></a>Scroll</h3><ul>
+<li>zt<ul>
+<li>scroll current line to top</li>
+</ul>
+</li>
+<li>zb<ul>
+<li>scroll current line to bottom</li>
+</ul>
+</li>
+<li>zz<ul>
+<li>scroll current line to middle</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><hr>
+<h3 id="Search-char-in-single-line"><a href="#Search-char-in-single-line" class="headerlink" title="Search char in single line"></a>Search char in single line</h3><ul>
+<li>f/F<ul>
+<li>find char, forward/backward</li>
+<li><code>abcABCabc</code>, <code>fC</code> to find middle C</li>
+</ul>
+</li>
+<li>t/T<ul>
+<li>Go to previous char before the char, forward/backward</li>
+<li><code>foo.bar&lt;&gt;</code> , move to r by <code>t&lt;</code></li>
+</ul>
+</li>
+<li>;<ul>
+<li>Repeat <code>t/T/f/F</code></li>
+</ul>
+</li>
+<li>,<ul>
+<li>Reverse <code>t/T/f/F</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Search-in-file"><a href="#Search-in-file" class="headerlink" title="Search in file"></a>Search in file</h3><ul>
+<li>/<ul>
+<li>Search forward</li>
+</ul>
+</li>
+<li>?<ul>
+<li>Search backward</li>
+</ul>
+</li>
+<li>n and N<ul>
+<li>next and previous</li>
+</ul>
+</li>
+<li>*, #<ul>
+<li>search next/previous current word</li>
+<li>The behavior is identical to /<code>word</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Edit"><a href="#Edit" class="headerlink" title="Edit"></a>Edit</h2><ul>
+<li>Undo/Redo<ul>
+<li>u / Ctrl+r</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><ul>
+<li>insert line before/after the current line<ul>
+<li>o, O</li>
+</ul>
+</li>
+<li>join two line (keep mode)<ul>
+<li>J</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><ul>
+<li>y + motion<ul>
+<li>combine with any motion, e.g. <code>yt;</code> or <code>yw</code></li>
+</ul>
+</li>
+<li>yy = Y<ul>
+<li>yank (copy) the current line</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Paste-from-clipboard-registry"><a href="#Paste-from-clipboard-registry" class="headerlink" title="Paste from clipboard registry"></a>Paste from clipboard registry</h3><ul>
+<li><p>p</p>
+<ul>
+<li>paste after</li>
+</ul>
+</li>
+<li><p>P</p>
+<ul>
+<li>paste before</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Cut-and-switch-to-insert-mode"><a href="#Cut-and-switch-to-insert-mode" class="headerlink" title="Cut and switch to insert mode"></a>Cut and switch to insert mode</h3><ul>
+<li>c + motion<ul>
+<li>Cut</li>
+</ul>
+</li>
+<li>C<ul>
+<li>Cut to end of line</li>
+</ul>
+</li>
+<li>s<ul>
+<li>Substitute the char under the cursor</li>
+</ul>
+</li>
+<li>S<ul>
+<li>Substitube the line</li>
+</ul>
+</li>
+<li>r<ul>
+<li>replace a char</li>
+</ul>
+</li>
+<li>R<ul>
+<li>Enter the insert-replace mode</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Cut-and-keep-in-normal-mode"><a href="#Cut-and-keep-in-normal-mode" class="headerlink" title="Cut and keep in normal mode"></a>Cut and keep in normal mode</h3><ul>
+<li>d<ul>
+<li><code>d3j</code> or <code>3dd</code></li>
+</ul>
+</li>
+<li>D<ul>
+<li>Delete to end of the line</li>
+</ul>
+</li>
+<li>dd<ul>
+<li>Delete the entire line</li>
+</ul>
+</li>
+<li>x and X<ul>
+<li>delete and backspace</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="inside-around"><a href="#inside-around" class="headerlink" title="inside / around"></a>inside / around</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># edit neariest word inside symbol, e.g. &#125;</span></span><br><span class="line">ci&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># edit neariest word outside symbol, e.g. ]</span></span><br><span class="line">ca]</span><br><span class="line"></span><br><span class="line"><span class="comment"># delete inside tag</span></span><br><span class="line">dit</span><br><span class="line"></span><br><span class="line"><span class="comment"># replace word with yanked word</span></span><br><span class="line">vi]p</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Repeat-action"><a href="#Repeat-action" class="headerlink" title="Repeat action"></a>Repeat action</h3><ul>
+<li>repeat action<ul>
+<li>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Macro"><a href="#Macro" class="headerlink" title="Macro"></a>Macro</h3><ul>
+<li><code>q</code> + <code>a~z</code><ul>
+<li>record macro to <code>a~z</code></li>
+</ul>
+</li>
+<li><code>normal mode</code> + <code>q</code> to quit recording</li>
+<li><code>@</code> + <code>a~z</code> to excute macro</li>
+</ul>
+<hr>
+<h3 id="Bookmark"><a href="#Bookmark" class="headerlink" title="Bookmark"></a>Bookmark</h3><ul>
+<li><code>m</code> + <code>a~z</code><ul>
+<li>bookmark current location to <code>a~z</code></li>
+</ul>
+</li>
+<li><code>&#39;</code> + <code>a~z</code><ul>
+<li>go to a~z bookmark</li>
+</ul>
+</li>
+<li><code>&#39;&#39;</code><ul>
+<li>go to the last position</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a><a href="https://www.brianstorti.com/vim-registers/" target="_blank" rel="noopener">Registers</a></h3><ul>
+<li><code>&quot;</code> + <code>a~z</code> <code>0~9</code> <code>&quot;+*/:%-</code><ul>
+<li><code>:reg</code> see all registers</li>
+<li><code>&quot;</code> the default(unnamed) register</li>
+<li><code>0</code> the default register for <code>y</code>(yank)</li>
+<li><code>+</code>, <code>*</code> the system clipboard</li>
+<li><code>/</code> the latest search keyword</li>
+<li><code>:</code> the latest used command</li>
+<li><code>%</code> the current file path</li>
+<li><code>#</code> the last edited file</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>“adw : delete the word and save to register <code>a</code></p>
+</blockquote>
+<p>===</p>
+<h3 id="Registers-Advance"><a href="#Registers-Advance" class="headerlink" title="Registers - Advance"></a>Registers - Advance</h3><ul>
+<li><code>&quot;0p</code> - paste from last yank</li>
+<li>Use the register in the <code>Search</code> and <code>Command mode</code><ul>
+<li><code>ctrl</code> + <code>r</code> + <code>&lt;register&gt;</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><code>*:%s/&lt;ctrl+r&gt;//abc/gc</code> to replace the lastest search keyword(*) to <code>abc</code> with confirmation dialog</p>
+</blockquote>
+<hr>
+<h3 id="Change-multi-line"><a href="#Change-multi-line" class="headerlink" title="Change multi line"></a>Change multi line</h3><ol>
+<li><code>Ctrl + v</code> to enter <code>Visual block mode</code></li>
+<li>Move cursor to select lines that need to be edited</li>
+<li><code>Shift + i</code></li>
+<li><code>#</code></li>
+<li>Esc</li>
+</ol>
+<hr>
+<h3 id="More"><a href="#More" class="headerlink" title="More"></a>More</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># increase the first right number in the line</span></span><br><span class="line">Ctrl + A</span><br><span class="line"></span><br><span class="line"><span class="comment"># decrease the first right number in the line</span></span><br><span class="line">Ctrl + X</span><br><span class="line"></span><br><span class="line"><span class="comment"># Make a word uppercase</span></span><br><span class="line">gUe</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show Line numbers</span></span><br><span class="line">:<span class="built_in">set</span> number</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set relative line number</span></span><br><span class="line">:<span class="built_in">set</span> rnu</span><br><span class="line"></span><br><span class="line"><span class="comment"># get recent command list</span></span><br><span class="line">q:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Replace word A with word B</span></span><br><span class="line">:%s/A/B/g</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="More…and-more"><a href="#More…and-more" class="headerlink" title="More…and more"></a>More…and more</h3><ul>
+<li>ctrl+o<ul>
+<li>previous jump position</li>
+</ul>
+</li>
+<li>ctrl+i<ul>
+<li>next jump position</li>
+</ul>
+</li>
+<li>g;<ul>
+<li>previous Change position</li>
+</ul>
+</li>
+<li>g,<ul>
+<li>next Change position</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="vim-X-IDE"><a href="#vim-X-IDE" class="headerlink" title="vim X IDE"></a>vim X IDE</h2><hr>
+<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><ul>
+<li><p>Ideavim</p>
+<ol>
+<li>click the <code>V</code> icon on the right bottom corner</li>
+<li>open <code>~/.ideavimrc</code></li>
+<li>edit and save</li>
+</ol>
+</li>
+<li><p><a href="https://github.com/Asing1001/tennis-kata#setup-vscode-configs" target="_blank" rel="noopener">VScode</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://vimdoc.sourceforge.net/htmldoc/motion.html" target="_blank" rel="noopener">vim doc</a></li>
+<li><a href="https://www.brianstorti.com/vim-registers/" target="_blank" rel="noopener">vim register</a></li>
+<li><a href="https://vim.rtorr.com/" target="_blank" rel="noopener">vim cheatsheet</a></li>
+</ul>
+<hr>
+<h3 id="Get-the-difference-before-saving-in-vim"><a href="#Get-the-difference-before-saving-in-vim" class="headerlink" title="Get the difference before saving in vim"></a>Get the difference before saving in vim</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w !diff % -</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>w</code> without filename will output to stdin</li>
+<li><code>!</code> will excute bash in vim</li>
+<li><code>%</code> is current file in vim</li>
+<li><code>diff</code> with <code>-</code> will read content from stdin</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vim/" rel="tag"># vim</a>
+          
+            <a href="/tags/introduction/" rel="tag"># introduction</a>
+          
+            <a href="/tags/trick/" rel="tag"># trick</a>
+          
+            <a href="/tags/must-know/" rel="tag"># must know</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/24/CSS-position-fixed-full-width/" rel="next" title="CSS padding-right disappear when position fixed width 100%">
+                <i class="fa fa-chevron-left"></i> CSS padding-right disappear when position fixed width 100%
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/03/check-gzip-size-with-curl-gzip-wc/" rel="prev" title="Measure gzip size via command line without actually compress it">
+                Measure gzip size via command line without actually compress it <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.jpg" alt="Sing Ming Chen">
+            
+              <p class="site-author-name" itemprop="name">Sing Ming Chen</p>
+              <p class="site-description motion-element" itemprop="description">Sing's log, a developer's blog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/timeline">
+                
+                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">182</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/asing1001" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:sing@paddingleft.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/andychen-pro/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/sing1001" target="_blank" title="Facebook" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/3959161/andy-chen?tab=profile" target="_blank" title="StackOverflow" rel="external nofollow"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mode"><span class="nav-number">1.</span> <span class="nav-text">Mode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert-mode"><span class="nav-number">1.1.</span> <span class="nav-text">Insert mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normal-mode"><span class="nav-number">1.2.</span> <span class="nav-text">Normal mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visual-mode"><span class="nav-number">1.3.</span> <span class="nav-text">Visual mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command-mode"><span class="nav-number">1.4.</span> <span class="nav-text">Command mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cursor-movement"><span class="nav-number">2.</span> <span class="nav-text">Cursor movement</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Char"><span class="nav-number">2.1.</span> <span class="nav-text">Char</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Word"><span class="nav-number">2.2.</span> <span class="nav-text">Word</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-line"><span class="nav-number">2.3.</span> <span class="nav-text">Single line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Object-motion"><span class="nav-number">2.4.</span> <span class="nav-text">Text Object motion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pair"><span class="nav-number">2.5.</span> <span class="nav-text">Pair</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Screen"><span class="nav-number">2.6.</span> <span class="nav-text">Screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File"><span class="nav-number">2.7.</span> <span class="nav-text">File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scroll"><span class="nav-number">2.8.</span> <span class="nav-text">Scroll</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search"><span class="nav-number">3.</span> <span class="nav-text">Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Search-char-in-single-line"><span class="nav-number">3.1.</span> <span class="nav-text">Search char in single line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Search-in-file"><span class="nav-number">3.2.</span> <span class="nav-text">Search in file</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Edit"><span class="nav-number">4.</span> <span class="nav-text">Edit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insert"><span class="nav-number">4.1.</span> <span class="nav-text">Insert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copy"><span class="nav-number">4.2.</span> <span class="nav-text">Copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Paste-from-clipboard-registry"><span class="nav-number">4.3.</span> <span class="nav-text">Paste from clipboard registry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cut-and-switch-to-insert-mode"><span class="nav-number">4.4.</span> <span class="nav-text">Cut and switch to insert mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cut-and-keep-in-normal-mode"><span class="nav-number">4.5.</span> <span class="nav-text">Cut and keep in normal mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inside-around"><span class="nav-number">4.6.</span> <span class="nav-text">inside / around</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repeat-action"><span class="nav-number">4.7.</span> <span class="nav-text">Repeat action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Macro"><span class="nav-number">4.8.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bookmark"><span class="nav-number">4.9.</span> <span class="nav-text">Bookmark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Registers"><span class="nav-number">4.10.</span> <span class="nav-text">Registers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Registers-Advance"><span class="nav-number">4.11.</span> <span class="nav-text">Registers - Advance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Change-multi-line"><span class="nav-number">4.12.</span> <span class="nav-text">Change multi line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More"><span class="nav-number">4.13.</span> <span class="nav-text">More</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#More…and-more"><span class="nav-number">4.14.</span> <span class="nav-text">More…and more</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-X-IDE"><span class="nav-number">5.</span> <span class="nav-text">vim X IDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Setup"><span class="nav-number">5.1.</span> <span class="nav-text">Setup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Get-the-difference-before-saving-in-vim"><span class="nav-number">6.1.</span> <span class="nav-text">Get the difference before saving in vim</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sing Ming Chen</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://acslog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://www.paddingleft.com/2018/08/29/vim-cheat-sheet/';
+        this.page.identifier = '2018/08/29/vim-cheat-sheet/';
+        this.page.title = 'Awesome Vim cheat sheet';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://acslog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
