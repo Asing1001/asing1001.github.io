@@ -6,10 +6,16 @@ tags: [Let's Encrypt, DNS, Certificate, https, docker]
 
 ## Steps
 
-1. Use the certbot command with docker:
+1. Create a folder for the certificate files
 
   ```sh
-  docker run -it certbot/certbot certonly --preferred-challenges dns --manual
+  mkdir /tmp/cert
+  ```
+
+2. Use the certbot command with docker:
+
+  ```sh
+  docker run -v /tmp/cert:/etc/letsencrypt/archive -it certbot/certbot certonly --preferred-challenges dns --manual
   ```
 
 1. Answer the questions
@@ -20,7 +26,9 @@ tags: [Let's Encrypt, DNS, Certificate, https, docker]
 
 1. Before hitting enter, ensure your record has published by [dig tool](https://toolbox.googleapps.com/apps/dig/#TXT/_acme-challenge.mvrater.com.)
 
-1. Hit enter then you will get the certificates
+  {% asset_img "dig.png" %}
+
+1. Hit enter then you will get the certificates under `/tmp/cert/{yourdomain}` in your Host machine
 
   {% asset_img "challenges.png" %}
 
