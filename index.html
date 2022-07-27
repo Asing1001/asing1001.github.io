@@ -366,6 +366,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2022/07/28/Mongodb-connection-test-inside-a-container/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/07/28/Mongodb-connection-test-inside-a-container/" itemprop="url">
+                  Mongodb connection test inside a container
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2022-07-28 01:42:40" itemprop="dateCreated datePublished" datetime="2022-07-28T01:42:40+00:00">2022-07-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/07/28/Mongodb-connection-test-inside-a-container/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/07/28/Mongodb-connection-test-inside-a-container/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>To test the connection between a container and the mongoDB.</p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ol>
+<li><p>Install mongo client</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install required package</span></span><br><span class="line">apt-get install gnupg</span><br><span class="line"></span><br><span class="line"><span class="comment"># import the MongoDB public GPG Key</span></span><br><span class="line">wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | apt-key add -</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a /etc/apt/sources.list.d/mongodb-org-6.0.list file for MongoDB</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"deb http://repo.mongodb.org/apt/debian buster/mongodb-org/6.0 main"</span> | tee /etc/apt/sources.list.d/mongodb-org-6.0.list</span><br><span class="line"></span><br><span class="line"><span class="comment"># Reload local package database.</span></span><br><span class="line">apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment"># Install the MongoDB packages.</span></span><br><span class="line">apt-get install -y mongodb-org</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Test the connection</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Login to mongo</span></span><br><span class="line">mongo <span class="string">"mongodb://username:pwd@1.2.3.4:5/dbname?authSource=admin"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Check the DB name</span></span><br><span class="line">db</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/#install-mongodb-community-edition" target="_blank" rel="noopener">https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-debian/#install-mongodb-community-edition</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2022/07/27/Run-puppeteer-inside-K8s-container/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -412,7 +586,7 @@
                 
               
 
-              <time title="Created: 2022-07-27 12:57:15 / Modified: 05:06:10" itemprop="dateCreated datePublished" datetime="2022-07-27T12:57:15+00:00">2022-07-27</time>
+              <time title="Created: 2022-07-27 12:57:15 / Modified: 17:56:49" itemprop="dateCreated datePublished" datetime="2022-07-27T12:57:15+00:00">2022-07-27</time>
             
 
             
@@ -585,7 +759,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -750,7 +924,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -934,7 +1108,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1121,7 +1295,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1301,7 +1475,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1482,7 +1656,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1657,7 +1831,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1838,7 +2012,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1929,170 +2103,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/" itemprop="url">
-                  [Drone CI] migrate pipeline config from 0.x to 1.x
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-09-11 17:24:25" itemprop="dateCreated datePublished" datetime="2019-09-11T17:24:25+00:00">2019-09-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="New-syntax-for-pipeline-and-step"><a href="#New-syntax-for-pipeline-and-step" class="headerlink" title="New syntax for pipeline and step"></a>New syntax for pipeline and step</h2><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- pipeline:</span></span><br><span class="line"><span class="deletion">-   custom-step:</span></span><br><span class="line"><span class="deletion">-     image: some-image</span></span><br><span class="line"><span class="addition">+ kind: pipeline</span></span><br><span class="line"><span class="addition">+ steps:</span></span><br><span class="line"><span class="addition">+   name: custom-step</span></span><br><span class="line"><span class="addition">+   image: some-image</span></span><br></pre></td></tr></table></figure>
-<h2 id="Custom-plugin-variables-should-be-placed-under-settings"><a href="#Custom-plugin-variables-should-be-placed-under-settings" class="headerlink" title="Custom plugin variables should be placed under settings"></a>Custom plugin variables should be placed under <code>settings</code></h2><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">kind: pipeline</span><br><span class="line">name: default</span><br><span class="line">steps:</span><br><span class="line">  name: custom-plugin</span><br><span class="line">  image: some-image</span><br><span class="line"><span class="deletion">- foo:</span></span><br><span class="line"><span class="deletion">-   bar: baz</span></span><br><span class="line"><span class="addition">+ settings:</span></span><br><span class="line"><span class="addition">+   foo:</span></span><br><span class="line"><span class="addition">+     bar: baz</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2142,7 +2152,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">75</span>
+                    <span class="site-state-item-count">76</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2535,7 +2545,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">188</span>
+                      
+                    
+                    <span class="site-state-item-count">189</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

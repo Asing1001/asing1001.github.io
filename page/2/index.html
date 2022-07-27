@@ -366,6 +366,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/" itemprop="url">
+                  [Drone CI] migrate pipeline config from 0.x to 1.x
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-11 17:24:25" itemprop="dateCreated datePublished" datetime="2019-09-11T17:24:25+00:00">2019-09-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/11/Drone-migrate-configuration-from-0-x-to-1-x/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="New-syntax-for-pipeline-and-step"><a href="#New-syntax-for-pipeline-and-step" class="headerlink" title="New syntax for pipeline and step"></a>New syntax for pipeline and step</h2><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- pipeline:</span></span><br><span class="line"><span class="deletion">-   custom-step:</span></span><br><span class="line"><span class="deletion">-     image: some-image</span></span><br><span class="line"><span class="addition">+ kind: pipeline</span></span><br><span class="line"><span class="addition">+ steps:</span></span><br><span class="line"><span class="addition">+   name: custom-step</span></span><br><span class="line"><span class="addition">+   image: some-image</span></span><br></pre></td></tr></table></figure>
+<h2 id="Custom-plugin-variables-should-be-placed-under-settings"><a href="#Custom-plugin-variables-should-be-placed-under-settings" class="headerlink" title="Custom plugin variables should be placed under settings"></a>Custom plugin variables should be placed under <code>settings</code></h2><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">kind: pipeline</span><br><span class="line">name: default</span><br><span class="line">steps:</span><br><span class="line">  name: custom-plugin</span><br><span class="line">  image: some-image</span><br><span class="line"><span class="deletion">- foo:</span></span><br><span class="line"><span class="deletion">-   bar: baz</span></span><br><span class="line"><span class="addition">+ settings:</span></span><br><span class="line"><span class="addition">+   foo:</span></span><br><span class="line"><span class="addition">+     bar: baz</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/08/20/git-submodule/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +593,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -605,7 +769,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -777,7 +941,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -946,7 +1110,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1117,7 +1281,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1377,7 +1541,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1551,7 +1715,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1718,7 +1882,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -1910,7 +2074,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
+                <time title="Modified: 2022-07-27 17:56:49" itemprop="dateModified" datetime="2022-07-27T17:56:49+00:00">2022-07-27</time>
               
             
           </span>
@@ -2000,565 +2164,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/08/29/vim-cheat-sheet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/29/vim-cheat-sheet/" itemprop="url">
-                  Awesome Vim cheat sheet
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-08-29 17:03:34" itemprop="dateCreated datePublished" datetime="2018-08-29T17:03:34+00:00">2018-08-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2022-07-27 05:06:10" itemprop="dateModified" datetime="2022-07-27T05:06:10+00:00">2022-07-27</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/29/vim-cheat-sheet/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/29/vim-cheat-sheet/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><a href="https://www.paddingleft.com/slides/html/vim.html">My slides share</a>[</li>
-<li><a href="/2021/09/24/Coding-faster-with-Vim-IDE/">Coding faster with Vim + IDE</a></li>
-</ul>
-<h2 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h2><ul>
-<li>insert</li>
-<li>normal</li>
-<li>visual</li>
-<li>command</li>
-</ul>
-<hr>
-<h3 id="Insert-mode"><a href="#Insert-mode" class="headerlink" title="Insert mode"></a>Insert mode</h3><ul>
-<li>i<ul>
-<li>insert before the cursor</li>
-</ul>
-</li>
-<li>I<ul>
-<li>insert before the start of line</li>
-</ul>
-</li>
-<li>a<ul>
-<li>append after the cursor</li>
-</ul>
-</li>
-<li>A<ul>
-<li>append at the end of line</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Normal-mode"><a href="#Normal-mode" class="headerlink" title="Normal mode"></a>Normal mode</h3><ul>
-<li><code>&lt;ESC&gt;</code></li>
-</ul>
-<hr>
-<h3 id="Visual-mode"><a href="#Visual-mode" class="headerlink" title="Visual mode"></a>Visual mode</h3><ul>
-<li>v<ul>
-<li>select a char</li>
-</ul>
-</li>
-<li>V<ul>
-<li>select a line</li>
-</ul>
-</li>
-<li>Ctrl + v<ul>
-<li>visual block mode</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Command-mode"><a href="#Command-mode" class="headerlink" title="Command mode"></a>Command mode</h3><p><code>:</code> + <code>&lt;command&gt;</code></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">wq</span></span><br><span class="line">:<span class="keyword">cq</span></span><br><span class="line">:<span class="keyword">set</span> rnu</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Cursor-movement"><a href="#Cursor-movement" class="headerlink" title="Cursor movement"></a>Cursor movement</h2><hr>
-<h3 id="Char"><a href="#Char" class="headerlink" title="Char"></a>Char</h3><ul>
-<li>h (left)</li>
-<li>j (down)</li>
-<li>k (up)</li>
-<li>l (right)</li>
-<li>Combile with number to move, <code>2k</code> to jump 2 lines up</li>
-<li>Relative line numbers <code>:set rnu</code></li>
-</ul>
-<hr>
-<h3 id="Word"><a href="#Word" class="headerlink" title="Word"></a>Word</h3><ul>
-<li>w or W<ul>
-<li>jump forwards to the start of a word</li>
-</ul>
-</li>
-<li>e or E<ul>
-<li>jump forwards to the end of a word</li>
-</ul>
-</li>
-<li>b or B<ul>
-<li>jump backwards to the start of a word</li>
-</ul>
-</li>
-<li>Capital case can contain <code>punctuation</code></li>
-</ul>
-<hr>
-<h3 id="Single-line"><a href="#Single-line" class="headerlink" title="Single line"></a>Single line</h3><ul>
-<li>$ - end of line</li>
-<li>^ - start of the line after the indentation</li>
-<li>0 - move to the column 0</li>
-</ul>
-<hr>
-<h3 id="Text-Object-motion"><a href="#Text-Object-motion" class="headerlink" title="Text Object motion"></a>Text Object motion</h3><ul>
-<li>{}<ul>
-<li>paragraphs forward/backward</li>
-</ul>
-</li>
-<li>()<ul>
-<li>sentences forward/backward</li>
-</ul>
-</li>
-<li>[]<ul>
-<li>backward/forward sections</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Pair"><a href="#Pair" class="headerlink" title="Pair"></a>Pair</h3><ul>
-<li>%<ul>
-<li>go to the match bracket</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Screen"><a href="#Screen" class="headerlink" title="Screen"></a>Screen</h3><ul>
-<li>H<ul>
-<li>move to top of screen</li>
-</ul>
-</li>
-<li>M<ul>
-<li>move to middle of screen</li>
-</ul>
-</li>
-<li>L<ul>
-<li>move to bottom of screen</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><ul>
-<li>gg<ul>
-<li>Start</li>
-</ul>
-</li>
-<li>G<ul>
-<li>end of file</li>
-</ul>
-</li>
-<li>:<code>&lt;absolute-line-numbers&gt;</code><ul>
-<li>move to the absolute line</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Scroll"><a href="#Scroll" class="headerlink" title="Scroll"></a>Scroll</h3><ul>
-<li>zt<ul>
-<li>scroll current line to top</li>
-</ul>
-</li>
-<li>zb<ul>
-<li>scroll current line to bottom</li>
-</ul>
-</li>
-<li>zz<ul>
-<li>scroll current line to middle</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><hr>
-<h3 id="Search-char-in-single-line"><a href="#Search-char-in-single-line" class="headerlink" title="Search char in single line"></a>Search char in single line</h3><ul>
-<li>f/F<ul>
-<li>find char, forward/backward</li>
-<li><code>abcABCabc</code>, <code>fC</code> to find middle C</li>
-</ul>
-</li>
-<li>t/T<ul>
-<li>Go to previous char before the char, forward/backward</li>
-<li><code>foo.bar&lt;&gt;</code> , move to r by <code>t&lt;</code></li>
-</ul>
-</li>
-<li>;<ul>
-<li>Repeat <code>t/T/f/F</code></li>
-</ul>
-</li>
-<li>,<ul>
-<li>Reverse <code>t/T/f/F</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Search-in-file"><a href="#Search-in-file" class="headerlink" title="Search in file"></a>Search in file</h3><ul>
-<li>/<ul>
-<li>Search forward</li>
-</ul>
-</li>
-<li>?<ul>
-<li>Search backward</li>
-</ul>
-</li>
-<li>n and N<ul>
-<li>next and previous</li>
-</ul>
-</li>
-<li>*, #<ul>
-<li>search next/previous current word</li>
-<li>The behavior is identical to /<code>word</code></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="Edit"><a href="#Edit" class="headerlink" title="Edit"></a>Edit</h2><ul>
-<li>Undo/Redo<ul>
-<li>u / Ctrl+r</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><ul>
-<li>insert line before/after the current line<ul>
-<li>o, O</li>
-</ul>
-</li>
-<li>join two line (keep mode)<ul>
-<li>J</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Copy"><a href="#Copy" class="headerlink" title="Copy"></a>Copy</h3><ul>
-<li>y + motion<ul>
-<li>combine with any motion, e.g. <code>yt;</code> or <code>yw</code></li>
-</ul>
-</li>
-<li>yy = Y<ul>
-<li>yank (copy) the current line</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Paste-from-clipboard-registry"><a href="#Paste-from-clipboard-registry" class="headerlink" title="Paste from clipboard registry"></a>Paste from clipboard registry</h3><ul>
-<li><p>p</p>
-<ul>
-<li>paste after</li>
-</ul>
-</li>
-<li><p>P</p>
-<ul>
-<li>paste before</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Cut-and-switch-to-insert-mode"><a href="#Cut-and-switch-to-insert-mode" class="headerlink" title="Cut and switch to insert mode"></a>Cut and switch to insert mode</h3><ul>
-<li>c + motion<ul>
-<li>Cut</li>
-</ul>
-</li>
-<li>C<ul>
-<li>Cut to end of line</li>
-</ul>
-</li>
-<li>s<ul>
-<li>Substitute the char under the cursor</li>
-</ul>
-</li>
-<li>S<ul>
-<li>Substitube the line</li>
-</ul>
-</li>
-<li>r<ul>
-<li>replace a char</li>
-</ul>
-</li>
-<li>R<ul>
-<li>Enter the insert-replace mode</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Cut-and-keep-in-normal-mode"><a href="#Cut-and-keep-in-normal-mode" class="headerlink" title="Cut and keep in normal mode"></a>Cut and keep in normal mode</h3><ul>
-<li>d<ul>
-<li><code>d3j</code> or <code>3dd</code></li>
-</ul>
-</li>
-<li>D<ul>
-<li>Delete to end of the line</li>
-</ul>
-</li>
-<li>dd<ul>
-<li>Delete the entire line</li>
-</ul>
-</li>
-<li>x and X<ul>
-<li>delete and backspace</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="inside-around"><a href="#inside-around" class="headerlink" title="inside / around"></a>inside / around</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># edit neariest word inside symbol, e.g. &#125;</span></span><br><span class="line">ci&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># edit neariest word outside symbol, e.g. ]</span></span><br><span class="line">ca]</span><br><span class="line"></span><br><span class="line"><span class="comment"># delete inside tag</span></span><br><span class="line">dit</span><br><span class="line"></span><br><span class="line"><span class="comment"># replace word with yanked word</span></span><br><span class="line">vi]p</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Repeat-action"><a href="#Repeat-action" class="headerlink" title="Repeat action"></a>Repeat action</h3><ul>
-<li>repeat action<ul>
-<li>.</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Macro"><a href="#Macro" class="headerlink" title="Macro"></a>Macro</h3><ul>
-<li><code>q</code> + <code>a~z</code><ul>
-<li>record macro to <code>a~z</code></li>
-</ul>
-</li>
-<li><code>normal mode</code> + <code>q</code> to quit recording</li>
-<li><code>@</code> + <code>a~z</code> to excute macro</li>
-</ul>
-<hr>
-<h3 id="Bookmark"><a href="#Bookmark" class="headerlink" title="Bookmark"></a>Bookmark</h3><ul>
-<li><code>m</code> + <code>a~z</code><ul>
-<li>bookmark current location to <code>a~z</code></li>
-</ul>
-</li>
-<li><code>&#39;</code> + <code>a~z</code><ul>
-<li>go to a~z bookmark</li>
-</ul>
-</li>
-<li><code>&#39;&#39;</code><ul>
-<li>go to the last position</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Registers"><a href="#Registers" class="headerlink" title="Registers"></a><a href="https://www.brianstorti.com/vim-registers/" target="_blank" rel="noopener">Registers</a></h3><ul>
-<li><code>&quot;</code> + <code>a~z</code> <code>0~9</code> <code>&quot;+*/:%-</code><ul>
-<li><code>:reg</code> see all registers</li>
-<li><code>&quot;</code> the default(unnamed) register</li>
-<li><code>0</code> the default register for <code>y</code>(yank)</li>
-<li><code>+</code>, <code>*</code> the system clipboard</li>
-<li><code>/</code> the latest search keyword</li>
-<li><code>:</code> the latest used command</li>
-<li><code>%</code> the current file path</li>
-<li><code>#</code> the last edited file</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>“adw : delete the word and save to register <code>a</code></p>
-</blockquote>
-<p>===</p>
-<h3 id="Registers-Advance"><a href="#Registers-Advance" class="headerlink" title="Registers - Advance"></a>Registers - Advance</h3><ul>
-<li><code>&quot;0p</code> - paste from last yank</li>
-<li>Use the register in the <code>Search</code> and <code>Command mode</code><ul>
-<li><code>ctrl</code> + <code>r</code> + <code>&lt;register&gt;</code></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><code>*:%s/&lt;ctrl+r&gt;//abc/gc</code> to replace the lastest search keyword(*) to <code>abc</code> with confirmation dialog</p>
-</blockquote>
-<hr>
-<h3 id="Change-multi-line"><a href="#Change-multi-line" class="headerlink" title="Change multi line"></a>Change multi line</h3><ol>
-<li><code>Ctrl + v</code> to enter <code>Visual block mode</code></li>
-<li>Move cursor to select lines that need to be edited</li>
-<li><code>Shift + i</code></li>
-<li><code>#</code></li>
-<li>Esc</li>
-</ol>
-<hr>
-<h3 id="More"><a href="#More" class="headerlink" title="More"></a>More</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># increase the first right number in the line</span></span><br><span class="line">Ctrl + A</span><br><span class="line"></span><br><span class="line"><span class="comment"># decrease the first right number in the line</span></span><br><span class="line">Ctrl + X</span><br><span class="line"></span><br><span class="line"><span class="comment"># Make a word uppercase</span></span><br><span class="line">gUe</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show Line numbers</span></span><br><span class="line">:<span class="built_in">set</span> number</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set relative line number</span></span><br><span class="line">:<span class="built_in">set</span> rnu</span><br><span class="line"></span><br><span class="line"><span class="comment"># get recent command list</span></span><br><span class="line">q:</span><br><span class="line"></span><br><span class="line"><span class="comment"># Replace word A with word B</span></span><br><span class="line">:%s/A/B/g</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="More…and-more"><a href="#More…and-more" class="headerlink" title="More…and more"></a>More…and more</h3><ul>
-<li>ctrl+o<ul>
-<li>previous jump position</li>
-</ul>
-</li>
-<li>ctrl+i<ul>
-<li>next jump position</li>
-</ul>
-</li>
-<li>g;<ul>
-<li>previous Change position</li>
-</ul>
-</li>
-<li>g,<ul>
-<li>next Change position</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="vim-X-IDE"><a href="#vim-X-IDE" class="headerlink" title="vim X IDE"></a>vim X IDE</h2><hr>
-<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><ul>
-<li><p>Ideavim</p>
-<ol>
-<li>click the <code>V</code> icon on the right bottom corner</li>
-<li>open <code>~/.ideavimrc</code></li>
-<li>edit and save</li>
-</ol>
-</li>
-<li><p><a href="https://github.com/Asing1001/tennis-kata#setup-vscode-configs" target="_blank" rel="noopener">VScode</a></p>
-</li>
-</ul>
-<hr>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="http://vimdoc.sourceforge.net/htmldoc/motion.html" target="_blank" rel="noopener">vim doc</a></li>
-<li><a href="https://www.brianstorti.com/vim-registers/" target="_blank" rel="noopener">vim register</a></li>
-<li><a href="https://vim.rtorr.com/" target="_blank" rel="noopener">vim cheatsheet</a></li>
-</ul>
-<hr>
-<h3 id="Get-the-difference-before-saving-in-vim"><a href="#Get-the-difference-before-saving-in-vim" class="headerlink" title="Get the difference before saving in vim"></a>Get the difference before saving in vim</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:w !diff % -</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>w</code> without filename will output to stdin</li>
-<li><code>!</code> will excute bash in vim</li>
-<li><code>%</code> is current file in vim</li>
-<li><code>diff</code> with <code>-</code> will read content from stdin</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2608,7 +2213,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">75</span>
+                    <span class="site-state-item-count">76</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3001,7 +2606,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">188</span>
+                      
+                    
+                    <span class="site-state-item-count">189</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
