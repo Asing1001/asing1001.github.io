@@ -32,8 +32,8 @@ To test the connection between a container and the mongoDB.
 1. Test the connection
 
   ```bash
-  # Login to mongo
-  mongo "mongodb://username:pwd@1.2.3.4:5/dbname?authSource=admin"
+  # Login to mongo (Use mongo or mongosh, depends on the mongodb package version)
+  mongosh "mongodb://username:pwd@1.2.3.4:5/dbname?authSource=admin"
 
   # Check the DB name
   db
