@@ -366,6 +366,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/09/03/check-gzip-size-with-curl-gzip-wc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/check-gzip-size-with-curl-gzip-wc/" itemprop="url">
+                  Measure gzip size via command line without actually compress it
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-03 15:10:11" itemprop="dateCreated datePublished" datetime="2018-09-03T15:10:11+00:00">2018-09-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/03/check-gzip-size-with-curl-gzip-wc/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/03/check-gzip-size-with-curl-gzip-wc/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h2 id="Measure-compressed-request-size-with-curl-gzip-and-wc"><a href="#Measure-compressed-request-size-with-curl-gzip-and-wc" class="headerlink" title="Measure compressed request size with curl, gzip and wc"></a>Measure compressed request size with curl, gzip and wc</h2><p>To measure gzip sizing for a request, you don’t need to actually gzip it, just use pipe <code>|</code> to pipe the stream from <code>curl</code> to <code>gzip</code> to <code>wc</code> :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># before gzip</span></span><br><span class="line">$ curl https://www.paddingleft.com | wc -c</span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100 57847    0 57847    0     0  99114      0 --:--:-- --:--:-- --:--:-- 99053</span><br><span class="line">   57847</span><br><span class="line"></span><br><span class="line"><span class="comment"># after gzip</span></span><br><span class="line">$ curl https://www.paddingleft.com | gzip | wc -c</span><br><span class="line">  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</span><br><span class="line">                                 Dload  Upload   Total   Spent    Left  Speed</span><br><span class="line">100 57848    0 57848    0     0   111k      0 --:--:-- --:--:-- --:--:--  110k</span><br><span class="line">   10443</span><br></pre></td></tr></table></figure>
+<p>As you can see, before gzip it’s 57847 bytes, after gzip it’s 10443 bytes.</p>
+<h2 id="Measure-file-size-after-gzip"><a href="#Measure-file-size-after-gzip" class="headerlink" title="Measure file size after gzip"></a>Measure file size after gzip</h2><p>You could do same things to measure a file gzip sizing by gzip with <code>-c</code> option, so it won’t actually gzip it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ gzip -c foo.jpg | wc -c</span><br><span class="line">    53688</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/08/29/vim-cheat-sheet/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +597,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -988,7 +1156,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1155,7 +1323,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1328,7 +1496,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -1502,7 +1670,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -1671,7 +1839,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1839,7 +2007,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -2006,7 +2174,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -2168,7 +2336,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -2255,169 +2423,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/04/11/HttpClient-PostAsync-GetAsync-Example/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/11/HttpClient-PostAsync-GetAsync-Example/" itemprop="url">
-                  HttpClient PostAsync/GetAsync JSON Example
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-11 18:52:32" itemprop="dateCreated datePublished" datetime="2018-04-11T18:52:32+00:00">2018-04-11</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/11/HttpClient-PostAsync-GetAsync-Example/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/11/HttpClient-PostAsync-GetAsync-Example/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="PostAsync"><a href="#PostAsync" class="headerlink" title="PostAsync"></a>PostAsync</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">readonly</span> HttpClient Client = <span class="keyword">new</span> HttpClient();</span><br><span class="line">public async Task&lt;T&gt; PostAsync&lt;T&gt;(string url, object data) where T : class, new()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">string</span> content = JsonConvert.SerializeObject(data);</span><br><span class="line">        <span class="keyword">var</span> buffer = Encoding.UTF8.GetBytes(content);</span><br><span class="line">        <span class="keyword">var</span> byteContent = <span class="keyword">new</span> ByteArrayContent(buffer);</span><br><span class="line">        byteContent.Headers.ContentType = <span class="keyword">new</span> MediaTypeHeaderValue(<span class="string">"application/json"</span>);</span><br><span class="line">        <span class="keyword">var</span> response = <span class="keyword">await</span> Client.PostAsync(url, byteContent).ConfigureAwait(<span class="literal">false</span>);</span><br><span class="line">        <span class="keyword">string</span> result = <span class="keyword">await</span> response.Content.ReadAsStringAsync();</span><br><span class="line">        <span class="keyword">if</span> (response.StatusCode != HttpStatusCode.OK)</span><br><span class="line">        &#123;</span><br><span class="line">            logger.Error(<span class="string">$"GetAsync End, url:<span class="subst">&#123;url&#125;</span>, HttpStatusCode:<span class="subst">&#123;response.StatusCode&#125;</span>, result:<span class="subst">&#123;result&#125;</span>"</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> T();</span><br><span class="line">        &#125;</span><br><span class="line">        logger.Info(<span class="string">$"GetAsync End, url:<span class="subst">&#123;url&#125;</span>, result:<span class="subst">&#123;result&#125;</span>"</span>);</span><br><span class="line">        <span class="keyword">return</span> JsonConvert.DeserializeObject&lt;T&gt;(result);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (WebException ex)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ex.Response != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">string</span> responseContent = <span class="keyword">new</span> StreamReader(ex.Response.GetResponseStream()).ReadToEnd();</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> System.Exception(<span class="string">$"response :<span class="subst">&#123;responseContent&#125;</span>"</span>, ex);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="GetAsync"><a href="#GetAsync" class="headerlink" title="GetAsync"></a>GetAsync</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">readonly</span> HttpClient Client = <span class="keyword">new</span> HttpClient();</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">async</span> Task&lt;<span class="keyword">string</span>&gt; <span class="title">GetAsync</span>(<span class="params"><span class="keyword">string</span> url, <span class="keyword">object</span> data</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">string</span> requestUrl = <span class="string">$"<span class="subst">&#123;url&#125;</span>?<span class="subst">&#123;GetQueryString(data)&#125;</span>"</span>;</span><br><span class="line">        logger.Info(<span class="string">$"GetAsync Start, requestUrl:<span class="subst">&#123;requestUrl&#125;</span>"</span>);</span><br><span class="line">        <span class="keyword">var</span> response = <span class="keyword">await</span> Client.GetAsync(requestUrl).ConfigureAwait(<span class="literal">false</span>);</span><br><span class="line">        <span class="keyword">string</span> result = <span class="keyword">await</span> response.Content.ReadAsStringAsync();</span><br><span class="line">        logger.Info(<span class="string">$"GetAsync End, requestUrl:<span class="subst">&#123;requestUrl&#125;</span>, HttpStatusCode:<span class="subst">&#123;response.StatusCode&#125;</span>, result:<span class="subst">&#123;result&#125;</span>"</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (WebException ex)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (ex.Response != <span class="literal">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">string</span> responseContent = <span class="keyword">new</span> StreamReader(ex.Response.GetResponseStream()).ReadToEnd();</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">$"Response :<span class="subst">&#123;responseContent&#125;</span>"</span>, ex);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">string</span> <span class="title">GetQueryString</span>(<span class="params"><span class="keyword">object</span> obj</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> properties = <span class="keyword">from</span> p <span class="keyword">in</span> obj.GetType().GetProperties()</span><br><span class="line">                        <span class="keyword">where</span> p.GetValue(obj, <span class="literal">null</span>) != <span class="literal">null</span></span><br><span class="line">                        <span class="keyword">select</span> p.Name + <span class="string">"="</span> + HttpUtility.UrlEncode(p.GetValue(obj, <span class="literal">null</span>).ToString());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> String.Join(<span class="string">"&amp;"</span>, properties.ToArray());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2467,7 +2472,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-count">77</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2862,7 +2867,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">189</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">193</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

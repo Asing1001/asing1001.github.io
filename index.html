@@ -366,6 +366,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2022/11/17/Remove-duplicate-documents-from-Mongodb-by-keys/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/11/17/Remove-duplicate-documents-from-Mongodb-by-keys/" itemprop="url">
+                  Remove duplicate documents from Mongodb by keys
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2022-11-17 03:40:20" itemprop="dateCreated datePublished" datetime="2022-11-17T03:40:20+00:00">2022-11-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2022/11/17/Remove-duplicate-documents-from-Mongodb-by-keys/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/11/17/Remove-duplicate-documents-from-Mongodb-by-keys/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>To ensure there is no duplicate documents, we could create an <a href="https://www.mongodb.com/docs/v5.0/core/index-unique/" target="_blank" rel="noopener">unique index</a>.<br>However, it will throw error when there are duplicates entries in the collection:</p>
+<blockquote>
+<p>MongoDB cannot create a <code>unique index</code> on the specified index field(s) if the collection already contains data that would violate the unique constraint for the index.</p>
+</blockquote>
+<h2 id="Remove-the-duplicates-by-keys"><a href="#Remove-the-duplicates-by-keys" class="headerlink" title="Remove the duplicates by keys"></a>Remove the duplicates by keys</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> collection = db.collection(<span class="string">'MyCollection'</span>);</span><br><span class="line"><span class="keyword">const</span> operations: <span class="built_in">Promise</span>&lt;<span class="built_in">any</span>&gt;[] = [];</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'aggregation'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">await</span> collection</span><br><span class="line">  .aggregate([</span><br><span class="line">    &#123;</span><br><span class="line">      $group: &#123;</span><br><span class="line">        _id: &#123;</span><br><span class="line">          key1: <span class="string">'$key1'</span>,</span><br><span class="line">          key2: <span class="string">'$key2'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        dups: &#123;</span><br><span class="line">          $push: <span class="string">'$_id'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        count: &#123;</span><br><span class="line">          $sum: <span class="number">1</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      $match: &#123;</span><br><span class="line">        _id: &#123;</span><br><span class="line">          $ne: <span class="literal">null</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        count: &#123;</span><br><span class="line">          $gt: <span class="number">1</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ])</span><br><span class="line">  .forEach(<span class="function">(<span class="params">doc</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(doc);</span><br><span class="line">    doc.dups.slice(<span class="number">1</span>).forEach(<span class="function">(<span class="params">duplicateId: <span class="built_in">string</span></span>) =&gt;</span> &#123;</span><br><span class="line">      operations.push(collection.deleteOne(&#123; _id: duplicateId &#125;));</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'aggregation'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'remove duplicate'</span>);</span><br><span class="line"><span class="keyword">await</span> <span class="built_in">Promise</span>.all(operations);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'remove duplicate'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Create-the-unique-index"><a href="#Create-the-unique-index" class="headerlink" title="Create the unique index"></a>Create the unique index</h2><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">await</span> collection.createIndex(&#123; key1: <span class="number">1</span>, key2: <span class="number">1</span> &#125;, &#123; unique: <span class="literal">true</span>, name: <span class="string">'unique_index'</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2022/07/28/Mongodb-connection-test-inside-a-container/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +597,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -603,7 +771,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -771,7 +939,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -936,7 +1104,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1120,7 +1288,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1307,7 +1475,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1487,7 +1655,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1668,7 +1836,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1843,7 +2011,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1946,175 +2114,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/09/18/Show-Search-on-mobile-devices-keyboard/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/18/Show-Search-on-mobile-devices-keyboard/" itemprop="url">
-                  Show "Search" button on mobile keyboard
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-09-18 12:52:53" itemprop="dateCreated datePublished" datetime="2019-09-18T12:52:53+00:00">2019-09-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/18/Show-Search-on-mobile-devices-keyboard/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/18/Show-Search-on-mobile-devices-keyboard/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><img style="width:200px" src="/2019/09/18/Show-Search-on-mobile-devices-keyboard/search_button.jpeg"></p>
-<h2 id="For-Android"><a href="#For-Android" class="headerlink" title="For Android"></a>For Android</h2><p>Only <code>type=&quot;search&quot;</code> is required on <code>&lt;input&gt;</code></p>
-<h2 id="For-IOS"><a href="#For-IOS" class="headerlink" title="For IOS"></a>For IOS</h2><p>It is required to wrap <code>&lt;input type=&quot;search&quot;&gt;</code> inside a <code>&lt;form action&gt;</code>, note that the attribute <code>action</code> is must-have.</p>
-<h2 id="For-all-mobile-devices"><a href="#For-all-mobile-devices" class="headerlink" title="For all mobile devices"></a>For all mobile devices</h2><p>To sum up, the minimum requirement on mobile is:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">    <span class="attr">type</span>=<span class="string">"search"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>To try on mobile device, here is a live example on JSFiddle :</p>
-<script async src="//jsfiddle.net/asing1001/70vhab4e/20/embed/result,html/dark/"></script>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2164,7 +2163,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-count">77</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2559,7 +2558,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">189</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">193</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

@@ -366,6 +366,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/10/copy-backup-mongodb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/10/copy-backup-mongodb/" itemprop="url">
+                  Copy / Backup MongoDB
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-10 18:04:00" itemprop="dateCreated datePublished" datetime="2018-03-10T18:04:00+00:00">2018-03-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/10/copy-backup-mongodb/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/10/copy-backup-mongodb/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Directly-copy-db-from-ip"><a href="#Directly-copy-db-from-ip" class="headerlink" title="Directly copy db from ip :"></a>Directly copy db from ip :</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mongo &lt;ip&gt;</span><br><span class="line">use admin</span><br><span class="line">db.runCommand(&#123;copydb:1, fromdb:<span class="string">"&lt;DB Name&gt;"</span>, todb:<span class="string">"&lt;DB Name&gt;"</span>, fromhost:<span class="string">"&lt;DB HOST IP&gt;"</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Export-Restore-DB"><a href="#Export-Restore-DB" class="headerlink" title="Export / Restore DB"></a>Export / Restore DB</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Export</span></span><br><span class="line">mongodump --db &lt;dbname&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Restore</span></span><br><span class="line">mongorestore --port &lt;port number&gt; &lt;path to backup folder&gt;</span><br><span class="line"><span class="comment"># e.g. mongorestore --port 27017 X:\dump</span></span><br></pre></td></tr></table></figure>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note :"></a>Note :</h3><ol>
+<li>Run commands in administrator mode</li>
+<li>If commands not found, excute commands under mongodb <code>bin</code> folder, windows default path : <code>C:\Program Files\MongoDB\Server\3.2\bin\</code></li>
+</ol>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference :"></a>Reference :</h3><p><a href="https://docs.mongodb.com/manual/tutorial/backup-and-restore-tools/" target="_blank" rel="noopener">https://docs.mongodb.com/manual/tutorial/backup-and-restore-tools/</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/02/13/markdown-to-word-pandoc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +598,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -596,7 +765,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -770,7 +939,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -944,7 +1113,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -1108,7 +1277,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -1274,7 +1443,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:54" itemprop="dateModified" datetime="2022-11-16T19:53:54+00:00">2022-11-16</time>
               
             
           </span>
@@ -1445,7 +1614,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -1609,7 +1778,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -1774,7 +1943,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
+                <time title="Modified: 2022-11-16 19:53:55" itemprop="dateModified" datetime="2022-11-16T19:53:55+00:00">2022-11-16</time>
               
             
           </span>
@@ -1869,174 +2038,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/06/06/what-is-reverse-proxy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/06/what-is-reverse-proxy/" itemprop="url">
-                  What is reverse proxy
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-06-06 22:10:18" itemprop="dateCreated datePublished" datetime="2017-06-06T22:10:18+00:00">2017-06-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2022-09-02 10:40:50" itemprop="dateModified" datetime="2022-09-02T10:40:50+00:00">2022-09-02</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/06/06/what-is-reverse-proxy/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/06/06/what-is-reverse-proxy/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Proxy means <code>on behalf of</code> :</p>
-<blockquote>
-<p><code>Proxy(Forward proxy)</code> on behalf of <code>user</code> to reach websites<br><code>Reverse proxy</code> on behalf of <code>server</code> to receive users request</p>
-</blockquote>
-<p>Thanks to Dean Sim’s picture on <a href="https://www.quora.com/Whats-the-difference-between-a-reverse-proxy-and-forward-proxy" target="_blank" rel="noopener">this answer</a>, it is the best to help understand reverse proxy :<br><img src="/2017/06/06/what-is-reverse-proxy/reverse_proxy.png"></p>
-<p>More detail on <a href="https://stackoverflow.com/questions/224664/difference-between-proxy-server-and-reverse-proxy-server/39241016#39241016" target="_blank" rel="noopener">stackoverflow answer</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2086,7 +2087,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-count">77</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2481,7 +2482,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">189</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">193</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
