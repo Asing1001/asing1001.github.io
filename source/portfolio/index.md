@@ -3,6 +3,8 @@ title: Portfolio
 date: 2017-03-20 02:27:40
 ---
 
+<!-- Multi device mockup generator: https://techsini.com/multi-mockup/ -->
+
 ## MovieRater
 > [Live Preview](https://www.mvrater.com/) | [Github](https://github.com/Asing1001/movieRater.react)
 *Crawl data from Yahoo, IMDB, PTT, for search movies' ratings easily.*
@@ -51,4 +53,4 @@ date: 2017-03-20 02:27:40
  `AngularJS 1.5` `Bootstrap 3`
 ![](index/blood-transfusion-calculate.jpg)
 
-More project could find in my [Github](https://github.com/asing1001)
+More project could be found in my [Github](https://github.com/asing1001)
