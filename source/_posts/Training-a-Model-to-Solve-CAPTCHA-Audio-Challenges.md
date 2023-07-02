@@ -1,7 +1,7 @@
 ---
 title: Training a Model to Solve CAPTCHA Audio Challenges
 date: 2023-07-02 20:55:11
-tags: [reCAPTCHA, Machine Learning, SVM, Audio Processing, Feature Extraction, Automation, User Experience, Web Security, Data Science, Python Programming]
+tags: [CAPTCHA, Machine Learning, SVM, Audio Processing, Feature Extraction, Automation, User Experience, Web Security, Data Science, Python Programming]
 ---
 
 In this blog post, we will explore how to train a machine learning model to solve CAPTCHA audio challenges. CAPTCHA is a widely used security measure on the web to prevent automated bots from accessing websites. It presents users with various tests to determine if they are human, one of which is the audio challenge. By training a model to solve these audio challenges, we can automate the process and improve user experience. Let's dive into the code and understand how it works.
