@@ -366,6 +366,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/04/14/linux-rdp-to-windows-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/14/linux-rdp-to-windows-error/" itemprop="url">
+                  Linux Remote Desktop Viewer to Windows error connecting to host
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-14 23:28:04" itemprop="dateCreated datePublished" datetime="2018-04-14T23:28:04+00:00">2018-04-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/14/linux-rdp-to-windows-error/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/14/linux-rdp-to-windows-error/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Today When I connect to Windows through <code>Remote Desktop Viewer</code> got <code>error connecting to host</code> prompt.<br>After searching the solution is to remove the server I’m having issue in <code>$home/.freerdp/known_hosts</code> and reconnecting again.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[sing@study ~]$ vi ~/.freerdp/known_hosts</span><br><span class="line"><span class="comment"># In Vim, remove the line start with server ip you are connecting to by `dd`, and `:wq` to save the file.</span></span><br></pre></td></tr></table></figure>
+<p>Reference: <a href="https://superuser.com/questions/834447/vinagre-remote-desktop-viewer-for-gnome-isnt-working-out-of-box" target="_blank" rel="noopener">https://superuser.com/questions/834447/vinagre-remote-desktop-viewer-for-gnome-isnt-working-out-of-box</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/04/11/HttpClient-PostAsync-GetAsync-Example/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +594,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -592,7 +757,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -807,7 +972,7 @@ table th:nth-of-type(2) {
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -979,7 +1144,7 @@ table th:nth-of-type(2) {
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1146,7 +1311,7 @@ table th:nth-of-type(2) {
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1315,7 +1480,7 @@ table th:nth-of-type(2) {
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1530,7 +1695,7 @@ table th:nth-of-type(2) {
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1699,7 +1864,7 @@ table th:nth-of-type(2) {
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1871,7 +2036,7 @@ table th:nth-of-type(2) {
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1983,173 +2148,6 @@ table th:nth-of-type(2) {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/18/python-pip-install/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/18/python-pip-install/" itemprop="url">
-                  Python - handle package dependencies with requirements.txt
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-03-18 01:02:00" itemprop="dateCreated datePublished" datetime="2018-03-18T01:02:00+00:00">2018-03-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/18/python-pip-install/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/18/python-pip-install/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>To create same environment in python, you must know <code>requirements.txt</code>, it includes packages dependencies and let you install by a single command, a requirements.txt looks like this :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">beautifulsoup4==4.6.0</span><br><span class="line">certifi==2018.1.18</span><br><span class="line">chardet==3.0.4</span><br></pre></td></tr></table></figure></p>
-<h3 id="To-generate-requirements-txt"><a href="#To-generate-requirements-txt" class="headerlink" title="To generate requirements.txt"></a>To generate requirements.txt</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Without using virtual environment</span><br><span class="line">pip install pipreqs</span><br><span class="line">pipreqs /path/to/project</span><br><span class="line"></span><br><span class="line"># With virtual environment</span><br><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
-<h3 id="Install-packages-from-requirements-txt"><a href="#Install-packages-from-requirements-txt" class="headerlink" title="Install packages from requirements.txt :"></a>Install packages from requirements.txt :</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
-<h3 id="pip-install-bypass-SSL-certificate"><a href="#pip-install-bypass-SSL-certificate" class="headerlink" title="pip install bypass SSL certificate :"></a>pip install bypass SSL certificate :</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install --trusted-host pypi.python.org &lt;package_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Combine with requirements.txt</span></span><br><span class="line">pip install --trusted-host pypi.python.org -r requirements.txt</span><br></pre></td></tr></table></figure>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://github.com/bndr/pipreqs" target="_blank" rel="noopener">https://github.com/bndr/pipreqs</a><br><code>pip install --help</code> is your friend.</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2199,7 +2197,7 @@ table th:nth-of-type(2) {
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2602,7 +2600,27 @@ table th:nth-of-type(2) {
                     
                       
                     
-                    <span class="site-state-item-count">193</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">203</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

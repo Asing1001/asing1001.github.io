@@ -366,6 +366,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/09/04/check-a-JPEG-is-progressive-or-baseline/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/check-a-JPEG-is-progressive-or-baseline/" itemprop="url">
+                  Check a JPEG is progressive or baseline
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-04 13:00:19" itemprop="dateCreated datePublished" datetime="2018-09-04T13:00:19+00:00">2018-09-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/04/check-a-JPEG-is-progressive-or-baseline/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/04/check-a-JPEG-is-progressive-or-baseline/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Determine-progressive-JPEG-by-it’s-content"><a href="#Determine-progressive-JPEG-by-it’s-content" class="headerlink" title="Determine progressive JPEG by it’s content"></a>Determine progressive JPEG by it’s content</h2><p>From <a href="https://en.wikipedia.org/wiki/JPEG" target="_blank" rel="noopener">wiki-JPEG</a>, we could see a baseline/progressive JPEG have byte marker mapping differently as following:</p>
+<table>
+<thead>
+<tr>
+<th>Short name</th>
+<th style="text-align:left">Bytes</th>
+<th style="text-align:left">Payload</th>
+<th style="text-align:left">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SOF0</td>
+<td style="text-align:left">0xFF, 0xC0</td>
+<td style="text-align:left">variable size</td>
+<td style="text-align:left">Start Of Frame (baseline DCT)</td>
+</tr>
+<tr>
+<td>SOF2</td>
+<td style="text-align:left">0xFF, 0xC2</td>
+<td style="text-align:left">variable size</td>
+<td style="text-align:left">Start Of Frame (progressive DCT)</td>
+</tr>
+</tbody>
+</table>
+<p>So to tell the image is progressive JPEG, we need to check if it contains <code>0xFF, 0xC0</code> which is <code>c2ff</code> in <code>Two-byte hexadecimal display</code>.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/04/check-a-JPEG-is-progressive-or-baseline/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/09/03/check-gzip-size-with-curl-gzip-wc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +621,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -597,7 +789,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1156,7 +1348,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1323,7 +1515,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1496,7 +1688,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1670,7 +1862,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1839,7 +2031,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -2007,7 +2199,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -2174,7 +2366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -2221,171 +2413,6 @@
         
           
             <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Get current datetime</span></span><br><span class="line">GETDATE()</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Get year of datetime</span></span><br><span class="line">YEAR(GETDATE())</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Get difference between dates</span></span><br><span class="line">DATEDIFF(dateformat, startdate, enddate)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Subtract date, e.g.: DATEADD(HOUR, -11, GETDATE())</span></span><br><span class="line">DATEADD(Unit of time, value, date)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Avalable Unit of time value</span></span><br><span class="line">NANOSECOND, MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, WEEKDAY, WEEK, DAY, DAYOFYEAR, MONTH, QUARTER, YEAR</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Between</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">User</span> <span class="keyword">where</span> CreatedDate <span class="keyword">between</span> <span class="string">'2016-09-26'</span> <span class="keyword">and</span> <span class="string">'2016-09-27'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Order by</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">User</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">column</span> <span class="keyword">desc</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Group by</span></span><br><span class="line"><span class="keyword">select</span> UserCode, <span class="keyword">Count</span>(*) <span class="keyword">from</span> <span class="keyword">User</span> <span class="keyword">group</span> <span class="keyword">by</span> UserCode</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Select top 10</span></span><br><span class="line"><span class="keyword">SELECT</span> TOP (<span class="number">10</span>) * <span class="keyword">from</span> <span class="keyword">User</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/04/14/linux-rdp-to-windows-error/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/14/linux-rdp-to-windows-error/" itemprop="url">
-                  Linux Remote Desktop Viewer to Windows error connecting to host
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-14 23:28:04" itemprop="dateCreated datePublished" datetime="2018-04-14T23:28:04+00:00">2018-04-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/14/linux-rdp-to-windows-error/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/14/linux-rdp-to-windows-error/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Today When I connect to Windows through <code>Remote Desktop Viewer</code> got <code>error connecting to host</code> prompt.<br>After searching the solution is to remove the server I’m having issue in <code>$home/.freerdp/known_hosts</code> and reconnecting again.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[sing@study ~]$ vi ~/.freerdp/known_hosts</span><br><span class="line"><span class="comment"># In Vim, remove the line start with server ip you are connecting to by `dd`, and `:wq` to save the file.</span></span><br></pre></td></tr></table></figure>
-<p>Reference: <a href="https://superuser.com/questions/834447/vinagre-remote-desktop-viewer-for-gnome-isnt-working-out-of-box" target="_blank" rel="noopener">https://superuser.com/questions/834447/vinagre-remote-desktop-viewer-for-gnome-isnt-working-out-of-box</a></p>
-
           
         
       
@@ -2472,7 +2499,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2875,7 +2902,27 @@
                     
                       
                     
-                    <span class="site-state-item-count">193</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">203</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

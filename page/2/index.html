@@ -366,6 +366,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/" itemprop="url">
+                  Schedule backup Mongodb to AWS S3 with DroneCI cronjob
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-10-18 15:42:08" itemprop="dateCreated datePublished" datetime="2019-10-18T15:42:08+00:00">2019-10-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/18/Schedule-backup-Mongodb-to-AWS-with-DroneCI-cronjob/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>To schedule backup mongodb to AWS S3 could be done extremely easy in any docker pipeline, here is an example using DroneCI docker pipeline and cronjob feature. The complete code example could be found here: <a href="https://github.com/Asing1001/mongodb-s3-backup" target="_blank" rel="noopener">https://github.com/Asing1001/mongodb-s3-backup</a>.</p>
+<ol>
+<li>Create <code>.drone.jsonnet</code> file using docker pipeline</li>
+<li>Use <code>mongodump</code> in step1 to create archive</li>
+<li><p>Upload the archive by <code>s3 plugin</code> in step2</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">local backupLocation = <span class="string">'mongo-archive.gz'</span>;</span><br><span class="line"></span><br><span class="line">[&#123;</span><br><span class="line">  kind: <span class="string">'pipeline'</span>,</span><br><span class="line">  name: <span class="string">'default'</span>,</span><br><span class="line">  steps: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">'mongodump'</span>,</span><br><span class="line">      image: <span class="string">'mongo:3.6.5'</span>,</span><br><span class="line">      environment: &#123;</span><br><span class="line">        DB_URI: &#123;</span><br><span class="line">          from_secret: <span class="string">'db_uri'</span></span><br><span class="line">        &#125;,</span><br><span class="line">      &#125;,</span><br><span class="line">      commands: [</span><br><span class="line">        <span class="string">'mongodump --gzip --uri="$DB_URI" --archive='</span> + backupLocation,</span><br><span class="line">      ],</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">'upload'</span>,</span><br><span class="line">      image: <span class="string">'plugins/s3'</span>,</span><br><span class="line">      settings: &#123;</span><br><span class="line">        bucket: <span class="string">'mongo-backup'</span>,</span><br><span class="line">        access_key: &#123;</span><br><span class="line">          from_secret: <span class="string">'aws_access_key_id'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        secret_key: &#123;</span><br><span class="line">          from_secret: <span class="string">'aws_secret_access_key'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        source: backupLocation,</span><br><span class="line">        target: <span class="string">'/'</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  trigger: &#123;</span><br><span class="line">    event: [<span class="string">'cron'</span>, <span class="string">'push'</span>],</span><br><span class="line">    branch: <span class="string">'master'</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Activate the project in DroneCI and fill up variables <code>aws_access_key_id</code>, <code>aws_secret_access_key</code>, <code>db_uri</code></p>
+</li>
+<li><p>Setup Cron jobs in Drone project’s settings<br><img src="https://user-images.githubusercontent.com/6785698/67076974-cdc89400-f1c0-11e9-9ccc-d98ed054ec65.png" alt="drone-mongo"></p>
+</li>
+<li><p>Push the repository and verify the job :)</p>
+</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://drone.io/" target="_blank" rel="noopener">Drone</a></li>
+<li><a href="https://docs.mongodb.com/manual/reference/program/mongodump/" target="_blank" rel="noopener">mongodump</a></li>
+<li><a href="http://plugins.drone.io/drone-plugins/drone-s3/" target="_blank" rel="noopener">drone S3 plugin</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/09/18/Show-Search-on-mobile-devices-keyboard/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +610,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -598,7 +779,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -762,7 +943,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -938,7 +1119,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1110,7 +1291,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1279,7 +1460,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1450,7 +1631,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1710,7 +1891,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1884,7 +2065,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
+                <time title="Modified: 2023-07-02 13:00:22" itemprop="dateModified" datetime="2023-07-02T13:00:22+00:00">2023-07-02</time>
               
             
           </span>
@@ -1973,198 +2154,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/09/04/check-a-JPEG-is-progressive-or-baseline/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/04/check-a-JPEG-is-progressive-or-baseline/" itemprop="url">
-                  Check a JPEG is progressive or baseline
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-04 13:00:19" itemprop="dateCreated datePublished" datetime="2018-09-04T13:00:19+00:00">2018-09-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-01-16 15:25:01" itemprop="dateModified" datetime="2023-01-16T15:25:01+00:00">2023-01-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/04/check-a-JPEG-is-progressive-or-baseline/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/04/check-a-JPEG-is-progressive-or-baseline/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Determine-progressive-JPEG-by-it’s-content"><a href="#Determine-progressive-JPEG-by-it’s-content" class="headerlink" title="Determine progressive JPEG by it’s content"></a>Determine progressive JPEG by it’s content</h2><p>From <a href="https://en.wikipedia.org/wiki/JPEG" target="_blank" rel="noopener">wiki-JPEG</a>, we could see a baseline/progressive JPEG have byte marker mapping differently as following:</p>
-<table>
-<thead>
-<tr>
-<th>Short name</th>
-<th style="text-align:left">Bytes</th>
-<th style="text-align:left">Payload</th>
-<th style="text-align:left">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SOF0</td>
-<td style="text-align:left">0xFF, 0xC0</td>
-<td style="text-align:left">variable size</td>
-<td style="text-align:left">Start Of Frame (baseline DCT)</td>
-</tr>
-<tr>
-<td>SOF2</td>
-<td style="text-align:left">0xFF, 0xC2</td>
-<td style="text-align:left">variable size</td>
-<td style="text-align:left">Start Of Frame (progressive DCT)</td>
-</tr>
-</tbody>
-</table>
-<p>So to tell the image is progressive JPEG, we need to check if it contains <code>0xFF, 0xC0</code> which is <code>c2ff</code> in <code>Two-byte hexadecimal display</code>.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/04/check-a-JPEG-is-progressive-or-baseline/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2214,7 +2203,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2617,7 +2606,27 @@
                     
                       
                     
-                    <span class="site-state-item-count">193</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">203</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
