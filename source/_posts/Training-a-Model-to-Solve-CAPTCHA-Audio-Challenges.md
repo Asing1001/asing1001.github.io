@@ -142,3 +142,7 @@ In this blog post, we explored how to train a machine learning model to solve CA
 ## Source code
 
 https://github.com/Asing1001/audio-captcha-svm
+
+## Reference
+
+[Audio Signal Processing and Recognition (音訊處理與辨識)](http://mirlab.org/jang/books/audiosignalprocessing/)
