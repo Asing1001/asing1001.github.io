@@ -26,6 +26,7 @@ To get started, make sure you have the following dependencies installed:
 - `joblib`: A library for serializing Python objects to disk and loading them back into memory.
 
 ## Code Walkthrough
+<!-- more -->
 
 Let's go through the code step by step to understand how the model is trained and used for predictions.
 
