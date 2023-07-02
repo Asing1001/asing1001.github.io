@@ -412,7 +412,7 @@
                 
               
 
-              <time title="Created: 2023-07-02 20:55:11 / Modified: 13:02:14" itemprop="dateCreated datePublished" datetime="2023-07-02T20:55:11+00:00">2023-07-02</time>
+              <time title="Created: 2023-07-02 20:55:11 / Modified: 13:05:30" itemprop="dateCreated datePublished" datetime="2023-07-02T20:55:11+00:00">2023-07-02</time>
             
 
             
@@ -462,8 +462,7 @@
 
       
         
-          
-            <p>In this blog post, we will explore how to train a machine learning model to solve CAPTCHA audio challenges. CAPTCHA is a widely used security measure on the web to prevent automated bots from accessing websites. It presents users with various tests to determine if they are human, one of which is the audio challenge. By training a model to solve these audio challenges, we can automate the process and improve user experience. Let’s dive into the code and understand how it works.</p>
+          <p>In this blog post, we will explore how to train a machine learning model to solve CAPTCHA audio challenges. CAPTCHA is a widely used security measure on the web to prevent automated bots from accessing websites. It presents users with various tests to determine if they are human, one of which is the audio challenge. By training a model to solve these audio challenges, we can automate the process and improve user experience. Let’s dive into the code and understand how it works.</p>
 <h2 id="The-Setup"><a href="#The-Setup" class="headerlink" title="The Setup"></a>The Setup</h2><p>Before we get into the code, let’s understand the directory structure and dependencies required for this project. Here’s an overview:</p>
 <ol>
 <li><code>login-captcha-example</code>: This directory contains the audio files used for training and testing the model.</li>
@@ -482,32 +481,14 @@
 <li><code>string.Template</code>: A class for string templating.</li>
 <li><code>joblib</code>: A library for serializing Python objects to disk and loading them back into memory.</li>
 </ul>
-<h2 id="Code-Walkthrough"><a href="#Code-Walkthrough" class="headerlink" title="Code Walkthrough"></a>Code Walkthrough</h2><p>Let’s go through the code step by step to understand how the model is trained and used for predictions.</p>
-<h3 id="Training-the-Model"><a href="#Training-the-Model" class="headerlink" title="Training the Model"></a>Training the Model</h3><p>The <code>train_model</code> function is responsible for training the SVM model using the provided audio data. Here’s how it works:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train_model</span><span class="params">()</span>:</span></span><br><span class="line">  X = []</span><br><span class="line">  y = []</span><br><span class="line">  <span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(train_material_dir):</span><br><span class="line">      <span class="keyword">if</span> file.endswith(<span class="string">'.wav'</span>):</span><br><span class="line">          file_path = os.path.join(train_material_dir, file)</span><br><span class="line">          label = file.split(<span class="string">'.'</span>)[<span class="number">0</span>]  <span class="comment"># Extract the label from the file name</span></span><br><span class="line">          y.extend(list(label))  <span class="comment"># Extend the label list for each digit</span></span><br><span class="line">          feature = extract_features(file_path)</span><br><span class="line">          X.append(feature)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Training the SVM model</span></span><br><span class="line">  svm = SVC(kernel=<span class="string">'rbf'</span>)</span><br><span class="line">  svm.fit(X, y)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Model evaluation</span></span><br><span class="line">  y_pred = svm.predict(X)</span><br><span class="line">  accuracy = accuracy_score(y, y_pred)</span><br><span class="line">  print(<span class="string">"Accuracy:"</span>, accuracy)</span><br><span class="line">  dump_model(svm)</span><br></pre></td></tr></table></figure>
-<p>First, it iterates over the audio files in the <code>train_material_dir</code> directory and extracts the labels (digits) from the file names. The features (MFCC coefficients) are then extracted using the <code>extract_features</code> function. The labels and features are stored in separate lists.</p>
-<p>Next, an SVM model is instantiated with the ‘rbf’ (Radial Basis Function) kernel and trained on the extracted features and labels. The accuracy of the trained model is evaluated using the <code>accuracy_score</code> function.</p>
-<p>Finally, the trained model is serialized using the <code>joblib</code> library and saved to the <code>svm_model.pkl</code> file using the <code>dump_model</code> function.</p>
-<h3 id="Preparing-Audio-Files-for-Prediction"><a href="#Preparing-Audio-Files-for-Prediction" class="headerlink" title="Preparing Audio Files for Prediction"></a>Preparing Audio Files for Prediction</h3><p>Before making predictions, the <code>split_by_silence</code> function splits the input audio file into smaller chunks based on silence. This is necessary because the audio files used for training and testing may have silence between digits. Here’s how it works</p>
-<p>:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">split_by_silence</span><span class="params">(file_path)</span>:</span></span><br><span class="line">  os.makedirs(temp_dir, exist_ok=<span class="literal">True</span>)</span><br><span class="line">  sox_template = Template(<span class="string">'sox "$&#123;src&#125;" "$&#123;dst&#125;" silence 1 0.02 1% 1 0.02 1% : newfile : restart'</span>)</span><br><span class="line">  sox_cmd = sox_template.substitute(src=file_path, dst=<span class="string">f'temp/%n.wav'</span>)</span><br><span class="line">  subprocess.run(sox_cmd, shell=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<p>The function creates the <code>temp</code> directory if it doesn’t already exist. It then uses the <code>sox</code> command-line tool to split the audio file based on silence, generating separate audio files for each chunk.</p>
-<h3 id="Extracting-Features"><a href="#Extracting-Features" class="headerlink" title="Extracting Features"></a>Extracting Features</h3><p>The <code>extract_features</code> function extracts the Mel-Frequency Cepstral Coefficients (MFCCs) from an audio file. Here’s how it works:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">extract_features</span><span class="params">(file_path)</span>:</span></span><br><span class="line">  audio, sr = librosa.load(file_path)</span><br><span class="line">  <span class="comment"># By using MFCC to extract features, the item in the audio could reduce from 5000+ to 20*30 2D array</span></span><br><span class="line">  mfcc = librosa.feature.mfcc(y=audio, sr=sr)</span><br><span class="line">  <span class="comment"># By np.mean, it could reduce from 20*30 2D array to 20 in 1D array, which could be used as the input of SVM</span></span><br><span class="line">  mfcc_mean = np.mean(mfcc, axis=<span class="number">1</span>)  <span class="comment"># Take the mean across MFCC coefficients</span></span><br><span class="line">  <span class="keyword">return</span> mfcc_mean</span><br></pre></td></tr></table></figure>
-<p>Using the <code>librosa</code> library, the function loads the audio file and computes the MFCCs. The resulting MFCC matrix is then reduced to a 1D array by taking the mean along the second axis. This reduced feature vector is suitable for inputting into the SVM model.</p>
-<h3 id="Making-Predictions"><a href="#Making-Predictions" class="headerlink" title="Making Predictions"></a>Making Predictions</h3><p>The <code>predict</code> function uses the trained SVM model to predict the digits present in the input audio file. Here’s how it works:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(file_path)</span>:</span></span><br><span class="line">  split_by_silence(file_path)</span><br><span class="line">  loaded_model = joblib.load(model_file)</span><br><span class="line">  result = <span class="string">''</span></span><br><span class="line">  <span class="comment"># only 5 digits in the audio file, but SOX splits it by silence into 6 files</span></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">6</span>):</span><br><span class="line">    filename = <span class="string">f"<span class="subst">&#123;str(i).zfill(<span class="number">2</span>)&#125;</span>.wav"</span></span><br><span class="line">    chunk_file_path = os.path.join(temp_dir, filename)</span><br><span class="line">    X = extract_features(chunk_file_path)</span><br><span class="line">    result += loaded_model.predict([X])[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
-<p>First, the <code>split_by_silence</code> function is called to split the input audio file into smaller chunks. The trained SVM model is then loaded from the <code>svm_model.pkl</code> file.</p>
-<p>Next, the function iterates over the chunked audio files, extracts features using the <code>extract_features</code> function, and predicts the digit using the loaded model. The predicted digits are concatenated to form the final result.</p>
-<p>Finally, the predicted result is returned by the function.</p>
-<h3 id="Putting-It-All-Together"><a href="#Putting-It-All-Together" class="headerlink" title="Putting It All Together"></a>Putting It All Together</h3><p>The code concludes by training the model using the <code>train_model</code> function and making predictions for each audio file in the <code>data_dir</code> directory:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">train_model()</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> os.listdir(data_dir):</span><br><span class="line">  result = predict(os.path.join(data_dir, file))</span><br><span class="line">  print(result, file)</span><br></pre></td></tr></table></figure>
-<p>The <code>train_model</code> function is called to train the model on the provided training data. Then, for each audio file in the <code>data_dir</code> directory, the <code>predict</code> function is called to generate the predicted result. The result is printed along with the file name.</p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this blog post, we explored how to train a machine learning model to solve CAPTCHA audio challenges</p>
-<p>. By using the SVM model and extracting MFCC features from the audio, we were able to achieve accurate predictions. This approach can be further improved and extended to handle more complex audio challenges. By automating the resolution of audio captchas, we can enhance user experience and streamline website access. Feel free to experiment with the code and adapt it to your specific needs.</p>
-<h2 id="Source-code"><a href="#Source-code" class="headerlink" title="Source code"></a>Source code</h2><p><a href="https://github.com/Asing1001/audio-captcha-svm" target="_blank" rel="noopener">https://github.com/Asing1001/audio-captcha-svm</a></p>
-
-          
+<h2 id="Code-Walkthrough"><a href="#Code-Walkthrough" class="headerlink" title="Code Walkthrough"></a>Code Walkthrough</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2023/07/02/Training-a-Model-to-Solve-CAPTCHA-Audio-Challenges/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -622,7 +603,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -790,7 +771,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -964,7 +945,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -1132,7 +1113,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -1297,7 +1278,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -1481,7 +1462,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -1668,7 +1649,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -1848,7 +1829,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
@@ -2029,7 +2010,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:02:14" itemprop="dateModified" datetime="2023-07-02T13:02:14+00:00">2023-07-02</time>
+                <time title="Modified: 2023-07-02 13:05:30" itemprop="dateModified" datetime="2023-07-02T13:05:30+00:00">2023-07-02</time>
               
             
           </span>
