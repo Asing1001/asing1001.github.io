@@ -1,7 +1,7 @@
 ---
 title: SSH to server without password
 date: 2021-09-15 03:26:00
-tags: [ssh, without password, authorized_keys]
+tags: [ssh, without password, authorized_keys, PubkeyAuthentication]
 ---
 
 ## The requirement to ssh to server without password
@@ -29,7 +29,13 @@ To ssh without password, you must meet the condition:
 1. Copy the content of the publicKey (id_rsa.pub) to server's `~/.ssh/authorized_keys`
 
   ```bash
-  echo "${public key content}" >> .ssh/authorized_keys
+  echo "${public key content}" >> ~/.ssh/authorized_keys
+  ```
+
+1. Make sure the sshd setting allow publickey authentication
+
+  ```bash
+  PubkeyAuthentication yes
   ```
 
 1. Verify ssh without password
