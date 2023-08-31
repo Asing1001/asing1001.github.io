@@ -114,14 +114,14 @@
 
 
   <meta name="description" content="The requirement to ssh to server without passwordTo ssh without password, you must meet the condition:  Private key in client ~/.ssh/ Public key in server ~/.ssh/authorized_keys  Steps to setup Create">
-<meta name="keywords" content="ssh,without password,authorized_keys">
+<meta name="keywords" content="ssh,without password,authorized_keys,PubkeyAuthentication">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH to server without password">
 <meta property="og:url" content="https://www.paddingleft.com/2021/09/15/SSH-to-server-without-password/index.html">
 <meta property="og:site_name" content="Sing&#39;s Log">
 <meta property="og:description" content="The requirement to ssh to server without passwordTo ssh without password, you must meet the condition:  Private key in client ~/.ssh/ Public key in server ~/.ssh/authorized_keys  Steps to setup Create">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-07-02T13:26:17.959Z">
+<meta property="og:updated_time" content="2023-08-31T22:49:53.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH to server without password">
 <meta name="twitter:description" content="The requirement to ssh to server without passwordTo ssh without password, you must meet the condition:  Private key in client ~/.ssh/ Public key in server ~/.ssh/authorized_keys  Steps to setup Create">
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-07-02 13:26:17" itemprop="dateModified" datetime="2023-07-02T13:26:17+00:00">2023-07-02</time>
+                <time title="Modified: 2023-08-31 22:49:53" itemprop="dateModified" datetime="2023-08-31T22:49:53+00:00">2023-08-31</time>
               
             
           </span>
@@ -485,6 +485,11 @@
 <li><p>Copy the content of the publicKey (id_rsa.pub) to server’s <code>~/.ssh/authorized_keys</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;public key content&#125;</span>"</span> &gt;&gt; .ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>Make sure the sshd setting allow publickey authentication</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PubkeyAuthentication yes</span><br></pre></td></tr></table></figure>
+<ol>
 <li><p>Verify ssh without password</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@serverip</span><br></pre></td></tr></table></figure>
 </li>
@@ -514,6 +519,8 @@
             <a href="/tags/without-password/" rel="tag"># without password</a>
           
             <a href="/tags/authorized-keys/" rel="tag"># authorized_keys</a>
+          
+            <a href="/tags/PubkeyAuthentication/" rel="tag"># PubkeyAuthentication</a>
           
         </div>
       
@@ -1065,7 +1072,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">203</span>
+                      
+                    
+                    <span class="site-state-item-count">204</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
