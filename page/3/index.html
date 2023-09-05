@@ -366,6 +366,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/09/08/git-cmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/08/git-cmd/" itemprop="url">
+                  Git commands and tricks you must know
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-08 18:29:07" itemprop="dateCreated datePublished" datetime="2018-09-08T18:29:07+00:00">2018-09-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/08/git-cmd/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/08/git-cmd/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Recommend-plugins"><a href="#Recommend-plugins" class="headerlink" title="Recommend plugins"></a>Recommend plugins</h2><ul>
+<li>Make your diff so fancy - <a href="https://github.com/so-fancy/diff-so-fancy" target="_blank" rel="noopener">diff-so-fancy</a></li>
+<li><a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh" target="_blank" rel="noopener">ZSH Git alias</a></li>
+</ul>
+<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Remove untracked files</span></span><br><span class="line">git clean -fd</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete local branch</span></span><br><span class="line">git -D &lt;branch_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete remote branch, there are two options</span></span><br><span class="line">git push &lt;remote_name&gt; :&lt;branch_name&gt;</span><br><span class="line">git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Remove tracking branches no longer on remote</span></span><br><span class="line">git fetch -p &amp;&amp; <span class="keyword">for</span> branch <span class="keyword">in</span> `git branch -vv | grep <span class="string">': gone]'</span> | awk <span class="string">'&#123;print $1&#125;'</span>`; <span class="keyword">do</span> git branch -D <span class="variable">$branch</span>; <span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Roll back only one folder to one commit</span></span><br><span class="line">git checkout &lt;hash_of_commit&gt; &lt;folder_name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Discard every change</span></span><br><span class="line">git reset --hard</span><br><span class="line"></span><br><span class="line"><span class="comment"># Undo most recent commit</span></span><br><span class="line">git reset HEAD~</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rebase pull</span></span><br><span class="line">git pull --rebase</span><br><span class="line"></span><br><span class="line"><span class="comment"># Push to target remote, -u is short for --set-upstream</span></span><br><span class="line">git push -u &lt;remote-name&gt; &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check commit's message and change(-p)</span></span><br><span class="line">git <span class="built_in">log</span> -p -2</span><br><span class="line"></span><br><span class="line"><span class="comment"># Update to latest submodules</span></span><br><span class="line">git submodule update --recursive --remote</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rebase</span></span><br><span class="line">git rebase &lt;commit SHA or branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rebase in interactive mode</span></span><br><span class="line">git rebase -i &lt;commit SHA or branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rebase interactive mode commands</span></span><br><span class="line">git rebase --skip <span class="comment"># you will need this if no change in some steps</span></span><br><span class="line">git rebase --<span class="built_in">continue</span> <span class="comment"># After resolving conflict and git add &lt;conflict file&gt;</span></span><br><span class="line"></span><br><span class="line">$ git rebase -i HEAD~3 <span class="comment"># You need to edit "pick" part to tell git to do commands on the commit</span></span><br><span class="line">pick 8b9100d commit message 1</span><br><span class="line">pick f175572 commit message 2</span><br><span class="line">pick 9bac799 commit message 3</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rebase 9a4f60e..9bac799 onto 9a4f60e (3 commands)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Commands:</span></span><br><span class="line"><span class="comment"># p, pick &lt;commit&gt; = use commit</span></span><br><span class="line"><span class="comment"># r, reword &lt;commit&gt; = use commit, but edit the commit message</span></span><br><span class="line"><span class="comment"># e, edit &lt;commit&gt; = use commit, but stop for amending</span></span><br><span class="line"><span class="comment"># s, squash &lt;commit&gt; = use commit, but meld into previous commit</span></span><br><span class="line"><span class="comment"># f, fixup &lt;commit&gt; = like "squash", but discard this commit's log message</span></span><br><span class="line"><span class="comment"># x, exec &lt;command&gt; = run command (the rest of the line) using shell</span></span><br><span class="line"><span class="comment"># d, drop &lt;commit&gt; = remove commit</span></span><br><span class="line"><span class="comment"># l, label &lt;label&gt; = label current HEAD with a name</span></span><br><span class="line"><span class="comment"># t, reset &lt;label&gt; = reset HEAD to a label</span></span><br><span class="line"><span class="comment"># m, merge [-C &lt;commit&gt; | -c &lt;commit&gt;] &lt;label&gt; [# &lt;oneline&gt;]</span></span><br><span class="line"><span class="comment"># .       create a merge commit using the original merge commit's</span></span><br><span class="line"><span class="comment"># .       message (or the oneline, if no original merge commit was</span></span><br><span class="line"><span class="comment"># .       specified). Use -c &lt;commit&gt; to reword the commit message.</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/09/04/check-a-JPEG-is-progressive-or-baseline/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +596,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -621,7 +788,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -789,7 +956,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1348,7 +1515,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1515,7 +1682,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1688,7 +1855,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1862,7 +2029,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -2031,7 +2198,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -2199,7 +2366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -2288,168 +2455,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/04/25/TSQL-cheat-sheet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/25/TSQL-cheat-sheet/" itemprop="url">
-                  Transact-SQL cheat sheet
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-04-25 15:35:37" itemprop="dateCreated datePublished" datetime="2018-04-25T15:35:37+00:00">2018-04-25</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/04/25/TSQL-cheat-sheet/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/25/TSQL-cheat-sheet/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Get current datetime</span></span><br><span class="line">GETDATE()</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Get year of datetime</span></span><br><span class="line">YEAR(GETDATE())</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Get difference between dates</span></span><br><span class="line">DATEDIFF(dateformat, startdate, enddate)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Subtract date, e.g.: DATEADD(HOUR, -11, GETDATE())</span></span><br><span class="line">DATEADD(Unit of time, value, date)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Avalable Unit of time value</span></span><br><span class="line">NANOSECOND, MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, WEEKDAY, WEEK, DAY, DAYOFYEAR, MONTH, QUARTER, YEAR</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Between</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">User</span> <span class="keyword">where</span> CreatedDate <span class="keyword">between</span> <span class="string">'2016-09-26'</span> <span class="keyword">and</span> <span class="string">'2016-09-27'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Order by</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">User</span> <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">column</span> <span class="keyword">desc</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Group by</span></span><br><span class="line"><span class="keyword">select</span> UserCode, <span class="keyword">Count</span>(*) <span class="keyword">from</span> <span class="keyword">User</span> <span class="keyword">group</span> <span class="keyword">by</span> UserCode</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Select top 10</span></span><br><span class="line"><span class="keyword">SELECT</span> TOP (<span class="number">10</span>) * <span class="keyword">from</span> <span class="keyword">User</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2499,7 +2504,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-count">79</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2924,7 +2929,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">204</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">208</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

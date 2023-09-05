@@ -366,6 +366,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/09/05/Terraform-sync-remote-state/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/09/05/Terraform-sync-remote-state/" itemprop="url">
+                  Synchronizing Remote Terraform Backend States
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2023-09-05 00:00:00 / Modified: 20:21:30" itemprop="dateCreated datePublished" datetime="2023-09-05T00:00:00+00:00">2023-09-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2023/09/05/Terraform-sync-remote-state/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/09/05/Terraform-sync-remote-state/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>When cloning a project from a remote source, it’s crucial to synchronize the Terraform states from the backend to maintain consistency and accuracy.</p>
+<h2 id="Syncing-Remote-Backend-State-A-Quick-Guide"><a href="#Syncing-Remote-Backend-State-A-Quick-Guide" class="headerlink" title="Syncing Remote Backend State: A Quick Guide"></a>Syncing Remote Backend State: A Quick Guide</h2><p>Follow these steps to efficiently sync your remote backend state:</p>
+<h3 id="1-Initialize-and-Install-Dependencies"><a href="#1-Initialize-and-Install-Dependencies" class="headerlink" title="1. Initialize and Install Dependencies"></a>1. Initialize and Install Dependencies</h3><p>First, initiate the process and update dependencies using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform init --upgrade</span><br></pre></td></tr></table></figure>
+<h3 id="2-Streamline-Variable-Input"><a href="#2-Streamline-Variable-Input" class="headerlink" title="2. Streamline Variable Input"></a>2. Streamline Variable Input</h3><p>Instead of manually inputting or exporting variables each time, simplify the process by creating a <code>terraform.tfvars</code> file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"foo=bar"</span> &gt; terraform.tfvars</span><br></pre></td></tr></table></figure>
+<h3 id="3-Removing-Items-Not-Present-in-Remote"><a href="#3-Removing-Items-Not-Present-in-Remote" class="headerlink" title="3. Removing Items Not Present in Remote"></a>3. Removing Items Not Present in Remote</h3><p>In cases where items are removed from the remote but haven’t been reflected in the state, use the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform state rm &lt;resource&gt;.&lt;name&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="4-Importing-New-Items-to-Sync-State"><a href="#4-Importing-New-Items-to-Sync-State" class="headerlink" title="4. Importing New Items to Sync State"></a>4. Importing New Items to Sync State</h3><p>If new items have been added but aren’t yet synced with the state, consult the provider’s documentation to confirm import support. Then use the provided syntax:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform import &lt;resource&gt;.&lt;name&gt; &lt;id&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Properly synchronizing Terraform backend states ensures your project’s integrity and consistency, especially when working with remote repositories. Following these concise steps will streamline your workflow and enhance your overall development process.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/07/02/Training-a-Model-to-Solve-CAPTCHA-Audio-Challenges/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +590,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -615,7 +776,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -783,7 +944,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -957,7 +1118,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1125,7 +1286,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1290,7 +1451,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1474,7 +1635,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1661,7 +1822,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1844,7 +2005,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
+                <time title="Modified: 2023-09-05 20:21:30" itemprop="dateModified" datetime="2023-09-05T20:21:30+00:00">2023-09-05</time>
               
             
           </span>
@@ -1947,181 +2108,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2020/11/16/Display-iphone-android-screen-on-Mac/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/11/16/Display-iphone-android-screen-on-Mac/" itemprop="url">
-                  Display iphone/android screen on Mac
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2020-11-16 19:56:17" itemprop="dateCreated datePublished" datetime="2020-11-16T19:56:17+00:00">2020-11-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-08-31 22:56:34" itemprop="dateModified" datetime="2023-08-31T22:56:34+00:00">2023-08-31</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/11/16/Display-iphone-android-screen-on-Mac/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/11/16/Display-iphone-android-screen-on-Mac/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Display-iphone-screen-on-Mac"><a href="#Display-iphone-screen-on-Mac" class="headerlink" title="Display iphone screen on Mac"></a>Display iphone screen on Mac</h2><ol>
-<li>Connect your iphone through wire.</li>
-<li>Open <code>QuickTime Player</code></li>
-<li>File &gt; New Movie Recording <img src="/2020/11/16/Display-iphone-android-screen-on-Mac/iphone_0.jpg"></li>
-<li>In the recording screen, select the dropdown &gt; camera &gt; your iphone name <img src="/2020/11/16/Display-iphone-android-screen-on-Mac/iphone_1.png">
-</li>
-</ol>
-<h2 id="Display-Android-Device-on-Mac"><a href="#Display-Android-Device-on-Mac" class="headerlink" title="Display Android Device on Mac"></a>Display Android Device on Mac</h2><ol>
-<li>Install <a href="https://github.com/Genymobile/scrcpy" target="_blank" rel="noopener">scrcpy</a> by <code>brew install scrcpy</code></li>
-<li>If you don’t have <code>adb</code>, run <code>brew cask install android-platform-tools</code></li>
-<li>Connect your Android phone through wire</li>
-<li>excute <code>scrcpy</code></li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2171,7 +2157,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">78</span>
+                    <span class="site-state-item-count">79</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2596,7 +2582,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">204</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">208</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
