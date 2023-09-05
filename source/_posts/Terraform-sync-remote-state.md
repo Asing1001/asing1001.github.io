@@ -17,6 +17,9 @@ Follow these steps to efficiently sync your remote backend state:
 First, initiate the process and update dependencies using the following command:
 
 ```bash
+terraform init
+
+# If you need to upgrade dependencies
 terraform init --upgrade
 ```
 
