@@ -7,5 +7,7 @@
 ```bash
 nvm use
 npm install
+git submodule init
+git submodule update --recursive
 npx hexo serve
 ```
