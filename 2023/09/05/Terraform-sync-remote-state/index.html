@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="Sing&#39;s Log">
 <meta property="og:description" content="IntroductionWhen cloning a project from a remote source, it’s crucial to synchronize the Terraform states from the backend to maintain consistency and accuracy. Syncing Remote Backend State: A Quick G">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-09-05T20:21:30.225Z">
+<meta property="og:updated_time" content="2023-09-05T20:27:55.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Synchronizing Remote Terraform Backend States">
 <meta name="twitter:description" content="IntroductionWhen cloning a project from a remote source, it’s crucial to synchronize the Terraform states from the backend to maintain consistency and accuracy. Syncing Remote Backend State: A Quick G">
@@ -410,7 +410,7 @@
                 
               
 
-              <time title="Created: 2023-09-05 00:00:00 / Modified: 20:21:30" itemprop="dateCreated datePublished" datetime="2023-09-05T00:00:00+00:00">2023-09-05</time>
+              <time title="Created: 2023-09-05 00:00:00 / Modified: 20:27:55" itemprop="dateCreated datePublished" datetime="2023-09-05T00:00:00+00:00">2023-09-05</time>
             
 
             
@@ -462,7 +462,7 @@
         <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>When cloning a project from a remote source, it’s crucial to synchronize the Terraform states from the backend to maintain consistency and accuracy.</p>
 <h2 id="Syncing-Remote-Backend-State-A-Quick-Guide"><a href="#Syncing-Remote-Backend-State-A-Quick-Guide" class="headerlink" title="Syncing Remote Backend State: A Quick Guide"></a>Syncing Remote Backend State: A Quick Guide</h2><p>Follow these steps to efficiently sync your remote backend state:</p>
 <h3 id="1-Initialize-and-Install-Dependencies"><a href="#1-Initialize-and-Install-Dependencies" class="headerlink" title="1. Initialize and Install Dependencies"></a>1. Initialize and Install Dependencies</h3><p>First, initiate the process and update dependencies using the following command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform init --upgrade</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">terraform init</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you need to upgrade dependencies</span></span><br><span class="line">terraform init --upgrade</span><br></pre></td></tr></table></figure>
 <h3 id="2-Streamline-Variable-Input"><a href="#2-Streamline-Variable-Input" class="headerlink" title="2. Streamline Variable Input"></a>2. Streamline Variable Input</h3><p>Instead of manually inputting or exporting variables each time, simplify the process by creating a <code>terraform.tfvars</code> file:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"foo=bar"</span> &gt; terraform.tfvars</span><br></pre></td></tr></table></figure>
 <h3 id="3-Removing-Items-Not-Present-in-Remote"><a href="#3-Removing-Items-Not-Present-in-Remote" class="headerlink" title="3. Removing Items Not Present in Remote"></a>3. Removing Items Not Present in Remote</h3><p>In cases where items are removed from the remote but haven’t been reflected in the state, use the following command:</p>
