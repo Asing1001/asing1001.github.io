@@ -52,7 +52,7 @@
 			    "@id":"https://www.paddingleft.com/2021/09/15/SSH-to-server-without-password/"
 			},
 			"datePublished": "2021-09-15T03:26:00.000Z",
-			"dateModified": "2023-09-05T20:27:55.409Z",
+			"dateModified": "2023-09-14T14:08:24.140Z",
 			
 			"image": {
 				"@type": "ImageObject",
@@ -1827,8 +1827,9 @@ h6.categories {
 <li><p>Copy the content of the publicKey (id_rsa.pub) to server&#x2019;s <code>~/.ssh/authorized_keys</code></p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;<span class="variable"><!--figure1-->#123;public key content}</span>&quot;</span> &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></tbody></table></figure>
 </li>
-<li><p>Make sure the sshd setting allow publickey authentication</p>
+<li><p>Make sure the sshd setting <code>/etc/ssh/sshd_config</code> allow publickey authentication,</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PubkeyAuthentication yes</span><br></pre></td></tr></tbody></table></figure>
+<p>Restart by <code>sudo systemctl restart ssh</code> if you modify the sshd setting.</p>
 </li>
 <li><p>Verify ssh without password</p>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@serverip</span><br></pre></td></tr></tbody></table></figure>

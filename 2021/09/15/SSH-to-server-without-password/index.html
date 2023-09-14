@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="Sing&#39;s Log">
 <meta property="og:description" content="The requirement to ssh to server without passwordTo ssh without password, you must meet the condition:  Private key in client ~/.ssh/ Public key in server ~/.ssh/authorized_keys  Steps to setup Create">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2023-09-05T20:27:55.409Z">
+<meta property="og:updated_time" content="2023-09-14T14:08:24.140Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH to server without password">
 <meta name="twitter:description" content="The requirement to ssh to server without passwordTo ssh without password, you must meet the condition:  Private key in client ~/.ssh/ Public key in server ~/.ssh/authorized_keys  Steps to setup Create">
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -485,8 +485,9 @@
 <li><p>Copy the content of the publicKey (id_rsa.pub) to server’s <code>~/.ssh/authorized_keys</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;public key content&#125;</span>"</span> &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Make sure the sshd setting allow publickey authentication</p>
+<li><p>Make sure the sshd setting <code>/etc/ssh/sshd_config</code> allow publickey authentication,</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PubkeyAuthentication yes</span><br></pre></td></tr></table></figure>
+<p>Restart by <code>sudo systemctl restart ssh</code> if you modify the sshd setting.</p>
 </li>
 <li><p>Verify ssh without password</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@serverip</span><br></pre></td></tr></table></figure>

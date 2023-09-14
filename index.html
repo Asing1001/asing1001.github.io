@@ -412,12 +412,24 @@
                 
               
 
-              <time title="Created: 2023-09-05 00:00:00 / Modified: 20:27:55" itemprop="dateCreated datePublished" datetime="2023-09-05T00:00:00+00:00">2023-09-05</time>
+              <time title="Created: 2023-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-05T00:00:00+00:00">2023-09-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -590,7 +602,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -776,7 +788,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -944,7 +956,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -1118,7 +1130,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -1286,7 +1298,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -1451,7 +1463,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -1635,7 +1647,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -1822,7 +1834,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
@@ -1882,8 +1894,9 @@
 <li><p>Copy the content of the publicKey (id_rsa.pub) to server’s <code>~/.ssh/authorized_keys</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;public key content&#125;</span>"</span> &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Make sure the sshd setting allow publickey authentication</p>
+<li><p>Make sure the sshd setting <code>/etc/ssh/sshd_config</code> allow publickey authentication,</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PubkeyAuthentication yes</span><br></pre></td></tr></table></figure>
+<p>Restart by <code>sudo systemctl restart ssh</code> if you modify the sshd setting.</p>
 </li>
 <li><p>Verify ssh without password</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@serverip</span><br></pre></td></tr></table></figure>
@@ -2005,7 +2018,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-09-05 20:27:55" itemprop="dateModified" datetime="2023-09-05T20:27:55+00:00">2023-09-05</time>
+                <time title="Modified: 2023-09-14 14:08:24" itemprop="dateModified" datetime="2023-09-14T14:08:24+00:00">2023-09-14</time>
               
             
           </span>
