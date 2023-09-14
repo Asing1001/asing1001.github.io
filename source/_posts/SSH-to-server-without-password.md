@@ -32,11 +32,13 @@ To ssh without password, you must meet the condition:
   echo "${public key content}" >> ~/.ssh/authorized_keys
   ```
 
-1. Make sure the sshd setting allow publickey authentication
+1. Make sure the sshd setting `/etc/ssh/sshd_config` allow publickey authentication,
 
   ```bash
   PubkeyAuthentication yes
   ```
+
+  Restart by `sudo systemctl restart ssh` if you modify the sshd setting.
 
 1. Verify ssh without password
 
