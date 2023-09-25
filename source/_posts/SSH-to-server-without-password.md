@@ -40,6 +40,13 @@ To ssh without password, you must meet the condition:
 
   Restart by `sudo systemctl restart ssh` if you modify the sshd setting.
 
+1. Modify ssh config (~/.ssh/config) in your client to indicate which ssh key to use
+
+  ```bash
+  Host <server ip>
+    IdentityFile ~/.ssh/id_rsa
+  ```
+
 1. Verify ssh without password
 
   ```bash
