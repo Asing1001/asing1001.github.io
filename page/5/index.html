@@ -366,6 +366,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/29/node-gyp-rebuild-contextify-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/29/node-gyp-rebuild-contextify-error/" itemprop="url">
+                  node-gyp rebuild contextify error
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-29 15:56:10" itemprop="dateCreated datePublished" datetime="2018-03-29T15:56:10+00:00">2018-03-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/29/node-gyp-rebuild-contextify-error/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/29/node-gyp-rebuild-contextify-error/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><ol>
+<li><code>yarn why contextify</code></li>
+<li>Remove/Update the result dependency from step 1. by modify <code>package.json</code>.</li>
+<li><code>npm install</code></li>
+</ol>
+<h2 id="Full-scenario"><a href="#Full-scenario" class="headerlink" title="Full scenario"></a>Full scenario</h2><p>Today I encounter an error when <code>npm install</code>, the error look like this : </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">error M:\Github\asing1001.github.io\node_modules\contextify: Command failed.</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">..\src\contextify.cc(150): error C2039: &apos;SetAccessCheckCallbacks&apos;: is not a member of &apos;v8::ObjectTemplate&apos;</span><br></pre></td></tr></table></figure>
+<p>This is caused by the package <code>contextify</code> too old, to find out which package dependent on <code>contextify</code>, I use <code>yarn why contextify</code> in command prompt :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">M:\Github\asing1001.github.io&gt; yarn why contextify</span><br><span class="line">yarn why v0.22.0</span><br><span class="line">[1/4] Why <span class="keyword">do</span> we have the module <span class="string">"contextify"</span>...?</span><br><span class="line">[2/4] Initialising dependency graph...</span><br><span class="line">[3/4] Finding dependency...</span><br><span class="line">[4/4] Calculating file sizes...</span><br><span class="line">info This module exists because <span class="string">"hexo-migrator-blogger#to-markdown#jsdom"</span> depends on it.</span><br><span class="line">Done <span class="keyword">in</span> 2.30s.</span><br></pre></td></tr></table></figure>
+<p>Obviously it is refenrence by dependency <code>hexo-migrator-blogger</code>, I update <code>package.json</code> to remove this package and <code>npm install</code> again, it is fixed :)</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/26/gitlab-ci-runner-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +601,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -619,7 +791,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -786,7 +958,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -955,7 +1127,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1122,7 +1294,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1296,7 +1468,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1470,7 +1642,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1634,7 +1806,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1800,7 +1972,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1893,170 +2065,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/07/09/leetcode-average-of-levels-in-binary-tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/09/leetcode-average-of-levels-in-binary-tree/" itemprop="url">
-                  LeetCode - Average of Levels in Binary Tree
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-07-09 11:19:09" itemprop="dateCreated datePublished" datetime="2017-07-09T11:19:09+00:00">2017-07-09</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/07/09/leetcode-average-of-levels-in-binary-tree/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/07/09/leetcode-average-of-levels-in-binary-tree/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一時興起參加了 LeetCode 的 <a href="https://leetcode.com/contest/leetcode-weekly-contest-40/" target="_blank" rel="noopener">Weekly Contest #40</a>，用Javascript只解出了第一題<a href="https://leetcode.com/contest/leetcode-weekly-contest-40/problems/average-of-levels-in-binary-tree/" target="_blank" rel="noopener">計算二元樹每層平均值</a>，思維是用兩個陣列，一個存每層的平均，一個存每層的總數量，最後相除得到每層的平均，實作如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * function TreeNode(val) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = val;</span></span><br><span class="line"><span class="comment"> *     this.left = this.right = null;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;TreeNode&#125;</span> <span class="variable">root</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> averageOfLevels = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> sumArr = [];</span><br><span class="line">    <span class="keyword">var</span> countArr = [];</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">node, level</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!node) <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> (!sumArr[level]) sumArr[level] = <span class="number">0</span>;</span><br><span class="line">        sumArr[level] += node.val;</span><br><span class="line">        <span class="keyword">if</span> (!countArr[level]) countArr[level] = <span class="number">0</span>;</span><br><span class="line">        countArr[level]++;</span><br><span class="line">        sum(node.left, level + <span class="number">1</span>);</span><br><span class="line">        sum(node.right, level + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sum(root, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">var</span> meanArr = sumArr.map(<span class="function">(<span class="params">sum, level</span>) =&gt;</span> sum / levelCountArr[level]);</span><br><span class="line">    <span class="keyword">return</span> meanArr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2106,7 +2114,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">79</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2539,7 +2547,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">208</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">215</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

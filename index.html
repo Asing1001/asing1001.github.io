@@ -366,6 +366,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/10/17/mybatis-Cannot-determine-value-type-from-string/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/10/17/mybatis-Cannot-determine-value-type-from-string/" itemprop="url">
+                  mybatis - Cannot determine value type from string, Cannot convert string to Timestamp
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2023-10-17 23:43:19 / Modified: 23:04:04" itemprop="dateCreated datePublished" datetime="2023-10-17T23:43:19+00:00">2023-10-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2023/10/17/mybatis-Cannot-determine-value-type-from-string/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/10/17/mybatis-Cannot-determine-value-type-from-string/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>These error occurs when selecting columns from the database that don’t match the model, for example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.dao.DataIntegrityViolationException: Error attempting to get column &apos;name&apos; from result set.  Cause: java.sql.SQLDataException: Cannot determine value type from string &apos;singming&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.dao.DataIntegrityViolationException: Error attempting to get column &apos;type&apos; from result set.  Cause: java.sql.SQLDataException: Cannot convert string &apos;MALE&apos; to java.sql.Timestamp value</span><br></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Ensure your SQL query only selects columns that exist in your Java model to avoid type mismatches and data integrity issues.</p>
+<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><p>The error looks ridiculous, it is because mybatis is trying to map results from sql to some fields in the java model. e.g. mapping a <code>name VARCHAR(255)</code> to <code>Date createdTime</code> even if you add the <code>jdbcType</code> mapping in the <code>&lt;resultMap&gt;</code><br>MyBatis expects a direct mapping between columns in your SQL query and properties in your Java model. If your SQL query selects columns that don’t exist in your model, you can encounter type mismatches errors above.</p>
+<p>To resolve this:</p>
+<ol>
+<li><p><strong>Review your SQL queries:</strong> Ensure that you only select columns that have corresponding properties in your Java model.</p>
+</li>
+<li><p><strong>Use aliases:</strong> If your SQL query retrieves columns with different names but equivalent data, use aliases to match them to the model properties.</p>
+</li>
+</ol>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- MyBatis XML Mapper --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Result Map --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"userResultMap"</span> <span class="attr">type</span>=<span class="string">"User"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"name"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"age"</span> <span class="attr">column</span>=<span class="string">"age"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- SQL Query --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"selectUsers"</span> <span class="attr">resultMap</span>=<span class="string">"userResultMap"</span>&gt;</span></span><br><span class="line">    SELECT name, age FROM users</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java model</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, the SQL query and Java model are aligned, resulting in a smooth mapping without type mismatches.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/09/05/Terraform-sync-remote-state/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +594,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -602,7 +767,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -788,7 +953,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -956,7 +1121,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1130,7 +1295,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1298,7 +1463,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1463,7 +1628,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1647,7 +1812,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1834,7 +1999,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
+                <time title="Modified: 2023-10-17 23:04:04" itemprop="dateModified" datetime="2023-10-17T23:04:04+00:00">2023-10-17</time>
               
             
           </span>
@@ -1943,187 +2108,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2021/09/14/Device-pixel-ratio/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/09/14/Device-pixel-ratio/" itemprop="url">
-                  Device pixel ratio - How to select a proper size image that looks sharp and display fast on different devices
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2021-09-14 01:39:07" itemprop="dateCreated datePublished" datetime="2021-09-14T01:39:07+00:00">2021-09-14</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-10-07 22:38:07" itemprop="dateModified" datetime="2023-10-07T22:38:07+00:00">2023-10-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/09/14/Device-pixel-ratio/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/14/Device-pixel-ratio/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="What-is-Device-Pixel-Ratio"><a href="#What-is-Device-Pixel-Ratio" class="headerlink" title="What is Device Pixel Ratio?"></a>What is Device Pixel Ratio?</h2><p>The term <code>device pixel ratio</code> plays the crucial role in different languages’ styling. The definition of Device pixel ratio from MDN:</p>
-<blockquote>
-<p>The devicePixelRatio of Window interface returns the ratio of the resolution in physical pixels to the resolution in CSS pixels for the current display device.</p>
-</blockquote>
-<p>My translation:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Device pixel ratio = (Device physical pixel width) / (Width of a device in a program)</span><br></pre></td></tr></table></figure>
-<p>For instance an <code>iPhone12</code>:</p>
-<ul>
-<li><code>Physical Width</code>: <code>1170px</code></li>
-<li><code>CSS width</code>: <code>390px</code></li>
-<li><code>Device Ratio Pixel</code>: <code>1170px / 390px = 3</code></li>
-</ul>
-<h2 id="How-to-select-a-proper-width-image"><a href="#How-to-select-a-proper-width-image" class="headerlink" title="How to select a proper width image"></a>How to select a proper width image</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Proper image size = devicePixelRatio * width</span><br></pre></td></tr></table></figure>
-<p>If you setup a image with style <code>width:150px</code>, the phone will use <code>150 * 3 = 450 physical pixel</code> to render, so the proper width of the image should be <code>450</code></p>
-<h2 id="Common-Device-Pixel-Ratio"><a href="#Common-Device-Pixel-Ratio" class="headerlink" title="Common Device Pixel Ratio"></a>Common Device Pixel Ratio</h2><img src="/2021/09/14/Device-pixel-ratio/device-pixel-ratio.png">
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="https://www.mydevice.io/" target="_blank" rel="noopener">https://www.mydevice.io/</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2173,7 +2157,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">79</span>
+                    <span class="site-state-item-count">80</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2606,7 +2590,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">208</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">215</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
