@@ -366,6 +366,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/30/grant-internet-access-by-ccproxy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/30/grant-internet-access-by-ccproxy/" itemprop="url">
+                  Grant server internet access by ccproxy in linux
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-30 16:16:25" itemprop="dateCreated datePublished" datetime="2018-03-30T16:16:25+00:00">2018-03-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/30/grant-internet-access-by-ccproxy/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/30/grant-internet-access-by-ccproxy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>It is painful to install something on server without internet access, you need to download package manually and upload it. <a href="http://www.youngzsoft.net/ccproxy/" target="_blank" rel="noopener">CCProxy</a> could help your server use your computer internet temporarily, here is the steps :</p>
+<ol>
+<li><a href="http://www.youngzsoft.net/ccproxy/proxy-server-download.htm" target="_blank" rel="noopener">Download</a> CCProxy</li>
+<li>Go through CCProxy setup wizard</li>
+<li>Open <code>CCProxy &gt; Options</code> to check your port and your ip address.<img src="/2018/03/30/grant-internet-access-by-ccproxy/ccproxy.jpg"></li>
+<li>Login to your linux server, use your CCProxy as proxy server, then you can <code>curl</code> to check if it works. <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@linux ~]# export http_proxy=http://172.16.49.170:808/</span><br><span class="line">[root@linux ~]# export https_proxy=http://172.16.49.170:808/</span><br><span class="line">[root@linux ~]# curl http://www.google.com</span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">en</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">utf-8</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">viewport</span> <span class="attr">content</span>=<span class="string">"initial-scale=1, minimum-scale=1, width=device-width"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Error 404 (Not Found)!!1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    *&#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>&#125;<span class="selector-tag">html</span>,<span class="selector-tag">code</span>&#123;<span class="attribute">font</span>:<span class="number">15px</span>/<span class="number">22px</span> arial,sans-serif&#125;<span class="selector-tag">html</span>&#123;<span class="attribute">background</span>:<span class="number">#fff</span>;<span class="attribute">color</span>:<span class="number">#222</span>;<span class="attribute">padding</span>:<span class="number">15px</span>&#125;<span class="selector-tag">body</span>&#123;<span class="attribute">margin</span>:<span class="number">7%</span> auto <span class="number">0</span>;<span class="attribute">max-width</span>:<span class="number">390px</span>;<span class="attribute">min-height</span>:<span class="number">180px</span>;<span class="attribute">padding</span>:<span class="number">30px</span> <span class="number">0</span> <span class="number">15px</span>&#125;* &gt; <span class="selector-tag">body</span>&#123;<span class="attribute">background</span>:<span class="built_in">url</span>(//www.google.com/images/errors/robot.png) <span class="number">100%</span> <span class="number">5px</span> no-repeat;<span class="attribute">padding-right</span>:<span class="number">205px</span>&#125;<span class="selector-tag">p</span>&#123;<span class="attribute">margin</span>:<span class="number">11px</span> <span class="number">0</span> <span class="number">22px</span>;<span class="attribute">overflow</span>:hidden&#125;<span class="selector-tag">ins</span>&#123;<span class="attribute">color</span>:<span class="number">#777</span>;<span class="attribute">text-decoration</span>:none&#125;<span class="selector-tag">a</span> <span class="selector-tag">img</span>&#123;<span class="attribute">border</span>:<span class="number">0</span>&#125;<span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span><span class="number">772px</span>)&#123;<span class="selector-tag">body</span>&#123;<span class="attribute">background</span>:none;<span class="attribute">margin-top</span>:<span class="number">0</span>;<span class="attribute">max-width</span>:none;<span class="attribute">padding-right</span>:<span class="number">0</span>&#125;&#125;<span class="selector-id">#logo</span>&#123;<span class="attribute">background</span>:<span class="built_in">url</span>(//www.google.com/images/branding/googlelogo/<span class="number">1</span>x/googlelogo_color_150x54dp.png) no-repeat;<span class="attribute">margin-left</span>:-<span class="number">5px</span>&#125;<span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-resolution:</span><span class="number">192dpi</span>)&#123;<span class="selector-id">#logo</span>&#123;<span class="attribute">background</span>:<span class="built_in">url</span>(//www.google.com/images/branding/googlelogo/<span class="number">2</span>x/googlelogo_color_150x54dp.png) no-repeat <span class="number">0%</span> <span class="number">0%</span>/<span class="number">100%</span> <span class="number">100%</span>;<span class="attribute">-moz-border-image</span>:<span class="built_in">url</span>(//www.google.com/images/branding/googlelogo/<span class="number">2</span>x/googlelogo_color_150x54dp.png) <span class="number">0</span>&#125;&#125;<span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">-webkit-min-device-pixel-ratio:</span><span class="number">2</span>)&#123;<span class="selector-id">#logo</span>&#123;<span class="attribute">background</span>:<span class="built_in">url</span>(//www.google.com/images/branding/googlelogo/<span class="number">2</span>x/googlelogo_color_150x54dp.png) no-repeat;<span class="attribute">-webkit-background-size</span>:<span class="number">100%</span> <span class="number">100%</span>&#125;&#125;<span class="selector-id">#logo</span>&#123;<span class="attribute">display</span>:inline-block;<span class="attribute">height</span>:<span class="number">54px</span>;<span class="attribute">width</span>:<span class="number">150px</span>&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">//www.google.com/</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">logo</span> <span class="attr">aria-label</span>=<span class="string">Google</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>404.<span class="tag">&lt;/<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">ins</span>&gt;</span>That’s an error.<span class="tag">&lt;/<span class="name">ins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>The requested URL <span class="tag">&lt;<span class="name">code</span>&gt;</span>/1.1<span class="tag">&lt;/<span class="name">code</span>&gt;</span> was not found on this server.  <span class="tag">&lt;<span class="name">ins</span>&gt;</span>That’s all we know.<span class="tag">&lt;/<span class="name">ins</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/29/node-gyp-rebuild-contextify-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +598,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -601,7 +770,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -791,7 +960,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -958,7 +1127,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1127,7 +1296,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1294,7 +1463,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1468,7 +1637,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1642,7 +1811,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1806,7 +1975,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1894,182 +2063,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/" itemprop="url">
-                  Install public npm package with ProGet npm connector
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-09-27 16:31:56" itemprop="dateCreated datePublished" datetime="2017-09-27T16:31:56+00:00">2017-09-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>For security reason, private CI server may not have internet access. Instead, it connect to private registry like ProGet. To install public npm package, ProGet connector is here to help, steps as following :</p>
-<ol>
-<li>Go to Connectors =&gt; create connectors =&gt; Feed type:npm =&gt; Save</li>
-<li>Go to feeds =&gt; Create New Feed =&gt; Feed type:npm =&gt; Feed name:npm</li>
-<li>Feed Connectors =&gt; add connector =&gt; registry.npmjs.org</li>
-<li>Set up npm via command line in server<br><code>npm config set registry http://{progethost}/npm/npm</code></li>
-</ol>
-<p>Now try <code>npm install</code>, it should work as it connect to public npm registry.</p>
-<p>Reference : <a href="http://inedo.com/support/documentation/proget/feed-types/npm" target="_blank" rel="noopener">http://inedo.com/support/documentation/proget/feed-types/npm</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2114,7 +2112,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2561,7 +2559,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">215</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">218</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

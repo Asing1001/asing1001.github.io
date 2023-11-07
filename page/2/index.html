@@ -366,6 +366,193 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2021/09/15/SSH-to-server-without-password/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/09/15/SSH-to-server-without-password/" itemprop="url">
+                  SSH to server without password
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2021-09-15 03:26:00" itemprop="dateCreated datePublished" datetime="2021-09-15T03:26:00+00:00">2021-09-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/09/15/SSH-to-server-without-password/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/15/SSH-to-server-without-password/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="The-requirement-to-ssh-to-server-without-password"><a href="#The-requirement-to-ssh-to-server-without-password" class="headerlink" title="The requirement to ssh to server without password"></a>The requirement to ssh to server without password</h2><p>To ssh without password, you must meet the condition:</p>
+<ul>
+<li>Private key in client <code>~/.ssh/</code></li>
+<li>Public key in server <code>~/.ssh/authorized_keys</code></li>
+</ul>
+<h2 id="Steps-to-setup"><a href="#Steps-to-setup" class="headerlink" title="Steps to setup"></a>Steps to setup</h2><ol>
+<li><p>Create ssh key pairs by ssh-keygen</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Generate key</span></span><br><span class="line">ssh-keygen</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check the generated key pair</span></span><br><span class="line">ls ~/.ssh</span><br><span class="line">-rw-------  1 sing  staff  1679 Jun  8  2018 id_rsa</span><br><span class="line">-rw-r--r--  1 sing  staff   404 Jun  8  2018 id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Login to your server</p>
+</li>
+<li><p>Copy the content of the publicKey (id_rsa.pub) to server’s <code>~/.ssh/authorized_keys</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"<span class="variable">$&#123;public key content&#125;</span>"</span> &gt;&gt; ~/.ssh/authorized_keys</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Make sure the sshd setting <code>/etc/ssh/sshd_config</code> allow publickey authentication,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PubkeyAuthentication yes</span><br></pre></td></tr></table></figure>
+<p>Restart by <code>sudo systemctl restart ssh</code> if you modify the sshd setting.</p>
+</li>
+<li><p>Modify ssh config (~/.ssh/config) in your client to indicate which ssh key to use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Host &lt;server ip&gt;</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify ssh without password</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh username@serverip</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2021/09/14/Device-pixel-ratio/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +616,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -610,7 +797,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -785,7 +972,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -966,7 +1153,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1135,7 +1322,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1299,7 +1486,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1475,7 +1662,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1647,7 +1834,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1816,7 +2003,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1909,271 +2096,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/09/19/new-to-mac/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/19/new-to-mac/" itemprop="url">
-                  New to Macbook guide for developer
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-09-19 03:15:00" itemprop="dateCreated datePublished" datetime="2018-09-19T03:15:00+00:00">2018-09-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/19/new-to-mac/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/09/19/new-to-mac/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Recently I start to use Macbook Pro for software development. It is really painful that so many shortcut and software are different from Windows. I hope log it down could help some MAC new comers :)</p>
-<h2 id="Recommended-install-list"><a href="#Recommended-install-list" class="headerlink" title="Recommended install list"></a>Recommended install list</h2><ul>
-<li><a href="https://brew.sh/" target="_blank" rel="noopener">homebrew</a><ul>
-<li>You could almost install everything through <code>brew install &lt;program name&gt;</code> or <code>brew install --cask &lt;program with GUI&gt;</code></li>
-</ul>
-</li>
-<li><a href="https://www.iterm2.com/" target="_blank" rel="noopener">iterm2</a><ul>
-<li>Better terminal in MAC</li>
-</ul>
-</li>
-<li><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="noopener">Oh-My-Zsh</a><ul>
-<li>Change default shell to zsh with <code>chsh -s $(which zsh)</code></li>
-</ul>
-</li>
-<li><a href="https://code.visualstudio.com/Download" target="_blank" rel="noopener">vscode</a></li>
-<li><a href="https://github.com/tekezo/Karabiner-Elements" target="_blank" rel="noopener">Karabiner-Elements</a><ul>
-<li><code>brew install --cask Karabiner-Elements</code></li>
-<li>Keyboard mapper, if you use your own keyboard you should install it!</li>
-</ul>
-</li>
-<li><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a><ul>
-<li>Handle Nodejs environment</li>
-</ul>
-</li>
-<li><a href="https://applealmond.com/posts/27387" target="_blank" rel="noopener">超注音</a><ul>
-<li>Enable the ability to switch language by <code>shift</code></li>
-</ul>
-</li>
-<li><a href="https://www.spectacleapp.com/" target="_blank" rel="noopener">spectacle</a><ul>
-<li>Shortcut for docking windows</li>
-</ul>
-</li>
-<li><a href="https://github.com/amix/vimrc" target="_blank" rel="noopener">awesome-vim-configuration</a></li>
-<li><a href="https://itunes.apple.com/cn/app/manico/id724472954?mt=12" target="_blank" rel="noopener">manico</a><ul>
-<li>Best tool for launching app with custom shortcut</li>
-</ul>
-</li>
-<li><a href="http://pilotmoon.com/scrollreverser/" target="_blank" rel="noopener">Scroll Reverser</a><ul>
-<li><code>brew install --cask scroll-reverser</code></li>
-<li>Seperate mouse / touchpad scroll direction setting</li>
-</ul>
-</li>
-<li><a href="https://github.com/so-fancy/diff-so-fancy" target="_blank" rel="noopener">diff-so-fancy</a><ul>
-<li>Make your git diff so fancy</li>
-<li><code>brew install diff-so-fancy</code></li>
-<li><code>git config --global core.pager &quot;diff-so-fancy | less --tabs=4 -RFX&quot;</code></li>
-</ul>
-</li>
-</ul>
-<h2 id="Shortcut"><a href="#Shortcut" class="headerlink" title="Shortcut"></a>Shortcut</h2><ul>
-<li><a href="https://support.apple.com/en-us/ht201236" target="_blank" rel="noopener">Mac shortcuts</a></li>
-<li><a href="https://support.spotify.com/us/using_spotify/system_settings/keyboard-shortcuts/" target="_blank" rel="noopener">Spotify</a></li>
-<li><a href="https://support.google.com/chrome/answer/157179?hl=zh-Hant" target="_blank" rel="noopener">Chrome</a></li>
-<li><a href="https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/git/git.plugin.zsh" target="_blank" rel="noopener">Zsh Git Alias</a></li>
-<li>Print screen area: <code>command + control + shift + 4</code> (<code>control</code> is optional for copy to clipboard)</li>
-<li>Open link in new tab: <code>command + click</code></li>
-<li>Delete file: <code>command + backspace</code></li>
-<li>Lock screen: <code>ctrl + command + q</code></li>
-<li>Close window: <code>command + w</code></li>
-<li>Quit app: <code>command + q</code></li>
-<li>Fullscreen/Normalscreen: <code>ctrl + command + f</code></li>
-<li>Hide window: <code>command + m</code></li>
-<li>Show window: Hold <code>command + tab</code> to the app, then hold <code>option</code> then release command</li>
-<li>Open application preference: <code>command + ,</code></li>
-<li>Switch different window in same application: <code>command + `</code></li>
-<li>Show desktop <code>command + F3</code> or <code>(fn) + F11</code></li>
-</ul>
-<h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><ul>
-<li>Finder<br>  <code>View</code> &gt; <code>Show Status Bar</code>, <code>Show Path Bar</code></li>
-<li>Iterm<br>  <code>Menu bar</code> &gt; <code>iterm2</code> &gt; <code>Make iIerm2 default term</code></li>
-<li><p>VSCode</p>
-<ul>
-<li><p>To use <code>zsh</code>, edit user settings:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"terminal.integrated.shell.osx": "zsh",</span><br><span class="line">"terminal.integrated.fontFamily": "Menlo for Powerline"</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><a href="https://stackoverflow.com/questions/30065227/run-open-vscode-from-mac-terminal" target="_blank" rel="noopener">Use terminal to open vscode</a>:<br><code>Command + Shift + P</code> then <code>Shell Command : Install code in PATH</code>, then you can type <code>code &lt;folder path&gt;</code> to open vscode</p>
-</li>
-</ul>
-</li>
-<li>zsh<ul>
-<li><a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx" target="_blank" rel="noopener">osx</a></li>
-<li><a href="https://github.com/zsh-users/zsh-completions" target="_blank" rel="noopener">zsh-completions</a></li>
-</ul>
-</li>
-<li>Disable firefox and other apps notification sound<ul>
-<li><code>System Preferences &gt; Notifications</code> Choose Firefox and uncheck <code>Play sound for notifications</code> to get rid of the sound.</li>
-</ul>
-</li>
-</ul>
-<h2 id="Things-you-need-to-know"><a href="#Things-you-need-to-know" class="headerlink" title="Things you need to know"></a>Things you need to know</h2><ul>
-<li>If you command + tab switch window and nothings come up, it is because there is no window for this application, to quit application just simply command + q, or you could open window for this application by top menu bar</li>
-<li><code>Spotlight</code> is search engine inside your Mac</li>
-<li><code>Finder</code> is File Manager</li>
-<li><code>Preview</code> has functionality of <code>painter</code></li>
-</ul>
-<h2 id="Read-more"><a href="#Read-more" class="headerlink" title="Read more"></a>Read more</h2><ul>
-<li><a href="http://letsoffice.tw/2016mackeyin/" target="_blank" rel="noopener">Mac輸入法教學</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2218,7 +2145,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2665,7 +2592,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">215</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">218</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

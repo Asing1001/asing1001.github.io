@@ -366,6 +366,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/" itemprop="url">
+                  Install public npm package with ProGet npm connector
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-09-27 16:31:56" itemprop="dateCreated datePublished" datetime="2017-09-27T16:31:56+00:00">2017-09-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/09/27/Install-public-npm-package-with-ProGet-npm-connector/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>For security reason, private CI server may not have internet access. Instead, it connect to private registry like ProGet. To install public npm package, ProGet connector is here to help, steps as following :</p>
+<ol>
+<li>Go to Connectors =&gt; create connectors =&gt; Feed type:npm =&gt; Save</li>
+<li>Go to feeds =&gt; Create New Feed =&gt; Feed type:npm =&gt; Feed name:npm</li>
+<li>Feed Connectors =&gt; add connector =&gt; registry.npmjs.org</li>
+<li>Set up npm via command line in server<br><code>npm config set registry http://{progethost}/npm/npm</code></li>
+</ol>
+<p>Now try <code>npm install</code>, it should work as it connect to public npm registry.</p>
+<p>Reference : <a href="http://inedo.com/support/documentation/proget/feed-types/npm" target="_blank" rel="noopener">http://inedo.com/support/documentation/proget/feed-types/npm</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/07/09/leetcode-average-of-levels-in-binary-tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +600,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -593,7 +764,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -758,7 +929,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -931,7 +1102,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1099,7 +1270,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1273,7 +1444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1440,7 +1611,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1609,7 +1780,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1776,7 +1947,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
+                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
               
             
           </span>
@@ -1865,178 +2036,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/03/18/Disable-pylint-warning/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/18/Disable-pylint-warning/" itemprop="url">
-                  Disable pylint warning
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-03-18 01:02:00" itemprop="dateCreated datePublished" datetime="2017-03-18T01:02:00+00:00">2017-03-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-10-17 23:37:42" itemprop="dateModified" datetime="2023-10-17T23:37:42+00:00">2023-10-17</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/18/Disable-pylint-warning/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/18/Disable-pylint-warning/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>裝了pylint後檔案到處都被標註有問題實在有點煩，於是找了disable部分lint的方式：<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/18/Disable-pylint-warning/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2081,7 +2085,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">80</span>
+                    <span class="site-state-item-count">81</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2528,7 +2532,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">215</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">218</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
