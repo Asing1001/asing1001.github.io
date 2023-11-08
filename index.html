@@ -366,6 +366,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/" itemprop="url">
+                  Automating Google Calendar from Gmail Content
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2023-11-08 12:09:31 / Modified: 12:40:10" itemprop="dateCreated datePublished" datetime="2023-11-08T12:09:31+00:00">2023-11-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/11/08/Automating-Google-Calendar-from-Gmail-Content/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>As a software engineer based in Dublin, Ireland, I often find myself juggling a busy schedule. Managing my fitness classes, work meetings, and personal commitments can be quite a challenge. To streamline this process, I decided to embark on a project to automatically create Google Calendar events from Gympass confirmation emails. In this blog post, I’ll walk you through the steps and code I used to accomplish this task.</p>
+<img src="/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/gmail-to-google-calendar.png">
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Gympass, a popular fitness service, sends confirmation emails whenever I book a fitness class. These emails contain valuable information about the class, such as the date, time, location, and instructor. Manually adding these details to my Google Calendar was becoming a time-consuming task.</p>
+<h2 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h2><p>To automate this process, I created a Google Apps Script that runs in my Gmail account. This script scans my inbox for Gympass confirmation emails, extracts the relevant information, and creates corresponding Google Calendar events. Here’s an overview of how it works:</p>
+<ol>
+<li><p><strong>Create a Google Apps Script Project</strong>:</p>
+<ul>
+<li>Open your Gmail account in a web browser.</li>
+<li>Click on the “Apps Script” icon in the top-right corner (it looks like a square with a pencil).</li>
+<li>This will open the Google Apps Script editor.</li>
+</ul>
+</li>
+<li><p><strong>Write the Script</strong>:</p>
+<ul>
+<li>In the Google Apps Script editor, copy and paste the script code provided in this blog post.</li>
+</ul>
+</li>
+<li><p><strong>Save and Name the Project</strong>:</p>
+<ul>
+<li>Give your project a name by clicking on “Untitled Project” at the top left and entering a name.</li>
+</ul>
+</li>
+<li><p><strong>Authorization</strong>:</p>
+<ul>
+<li>The script will need authorization to access your Gmail and Google Calendar. Click on the run button (▶️) in the script editor.</li>
+<li>Follow the prompts to grant the necessary permissions to the script.</li>
+</ul>
+</li>
+<li><p><strong>Trigger the Script</strong>:</p>
+<ul>
+<li>To automate the script’s execution, you can set up triggers. Click on the clock icon ⏰ in the script editor.</li>
+<li>Create a new trigger that specifies when and how often the script should run. You might want it to run periodically, such as every hour.</li>
+</ul>
+</li>
+<li><p><strong>Email Search</strong>: The script starts by searching your inbox for emails from <a href="mailto:`no-reply@gympass.com" target="_blank" rel="noopener">`no-reply@gympass.com</a>`. This ensures that it only processes Gympass emails.</p>
+</li>
+<li><p><strong>Email Parsing</strong>: For each Gympass email found, the script extracts the email’s subject and plain text body.</p>
+</li>
+<li><p><strong>Cancellation Handling</strong>: If the email subject indicates that you canceled a booking, the script performs a cancellation action (you can customize this based on your business logic).</p>
+</li>
+<li><p><strong>Data Extraction</strong>: For non-cancellation emails, the script removes any unnecessary footer text and URLs from the email body.</p>
+</li>
+<li><p><strong>Event Details Extraction</strong>: Using regular expressions, the script extracts the date, time, location, and event title from the cleaned email body.</p>
+</li>
+<li><p><strong>Month-to-Number Conversion</strong>: It converts the month name to a numeric value for creating a <code>Date</code> object.</p>
+</li>
+<li><p><strong>Event Creation</strong>: With all the details in hand, the script creates a new Google Calendar event. It includes the event title, start and end times, location, and a Google Maps link to the event’s location.</p>
+</li>
+<li><p><strong>Duplicate Event Check</strong>: Before creating an event, the script checks if an event with the same date, time, title, and location already exists in the calendar to avoid duplicates.</p>
+</li>
+</ol>
+<h2 id="Code-Organization"><a href="#Code-Organization" class="headerlink" title="Code Organization"></a>Code Organization</h2><p>To keep the code clean and maintainable, I divided it into several functions:</p>
+<ul>
+<li><code>extractAndCreateCalendarEvent</code>: The main function that orchestrates the entire process.</li>
+<li><code>extractEventDetails</code>: Extracts event details from the email body using regular expressions.</li>
+<li><code>monthToNumber</code>: Converts month names to numeric values.</li>
+<li><code>createCalendarEvent</code>: Creates a new Google Calendar event.</li>
+<li><code>isEventExist</code>: Checks if an event with the same details already exists.</li>
+<li><code>removeFooterAndUrls</code>: Removes unnecessary footer text and URLs from the email body.</li>
+<li><code>cancelEvent</code>: Placeholder for handling event cancellations (customize based on your needs).</li>
+<li><code>parseTime</code>: Parses time in HH:mm a format and returns it as milliseconds.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main function to process emails and create calendar events</span></span><br><span class="line"><span class="keyword">const</span> extractAndCreateCalendarEvent = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> searchString = <span class="string">"from:no-reply@gympass.com"</span>;</span><br><span class="line">  <span class="keyword">const</span> threads = GmailApp.search(searchString);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; threads.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> messages = threads[i].getMessages();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; messages.length; j++) &#123;</span><br><span class="line">      <span class="keyword">const</span> message = messages[j];</span><br><span class="line">      <span class="keyword">const</span> subject = message.getSubject();</span><br><span class="line">      <span class="keyword">const</span> body = message.getPlainBody();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (subject.includes(<span class="string">"You canceled your booking"</span>)) &#123;</span><br><span class="line">        cancelEvent(body);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> cleanedBody = removeFooterAndUrls(body);</span><br><span class="line">        <span class="keyword">const</span> eventDetails = extractEventDetails(cleanedBody);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (eventDetails) &#123;</span><br><span class="line">          createCalendarEvent(eventDetails, cleanedBody);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Extract the event details from the email body</span></span><br><span class="line"><span class="keyword">const</span> extractEventDetails = <span class="function">(<span class="params">body</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> dateRegex = <span class="regexp">/(\w+), ([A-Za-z]+) (\d+)th at (\d+:\d+ [APap][Mm]) \(GMT\)/</span>;</span><br><span class="line">  <span class="keyword">const</span> locationRegex = <span class="regexp">/In-person • (.+)/</span>;</span><br><span class="line">  <span class="keyword">const</span> titleRegex = <span class="regexp">/(.*?) will see you/</span>;</span><br><span class="line">  <span class="keyword">const</span> timeRegex = <span class="regexp">/(\d+:\d+ [APap][Mm]) - (\d+:\d+ [APap][Mm]) \(GMT\)/</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> dateMatch = body.match(dateRegex);</span><br><span class="line">  <span class="keyword">const</span> locationMatch = body.match(locationRegex);</span><br><span class="line">  <span class="keyword">const</span> titleMatch = body.match(titleRegex);</span><br><span class="line">  <span class="keyword">const</span> timeMatch = body.match(timeRegex);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (dateMatch &amp;&amp; locationMatch &amp;&amp; titleMatch &amp;&amp; timeMatch) &#123;</span><br><span class="line">    <span class="keyword">const</span> dayOfWeek = dateMatch[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">const</span> month = dateMatch[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">const</span> day = dateMatch[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">const</span> eventTimeStart = timeMatch[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">const</span> eventTimeEnd = timeMatch[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">const</span> location = locationMatch[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">const</span> eventTitle = titleMatch[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      dayOfWeek,</span><br><span class="line">      month,</span><br><span class="line">      day,</span><br><span class="line">      eventTimeStart,</span><br><span class="line">      eventTimeEnd,</span><br><span class="line">      location,</span><br><span class="line">      eventTitle,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Convert month name to a numeric value</span></span><br><span class="line"><span class="keyword">const</span> monthToNumber = <span class="function">(<span class="params">month</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> monthMap = &#123;</span><br><span class="line">    <span class="string">"January"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"February"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"March"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">"April"</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">"May"</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">"June"</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="string">"July"</span>: <span class="number">6</span>,</span><br><span class="line">    <span class="string">"August"</span>: <span class="number">7</span>,</span><br><span class="line">    <span class="string">"September"</span>: <span class="number">8</span>,</span><br><span class="line">    <span class="string">"October"</span>: <span class="number">9</span>,</span><br><span class="line">    <span class="string">"November"</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="string">"December"</span>: <span class="number">11</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> monthMap[month];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a Google Calendar event</span></span><br><span class="line"><span class="keyword">const</span> createCalendarEvent = <span class="function">(<span class="params">eventDetails, cleanedContent</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;</span><br><span class="line">    dayOfWeek,</span><br><span class="line">    month,</span><br><span class="line">    day,</span><br><span class="line">    eventTimeStart,</span><br><span class="line">    eventTimeEnd,</span><br><span class="line">    location,</span><br><span class="line">    eventTitle,</span><br><span class="line">  &#125; = eventDetails;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> monthNumber = monthToNumber(month);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> eventDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(), monthNumber, day, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> eventStartTime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(), monthNumber, day, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  eventStartTime.setMilliseconds(parseTime(eventTimeStart));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> eventEndTime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(), monthNumber, day, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  eventEndTime.setMilliseconds(parseTime(eventTimeEnd));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> gymName = eventTitle;</span><br><span class="line">  <span class="keyword">const</span> mapsUrl = <span class="string">'https://www.google.com/maps/search/'</span> + <span class="built_in">encodeURIComponent</span>(<span class="string">`<span class="subst">$&#123;gymName&#125;</span> <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">const</span> description = <span class="string">`Google Maps Location URL: <span class="subst">$&#123;mapsUrl&#125;</span>\n<span class="subst">$&#123;cleanedContent&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!isEventExist(eventDate, eventEndTime, eventTitle, location)) &#123;</span><br><span class="line">    <span class="keyword">const</span> calendar = CalendarApp.getDefaultCalendar();</span><br><span class="line">    calendar.createEvent(eventTitle, eventStartTime, eventEndTime, &#123; location, description &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Check if an event already exists</span></span><br><span class="line"><span class="keyword">const</span> isEventExist = <span class="function">(<span class="params">startDate, endDate, title, location</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> calendar = CalendarApp.getDefaultCalendar();</span><br><span class="line">  <span class="keyword">const</span> events = calendar.getEvents(startDate, endDate);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; events.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (events[i].getTitle() === title &amp;&amp; events[i].getLocation() === location) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Remove footer text and URLs</span></span><br><span class="line"><span class="keyword">const</span> removeFooterAndUrls = <span class="function">(<span class="params">body</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> footerRegex = <span class="regexp">/Help\n&lt;.*?&gt;[\s\S]*$/</span>;</span><br><span class="line">  <span class="keyword">const</span> cleanedBody = body.replace(footerRegex, <span class="string">''</span>);</span><br><span class="line">  <span class="keyword">const</span> urlRegex = <span class="regexp">/&lt;[^&gt;]*&gt;/g</span>;</span><br><span class="line">  <span class="keyword">const</span> cleanedContent = cleanedBody.replace(urlRegex, <span class="string">''</span>);</span><br><span class="line">  <span class="keyword">return</span> cleanedContent;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Cancel an event</span></span><br><span class="line"><span class="keyword">const</span> cancelEvent = <span class="function">(<span class="params">body</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Parse the content of the cancellation email and perform the cancellation action as needed</span></span><br><span class="line">  <span class="comment">// You can identify the event to cancel based on the information in the email content</span></span><br><span class="line">  <span class="comment">// The specific implementation of this depends on your business logic</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Helper function to parse time in HH:mm a format and return it as milliseconds</span></span><br><span class="line"><span class="keyword">const</span> parseTime = <span class="function">(<span class="params">timeString</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [time, amPm] = timeString.split(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">const</span> [hours, minutes] = time.split(<span class="string">':'</span>);</span><br><span class="line">  <span class="keyword">let</span> hoursInt = <span class="built_in">parseInt</span>(hours, <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">const</span> minutesInt = <span class="built_in">parseInt</span>(minutes, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (amPm.toLowerCase() === <span class="string">'pm'</span> &amp;&amp; hoursInt !== <span class="number">12</span>) &#123;</span><br><span class="line">    hoursInt += <span class="number">12</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (amPm.toLowerCase() === <span class="string">'am'</span> &amp;&amp; hoursInt === <span class="number">12</span>) &#123;</span><br><span class="line">    hoursInt = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (hoursInt * <span class="number">60</span> + minutesInt) * <span class="number">60000</span>; <span class="comment">// Convert to milliseconds</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Automating the creation of Google Calendar events from Gympass emails has significantly reduced the time and effort required to manage fitness classes and appointments. With this script running in the background, you can focus on your workouts and let technology take care of the scheduling.</p>
+<p>By following the steps outlined in this blog post, you can set up your own automated email-to-calendar integration and adapt it to your specific needs. Happy coding!</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/11/07/Nuphy-keyboard-with-Karabinar-Elements/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -412,12 +627,24 @@
                 
               
 
-              <time title="Created: 2023-11-07 11:50:44 / Modified: 16:25:08" itemprop="dateCreated datePublished" datetime="2023-11-07T11:50:44+00:00">2023-11-07</time>
+              <time title="Created: 2023-11-07 11:50:44" itemprop="dateCreated datePublished" datetime="2023-11-07T11:50:44+00:00">2023-11-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -591,7 +818,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -768,7 +995,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -941,7 +1168,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1127,7 +1354,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1295,7 +1522,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1469,7 +1696,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1637,7 +1864,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1802,7 +2029,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1908,193 +2135,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2021/09/24/Coding-faster-with-Vim-IDE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/09/24/Coding-faster-with-Vim-IDE/" itemprop="url">
-                  Coding faster with Vim + IDE
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2021-09-24 16:54:59" itemprop="dateCreated datePublished" datetime="2021-09-24T16:54:59+00:00">2021-09-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/09/24/Coding-faster-with-Vim-IDE/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/09/24/Coding-faster-with-Vim-IDE/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Vim-X-IDE"><a href="#Vim-X-IDE" class="headerlink" title="Vim X IDE"></a>Vim X IDE</h2><ul>
-<li><a href="https://www.paddingleft.com/slides/html/vim.html">My slides share</a></li>
-<li><a href="/2018/08/29/vim-cheat-sheet/">Vim tutorial</a></li>
-</ul>
-<hr>
-<h3 id="JetBrains-IDE-vim"><a href="#JetBrains-IDE-vim" class="headerlink" title="JetBrains IDE + vim"></a>JetBrains IDE + vim</h3><ul>
-<li>Install <a href="https://plugins.jetbrains.com/plugin/164-ideavim" target="_blank" rel="noopener">ideavim</a><ul>
-<li>Custom setting<ol>
-<li>Click <code>V</code> icon on the right bottom corner</li>
-<li>Open and edit <code>~/.ideavimrc</code></li>
-</ol>
-</li>
-</ul>
-</li>
-<li>Tennis Kata demo - <code>Dart</code> + <code>Android Studio</code></li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rev_gQ_FTaA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<hr>
-<h3 id="VScode-Vim"><a href="#VScode-Vim" class="headerlink" title="VScode + Vim"></a>VScode + Vim</h3><ul>
-<li>Install <a href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim" target="_blank" rel="noopener">vscodevim</a></li>
-<li><a href="https://github.com/Asing1001/tennis-kata#setup-vscode-configs" target="_blank" rel="noopener">Setup instruction</a></li>
-<li>Tennis Kata demo - <code>Vscode</code> + <code>Javascript</code></li>
-</ul>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6lEIFl30JEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2144,7 +2184,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">81</span>
+                    <span class="site-state-item-count">82</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2597,7 +2637,29 @@
                     
                       
                     
-                    <span class="site-state-item-count">218</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">229</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

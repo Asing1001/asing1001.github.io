@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="nNUMPUrqNNot_PkJfPzacCg4M0b6Mz5viTh_YBlxew8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=20170328?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: true,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'RG9H1JR5W2',
+      apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Sing's Log">
+<script data-ad-client="ca-pub-6735629726636183" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <link rel="amphtml" href="./amp/index.html">
+
+
+
+  <meta name="description" content="As a software engineer based in Dublin, Ireland, I often find myself juggling a busy schedule. Managing my fitness classes, work meetings, and personal commitments can be quite a challenge. To streaml">
+<meta name="keywords" content="automation,Google Apps Script,Gmail,Google Calendar,productivity,coding,programming,calendar events,email processing,scripting,Gympass">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automating Google Calendar from Gmail Content">
+<meta property="og:url" content="https://www.paddingleft.com/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/index.html">
+<meta property="og:site_name" content="Sing&#39;s Log">
+<meta property="og:description" content="As a software engineer based in Dublin, Ireland, I often find myself juggling a busy schedule. Managing my fitness classes, work meetings, and personal commitments can be quite a challenge. To streaml">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.paddingleft.com/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/gmail-to-google-calendar.png">
+<meta property="og:updated_time" content="2023-11-08T12:40:10.073Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Automating Google Calendar from Gmail Content">
+<meta name="twitter:description" content="As a software engineer based in Dublin, Ireland, I often find myself juggling a busy schedule. Managing my fitness classes, work meetings, and personal commitments can be quite a challenge. To streaml">
+<meta name="twitter:image" content="https://www.paddingleft.com/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/gmail-to-google-calendar.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.paddingleft.com/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Automating Google Calendar from Gmail Content | Sing's Log</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '546618865728828',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93986058-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93986058-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sing's Log</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Knowledge worth sharing</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-timeline">
+    <a href="/timeline/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Timeline</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-portfolio">
+    <a href="/portfolio/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-book"></i> <br>Portfolio</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Automating Google Calendar from Gmail Content
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2023-11-08 12:09:31 / Modified: 12:40:10" itemprop="dateCreated datePublished" datetime="2023-11-08T12:09:31+00:00">2023-11-08</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/11/08/Automating-Google-Calendar-from-Gmail-Content/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>As a software engineer based in Dublin, Ireland, I often find myself juggling a busy schedule. Managing my fitness classes, work meetings, and personal commitments can be quite a challenge. To streamline this process, I decided to embark on a project to automatically create Google Calendar events from Gympass confirmation emails. In this blog post, I’ll walk you through the steps and code I used to accomplish this task.</p>
+<img src="/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/gmail-to-google-calendar.png">
+<h2 id="The-Problem"><a href="#The-Problem" class="headerlink" title="The Problem"></a>The Problem</h2><p>Gympass, a popular fitness service, sends confirmation emails whenever I book a fitness class. These emails contain valuable information about the class, such as the date, time, location, and instructor. Manually adding these details to my Google Calendar was becoming a time-consuming task.</p>
+<h2 id="The-Solution"><a href="#The-Solution" class="headerlink" title="The Solution"></a>The Solution</h2><p>To automate this process, I created a Google Apps Script that runs in my Gmail account. This script scans my inbox for Gympass confirmation emails, extracts the relevant information, and creates corresponding Google Calendar events. Here’s an overview of how it works:</p>
+<ol>
+<li><p><strong>Create a Google Apps Script Project</strong>:</p>
+<ul>
+<li>Open your Gmail account in a web browser.</li>
+<li>Click on the “Apps Script” icon in the top-right corner (it looks like a square with a pencil).</li>
+<li>This will open the Google Apps Script editor.</li>
+</ul>
+</li>
+<li><p><strong>Write the Script</strong>:</p>
+<ul>
+<li>In the Google Apps Script editor, copy and paste the script code provided in this blog post.</li>
+</ul>
+</li>
+<li><p><strong>Save and Name the Project</strong>:</p>
+<ul>
+<li>Give your project a name by clicking on “Untitled Project” at the top left and entering a name.</li>
+</ul>
+</li>
+<li><p><strong>Authorization</strong>:</p>
+<ul>
+<li>The script will need authorization to access your Gmail and Google Calendar. Click on the run button (▶️) in the script editor.</li>
+<li>Follow the prompts to grant the necessary permissions to the script.</li>
+</ul>
+</li>
+<li><p><strong>Trigger the Script</strong>:</p>
+<ul>
+<li>To automate the script’s execution, you can set up triggers. Click on the clock icon ⏰ in the script editor.</li>
+<li>Create a new trigger that specifies when and how often the script should run. You might want it to run periodically, such as every hour.</li>
+</ul>
+</li>
+<li><p><strong>Email Search</strong>: The script starts by searching your inbox for emails from <a href="mailto:`no-reply@gympass.com" target="_blank" rel="noopener">`no-reply@gympass.com</a>`. This ensures that it only processes Gympass emails.</p>
+</li>
+<li><p><strong>Email Parsing</strong>: For each Gympass email found, the script extracts the email’s subject and plain text body.</p>
+</li>
+<li><p><strong>Cancellation Handling</strong>: If the email subject indicates that you canceled a booking, the script performs a cancellation action (you can customize this based on your business logic).</p>
+</li>
+<li><p><strong>Data Extraction</strong>: For non-cancellation emails, the script removes any unnecessary footer text and URLs from the email body.</p>
+</li>
+<li><p><strong>Event Details Extraction</strong>: Using regular expressions, the script extracts the date, time, location, and event title from the cleaned email body.</p>
+</li>
+<li><p><strong>Month-to-Number Conversion</strong>: It converts the month name to a numeric value for creating a <code>Date</code> object.</p>
+</li>
+<li><p><strong>Event Creation</strong>: With all the details in hand, the script creates a new Google Calendar event. It includes the event title, start and end times, location, and a Google Maps link to the event’s location.</p>
+</li>
+<li><p><strong>Duplicate Event Check</strong>: Before creating an event, the script checks if an event with the same date, time, title, and location already exists in the calendar to avoid duplicates.</p>
+</li>
+</ol>
+<h2 id="Code-Organization"><a href="#Code-Organization" class="headerlink" title="Code Organization"></a>Code Organization</h2><p>To keep the code clean and maintainable, I divided it into several functions:</p>
+<ul>
+<li><code>extractAndCreateCalendarEvent</code>: The main function that orchestrates the entire process.</li>
+<li><code>extractEventDetails</code>: Extracts event details from the email body using regular expressions.</li>
+<li><code>monthToNumber</code>: Converts month names to numeric values.</li>
+<li><code>createCalendarEvent</code>: Creates a new Google Calendar event.</li>
+<li><code>isEventExist</code>: Checks if an event with the same details already exists.</li>
+<li><code>removeFooterAndUrls</code>: Removes unnecessary footer text and URLs from the email body.</li>
+<li><code>cancelEvent</code>: Placeholder for handling event cancellations (customize based on your needs).</li>
+<li><code>parseTime</code>: Parses time in HH:mm a format and returns it as milliseconds.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main function to process emails and create calendar events</span></span><br><span class="line"><span class="keyword">const</span> extractAndCreateCalendarEvent = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> searchString = <span class="string">"from:no-reply@gympass.com"</span>;</span><br><span class="line">  <span class="keyword">const</span> threads = GmailApp.search(searchString);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; threads.length; i++) &#123;</span><br><span class="line">    <span class="keyword">const</span> messages = threads[i].getMessages();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; messages.length; j++) &#123;</span><br><span class="line">      <span class="keyword">const</span> message = messages[j];</span><br><span class="line">      <span class="keyword">const</span> subject = message.getSubject();</span><br><span class="line">      <span class="keyword">const</span> body = message.getPlainBody();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (subject.includes(<span class="string">"You canceled your booking"</span>)) &#123;</span><br><span class="line">        cancelEvent(body);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> cleanedBody = removeFooterAndUrls(body);</span><br><span class="line">        <span class="keyword">const</span> eventDetails = extractEventDetails(cleanedBody);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (eventDetails) &#123;</span><br><span class="line">          createCalendarEvent(eventDetails, cleanedBody);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Extract the event details from the email body</span></span><br><span class="line"><span class="keyword">const</span> extractEventDetails = <span class="function">(<span class="params">body</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> dateRegex = <span class="regexp">/(\w+), ([A-Za-z]+) (\d+)th at (\d+:\d+ [APap][Mm]) \(GMT\)/</span>;</span><br><span class="line">  <span class="keyword">const</span> locationRegex = <span class="regexp">/In-person • (.+)/</span>;</span><br><span class="line">  <span class="keyword">const</span> titleRegex = <span class="regexp">/(.*?) will see you/</span>;</span><br><span class="line">  <span class="keyword">const</span> timeRegex = <span class="regexp">/(\d+:\d+ [APap][Mm]) - (\d+:\d+ [APap][Mm]) \(GMT\)/</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> dateMatch = body.match(dateRegex);</span><br><span class="line">  <span class="keyword">const</span> locationMatch = body.match(locationRegex);</span><br><span class="line">  <span class="keyword">const</span> titleMatch = body.match(titleRegex);</span><br><span class="line">  <span class="keyword">const</span> timeMatch = body.match(timeRegex);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (dateMatch &amp;&amp; locationMatch &amp;&amp; titleMatch &amp;&amp; timeMatch) &#123;</span><br><span class="line">    <span class="keyword">const</span> dayOfWeek = dateMatch[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">const</span> month = dateMatch[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">const</span> day = dateMatch[<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">const</span> eventTimeStart = timeMatch[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">const</span> eventTimeEnd = timeMatch[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">const</span> location = locationMatch[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">const</span> eventTitle = titleMatch[<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      dayOfWeek,</span><br><span class="line">      month,</span><br><span class="line">      day,</span><br><span class="line">      eventTimeStart,</span><br><span class="line">      eventTimeEnd,</span><br><span class="line">      location,</span><br><span class="line">      eventTitle,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Convert month name to a numeric value</span></span><br><span class="line"><span class="keyword">const</span> monthToNumber = <span class="function">(<span class="params">month</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> monthMap = &#123;</span><br><span class="line">    <span class="string">"January"</span>: <span class="number">0</span>,</span><br><span class="line">    <span class="string">"February"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">"March"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">"April"</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">"May"</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">"June"</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="string">"July"</span>: <span class="number">6</span>,</span><br><span class="line">    <span class="string">"August"</span>: <span class="number">7</span>,</span><br><span class="line">    <span class="string">"September"</span>: <span class="number">8</span>,</span><br><span class="line">    <span class="string">"October"</span>: <span class="number">9</span>,</span><br><span class="line">    <span class="string">"November"</span>: <span class="number">10</span>,</span><br><span class="line">    <span class="string">"December"</span>: <span class="number">11</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> monthMap[month];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a Google Calendar event</span></span><br><span class="line"><span class="keyword">const</span> createCalendarEvent = <span class="function">(<span class="params">eventDetails, cleanedContent</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123;</span><br><span class="line">    dayOfWeek,</span><br><span class="line">    month,</span><br><span class="line">    day,</span><br><span class="line">    eventTimeStart,</span><br><span class="line">    eventTimeEnd,</span><br><span class="line">    location,</span><br><span class="line">    eventTitle,</span><br><span class="line">  &#125; = eventDetails;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> monthNumber = monthToNumber(month);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> eventDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(), monthNumber, day, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  <span class="keyword">const</span> eventStartTime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(), monthNumber, day, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  eventStartTime.setMilliseconds(parseTime(eventTimeStart));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> eventEndTime = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear(), monthNumber, day, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  eventEndTime.setMilliseconds(parseTime(eventTimeEnd));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> gymName = eventTitle;</span><br><span class="line">  <span class="keyword">const</span> mapsUrl = <span class="string">'https://www.google.com/maps/search/'</span> + <span class="built_in">encodeURIComponent</span>(<span class="string">`<span class="subst">$&#123;gymName&#125;</span> <span class="subst">$&#123;location&#125;</span>`</span>);</span><br><span class="line">  <span class="keyword">const</span> description = <span class="string">`Google Maps Location URL: <span class="subst">$&#123;mapsUrl&#125;</span>\n<span class="subst">$&#123;cleanedContent&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!isEventExist(eventDate, eventEndTime, eventTitle, location)) &#123;</span><br><span class="line">    <span class="keyword">const</span> calendar = CalendarApp.getDefaultCalendar();</span><br><span class="line">    calendar.createEvent(eventTitle, eventStartTime, eventEndTime, &#123; location, description &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Check if an event already exists</span></span><br><span class="line"><span class="keyword">const</span> isEventExist = <span class="function">(<span class="params">startDate, endDate, title, location</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> calendar = CalendarApp.getDefaultCalendar();</span><br><span class="line">  <span class="keyword">const</span> events = calendar.getEvents(startDate, endDate);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; events.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (events[i].getTitle() === title &amp;&amp; events[i].getLocation() === location) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Remove footer text and URLs</span></span><br><span class="line"><span class="keyword">const</span> removeFooterAndUrls = <span class="function">(<span class="params">body</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> footerRegex = <span class="regexp">/Help\n&lt;.*?&gt;[\s\S]*$/</span>;</span><br><span class="line">  <span class="keyword">const</span> cleanedBody = body.replace(footerRegex, <span class="string">''</span>);</span><br><span class="line">  <span class="keyword">const</span> urlRegex = <span class="regexp">/&lt;[^&gt;]*&gt;/g</span>;</span><br><span class="line">  <span class="keyword">const</span> cleanedContent = cleanedBody.replace(urlRegex, <span class="string">''</span>);</span><br><span class="line">  <span class="keyword">return</span> cleanedContent;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Cancel an event</span></span><br><span class="line"><span class="keyword">const</span> cancelEvent = <span class="function">(<span class="params">body</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Parse the content of the cancellation email and perform the cancellation action as needed</span></span><br><span class="line">  <span class="comment">// You can identify the event to cancel based on the information in the email content</span></span><br><span class="line">  <span class="comment">// The specific implementation of this depends on your business logic</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Helper function to parse time in HH:mm a format and return it as milliseconds</span></span><br><span class="line"><span class="keyword">const</span> parseTime = <span class="function">(<span class="params">timeString</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> [time, amPm] = timeString.split(<span class="string">' '</span>);</span><br><span class="line">  <span class="keyword">const</span> [hours, minutes] = time.split(<span class="string">':'</span>);</span><br><span class="line">  <span class="keyword">let</span> hoursInt = <span class="built_in">parseInt</span>(hours, <span class="number">10</span>);</span><br><span class="line">  <span class="keyword">const</span> minutesInt = <span class="built_in">parseInt</span>(minutes, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (amPm.toLowerCase() === <span class="string">'pm'</span> &amp;&amp; hoursInt !== <span class="number">12</span>) &#123;</span><br><span class="line">    hoursInt += <span class="number">12</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (amPm.toLowerCase() === <span class="string">'am'</span> &amp;&amp; hoursInt === <span class="number">12</span>) &#123;</span><br><span class="line">    hoursInt = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (hoursInt * <span class="number">60</span> + minutesInt) * <span class="number">60000</span>; <span class="comment">// Convert to milliseconds</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Automating the creation of Google Calendar events from Gympass emails has significantly reduced the time and effort required to manage fitness classes and appointments. With this script running in the background, you can focus on your workouts and let technology take care of the scheduling.</p>
+<p>By following the steps outlined in this blog post, you can set up your own automated email-to-calendar integration and adapt it to your specific needs. Happy coding!</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/automation/" rel="tag"># automation</a>
+          
+            <a href="/tags/Google-Apps-Script/" rel="tag"># Google Apps Script</a>
+          
+            <a href="/tags/Gmail/" rel="tag"># Gmail</a>
+          
+            <a href="/tags/Google-Calendar/" rel="tag"># Google Calendar</a>
+          
+            <a href="/tags/productivity/" rel="tag"># productivity</a>
+          
+            <a href="/tags/coding/" rel="tag"># coding</a>
+          
+            <a href="/tags/programming/" rel="tag"># programming</a>
+          
+            <a href="/tags/calendar-events/" rel="tag"># calendar events</a>
+          
+            <a href="/tags/email-processing/" rel="tag"># email processing</a>
+          
+            <a href="/tags/scripting/" rel="tag"># scripting</a>
+          
+            <a href="/tags/Gympass/" rel="tag"># Gympass</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/11/07/Nuphy-keyboard-with-Karabinar-Elements/" rel="next" title="Nuphy keyboard with Karabinar Elements">
+                <i class="fa fa-chevron-left"></i> Nuphy keyboard with Karabinar Elements
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar_speaking.jpg" alt="Sing Ming Chen">
+            
+              <p class="site-author-name" itemprop="name">Sing Ming Chen</p>
+              <p class="site-description motion-element" itemprop="description">Sing's log, a developer's blog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/timeline">
+                
+                    <span class="site-state-item-count">82</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">229</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/asing1001" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:sing@paddingleft.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/andychen-pro/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/sing1001" target="_blank" title="Facebook" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://stackoverflow.com/users/3959161/andy-chen?tab=profile" target="_blank" title="StackOverflow" rel="external nofollow"><i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Problem"><span class="nav-number">1.</span> <span class="nav-text">The Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Solution"><span class="nav-number">2.</span> <span class="nav-text">The Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-Organization"><span class="nav-number">3.</span> <span class="nav-text">Code Organization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sing Ming Chen</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://acslog.disqus.com/count.js" async></script>
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://www.paddingleft.com/2023/11/08/Automating-Google-Calendar-from-Gmail-Content/';
+        this.page.identifier = '2023/11/08/Automating-Google-Calendar-from-Gmail-Content/';
+        this.page.title = 'Automating Google Calendar from Gmail Content';
+        };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://acslog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

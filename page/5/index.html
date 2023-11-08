@@ -366,6 +366,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/30/install-elk-on-linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/30/install-elk-on-linux/" itemprop="url">
+                  Install ELK on linux
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-30 18:09:19" itemprop="dateCreated datePublished" datetime="2018-03-30T18:09:19+00:00">2018-03-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/30/install-elk-on-linux/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/30/install-elk-on-linux/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Before-Start"><a href="#Before-Start" class="headerlink" title="Before Start"></a>Before Start</h2><p>Make sure the server has internet access or you will have to download and upload packages manually. If the server doesn’t, I recommend <a href="/2018/03/30/grant-internet-access-by-ccproxy/" title="CCProxy">CCProxy</a> to grant temporary internet access.</p>
+<h2 id="Install-JDK"><a href="#Install-JDK" class="headerlink" title="Install JDK"></a>Install JDK</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget -c --header <span class="string">"Cookie: oraclelicense=accept-securebackup-cookie"</span> http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-linux-x64.rpm</span><br><span class="line">rpm -ivh jdk-8u161-linux-x64.rpm</span><br></pre></td></tr></table></figure>
+<h2 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h2><ol>
+<li><p>Download and install</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.3.rpm</span><br><span class="line">rpm -ivh elasticsearch-6.2.3.rpm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Start service</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Auto start elasticsearch when computer start</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl <span class="built_in">enable</span> elasticsearch.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># start service</span></span><br><span class="line">systemctl start elasticsearch</span><br><span class="line">systemctl status elasticsearch</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify Elastic search is running</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl http://localhost:9200</span><br><span class="line"></span><br><span class="line"><span class="comment"># If not working, you could try reboot</span></span><br><span class="line">reboot -r</span><br></pre></td></tr></table></figure>
+<p> You could check log files under <code>/var/log/elasticsearch/</code></p>
+</li>
+<li><p>Reference : <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html</a></p>
+</li>
+</ol>
+<h2 id="Kibana"><a href="#Kibana" class="headerlink" title="Kibana"></a>Kibana</h2><ol>
+<li><p>Download and install</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://artifacts.elastic.co/downloads/kibana/kibana-6.2.3-x86_64.rpm</span><br><span class="line">rpm -ivh kibana-6.2.3-x86_64.rpm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Modify kibana config</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/kibana/kibana.yml</span><br><span class="line"><span class="comment"># Kibana port</span></span><br><span class="line">server.port: 5601</span><br><span class="line"><span class="comment"># Bind to all ip address</span></span><br><span class="line">server.host: <span class="string">"0.0.0.0"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Start service</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl <span class="built_in">enable</span> kibana.service</span><br><span class="line">systemctl start kibana</span><br><span class="line">systemctl status kibana</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify installation</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl localhost:5601</span><br></pre></td></tr></table></figure>
+<p> You can check log file under <code>/var/log/kibana/</code></p>
+</li>
+<li><p>Reference : <a href="https://www.elastic.co/guide/en/kibana/current/rpm.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/kibana/current/rpm.html</a></p>
+</li>
+</ol>
+<h2 id="Logstash"><a href="#Logstash" class="headerlink" title="Logstash"></a>Logstash</h2><ol>
+<li><p>Download and install</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://artifacts.elastic.co/downloads/logstash/logstash-6.2.3.rpm</span><br><span class="line">rpm -ivh logstash-6.2.3.rpm</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Modify <code>logstash.yml</code> to enable auto reload config</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/logstash/logstash.yml</span><br><span class="line">config.reload.automatic: <span class="literal">true</span></span><br><span class="line">config.reload.interval: 3s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Add first logstash config</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/logstash/conf.d/</span><br><span class="line">cat &gt; default.conf</span><br><span class="line">input &#123;</span><br><span class="line">  beats &#123;</span><br><span class="line">    port =&gt; 5044</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line">  elasticsearch &#123;</span><br><span class="line">    hosts =&gt; [<span class="string">"http://localhost:9200"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Start service</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl <span class="built_in">enable</span> logstash.service</span><br><span class="line">systemctl start logstash</span><br><span class="line">systemctl status logstash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Verify installation</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet 127.0.0.1 5044</span><br></pre></td></tr></table></figure>
+<p> You could check log file under <code>/var/log/logstash/</code></p>
+</li>
+<li><p>Reference : <a href="https://www.elastic.co/guide/en/logstash/current/installing-logstash.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/installing-logstash.html</a></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/03/30/grant-internet-access-by-ccproxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +644,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -598,7 +813,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -770,7 +985,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -960,7 +1175,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1127,7 +1342,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1296,7 +1511,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1463,7 +1678,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1637,7 +1852,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1811,7 +2026,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
+                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
               
             
           </span>
@@ -1859,172 +2074,6 @@
           
             <p><strong>Always use <code>man commandName</code> to know what the command is before copy and paste.</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Open a new shell with root, exit with "exit" or "ctrl+d"</span></span><br><span class="line">sudo su -</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show how to use a command</span></span><br><span class="line">man <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Find first excutable path</span></span><br><span class="line">whichis <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Find every excutable path</span></span><br><span class="line">whereis <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use proxy</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=http://server-ip:port/</span><br><span class="line"><span class="built_in">export</span> https_proxy=http://server-ip:port/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check CentOS version</span></span><br><span class="line">rpm --query centos-release</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read file</span></span><br><span class="line">cat filename</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write file (after excute, type content and ctrl+d to save)</span></span><br><span class="line">cat &gt; filename</span><br><span class="line"></span><br><span class="line"><span class="comment"># RPM install</span></span><br><span class="line">rpm -ivh file.rpm</span><br><span class="line"></span><br><span class="line"><span class="comment"># switch to last directory</span></span><br><span class="line"><span class="built_in">cd</span> -</span><br><span class="line"></span><br><span class="line"><span class="comment"># Download file with wget -c=continue download</span></span><br><span class="line">wget -c --header <span class="string">"Cookie: foo=bar"</span> http://url/to/file`</span><br><span class="line"></span><br><span class="line"><span class="comment"># Force reboot immediately</span></span><br><span class="line">reboot -f</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rename files</span></span><br><span class="line">rename &lt;old name&gt; &lt;new name&gt; &lt;Regex match&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to openvpn</span></span><br><span class="line">sudo openvpn --config client.ovpn</span><br><span class="line"></span><br><span class="line"><span class="comment"># List port listening</span></span><br><span class="line">lsof -i :&lt;port&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># kill process by id</span></span><br><span class="line"><span class="built_in">kill</span> PID</span><br><span class="line"></span><br><span class="line"><span class="comment"># List recent command history</span></span><br><span class="line"><span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># excute command from history</span></span><br><span class="line">!&lt;search text&gt;</span><br><span class="line">!vi <span class="comment"># excute recent command contains vi</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/10/30/vs-npm-task-runner/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/30/vs-npm-task-runner/" itemprop="url">
-                  Visual Studio NPM Task Runner
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-10-30 16:22:26" itemprop="dateCreated datePublished" datetime="2017-10-30T16:22:26+00:00">2017-10-30</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-11-07 16:25:08" itemprop="dateModified" datetime="2023-11-07T16:25:08+00:00">2023-11-07</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/30/vs-npm-task-runner/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/10/30/vs-npm-task-runner/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Recently my co-worker recommends a great VS extension <a href="https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner" target="_blank" rel="noopener">NPM task runner</a>. Instead of running NPM task via a separate terminal, it will discover NPM task via package.json and run them inside Visual Studio by a double-click.</p>
-<p>Install via <code>Tools &gt; Extensions and Updates &gt; Online &gt; Search NPM task runner</code><br><img src="/2017/10/30/vs-npm-task-runner/extension.jpg"></p>
-<p>Task Runner Explorer locate in <code>View &gt; Other Windows &gt; Task Runner Explorer</code><br>Run task by double-click tasks in sidebar, close it by <code>x</code> button<br><img src="/2017/10/30/vs-npm-task-runner/task-runner.jpg"></p>
-<p>If your task fails, it probably references to wrong NPM or Node.js, to fix it change the order in <code>Tools &gt; Options &gt; Projects and Solutions &gt; External Web Tools</code>. I lift-up <code>${PATH}</code> to the second one.<br><img src="/2017/10/30/vs-npm-task-runner/setting.jpg"></p>
 
           
         
@@ -2112,7 +2161,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">81</span>
+                    <span class="site-state-item-count">82</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2565,7 +2614,29 @@
                     
                       
                     
-                    <span class="site-state-item-count">218</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">229</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
