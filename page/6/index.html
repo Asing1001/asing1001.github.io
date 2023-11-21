@@ -366,6 +366,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/02/08/linux-cmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/08/linux-cmd/" itemprop="url">
+                  Linux commands cheatsheet
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-02-08 14:28:04" itemprop="dateCreated datePublished" datetime="2018-02-08T14:28:04+00:00">2018-02-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/02/08/linux-cmd/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/08/linux-cmd/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Always use <code>man commandName</code> to know what the command is before copy and paste.</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Open a new shell with root, exit with "exit" or "ctrl+d"</span></span><br><span class="line">sudo su -</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show how to use a command</span></span><br><span class="line">man <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Find first excutable path</span></span><br><span class="line">whichis <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Find every excutable path</span></span><br><span class="line">whereis <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use proxy</span></span><br><span class="line"><span class="built_in">export</span> http_proxy=http://server-ip:port/</span><br><span class="line"><span class="built_in">export</span> https_proxy=http://server-ip:port/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Check CentOS version</span></span><br><span class="line">rpm --query centos-release</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read file</span></span><br><span class="line">cat filename</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write file (after excute, type content and ctrl+d to save)</span></span><br><span class="line">cat &gt; filename</span><br><span class="line"></span><br><span class="line"><span class="comment"># RPM install</span></span><br><span class="line">rpm -ivh file.rpm</span><br><span class="line"></span><br><span class="line"><span class="comment"># switch to last directory</span></span><br><span class="line"><span class="built_in">cd</span> -</span><br><span class="line"></span><br><span class="line"><span class="comment"># Download file with wget -c=continue download</span></span><br><span class="line">wget -c --header <span class="string">"Cookie: foo=bar"</span> http://url/to/file`</span><br><span class="line"></span><br><span class="line"><span class="comment"># Force reboot immediately</span></span><br><span class="line">reboot -f</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rename files</span></span><br><span class="line">rename &lt;old name&gt; &lt;new name&gt; &lt;Regex match&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Connect to openvpn</span></span><br><span class="line">sudo openvpn --config client.ovpn</span><br><span class="line"></span><br><span class="line"><span class="comment"># List port listening</span></span><br><span class="line">lsof -i :&lt;port&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># kill process by id</span></span><br><span class="line"><span class="built_in">kill</span> PID</span><br><span class="line"></span><br><span class="line"><span class="comment"># List recent command history</span></span><br><span class="line"><span class="built_in">history</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># excute command from history</span></span><br><span class="line">!&lt;search text&gt;</span><br><span class="line">!vi <span class="comment"># excute recent command contains vi</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/10/30/vs-npm-task-runner/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +593,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -595,7 +759,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -766,7 +930,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -930,7 +1094,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1095,7 +1259,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1268,7 +1432,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1436,7 +1600,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1610,7 +1774,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1777,7 +1941,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1868,173 +2032,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2017/03/24/csharp-send-email-551-authentication-required/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/24/csharp-send-email-551-authentication-required/" itemprop="url">
-                  Gmail sending error 5.5.1 Authentication Required.
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2017-03-24 00:10:55" itemprop="dateCreated datePublished" datetime="2017-03-24T00:10:55+00:00">2017-03-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/24/csharp-send-email-551-authentication-required/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/03/24/csharp-send-email-551-authentication-required/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="錯誤"><a href="#錯誤" class="headerlink" title="錯誤"></a>錯誤</h2><p>程式自動寄送Email時發生錯誤：<br><code>SMTP 伺服器需要安全連接，或用戶端未經驗證。伺服器回應為: 5.5.1 Authentication Required.</code><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/24/csharp-send-email-551-authentication-required/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2084,7 +2081,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">82</span>
+                    <span class="site-state-item-count">83</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2559,7 +2556,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">229</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">232</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

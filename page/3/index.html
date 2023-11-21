@@ -366,6 +366,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/02/21/GTM-Get-the-item-order-in-a-list/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/21/GTM-Get-the-item-order-in-a-list/" itemprop="url">
+                  [GTM] Get the item order in a list
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-02-21 11:55:02" itemprop="dateCreated datePublished" datetime="2019-02-21T11:55:02+00:00">2019-02-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/21/GTM-Get-the-item-order-in-a-list/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/21/GTM-Get-the-item-order-in-a-list/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Google Tag Manager(GTM) is a back office for quickly managing HTML on webpages, basically, it enables the maintainer to do <strong>Everything</strong> on their website without changing the code base. There are three major elements in GTM which are Tag, Variable, and Trigger.</p>
+<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2><p>A Tag will be triggered by the <strong>Trigger</strong> you set and passing both the system defined variables and the user-defined variables to your Tag, then you could take the action such as sending it to GA or manipulate DOM on your pages.</p>
+<img src="/2019/02/21/GTM-Get-the-item-order-in-a-list/tag.png">
+<h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><img src="/2019/02/21/GTM-Get-the-item-order-in-a-list/customjs.png">
+<p>Other than System defined variables, you could create your own by Javascript:<br>Select <code>User-Defined Variables</code>, then select the type <code>Custom Javascript</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> element = &#123;&#123;Click Element&#125;&#125;</span><br><span class="line">    <span class="keyword">var</span> elementClass = &#123;&#123;Element <span class="class"><span class="keyword">class</span>&#125;&#125;</span></span><br><span class="line"><span class="class">    <span class="title">if</span> (!<span class="title">element</span> || !<span class="title">elementClass</span>) <span class="title">return</span></span></span><br><span class="line"><span class="class">    <span class="title">var</span> <span class="title">selector</span> </span>= <span class="string">'.'</span> + elementClass.split(<span class="string">' '</span>).join(<span class="string">'.'</span>)</span><br><span class="line">    <span class="keyword">var</span> list = <span class="built_in">document</span>.querySelectorAll(selector)</span><br><span class="line">    <span class="keyword">var</span> order = [].indexOf.call(list, element) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> order</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.dataLayer.filter(<span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> obj.errorMsg === e.message;</span><br><span class="line">    &#125;).length == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">window</span>.dataLayer.push(&#123;</span><br><span class="line">        <span class="string">'event'</span>: <span class="string">'variable error'</span>,</span><br><span class="line">        <span class="string">'errorMsg'</span>: e.message</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Trigger"><a href="#Trigger" class="headerlink" title="Trigger"></a>Trigger</h2><img src="/2019/02/21/GTM-Get-the-item-order-in-a-list/trigger.png">
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/11/18/xampp-connect-to-GCP-mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +598,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -600,7 +769,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -860,7 +1029,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1034,7 +1203,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1201,7 +1370,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1393,7 +1562,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -1561,7 +1730,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -2120,7 +2289,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -2287,7 +2456,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
+                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
               
             
           </span>
@@ -2382,180 +2551,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/05/29/install-nodejs-program-as-windows-service-by-nssm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/29/install-nodejs-program-as-windows-service-by-nssm/" itemprop="url">
-                  Install nodejs program as windows service by nssm
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-05-29 14:39:55" itemprop="dateCreated datePublished" datetime="2018-05-29T14:39:55+00:00">2018-05-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-11-08 12:40:10" itemprop="dateModified" datetime="2023-11-08T12:40:10+00:00">2023-11-08</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/29/install-nodejs-program-as-windows-service-by-nssm/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/05/29/install-nodejs-program-as-windows-service-by-nssm/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Steps-to-install-windows-service"><a href="#Steps-to-install-windows-service" class="headerlink" title="Steps to install windows service"></a>Steps to install windows service</h2><ol>
-<li>Create a <code>start.bat</code> file with content <code>npm start</code></li>
-<li><a href="http://nssm.cc/download" target="_blank" rel="noopener">Download nssm</a></li>
-<li>Extract it and go to <code>nssm/win64</code> folder</li>
-<li>Type <code>nssm install service-name</code> from command prompt</li>
-<li>Select <code>start.bat</code> as Application Path, you could also add your startup Arguments here <img src="/2018/05/29/install-nodejs-program-as-windows-service-by-nssm/nssm.jpg"></li>
-<li>Start service with <code>nssm start service-name</code></li>
-<li>You could find it already registered as windows service :)</li>
-</ol>
-<h2 id="NSSM-commands-reference"><a href="#NSSM-commands-reference" class="headerlink" title="NSSM commands reference"></a>NSSM commands reference</h2><p>You could type <code>nssm</code> anytime to see this document</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">M:\nssm-2.24\win64&gt;nssm</span><br><span class="line">NSSM: The non-sucking service manager</span><br><span class="line">Version 2.24 64-bit, 2014-08-31</span><br><span class="line">Usage: nssm &lt;option&gt; [&lt;args&gt; ...]</span><br><span class="line"></span><br><span class="line">To show service installation GUI:</span><br><span class="line"></span><br><span class="line">        nssm install [&lt;servicename&gt;]</span><br><span class="line"></span><br><span class="line">To install a service without confirmation:</span><br><span class="line"></span><br><span class="line">        nssm install &lt;servicename&gt; &lt;app&gt; [&lt;args&gt; ...]</span><br><span class="line"></span><br><span class="line">To show service editing GUI:</span><br><span class="line"></span><br><span class="line">        nssm edit &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line">To retrieve or edit service parameters directly:</span><br><span class="line"></span><br><span class="line">        nssm get &lt;servicename&gt; &lt;parameter&gt; [&lt;subparameter&gt;]</span><br><span class="line"></span><br><span class="line">        nssm set &lt;servicename&gt; &lt;parameter&gt; [&lt;subparameter&gt;] &lt;value&gt;</span><br><span class="line"></span><br><span class="line">        nssm reset &lt;servicename&gt; &lt;parameter&gt; [&lt;subparameter&gt;]</span><br><span class="line"></span><br><span class="line">To show service removal GUI:</span><br><span class="line"></span><br><span class="line">        nssm remove [&lt;servicename&gt;]</span><br><span class="line"></span><br><span class="line">To remove a service without confirmation:</span><br><span class="line"></span><br><span class="line">        nssm remove &lt;servicename&gt; confirm</span><br><span class="line"></span><br><span class="line">To manage a service:</span><br><span class="line"></span><br><span class="line">        nssm start &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line">        nssm stop &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line">        nssm restart &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line">        nssm status &lt;servicename&gt;</span><br><span class="line"></span><br><span class="line">        nssm rotate &lt;servicename&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://nssm.cc" target="_blank" rel="noopener">http://nssm.cc</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2605,7 +2600,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">82</span>
+                    <span class="site-state-item-count">83</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3080,7 +3075,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">229</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">232</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
