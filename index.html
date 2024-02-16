@@ -366,6 +366,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2024/02/16/Classification-with-scikit-learn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2024/02/16/Classification-with-scikit-learn/" itemprop="url">
+                  Leveraging scikit-learn for Invoice Classification using Text Data
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2024-02-16 16:45:47 / Modified: 16:55:37" itemprop="dateCreated datePublished" datetime="2024-02-16T16:45:47+00:00">2024-02-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2024/02/16/Classification-with-scikit-learn/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/02/16/Classification-with-scikit-learn/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>In the realm of data science and machine learning, text classification is a common task with a wide range of applications. One such application is invoice classification, where invoices are categorized based on their textual content. In this blog post, we’ll explore how to accomplish this task using scikit-learn, a popular machine learning library in Python.</p>
+<h2 id="Understanding-the-Data"><a href="#Understanding-the-Data" class="headerlink" title="Understanding the Data"></a>Understanding the Data</h2><p>Before diving into the code, let’s first understand the data we’re working with. Our dataset consists of invoices along with their corresponding categories. We’ve gathered data from various sources, including human-marked data, generated data, and crawled data from the web.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the data</span></span><br><span class="line">data1 = pd.read_csv(<span class="string">'./data/human-marked.csv'</span>)</span><br><span class="line">data2 = pd.read_csv(<span class="string">'./data/generated/train.csv'</span>)</span><br><span class="line">data3 = pd.read_csv(<span class="string">'./data/crawled/train.csv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Concatenate the data into a single DataFrame</span></span><br><span class="line">data = pd.concat([data1, data2, data3])</span><br></pre></td></tr></table></figure>
+<h2 id="Data-Preprocessing-and-Exploration"><a href="#Data-Preprocessing-and-Exploration" class="headerlink" title="Data Preprocessing and Exploration"></a>Data Preprocessing and Exploration</h2><p>After loading the data, we preprocess it to ensure uniformity, such as removing redundant spaces from category labels. Additionally, we explore the distribution of categories in our dataset to gain insights into the class distribution.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocessing</span></span><br><span class="line">data[<span class="string">'categories'</span>] = data[<span class="string">'categories'</span>].str.strip()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Explore category distribution</span></span><br><span class="line">category_counts = data[<span class="string">'categories'</span>].value_counts()</span><br></pre></td></tr></table></figure>
+<h2 id="Building-the-Classification-Pipeline"><a href="#Building-the-Classification-Pipeline" class="headerlink" title="Building the Classification Pipeline"></a>Building the Classification Pipeline</h2><p>With our data ready, we construct a classification pipeline using scikit-learn. Our pipeline consists of a TF-IDF vectorizer for feature extraction and a linear support vector classifier (LinearSVC) as the classification model.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> TfidfVectorizer</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.calibration <span class="keyword">import</span> CalibratedClassifierCV</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"></span><br><span class="line"><span class="comment"># Split the data into training and testing sets</span></span><br><span class="line">X = data[<span class="string">'text'</span>].values</span><br><span class="line">y = data[<span class="string">'categories'</span>].values</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the pipeline</span></span><br><span class="line">pipeline = Pipeline([</span><br><span class="line">    (<span class="string">'tfidf'</span>, TfidfVectorizer()),</span><br><span class="line">    (<span class="string">'clf'</span>, CalibratedClassifierCV(LinearSVC())),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h2 id="Model-Training-and-Evaluation"><a href="#Model-Training-and-Evaluation" class="headerlink" title="Model Training and Evaluation"></a>Model Training and Evaluation</h2><p>Next, we train our model using grid search to find the optimal hyperparameters and evaluate its performance on the test set.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the parameter grid for grid search</span></span><br><span class="line">param_grid = &#123;</span><br><span class="line">    <span class="comment"># Hyperparameters to tune</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Perform grid search with cross-validation</span></span><br><span class="line">grid_search = GridSearchCV(pipeline, param_grid, cv=<span class="number">2</span>)</span><br><span class="line">grid_search.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Evaluate the model on the test set</span></span><br><span class="line">best_estimator = grid_search.best_estimator_</span><br><span class="line">y_pred = best_estimator.predict(X_test)</span><br><span class="line">report = classification_report(y_test, y_pred)</span><br></pre></td></tr></table></figure>
+<h2 id="Inference-and-Model-Deployment"><a href="#Inference-and-Model-Deployment" class="headerlink" title="Inference and Model Deployment"></a>Inference and Model Deployment</h2><p>Finally, we demonstrate how to use the trained model for inference on new invoice texts and save the model for future use.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line"><span class="comment"># Example inference on new invoice texts</span></span><br><span class="line">test_texts = [<span class="string">'台電電費'</span>, <span class="string">'Apple'</span>, <span class="string">'netflix訂閱'</span>, <span class="string">'瓦斯現金券'</span>, <span class="string">'不鏽鋼鍋'</span>]</span><br><span class="line">results = get_prediction_probabilities(best_estimator, test_texts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the trained model</span></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">'model.pkl'</span>, <span class="string">'wb'</span>) <span class="keyword">as</span> file:</span><br><span class="line">    pickle.dump(best_estimator, file)</span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this blog post, we’ve demonstrated how to leverage scikit-learn to classify invoices based on their textual content. By building a robust classification pipeline and fine-tuning hyperparameters using grid search, we can achieve accurate categorization of invoices, enabling streamlined invoice processing and management.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/11/21/IntelliJ-error-Cannot-resolve-symbol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -412,12 +574,24 @@
                 
               
 
-              <time title="Created: 2023-11-21 16:21:40 / Modified: 16:35:41" itemprop="dateCreated datePublished" datetime="2023-11-21T16:21:40+00:00">2023-11-21</time>
+              <time title="Created: 2023-11-21 16:21:40" itemprop="dateCreated datePublished" datetime="2023-11-21T16:21:40+00:00">2023-11-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -588,7 +762,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -815,7 +989,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -989,7 +1163,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -1166,7 +1340,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -1339,7 +1513,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -1525,7 +1699,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -1693,7 +1867,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -1867,7 +2041,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
+                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
               
             
           </span>
@@ -1957,171 +2131,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2022/06/06/Enlarge-Click-Area-by-CSS-pseudo-element/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/06/06/Enlarge-Click-Area-by-CSS-pseudo-element/" itemprop="url">
-                  Enlarge Click Area by CSS pseudo element
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2022-06-06 01:15:35" itemprop="dateCreated datePublished" datetime="2022-06-06T01:15:35+00:00">2022-06-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2023-11-21 16:35:41" itemprop="dateModified" datetime="2023-11-21T16:35:41+00:00">2023-11-21</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2022/06/06/Enlarge-Click-Area-by-CSS-pseudo-element/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/06/06/Enlarge-Click-Area-by-CSS-pseudo-element/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>An utility class <code>.enlarge-click-area</code> to enlarge the click area of any elements.</p>
-<h2 id="Plain-CSS"><a href="#Plain-CSS" class="headerlink" title="Plain CSS"></a>Plain CSS</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.enlarge-click-area</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.enlarge-click-area</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">160%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">160%</span>;</span><br><span class="line">  <span class="comment">/* How to calculate 18.75%:</span></span><br><span class="line"><span class="comment">    Extra width for left-hand side: (160% - 100%) / 2 = 30%</span></span><br><span class="line"><span class="comment">    Transform percentage will relative to the width: 30% / 160% = 18.75%</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">18.75%</span>, -<span class="number">18.75%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="SCSS"><a href="#SCSS" class="headerlink" title="SCSS"></a>SCSS</h2><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">=enlargeClickArea($ratio: 2)</span><br><span class="line">  <span class="attribute">position</span>: relative</span><br><span class="line"></span><br><span class="line">  &amp;:after</span><br><span class="line">    <span class="variable">$offset</span>: percentage((<span class="number">1</span> - <span class="variable">$ratio</span>) / <span class="number">2</span> / <span class="variable">$ratio</span>)</span><br><span class="line"></span><br><span class="line">    content: <span class="string">''</span></span><br><span class="line">    display: block</span><br><span class="line">    position: absolute</span><br><span class="line">    left: <span class="number">0</span></span><br><span class="line">    top: <span class="number">0</span></span><br><span class="line">    width: percentage(<span class="variable">$ratio</span>)</span><br><span class="line">    height: percentage(<span class="variable">$ratio</span>)</span><br><span class="line">    transform: translate(<span class="variable">$offset</span>, <span class="variable">$offset</span>)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2171,7 +2180,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">83</span>
+                    <span class="site-state-item-count">84</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2652,7 +2661,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">232</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">240</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -2721,7 +2746,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2024</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
