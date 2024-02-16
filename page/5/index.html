@@ -366,6 +366,178 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/04/10/jenkins-migration/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/10/jenkins-migration/" itemprop="url">
+                  Jenkins migration
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-10 11:15:00" itemprop="dateCreated datePublished" datetime="2018-04-10T11:15:00+00:00">2018-04-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/10/jenkins-migration/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/04/10/jenkins-migration/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>Copy existing jenkins folder, exclude <code>workspace</code></li>
+<li>Modify jenkins port in <code>Jenkins.xml</code>, default <code>8080</code></li>
+<li>Modify AD Domain and rename an account to yours in <code>config.xml</code></li>
+<li><p>Create / Start Jenkins service in cmd with administrator mode:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sc create &lt;jenkins-service-name&gt; &lt;path/to/jenkins.exe&gt;</span><br><span class="line">sc start &lt;jenkins-service-name&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>View migrated jenkins in your browser with port specify above, default <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/04/02/how-redux-work/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +601,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -596,7 +768,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -765,7 +937,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -980,7 +1152,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1149,7 +1321,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1321,7 +1493,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1511,7 +1683,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1678,7 +1850,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1847,7 +2019,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1936,180 +2108,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/02/10/chromebook-shortcut/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/chromebook-shortcut/" itemprop="url">
-                  Chromebook shortcut
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-02-10 22:04:00" itemprop="dateCreated datePublished" datetime="2018-02-10T22:04:00+00:00">2018-02-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/02/10/chromebook-shortcut/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/02/10/chromebook-shortcut/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><code>ctrl + alt + /</code> : Show Keyboard Shortcut</li>
-<li><code>ctrl + 口||</code> : Screenshot</li>
-<li><code>ctrl + shift + 口||</code> : Screenshot region</li>
-<li><code>ctrl + shift + i</code> : Open developer tools</li>
-<li><code>alt + search</code> : Toggle Caps Lock</li>
-<li><code>alt + shift + m</code> : Open file manager</li>
-<li><code>ctrl + space</code> : Change input method</li>
-<li><code>shift + esc</code> : Open task manager</li>
-<li><code>ctrl + alt + t</code> : Open terminal</li>
-<li><code>search + button between esc and power</code> : F1~F10</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2159,7 +2157,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">84</span>
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2656,7 +2654,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">240</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

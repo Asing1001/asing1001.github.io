@@ -366,6 +366,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2024/02/16/Deploying-a-Machine-Learning-Model-as-an-API-with-FastAPI-Docker-and-Knative/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2024/02/16/Deploying-a-Machine-Learning-Model-as-an-API-with-FastAPI-Docker-and-Knative/" itemprop="url">
+                  Deploying a Machine Learning Model as an API with FastAPI, Docker, and Knative
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2024-02-16 17:26:08 / Modified: 17:56:13" itemprop="dateCreated datePublished" datetime="2024-02-16T17:26:08+00:00">2024-02-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2024/02/16/Deploying-a-Machine-Learning-Model-as-an-API-with-FastAPI-Docker-and-Knative/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/02/16/Deploying-a-Machine-Learning-Model-as-an-API-with-FastAPI-Docker-and-Knative/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>In the post <a href="/2024/02/16/Classification-with-scikit-learn/" title="Leveraging scikit-learn for Invoice Classification using Text Data">Leveraging scikit-learn for Invoice Classification using Text Data</a>, we explored how to train a machine learning model to classify invoices based on their textual content using scikit-learn. However, once we have a model trained, a natural next step is to make it accessible to other systems or services through an API. This raises the question: how do we deploy it as a scalable API?</p>
+<p>In this blog post, we’ll address this question by walking through the process of wrapping our scikit-learn model as an API using FastAPI, containerizing it with Docker, and deploying it on Knative for serverless scaling. Let’s dive in!</p>
+<h2 id="Wrapping-the-Model-as-an-API-with-FastAPI"><a href="#Wrapping-the-Model-as-an-API-with-FastAPI" class="headerlink" title="Wrapping the Model as an API with FastAPI"></a>Wrapping the Model as an API with FastAPI</h2><p>We’ll start by wrapping our machine learning model as an API using FastAPI, a modern web framework for building APIs with Python. FastAPI offers automatic OpenAPI documentation generation and high performance, making it an excellent choice for our use case.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List, Dict</span><br><span class="line"><span class="keyword">from</span> fastapi <span class="keyword">import</span> FastAPI</span><br><span class="line"><span class="keyword">from</span> pydantic <span class="keyword">import</span> BaseModel</span><br><span class="line"><span class="keyword">from</span> util.get_prediction_probabilities <span class="keyword">import</span> get_prediction_probabilities</span><br><span class="line"></span><br><span class="line">app = FastAPI()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PredictionResult</span><span class="params">(BaseModel)</span>:</span></span><br><span class="line">    text: str</span><br><span class="line">    prediction: str</span><br><span class="line">    probabilities: Dict[str, float]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PredictionRequest</span><span class="params">(BaseModel)</span>:</span></span><br><span class="line">    texts: List[str]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PredictionResponse</span><span class="params">(BaseModel)</span>:</span></span><br><span class="line">    results: List[PredictionResult]</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.post('/predict', response_model=PredictionResponse)</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(request: PredictionRequest)</span>:</span></span><br><span class="line">    texts = request.texts</span><br><span class="line">    results = get_prediction_probabilities(model, texts)</span><br><span class="line"></span><br><span class="line">    response = PredictionResponse(results=results)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
+<h2 id="Building-a-Docker-Image"><a href="#Building-a-Docker-Image" class="headerlink" title="Building a Docker Image"></a>Building a Docker Image</h2><p>Next, we’ll containerize our FastAPI application using Docker. Docker provides a lightweight and portable way to package applications and their dependencies into containers, ensuring consistency across different environments.</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> tiangolo/uvicorn-gunicorn-fastapi:python3.<span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">COPY</span> ./app /app</span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span> pip install scikit-learn  # Install any dependencies</span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span> ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]</span><br></pre></td></tr></table></figure>
+<h2 id="Deployment-on-Knative"><a href="#Deployment-on-Knative" class="headerlink" title="Deployment on Knative"></a>Deployment on Knative</h2><p>Finally, we’ll deploy our Docker image to Knative, a Kubernetes-based platform for building, deploying, and managing modern serverless workloads. Knative offers auto-scaling capabilities, allowing our API to handle varying levels of traffic efficiently.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">serving.knative.dev/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">invoice-classifier</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">annotations:</span></span><br><span class="line">        <span class="attr">autoscaling.knative.dev/target-burst-capacity:</span> <span class="string">"500"</span></span><br><span class="line">        <span class="attr">autoscaling.knative.dev/class:</span> <span class="string">"hpa.autoscaling.knative.dev"</span></span><br><span class="line">        <span class="attr">autoscaling.knative.dev/metric:</span> <span class="string">"cpu"</span></span><br><span class="line">        <span class="attr">autoscaling.knative.dev/target:</span> <span class="string">"60"</span></span><br><span class="line">        <span class="attr">autoscaling.knative.dev/minScale:</span> <span class="string">"2"</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">invoice-classifier</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">your-docker-registry/invoice-classifier</span></span><br><span class="line">        <span class="attr">resources:</span></span><br><span class="line">          <span class="attr">limits:</span></span><br><span class="line">            <span class="attr">cpu:</span> <span class="number">1</span></span><br><span class="line">            <span class="attr">memory:</span> <span class="string">2Gi</span></span><br><span class="line">          <span class="attr">requests:</span></span><br><span class="line">            <span class="attr">cpu:</span> <span class="string">300m</span></span><br><span class="line">            <span class="attr">memory:</span> <span class="string">500Mi</span></span><br></pre></td></tr></table></figure>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In this blog post, we’ve demonstrated how to deploy a machine learning model as an API using FastAPI, Docker, and Knative. By following these steps, you can make your machine learning models accessible as scalable and reliable APIs, enabling seamless integration into your applications and workflows.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2024/02/16/Classification-with-scikit-learn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -412,7 +571,7 @@
                 
               
 
-              <time title="Created: 2024-02-16 16:45:47 / Modified: 16:55:37" itemprop="dateCreated datePublished" datetime="2024-02-16T16:45:47+00:00">2024-02-16</time>
+              <time title="Created: 2024-02-16 16:45:47 / Modified: 17:56:13" itemprop="dateCreated datePublished" datetime="2024-02-16T16:45:47+00:00">2024-02-16</time>
             
 
             
@@ -468,8 +627,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load the data</span></span><br><span class="line">data1 = pd.read_csv(<span class="string">'./data/human-marked.csv'</span>)</span><br><span class="line">data2 = pd.read_csv(<span class="string">'./data/generated/train.csv'</span>)</span><br><span class="line">data3 = pd.read_csv(<span class="string">'./data/crawled/train.csv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Concatenate the data into a single DataFrame</span></span><br><span class="line">data = pd.concat([data1, data2, data3])</span><br></pre></td></tr></table></figure>
 <h2 id="Data-Preprocessing-and-Exploration"><a href="#Data-Preprocessing-and-Exploration" class="headerlink" title="Data Preprocessing and Exploration"></a>Data Preprocessing and Exploration</h2><p>After loading the data, we preprocess it to ensure uniformity, such as removing redundant spaces from category labels. Additionally, we explore the distribution of categories in our dataset to gain insights into the class distribution.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preprocessing</span></span><br><span class="line">data[<span class="string">'categories'</span>] = data[<span class="string">'categories'</span>].str.strip()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Explore category distribution</span></span><br><span class="line">category_counts = data[<span class="string">'categories'</span>].value_counts()</span><br></pre></td></tr></table></figure>
-<h2 id="Building-the-Classification-Pipeline"><a href="#Building-the-Classification-Pipeline" class="headerlink" title="Building the Classification Pipeline"></a>Building the Classification Pipeline</h2><p>With our data ready, we construct a classification pipeline using scikit-learn. Our pipeline consists of a TF-IDF vectorizer for feature extraction and a linear support vector classifier (LinearSVC) as the classification model.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> TfidfVectorizer</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.calibration <span class="keyword">import</span> CalibratedClassifierCV</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"></span><br><span class="line"><span class="comment"># Split the data into training and testing sets</span></span><br><span class="line">X = data[<span class="string">'text'</span>].values</span><br><span class="line">y = data[<span class="string">'categories'</span>].values</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the pipeline</span></span><br><span class="line">pipeline = Pipeline([</span><br><span class="line">    (<span class="string">'tfidf'</span>, TfidfVectorizer()),</span><br><span class="line">    (<span class="string">'clf'</span>, CalibratedClassifierCV(LinearSVC())),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<h2 id="Building-the-Classification-Pipeline"><a href="#Building-the-Classification-Pipeline" class="headerlink" title="Building the Classification Pipeline"></a>Building the Classification Pipeline</h2><p>With our data ready, we construct a classification pipeline using scikit-learn. Our pipeline consists of a TF-IDF vectorizer with Jieba as the Chinese tokenizer for feature extraction and a linear support vector classifier (LinearSVC) as the classification model.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> TfidfVectorizer</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.calibration <span class="keyword">import</span> CalibratedClassifierCV</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"><span class="keyword">from</span> util.tokenizer <span class="keyword">import</span> tokenizer</span><br><span class="line"></span><br><span class="line"><span class="comment"># Split the data into training and testing sets</span></span><br><span class="line">X = data[<span class="string">'text'</span>].values</span><br><span class="line">y = data[<span class="string">'categories'</span>].values</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.2</span>, random_state=<span class="number">42</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the pipeline</span></span><br><span class="line">pipeline = Pipeline([</span><br><span class="line">    (<span class="string">'jieba'</span>, TfidfVectorizer(tokenizer=tokenizer)),</span><br><span class="line">    (<span class="string">'clf'</span>, CalibratedClassifierCV(LinearSVC())),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<p>util.tokenizer (For Chinese tokenization)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tokenizer</span><span class="params">(text)</span>:</span></span><br><span class="line">    words = list(jieba.cut(text))</span><br><span class="line">    words = [word <span class="keyword">for</span> word <span class="keyword">in</span> words <span class="keyword">if</span> re.match(<span class="string">r'^[\w\u4e00-\u9fff]+$'</span>, word)]</span><br><span class="line">    <span class="keyword">return</span> words</span><br></pre></td></tr></table></figure>
 <h2 id="Model-Training-and-Evaluation"><a href="#Model-Training-and-Evaluation" class="headerlink" title="Model Training and Evaluation"></a>Model Training and Evaluation</h2><p>Next, we train our model using grid search to find the optimal hyperparameters and evaluate its performance on the test set.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> classification_report</span><br><span class="line"></span><br><span class="line"><span class="comment"># Define the parameter grid for grid search</span></span><br><span class="line">param_grid = &#123;</span><br><span class="line">    <span class="comment"># Hyperparameters to tune</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Perform grid search with cross-validation</span></span><br><span class="line">grid_search = GridSearchCV(pipeline, param_grid, cv=<span class="number">2</span>)</span><br><span class="line">grid_search.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Evaluate the model on the test set</span></span><br><span class="line">best_estimator = grid_search.best_estimator_</span><br><span class="line">y_pred = best_estimator.predict(X_test)</span><br><span class="line">report = classification_report(y_test, y_pred)</span><br></pre></td></tr></table></figure>
 <h2 id="Inference-and-Model-Deployment"><a href="#Inference-and-Model-Deployment" class="headerlink" title="Inference and Model Deployment"></a>Inference and Model Deployment</h2><p>Finally, we demonstrate how to use the trained model for inference on new invoice texts and save the model for future use.</p>
@@ -591,7 +752,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -762,7 +923,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -989,7 +1150,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1163,7 +1324,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1340,7 +1501,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1513,7 +1674,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1699,7 +1860,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1867,7 +2028,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1963,174 +2124,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2022/07/27/Run-puppeteer-inside-K8s-container/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/07/27/Run-puppeteer-inside-K8s-container/" itemprop="url">
-                  Build Puppeteer Docker image to run inside K8s cluster
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2022-07-27 12:57:15" itemprop="dateCreated datePublished" datetime="2022-07-27T12:57:15+00:00">2022-07-27</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2022/07/27/Run-puppeteer-inside-K8s-container/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/07/27/Run-puppeteer-inside-K8s-container/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><ul>
-<li>To run Puppeteer, you can’t just use an official Nodejs image and npm install puppeteer</li>
-<li>Below is the Dockerfile that I have tried and proved as a working solution</li>
-<li>More information see the <a href="https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#running-puppeteer-in-docker" target="_blank" rel="noopener">Puppeteer official troubleshooting</a></li>
-</ul>
-<h3 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">FROM alpine</span><br><span class="line"></span><br><span class="line"><span class="comment"># Installs latest Chromium (100) package.</span></span><br><span class="line">RUN apk add --no-cache \</span><br><span class="line">  chromium \</span><br><span class="line">  nss \</span><br><span class="line">  freetype \</span><br><span class="line">  harfbuzz \</span><br><span class="line">  ca-certificates \</span><br><span class="line">  ttf-freefont \</span><br><span class="line">  nodejs \</span><br><span class="line">  yarn</span><br><span class="line"></span><br><span class="line"><span class="comment"># Tell Puppeteer to skip installing Chrome. We'll be using the installed package.</span></span><br><span class="line">ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=<span class="literal">true</span> \</span><br><span class="line">  PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser</span><br><span class="line"></span><br><span class="line">COPY package.json yarn.lock ./</span><br><span class="line">RUN yarn</span><br><span class="line"></span><br><span class="line"><span class="comment"># Puppeteer v13.5.0 works with Chromium 100.</span></span><br><span class="line"><span class="comment"># RUN yarn add puppeteer@13.5.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Add user so we don't need --no-sandbox.</span></span><br><span class="line">RUN addgroup -S pptruser &amp;&amp; adduser -S -G pptruser pptruser \</span><br><span class="line">  &amp;&amp; mkdir -p /home/pptruser/Downloads /app \</span><br><span class="line">  &amp;&amp; chown -R pptruser:pptruser /home/pptruser \</span><br><span class="line">  &amp;&amp; chown -R pptruser:pptruser /app</span><br><span class="line"></span><br><span class="line"><span class="comment"># Run everything after as non-privileged user.</span></span><br><span class="line">USER pptruser</span><br><span class="line"></span><br><span class="line">WORKDIR /app</span><br><span class="line"></span><br><span class="line">COPY . .</span><br><span class="line"></span><br><span class="line">EXPOSE 3003</span><br><span class="line">CMD [<span class="string">"yarn"</span>, <span class="string">"start"</span>]</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2180,7 +2173,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">84</span>
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2677,7 +2670,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">240</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

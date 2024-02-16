@@ -366,6 +366,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/08/20/git-submodule/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/20/git-submodule/" itemprop="url">
+                  GIT submodule note
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-20 23:17:24" itemprop="dateCreated datePublished" datetime="2019-08-20T23:17:24+00:00">2019-08-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/20/git-submodule/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/20/git-submodule/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Clone-repository-with-submodule"><a href="#Clone-repository-with-submodule" class="headerlink" title="Clone repository with submodule"></a>Clone repository with submodule</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --recursive &lt;repo_url&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Clone-submodules-after-repository-cloned"><a href="#Clone-submodules-after-repository-cloned" class="headerlink" title="Clone submodules after repository cloned"></a>Clone submodules after repository cloned</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git submodule init</span><br><span class="line">git submodule update --recursive</span><br></pre></td></tr></table></figure>
+<h2 id="Add-submodule"><a href="#Add-submodule" class="headerlink" title="Add submodule"></a>Add submodule</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add &lt;submodule_clone_url&gt; &lt;submodule_folder&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Remove-submodule"><a href="#Remove-submodule" class="headerlink" title="Remove submodule"></a>Remove submodule</h2><p>Step1 - Remove submodule folder</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached /path/to/submodule</span><br><span class="line">rm -rf /path/to/submodule</span><br></pre></td></tr></table></figure>
+<p>Step2 - Remove submodule config in <code>.gitmodules</code></p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">-[submodule "themes/next"]</span></span><br><span class="line"><span class="deletion">- path = themes/next</span></span><br><span class="line"><span class="deletion">- url = https://github.com/Asing1001/hexo-theme-next.git</span></span><br><span class="line">[submodule "themes/next-reloaded"]</span><br><span class="line">path = themes/next-reloaded</span><br><span class="line">url = https://github.com/Asing1001/hexo-next.git</span><br></pre></td></tr></table></figure>
+<h2 id="Update-submodule-to-latest-commit"><a href="#Update-submodule-to-latest-commit" class="headerlink" title="Update submodule to latest commit"></a>Update submodule to latest commit</h2><p>Step1 - Checkout the target version of the submodule</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Go to the submodule folder</span></span><br><span class="line"><span class="built_in">cd</span> projB/projA</span><br><span class="line"><span class="comment"># Checkout the target commit</span></span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>Step2 - Commit the update</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Back to the parent folder</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">git add projB/projA</span><br><span class="line">git commit -m <span class="string">"submodule projA updated"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://stackoverflow.com/questions/8191299/update-a-submodule-to-the-latest-commit" target="_blank" rel="noopener">https://stackoverflow.com/questions/8191299/update-a-submodule-to-the-latest-commit</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2019/06/18/VSCode-settings-and-shortcuts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +605,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -601,7 +777,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -770,7 +946,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -941,7 +1117,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1201,7 +1377,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1375,7 +1551,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1542,7 +1718,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1734,7 +1910,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -1902,7 +2078,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
+                <time title="Modified: 2024-02-16 17:56:13" itemprop="dateModified" datetime="2024-02-16T17:56:13+00:00">2024-02-16</time>
               
             
           </span>
@@ -2383,173 +2559,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2018/07/24/CSS-position-fixed-full-width/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/24/CSS-position-fixed-full-width/" itemprop="url">
-                  CSS padding-right disappear when position fixed width 100%
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2018-07-24 17:05:33" itemprop="dateCreated datePublished" datetime="2018-07-24T17:05:33+00:00">2018-07-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2024-02-16 16:55:37" itemprop="dateModified" datetime="2024-02-16T16:55:37+00:00">2024-02-16</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/24/CSS-position-fixed-full-width/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/07/24/CSS-position-fixed-full-width/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>When creating fixed navigation bar with padding, we got :</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">fixed</span>;</span><br><span class="line"><span class="selector-tag">width</span>: 100%;</span><br><span class="line"><span class="selector-tag">padding</span>: 15<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-<p>However you will find padding-right disappear, the reason is the width is <code>window width + padding-left + padding-right</code>. It is exceed the window, to fix it just use <code>width: calc(100% - 30px)</code> to reduce the width</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">fixed</span>;</span><br><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">calc</span>(100% <span class="selector-tag">-</span> 30<span class="selector-tag">px</span>);</span><br><span class="line"><span class="selector-tag">padding</span>: 15<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="rrmvdZ" data-default-tab="css,result" data-user="Asing1001" data-pen-title="Fixed nav with correct padding" class="codepen">See the Pen <a href="https://codepen.io/Asing1001/pen/rrmvdZ/" target="_blank" rel="noopener">Fixed nav with correct padding</a> by AsinChen (<a href="https://codepen.io/Asing1001" target="_blank" rel="noopener">@Asing1001</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2599,7 +2608,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">84</span>
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -3096,7 +3105,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">240</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
