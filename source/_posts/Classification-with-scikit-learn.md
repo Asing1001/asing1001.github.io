@@ -36,13 +36,14 @@ category_counts = data['categories'].value_counts()
 
 ## Building the Classification Pipeline
 
-With our data ready, we construct a classification pipeline using scikit-learn. Our pipeline consists of a TF-IDF vectorizer for feature extraction and a linear support vector classifier (LinearSVC) as the classification model.
+With our data ready, we construct a classification pipeline using scikit-learn. Our pipeline consists of a TF-IDF vectorizer with Jieba as the Chinese tokenizer for feature extraction and a linear support vector classifier (LinearSVC) as the classification model.
 
 ```python
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.svm import LinearSVC
+from util.tokenizer import tokenizer
 
 # Split the data into training and testing sets
 X = data['text'].values
@@ -51,9 +52,21 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Define the pipeline
 pipeline = Pipeline([
-    ('tfidf', TfidfVectorizer()),
+    ('jieba', TfidfVectorizer(tokenizer=tokenizer)),
     ('clf', CalibratedClassifierCV(LinearSVC())),
 ])
+```
+
+util.tokenizer (For Chinese tokenization)
+
+```python
+import re
+import jieba
+
+def tokenizer(text):
+    words = list(jieba.cut(text))
+    words = [word for word in words if re.match(r'^[\w\u4e00-\u9fff]+$', word)]
+    return words
 ```
 
 ## Model Training and Evaluation
