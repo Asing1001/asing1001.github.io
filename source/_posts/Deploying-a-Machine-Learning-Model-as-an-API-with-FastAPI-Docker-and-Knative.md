@@ -13,11 +13,18 @@ In this blog post, we'll address this question by walking through the process of
 We'll start by wrapping our machine learning model as an API using FastAPI, a modern web framework for building APIs with Python. FastAPI offers automatic OpenAPI documentation generation and high performance, making it an excellent choice for our use case.
 
 ```python
-from typing import List, Dict
+import pickle
+from typing import Dict, List
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from util.get_prediction_probabilities import get_prediction_probabilities
 
+def load_model():
+    with open("model.pkl", "rb") as file:
+        model = pickle.load(file)
+    return model
+
+model = load_model()
 app = FastAPI()
 
 class PredictionResult(BaseModel):
@@ -25,19 +32,28 @@ class PredictionResult(BaseModel):
     prediction: str
     probabilities: Dict[str, float]
 
-class PredictionRequest(BaseModel):
-    texts: List[str]
-
 class PredictionResponse(BaseModel):
-    results: List[PredictionResult]
+    results: List[PredictionResult] = Field(
+        examples=[
+            {
+                "text": "netflix訂閱",
+                "prediction": "subscription",
+                "probabilities": {
+                    "subscription": 0.916624393150892,
+                    "learning": 0.023890389044000114,
+                },
+            },
+        ]
+    )
 
-@app.post('/predict', response_model=PredictionResponse)
+class PredictionRequest(BaseModel):
+    texts: List[str] = Field(..., example=["netflix訂閱"])
+
+@app.post("/predict", response_model=PredictionResponse)
 async def predict(request: PredictionRequest):
     texts = request.texts
     results = get_prediction_probabilities(model, texts)
-
-    response = PredictionResponse(results=results)
-    return response
+    return {"results": results}
 ```
 
 ## Building a Docker Image
@@ -45,13 +61,23 @@ async def predict(request: PredictionRequest):
 Next, we'll containerize our FastAPI application using Docker. Docker provides a lightweight and portable way to package applications and their dependencies into containers, ensuring consistency across different environments.
 
 ```Dockerfile
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+# Use a base image with Python installed
+FROM python:3.9-slim
 
-COPY ./app /app
+# Set the working directory inside the container
+WORKDIR /app
 
-RUN pip install scikit-learn  # Install any dependencies
+# Copy the requirements file into the container
+COPY requirements.txt .
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+# Install the Python dependencies
+RUN pip install -r requirements.txt
+
+# Copy the application code
+COPY . .
+
+# Set the entrypoint command
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "5050"]
 ```
 
 ## Deployment on Knative
