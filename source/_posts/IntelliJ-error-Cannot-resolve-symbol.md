@@ -10,6 +10,7 @@ If you've encountered the `Cannot resolve symbol...` error in IntelliJ IDEA afte
 
 To resolve this issue, follow these steps:
 
+0. Remove the `targets` folder, if it's a maven project, you could do `mvn clean`
 1. Expand the Maven plugin in IntelliJ IDEA's sidebar.
 2. Click the `Reload All Maven Projects` button with the refresh icon.
 
