@@ -52,7 +52,7 @@
 			    "@id":"https://www.paddingleft.com/2023/11/21/IntelliJ-error-Cannot-resolve-symbol/"
 			},
 			"datePublished": "2023-11-21T16:21:40.000Z",
-			"dateModified": "2024-02-18T00:30:18.042Z",
+			"dateModified": "2024-02-20T14:38:44.932Z",
 			
 			"image": {
 				"@type": "ImageObject",
@@ -1815,7 +1815,8 @@ h6.categories {
 			    	<!-- content -->
 			  		<p>If you&#x2019;ve encountered the <code>Cannot resolve symbol...</code> error in IntelliJ IDEA after switching branches, you&#x2019;re not alone. This frustrating issue can occur even when your code is error-free and compiles successfully from the command line.</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>To resolve this issue, follow these steps:</p>
-<ol>
+<ol start="0">
+<li>Remove the <code>targets</code> folder, if it&#x2019;s a maven project, you could do <code>mvn clean</code></li>
 <li>Expand the Maven plugin in IntelliJ IDEA&#x2019;s sidebar.</li>
 <li>Click the <code>Reload All Maven Projects</code> button with the refresh icon.</li>
 </ol>
