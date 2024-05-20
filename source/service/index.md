@@ -35,7 +35,7 @@ comments: false
 - 整合來自10多家公司100多個遊戲產品的 API。
 - 優化前端和 API 性能，減少50%的加載時間和20%的 CDN 成本。
 
-## 大型專案
+## 企業專案
 
 ### [LINE發票管家](https://invoice.line.me/)
 `React` `Typescript` `GraphQL` `Temporal` `NodeJS` `MySQL` `MongoDB` `k8s` `Knative` `OCR` `Python`
@@ -61,4 +61,4 @@ comments: false
 
 ![188BET](index/188bet_casino.avif)
 
-更多中小型企業專案詳情請參見 https://www.paddingleft.com/portfolio/
+更多中小型商務專案詳情請參見 https://www.paddingleft.com/portfolio/
