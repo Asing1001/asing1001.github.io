@@ -9,7 +9,7 @@ comments: false
 
 - **LinkedIn:** [linkedin.com/in/sing-ming-chen](https://linkedin.com/in/sing-ming-chen)
 - **GitHub:** [github.com/asing1001](https://github.com/asing1001)
-- **Email:** service@paddingleft.com
+- **Email:** shinningstar1001@gmail.com
 - **LINE:** [shinningstar1001](https://line.me/ti/p/vR_2KJFDFn)
 
 ## 專業經驗
