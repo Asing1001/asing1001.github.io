@@ -1,11 +1,12 @@
 ---
-title: Sing's Portfolio
-date: 2017-03-20 02:27:40
+# title: Sing's Portfolio
+date: 2024-05-20 21:57:36
+comments: false
 ---
 
 <!-- Multi device mockup generator: https://techsini.com/multi-mockup/ -->
 
-## Professional Experience
+## Enterprise Projects
 
 ### [LINE Invoice](https://invoice.line.me/)
 
@@ -42,6 +43,8 @@ date: 2017-03-20 02:27:40
 ![](index/188bet_casino.avif)
 
 ---
+
+## Small/Medium Business Projects
 
 ### [MovieRater](https://www.mvrater.com/) | [Github](https://github.com/Asing1001/movieRater.react)
 
