@@ -374,6 +374,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2024/05/25/Understanding-Lexicographical-vs-Numerical-Sorting-in-JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2024/05/25/Understanding-Lexicographical-vs-Numerical-Sorting-in-JavaScript/" itemprop="url">
+                  Lexicographical vs Numerical Sorting in JavaScript Array.prototype.sort()
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2024-05-25 14:30:00 / Modified: 20:36:18" itemprop="dateCreated datePublished" datetime="2024-05-25T14:30:00+00:00">2024-05-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2024/05/25/Understanding-Lexicographical-vs-Numerical-Sorting-in-JavaScript/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/05/25/Understanding-Lexicographical-vs-Numerical-Sorting-in-JavaScript/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Default-behavior-Lexicographical-Sorting"><a href="#Default-behavior-Lexicographical-Sorting" class="headerlink" title="Default behavior - Lexicographical Sorting"></a>Default behavior - Lexicographical Sorting</h3><p><strong>By default, the <code>sort()</code> method sorts the elements of an array as strings.</strong> This means the elements are compared based on their Unicode code point values, leading to lexicographical order, which is not always the intended numerical order. <strong>This default behavior can cause bugs when sorting numbers.</strong></p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nums = [<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">nums.sort();</span><br><span class="line"><span class="built_in">console</span>.log(nums); <span class="comment">// Output: [-1, -2, -3, -4, 0, 1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<p>In this example, the <code>sort()</code> method treats the numbers as strings and sorts them based on the Unicode values, resulting in an order that looks correct but isn’t numerically accurate. This can lead to unexpected behavior and bugs in your code.</p>
+<h3 id="Numerical-Sorting"><a href="#Numerical-Sorting" class="headerlink" title="Numerical Sorting"></a>Numerical Sorting</h3><p>To sort the numbers correctly in ascending order, you need to provide a comparison function to the <code>sort()</code> method. The comparison function should subtract one number from the other, ensuring numerical comparison.</p>
+<h4 id="Example-1"><a href="#Example-1" class="headerlink" title="Example:"></a>Example:</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nums = [<span class="number">-1</span>, <span class="number">-2</span>, <span class="number">-3</span>, <span class="number">-4</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line">nums.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b);</span><br><span class="line"><span class="built_in">console</span>.log(nums); <span class="comment">// Output: [-4, -3, -2, -1, 0, 1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+<p>In this corrected example, the comparison function <code>(a, b) =&gt; a - b</code> ensures that the array is sorted numerically in ascending order.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>When sorting numbers in JavaScript, always use a comparison function with the <code>sort()</code> method to ensure the elements are sorted numerically. This small adjustment prevents unexpected results and ensures your array is in the correct order, avoiding potential bugs caused by default lexicographical sorting.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2024/04/29/Automating-tasks-with-PostgreSQL-Triggers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -437,7 +594,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -608,7 +765,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -778,7 +935,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -949,7 +1106,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -1125,7 +1282,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -1297,7 +1454,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -1524,7 +1681,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -1698,7 +1855,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -1875,7 +2032,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
+                <time title="Modified: 2024-05-25 20:36:18" itemprop="dateModified" datetime="2024-05-25T20:36:18+00:00">2024-05-25</time>
               
             
           </span>
@@ -1970,192 +2127,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/07/02/Training-a-Model-to-Solve-CAPTCHA-Audio-Challenges/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/07/02/Training-a-Model-to-Solve-CAPTCHA-Audio-Challenges/" itemprop="url">
-                  Training a Model to Solve CAPTCHA Audio Challenges
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2023-07-02 20:55:11" itemprop="dateCreated datePublished" datetime="2023-07-02T20:55:11+00:00">2023-07-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2024-05-20 16:56:21" itemprop="dateModified" datetime="2024-05-20T16:56:21+00:00">2024-05-20</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2023/07/02/Training-a-Model-to-Solve-CAPTCHA-Audio-Challenges/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/07/02/Training-a-Model-to-Solve-CAPTCHA-Audio-Challenges/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>In this blog post, we will explore how to train a machine learning model to solve CAPTCHA audio challenges. CAPTCHA is a widely used security measure on the web to prevent automated bots from accessing websites. It presents users with various tests to determine if they are human, one of which is the audio challenge. By training a model to solve these audio challenges, we can automate the process and improve user experience. Let’s dive into the code and understand how it works.</p>
-<h2 id="The-Setup"><a href="#The-Setup" class="headerlink" title="The Setup"></a>The Setup</h2><p>Before we get into the code, let’s understand the directory structure and dependencies required for this project. Here’s an overview:</p>
-<ol>
-<li><code>login-captcha-example</code>: This directory contains the audio files used for training and testing the model.</li>
-<li><code>material</code>: This directory contains the labeled training audio files. Each audio file represents a digit in the captcha.</li>
-<li><code>svm_model.pkl</code>: This is the trained SVM model file that will be generated during training.</li>
-<li><code>temp</code>: This directory will be used to store temporary audio files generated during the prediction process.</li>
-</ol>
-<p>To get started, make sure you have the following dependencies installed:</p>
-<ul>
-<li><code>os</code>: A module for interacting with the operating system.</li>
-<li><code>librosa</code>: A library for audio and music signal analysis.</li>
-<li><code>numpy</code>: A library for mathematical operations on multi-dimensional arrays.</li>
-<li><code>sklearn.svm</code>: The SVM (Support Vector Machine) model implementation from scikit-learn.</li>
-<li><code>sklearn.metrics</code>: A module for evaluating the performance of machine learning models.</li>
-<li><code>subprocess</code>: A module for spawning new processes and executing system commands.</li>
-<li><code>string.Template</code>: A class for string templating.</li>
-<li><code>joblib</code>: A library for serializing Python objects to disk and loading them back into memory.</li>
-</ul>
-<h2 id="Code-Walkthrough"><a href="#Code-Walkthrough" class="headerlink" title="Code Walkthrough"></a>Code Walkthrough</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2023/07/02/Training-a-Model-to-Solve-CAPTCHA-Audio-Challenges/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2205,7 +2176,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">87</span>
+                    <span class="site-state-item-count">88</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2720,7 +2691,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">249</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">251</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
