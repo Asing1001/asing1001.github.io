@@ -10,6 +10,8 @@ comments: false
 
 ### [LINE Invoice](https://invoice.line.me/)
 
+- Role: Tech Lead to lead the fullstack development from 0 to 1.
+- Scale: 5 millions user, 300 millions invoices
 `React` `Typescript` `GraphQL` `Temporal` `Parse-server` `NodeJS` `MySQL` `MongoDB` `k8s` `Knative` `OCR` `GoLang` `Python` `Machine Learning`
 > LINE Invoice simplifies the management of daily invoices and receipts for users. Incorporating OCR and machine learning for efficient processing, it stands out for its robust backend infrastructure.
 
@@ -19,6 +21,8 @@ comments: false
 
 ### [LINE Shopping](https://buy.line.me/)
 
+- Role: Tech lead for iOS/Andriod development, Frontend Lead developer to build from 0 to 1, DevOps.
+- Scale: 10 millions user (1/2 population in Taiwan)
 `VueJS` `Typescript` `GraphQL` `Java` `MySQL` `MongoDB` `k8s`
 > As Taiwan's leading e-commerce platform, LINE Shopping offers a comprehensive shopping experience across iOS, Android, and web. This project showcases a seamless integration of modern frontend technologies with a scalable backend.
 
@@ -28,6 +32,8 @@ comments: false
 
 ### [LINE Travel](https://travel.line.me/)
 
+- Role: Fullstack Lead developer
+- Scale: 3 millions user
 `VueJS` `NodeJS` `ElasticSearch` `MongoDB` `k8s`
 > The top travel agency platform in Taiwan, LINE Travel, partners with renowned companies like Agoda, Booking.com, and Skyscanner to offer unmatched travel deals and options.
 
@@ -37,6 +43,7 @@ comments: false
 
 ### [188BET](https://www.188bet.com/)
 
+- Role: Fullstack developer
 `AngularJS` `C#` `ASP.NET` `OracleDB` `Windows Server`
 > An international online sports betting platform, 188BET provides a secure and dynamic betting experience, leveraging cutting-edge technologies for high performance and reliability.
 
