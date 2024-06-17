@@ -374,6 +374,193 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2024/06/17/Changing-Sequence-in-PostgreSQL-A-Step-by-Step-Guide/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2024/06/17/Changing-Sequence-in-PostgreSQL-A-Step-by-Step-Guide/" itemprop="url">
+                  Changing Sequence in PostgreSQL: A Step-by-Step Guide
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2024-06-17 10:00:00 / Modified: 17:50:02" itemprop="dateCreated datePublished" datetime="2024-06-17T10:00:00+00:00">2024-06-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2024/06/17/Changing-Sequence-in-PostgreSQL-A-Step-by-Step-Guide/#comments" itemprop="discussionUrl">
+                
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/06/17/Changing-Sequence-in-PostgreSQL-A-Step-by-Step-Guide/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>In PostgreSQL, sequences are integral for generating unique identifiers, especially for <code>SERIAL</code> or <code>BIGSERIAL</code> columns. Issues with sequences can arise after database migrations or due to automated processes, such as those handled by tools like Retool. This guide provides steps to adjust a sequence associated with an <code>id</code> column in PostgreSQL, with consideration for environments like Retool that automate database operations.</p>
+<h3 id="Step-by-Step-Guide"><a href="#Step-by-Step-Guide" class="headerlink" title="Step-by-Step Guide"></a>Step-by-Step Guide</h3><ol>
+<li><p><strong>Identify the Sequence Name</strong></p>
+<p>First, determine the name of the sequence associated with your table and column. Use the <code>pg_get_serial_sequence</code> function:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> pg_get_serial_sequence(<span class="string">'your_table_name'</span>, <span class="string">'id'</span>);</span><br></pre></td></tr></table></figure>
+<p>Replace <code>&#39;your_table_name&#39;</code> with your actual table name and <code>&#39;id&#39;</code> with the column name (<code>&#39;id&#39;</code> in your case).</p>
+</li>
+<li><p><strong>Check Current Maximum Value</strong></p>
+<p>Find the current maximum value of the <code>id</code> column to set the sequence correctly:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">MAX</span>(<span class="keyword">id</span>) <span class="keyword">FROM</span> your_table_name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Reset the Sequence</strong></p>
+<p>Use <code>SETVAL</code> to adjust the sequence to the desired next value:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> setval(<span class="string">'your_sequence_name'</span>, your_next_value);</span><br></pre></td></tr></table></figure>
+<p>Replace <code>&#39;your_sequence_name&#39;</code> with the sequence name obtained in step 1, and <code>your_next_value</code> with the appropriate next value based on the maximum <code>id</code> value.</p>
+</li>
+<li><p><strong>Verify the Sequence</strong></p>
+<p>Confirm the sequence update by checking its next value:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">nextval</span>(<span class="string">'your_sequence_name'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Example-Scenario"><a href="#Example-Scenario" class="headerlink" title="Example Scenario"></a>Example Scenario</h3><p>Assuming you’re using Retool and encountered sequence issues after a migration:</p>
+<ol>
+<li><p><strong>Identify the Sequence Name</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> pg_get_serial_sequence(<span class="string">'users'</span>, <span class="string">'id'</span>);</span><br><span class="line"><span class="comment">-- This might return 'public.clients_client_id_seq' based on your setup in Retool.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Check Current Maximum Value</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">MAX</span>(<span class="keyword">id</span>) <span class="keyword">FROM</span> <span class="keyword">users</span>;</span><br><span class="line"><span class="comment">-- Assuming this returns 100, indicating the next id should start from 101.</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Reset the Sequence</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> setval(<span class="string">'public.clients_client_id_seq'</span>, <span class="number">101</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Verify the Sequence</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">nextval</span>(<span class="string">'public.clients_client_id_seq'</span>);</span><br><span class="line"><span class="comment">-- This should return 101 if the sequence was set correctly.</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>Managing sequences in PostgreSQL is crucial for ensuring database integrity, especially in environments where automated processes like Retool handle migrations. By following these steps, you can effectively adjust sequences and prevent issues such as duplicate key errors in your PostgreSQL database managed by Retool.</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2024/05/25/Understanding-Lexicographical-vs-Numerical-Sorting-in-JavaScript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -437,7 +624,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -606,7 +793,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -777,7 +964,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -947,7 +1134,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -1118,7 +1305,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -1294,7 +1481,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -1466,7 +1653,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -1693,7 +1880,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -1867,7 +2054,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
+                <time title="Modified: 2024-06-17 17:50:02" itemprop="dateModified" datetime="2024-06-17T17:50:02+00:00">2024-06-17</time>
               
             
           </span>
@@ -1966,179 +2153,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2023/09/05/Terraform-sync-remote-state/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sing Ming Chen">
-      <meta itemprop="description" content="Sing's log, a developer's blog">
-      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sing's Log">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2023/09/05/Terraform-sync-remote-state/" itemprop="url">
-                  Synchronizing Remote Terraform Backend States
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2023-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-05T00:00:00+00:00">2023-09-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2024-05-29 14:00:48" itemprop="dateModified" datetime="2024-05-29T14:00:48+00:00">2024-05-29</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2023/09/05/Terraform-sync-remote-state/#comments" itemprop="discussionUrl">
-                
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/09/05/Terraform-sync-remote-state/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>When cloning a project from a remote source, it’s crucial to synchronize the Terraform states from the backend to maintain consistency and accuracy.</p>
-<h2 id="Syncing-Remote-Backend-State-A-Quick-Guide"><a href="#Syncing-Remote-Backend-State-A-Quick-Guide" class="headerlink" title="Syncing Remote Backend State: A Quick Guide"></a>Syncing Remote Backend State: A Quick Guide</h2><p>Follow these steps to efficiently sync your remote backend state:</p>
-<h3 id="1-Initialize-and-Install-Dependencies"><a href="#1-Initialize-and-Install-Dependencies" class="headerlink" title="1. Initialize and Install Dependencies"></a>1. Initialize and Install Dependencies</h3><p>First, initiate the process and update dependencies using the following command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">terraform init</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you need to upgrade dependencies</span></span><br><span class="line">terraform init --upgrade</span><br></pre></td></tr></table></figure>
-<h3 id="2-Streamline-Variable-Input"><a href="#2-Streamline-Variable-Input" class="headerlink" title="2. Streamline Variable Input"></a>2. Streamline Variable Input</h3><p>Instead of manually inputting or exporting variables each time, simplify the process by creating a <code>terraform.tfvars</code> file:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"foo=bar"</span> &gt; terraform.tfvars</span><br></pre></td></tr></table></figure>
-<h3 id="3-Removing-Items-Not-Present-in-Remote"><a href="#3-Removing-Items-Not-Present-in-Remote" class="headerlink" title="3. Removing Items Not Present in Remote"></a>3. Removing Items Not Present in Remote</h3><p>In cases where items are removed from the remote but haven’t been reflected in the state, use the following command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform state rm &lt;resource&gt;.&lt;name&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="4-Importing-New-Items-to-Sync-State"><a href="#4-Importing-New-Items-to-Sync-State" class="headerlink" title="4. Importing New Items to Sync State"></a>4. Importing New Items to Sync State</h3><p>If new items have been added but aren’t yet synced with the state, consult the provider’s documentation to confirm import support. Then use the provided syntax:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">terraform import &lt;resource&gt;.&lt;name&gt; &lt;id&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Properly synchronizing Terraform backend states ensures your project’s integrity and consistency, especially when working with remote repositories. Following these concise steps will streamline your workflow and enhance your overall development process.</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2188,7 +2202,7 @@
                 
                   <a href="/timeline">
                 
-                    <span class="site-state-item-count">88</span>
+                    <span class="site-state-item-count">89</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2707,7 +2721,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">251</span>
+                      
+                    
+                    <span class="site-state-item-count">252</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
