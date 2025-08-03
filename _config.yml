@@ -6,7 +6,7 @@
 title: Sing's Log
 subtitle: Knowledge worth sharing
 description: Sing's log, a developer's blog
-keywords: Web development, Front-End, Javascript, IT, Hexo, NexT
+keywords: Software development, Fullstack Web Development, JavaScript, TypeScript, React, Node.js, Hexo, Programming, Coding, Technology
 author: Sing Ming Chen
 language: en
 timezone:
@@ -32,8 +32,7 @@ skip_render: [README.md]
 social:
   GitHub: https://github.com/asing1001 || github
   E-Mail: mailto:sing@paddingleft.com || envelope
-  Linkedin: https://www.linkedin.com/in/andychen-pro/ || linkedin
-  Facebook: https://www.facebook.com/sing1001 || facebook
+  Linkedin: https://www.linkedin.com/in/sing-ming-chen/ || linkedin
 
 # Writing
 new_post_name: :title.md # File name of new posts
