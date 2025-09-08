@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="nNUMPUrqNNot_PkJfPzacCg4M0b6Mz5viTh_YBlxew8">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=20170328?v=6.3.0">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    fastclick: true,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'RG9H1JR5W2',
+      apiKey: 'dcbd98ce20c49cb7d89d4f1b6a3a2206',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<link rel="search" href="/opensearch.xml" type="application/opensearchdescription+xml" title="Sing's Log">
+<script data-ad-client="ca-pub-6735629726636183" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <link rel="amphtml" href="./amp/index.html">
+
+
+
+  <meta name="description" content="背景 台北大學企管學士，畢業當完兵直接資策會微軟班轉職當工程師 3.5年博弈軟體工程師 (Taipei) 5年知名通訊軟體工程師/Lead (Taipei) 1.5年知名社群軟體工程師/Lead (Dublin)  面試目標歐洲區L5職缺 時程 2024四月左右JS共刷了200題左右開始嘗試面試，面了X(Twitter) &amp;amp; Amazon知道自己算法不太行 五月積極找朋友內推 六月初收到M">
+<meta name="keywords" content="interview">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024 EU Google&#x2F;Meta L5面試心得">
+<meta property="og:url" content="https://www.paddingleft.com/2025/08/04/2024-eu-interview/index.html">
+<meta property="og:site_name" content="Sing&#39;s Log">
+<meta property="og:description" content="背景 台北大學企管學士，畢業當完兵直接資策會微軟班轉職當工程師 3.5年博弈軟體工程師 (Taipei) 5年知名通訊軟體工程師/Lead (Taipei) 1.5年知名社群軟體工程師/Lead (Dublin)  面試目標歐洲區L5職缺 時程 2024四月左右JS共刷了200題左右開始嘗試面試，面了X(Twitter) &amp;amp; Amazon知道自己算法不太行 五月積極找朋友內推 六月初收到M">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://www.paddingleft.com/2025/08/04/2024-eu-interview/leetcode.png">
+<meta property="og:image" content="https://www.paddingleft.com/2025/08/04/2024-eu-interview/netflix.png">
+<meta property="og:updated_time" content="2025-09-08T22:06:00.466Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2024 EU Google&#x2F;Meta L5面試心得">
+<meta name="twitter:description" content="背景 台北大學企管學士，畢業當完兵直接資策會微軟班轉職當工程師 3.5年博弈軟體工程師 (Taipei) 5年知名通訊軟體工程師/Lead (Taipei) 1.5年知名社群軟體工程師/Lead (Dublin)  面試目標歐洲區L5職缺 時程 2024四月左右JS共刷了200題左右開始嘗試面試，面了X(Twitter) &amp;amp; Amazon知道自己算法不太行 五月積極找朋友內推 六月初收到M">
+<meta name="twitter:image" content="https://www.paddingleft.com/2025/08/04/2024-eu-interview/leetcode.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.paddingleft.com/2025/08/04/2024-eu-interview/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>2024 EU Google/Meta L5面試心得 | Sing's Log</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '546618865728828',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93986058-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93986058-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sing's Log</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Knowledge Worth Spreading</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-career-coach">
+    <a href="/career-coach/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-comment"></i> <br>Career Coach</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-portfolio">
+    <a href="/portfolio/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-book"></i> <br>Portfolio</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.paddingleft.com/2025/08/04/2024-eu-interview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sing Ming Chen">
+      <meta itemprop="description" content="Sing's log, a developer's blog">
+      <meta itemprop="image" content="/uploads/avatar_speaking.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sing's Log">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">2024 EU Google/Meta L5面試心得
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2025-08-04 00:58:59" itemprop="dateCreated datePublished" datetime="2025-08-04T00:58:59+00:00">2025-08-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2025-09-08 22:06:00" itemprop="dateModified" datetime="2025-09-08T22:06:00+00:00">2025-09-08</time>
+              
+            
+          </span>
+
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li>台北大學企管學士，畢業當完兵直接資策會微軟班轉職當工程師</li>
+<li>3.5年博弈軟體工程師 (Taipei)</li>
+<li>5年知名通訊軟體工程師/Lead (Taipei)</li>
+<li>1.5年知名社群軟體工程師/Lead (Dublin)</li>
+</ul>
+<h2 id="面試目標"><a href="#面試目標" class="headerlink" title="面試目標"></a>面試目標</h2><p>歐洲區L5職缺</p>
+<h2 id="時程"><a href="#時程" class="headerlink" title="時程"></a>時程</h2><ul>
+<li>2024四月左右JS共刷了200題左右開始嘗試面試，面了X(Twitter) &amp; Amazon知道自己算法不太行</li>
+<li>五月積極找朋友內推</li>
+<li>六月初收到Meta/Google/Uber面試邀請，告知各recruiter需要一個月準備，此時開始用python從0開始瘋狂刷題</li>
+<li>六月底Leetcode累積刷300題，面完所有phone interview，再告知recruiter需要準備一個月</li>
+<li>七月底Leetcode累積刷450題，並準備好System Design，開始密集面試</li>
+<li>八月第二週全部面完，總計10場演算法+3場System Design共13 Round全部都拿到Hire or Strong Hire，最終Leetcode共470題 (Easy 120, Medium 285, Hard 65), System design準備20題</li>
+<li>八月第二週確定Level(Meta E5 / Google L5)，月底前完成Team Match</li>
+<li>九月第二週談完Final Package，最後決定加入Google UK</li>
+</ul>
+<h2 id="面試公司"><a href="#面試公司" class="headerlink" title="面試公司"></a>面試公司</h2><p>總共投8間</p>
+<ul>
+<li>內推: Amazon, Meta, Google, Microsoft, Apple</li>
+<li>自投: OpenAI, Uber</li>
+<li>獵頭: X(Twitter)</li>
+</ul>
+<h2 id="面試結果"><a href="#面試結果" class="headerlink" title="面試結果"></a>面試結果</h2><ul>
+<li>Offer: Google SWE-SRE L5, Meta SWE E5, Meta Production Engineer E4</li>
+<li>Reject: Amazon, X(Twitter)</li>
+<li>沒面試機會: Apple, OpenAI</li>
+<li>決定Offer後暫停: Microsoft, Uber</li>
+</ul>
+<h3 id="X-Twitter-Dublin"><a href="#X-Twitter-Dublin" class="headerlink" title="X(Twitter) (Dublin)"></a>X(Twitter) (Dublin)</h3><p>Headhunter表示X正在Ireland徵Senior SRE要不要試，稍微聊了一下薪資期待和經驗給出履歷後就發了OA來，雖然知道當時刷很少題(100題)應該上不了，但滿想聊看看Elon musk帶領下的X長什麼樣子，也想評估一下自己水平在哪就去面試了。</p>
+<ul>
+<li>OA: 兩題Leetcode問題給60分鐘做完，難度1 easy 1 medium</li>
+<li>Coding Interview: 平台是用Hackerrank不限語言，問了2D dp問題，我是用JS寫，只給出暴力解。另外聊了過去經驗和Why X之類的問題，面試我的工程師說他很喜歡在X工作，覺得同事都很猛學到很多東西。</li>
+<li>System Design: 說實在Round 1結束我以為已經沒了，但意外的是Hunter說Hiring manager還是有興趣想聊一些Architecture &amp; culture fit就約了2面，我不太記得具體問題了只印象我表現一般。</li>
+</ul>
+<p>結果：Reject</p>
+<h3 id="Amazon-SDE-Dublin"><a href="#Amazon-SDE-Dublin" class="headerlink" title="Amazon SDE (Dublin)"></a>Amazon SDE (Dublin)</h3><p>強者朋友內推後面試，當時大概Leetcode 150題，過了線上OA後的流程：</p>
+<ul>
+<li>Phone Interview - 問Datastructure原理和實作細節，再問一些Web基礎問題</li>
+<li>Coding Interview - 一題medium + follow up, 另30分鐘Leadership Principle</li>
+<li>Lower Level Design Interview - 實作Api, 問要用什麼資料結構etc, 另30分鐘Leadership Principle</li>
+<li>Behavior Interview - 1hr Leadership Principle</li>
+<li>System Design Interview - 30m 給一個現有系統, 設計新功能, 30m Leadership Principle</li>
+<li>Behavior Interview - 1hr Leadership Principle</li>
+</ul>
+<p>感想：System Design Interview表現不好，Leadership Principle需要很大量的準備Story<br>結果：Recruiter打電話來Reject, 接到電話還以為有希望了XD</p>
+<h3 id="Meta-SWE-London"><a href="#Meta-SWE-London" class="headerlink" title="Meta SWE (London)"></a>Meta SWE (London)</h3><p>透過朋友內推，6月初接到recruiter電話，約好六月底phone interview<br>Meta interview都是45min, coding兩題, 最後5分鐘是給你問問題, 時間很緊所以都會滿直接給Hint, e.g. 這個用inorder應該做不出來喔! or 這題不用in-place做!</p>
+<ul>
+<li>Phone Interview - 45min, 兩題Hard (Sort, DFS)</li>
+<li>Coding - 45min, 1 medium(linkedlist), 1 hard(backtrack)</li>
+<li>Coding - 45min, 2 medium(binary tree + prefixSum)</li>
+<li>Coding - 45min, 1 medium(2d dp) + 1 hard(graph)</li>
+<li>System Design - 45 min, System Design經典題</li>
+<li>Behavior Interview - 45 min</li>
+<li>Hiring commitee - Recruiter說Got hire/strong hire on everyround, especially system design幫忙爭取E6 Offer, 但HC覺得過去經驗的Scope不夠到E6，給了E5。</li>
+<li>Team match</li>
+<li>Offer</li>
+</ul>
+<p>結果：Offer Get (E5)，考慮了很久最後決定Take Google Offer</p>
+<h3 id="Meta-Production-Engineer-Dublin"><a href="#Meta-Production-Engineer-Dublin" class="headerlink" title="Meta Production Engineer (Dublin)"></a>Meta Production Engineer (Dublin)</h3><p>當初同時也投了這個職缺，因為本身經驗都是以JS fullstack為主，Skillset滿合就想說來試試，後來才發現interview時程太滿就只準備了SWE的面試，這裡算是硬著頭皮裸考純靠過去經驗上戰場…但還是可以分享一下：</p>
+<ul>
+<li>UI Coding Interview - JS兩題工作上會遇到的問題</li>
+<li>Lower Level Design Interview - Nodejs底層API實作</li>
+<li>PE System Design - 45min, design cli tool</li>
+<li>Coding / System Design / Behavior - 原本還有三場但和recuiter表達SWE已經面試很多關了能不能直接參考，後來讓我直接skip了。</li>
+</ul>
+<p>結果：Offer Get (E4)</p>
+<h3 id="Google-SWE-SRE-London-Dublin"><a href="#Google-SWE-SRE-London-Dublin" class="headerlink" title="Google SWE-SRE (London + Dublin)"></a>Google SWE-SRE (London + Dublin)</h3><p>透過朋友內推投了London / Dublin的缺，約6月初Recuriter電話聊了一下約六月底面試</p>
+<ul>
+<li>Phone Interview: 非常規算法題，實作面試官要求的功能 (medium~hard)</li>
+<li>Coding: 這場滿特別我沒做出最佳解，我用2D DP, 最佳解是Greedy, 我最後做完有提出很可能有Greedy解，Feedback是解題和溝通都順暢, 拿到hire</li>
+<li>Coding: Binary search (hard)，這場很快做完提早15分鐘結束，結果只拿到Hire說解法可以再做一些優化所以沒有strong hire</li>
+<li>Coding: 非常規算法題，一開始難度easy, 很顯然的O(n)解, follow up難度Hard，問有沒有辦法降複雜度，面試官說這題整年沒遇過有人解出來，他給了一些提示最後我有解出來他整個很High, 我也很High</li>
+<li>System design: 45min, 非經典題型但算是工作上實際會遇到的新系統Design</li>
+<li>Googleyness: 45min</li>
+<li>Hiring Commitee: Skip, Recruiter電話通知所有Round都Hire，可以直接跳過HC</li>
+<li>Team match: 和uk, ireland的team主管聊興趣</li>
+<li>Offer</li>
+</ul>
+<p>結果: Offer Get - Google UK L5, 最後決定去Google圓夢，當初當工程師一直覺得有一天要進去看看。</p>
+<h3 id="Uber-Senior-Web-Developer-Amsterdam"><a href="#Uber-Senior-Web-Developer-Amsterdam" class="headerlink" title="Uber Senior Web Developer (Amsterdam)"></a>Uber Senior Web Developer (Amsterdam)</h3><p>和recuiter聊天時有被問了一些簡單的Web快問快答問題，介紹了一下面試內容，大致上是說就考DSA，寄來的事前準備也是這樣寫，但…</p>
+<ul>
+<li>Coding Interview: 一進去看到一個GIF動畫就傻了幾秒，是考純前端CSS + Typescript React，考題是給一個GIF動畫，請你用Reactjs coding出一個一樣的效果，我坦白跟面試官說我以為是考算法，上次寫前端是一年前但我還是可以試試，憑著印象跟很尷尬的問面試官React hook的Syntax還是做出了和動畫一模一樣的效果，面試官表示很滿意，但討論了一下我的期待是做Fullstack而非純Frontend就沒有後續了。</li>
+</ul>
+<h3 id="Uber-Senior-SRE-Amsterdam"><a href="#Uber-Senior-SRE-Amsterdam" class="headerlink" title="Uber Senior SRE (Amsterdam)"></a>Uber Senior SRE (Amsterdam)</h3><ul>
+<li>Coding interview: Hard * 1, 掙扎很久最後有bug沒完整做出來，特別的地方是uber面試用的平台可以run code</li>
+<li>Coding interview: 1題medium follow up到hard</li>
+<li>System design: system design經典題</li>
+<li>System design + past experience interview: 和主管聊過去專案，recruiter說可以做個powerpoint介紹, 面試當天Recruiter告知該team headcount被內轉佔走了，但我前面的feedback都是hire，問我還有沒有興趣和其他部門主管interview，當時因為已經確定可以拿到Meta/Google offer就婉拒了。</li>
+</ul>
+<h3 id="Microsoft-Dublin"><a href="#Microsoft-Dublin" class="headerlink" title="Microsoft (Dublin)"></a>Microsoft (Dublin)</h3><p>朋友六月內推後八月才收到面試邀請和OA，做了一下難度是兩題Medium，OA過了但已經Accept Offer因此婉拒。</p>
+<h2 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h2><p>不論是coding interview或是system design, 用有系統的方式刷題很重要，網路上很多高手有介紹不同流派，找到一個適合自己的方法後就堅持下去，以下是一些我的感悟</p>
+<h3 id="演算法"><a href="#演算法" class="headerlink" title="演算法"></a>演算法</h3><ul>
+<li>在有限時間下，Leetcode精和多需要找到一個平衡。精：每一種題型都要做過，隔一陣子要複習，不一定要整個重寫但是要能想出對的思路。多：Leetcode每日 + weekly/biweekly contest，同時培養面對未知題型的能力。</li>
+<li>平時刷題要有自言自語的習慣，假裝自己在和面試官對話，而且每一題都要逼自己想出時間複雜度，最好是先把思路/複雜度都想好了才開始實作。</li>
+<li>英文是一個很大的門檻，練習時要強迫全英文自言自語</li>
+<li>短時間認真刷一定會頭痛的，加油撐下去，當時我每天頭痛，很常半夜醒來發覺腦子在快速跑演算法就睡不著了。在頭痛刷題的你並不孤單</li>
+</ul>
+<h3 id="System-Design"><a href="#System-Design" class="headerlink" title="System Design"></a>System Design</h3><ul>
+<li>釐清需求才開始Design</li>
+<li>Back-of-the-envelope calculation要多練習</li>
+<li>邊畫圖一樣也要邊自言自語，模擬和面試官講解</li>
+<li>不要死背，交叉參考同一個系統網路上不同的design方式，結合自己的過去經驗畫出屬於自己的架構圖</li>
+</ul>
+<h3 id="自己的一些練習記錄"><a href="#自己的一些練習記錄" class="headerlink" title="自己的一些練習記錄"></a>自己的一些練習記錄</h3><img src="/2025/08/04/2024-eu-interview/leetcode.png">
+<img src="/2025/08/04/2024-eu-interview/netflix.png">
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/interview/" rel="tag"># interview</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2024/07/16/Bridge-to-Gnosis-chain-to-earn-sDAI-APR/" rel="next" title="Bridge to Gnosis chain to earn APR from DAI">
+                <i class="fa fa-chevron-left"></i> Bridge to Gnosis chain to earn APR from DAI
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar_speaking.jpg" alt="Sing Ming Chen">
+            
+              <p class="site-author-name" itemprop="name">Sing Ming Chen</p>
+              <p class="site-description motion-element" itemprop="description">Sing's log, a developer's blog</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/timeline">
+                
+                    <span class="site-state-item-count">91</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">260</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/asing1001" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:sing@paddingleft.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/sing-ming-chen/" target="_blank" title="Linkedin" rel="external nofollow"><i class="fa fa-fw fa-linkedin"></i>Linkedin</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面試目標"><span class="nav-number">2.</span> <span class="nav-text">面試目標</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#時程"><span class="nav-number">3.</span> <span class="nav-text">時程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面試公司"><span class="nav-number">4.</span> <span class="nav-text">面試公司</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面試結果"><span class="nav-number">5.</span> <span class="nav-text">面試結果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#X-Twitter-Dublin"><span class="nav-number">5.1.</span> <span class="nav-text">X(Twitter) (Dublin)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Amazon-SDE-Dublin"><span class="nav-number">5.2.</span> <span class="nav-text">Amazon SDE (Dublin)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Meta-SWE-London"><span class="nav-number">5.3.</span> <span class="nav-text">Meta SWE (London)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Meta-Production-Engineer-Dublin"><span class="nav-number">5.4.</span> <span class="nav-text">Meta Production Engineer (Dublin)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-SWE-SRE-London-Dublin"><span class="nav-number">5.5.</span> <span class="nav-text">Google SWE-SRE (London + Dublin)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Uber-Senior-Web-Developer-Amsterdam"><span class="nav-number">5.6.</span> <span class="nav-text">Uber Senior Web Developer (Amsterdam)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Uber-Senior-SRE-Amsterdam"><span class="nav-number">5.7.</span> <span class="nav-text">Uber Senior SRE (Amsterdam)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Microsoft-Dublin"><span class="nav-number">5.8.</span> <span class="nav-text">Microsoft (Dublin)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#心得"><span class="nav-number">6.</span> <span class="nav-text">心得</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#演算法"><span class="nav-number">6.1.</span> <span class="nav-text">演算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#System-Design"><span class="nav-number">6.2.</span> <span class="nav-text">System Design</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自己的一些練習記錄"><span class="nav-number">6.3.</span> <span class="nav-text">自己的一些練習記錄</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2025</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sing Ming Chen</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.3.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://acslog.disqus.com/count.js" async></script>
+  
+
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
