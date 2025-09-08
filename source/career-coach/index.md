@@ -43,4 +43,4 @@ comments: false
 ---
 
 更多經歷與面試心得可參考：
-[2024 EU Google/Meta L5 面試心得](/source/_posts/2024-eu-interview.md)
+{% post_link 2024-eu-interview 2024 EU Google/Meta L5 面試心得 %}

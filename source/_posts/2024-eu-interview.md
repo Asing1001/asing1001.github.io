@@ -143,3 +143,8 @@ Meta interview都是45min, coding兩題, 最後5分鐘是給你問問題, 時間
 - Back-of-the-envelope calculation要多練習
 - 邊畫圖一樣也要邊自言自語，模擬和面試官講解
 - 不要死背，交叉參考同一個系統網路上不同的design方式，結合自己的過去經驗畫出屬於自己的架構圖
+
+### 自己的一些練習記錄
+
+{% asset_img "leetcode.png" %}
+{% asset_img "netflix.png" %}
